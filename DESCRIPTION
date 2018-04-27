@@ -11,10 +11,6 @@ URL: https://github.com/yonicd/covrpage
 BugReports: https://github.com/yonicd/covrpage/issues
 Encoding: UTF-8
 LazyData: true
-Imports: rmarkdown, utils, tidyr, dplyr
+Imports: rmarkdown,utils,dplyr,tidyr,covr,tibble
 RoxygenNote: 6.0.1.9000
-Suggests: 
-  testthat,
-  covr,
-  tibble,
-  knitr
+Suggests: testthat, knitr
