@@ -7,6 +7,7 @@
 #' @export 
 #' @import dplyr
 #' @importFrom tidyr gather spread
+#' @importFrom rlang UQ sym UQS syms
 testthat_summary <- function(x,type=c('short','long')){
 
 x <- dplyr::as_data_frame(x)
@@ -14,24 +15,37 @@ x <- dplyr::as_data_frame(x)
 switch(type,
        
        'short'={
+         
+         melt_cols <- c('failed','skipped','error','warning')
+         
          x%>%
-           dplyr::group_by(file)%>%
-           dplyr::select(n=nb,time=real,failed,skipped,error,warning)%>%
+           dplyr::group_by(rlang::UQ(rlang::sym('file')))%>%
+           dplyr::select(n=rlang::UQ(rlang::sym('nb')),
+                         time=rlang::UQ(rlang::sym('real')),
+                         rlang::UQS(rlang::syms(melt_cols))
+                         )%>%
            dplyr::mutate_all(as.numeric)%>%
-           tidyr::gather(key = 'status_type',value='status',-c(file,n,time))%>%
-           dplyr::group_by(file,status_type)%>%
-           dplyr::summarise_at(dplyr::vars(n,time,status),dplyr::funs(sum))%>%
-           tidyr::spread(key = status_type,value=status)%>%
+           tidyr::gather(key = 'status_type',value='status',
+                         rlang::UQS(rlang::syms(melt_cols)))%>%
+           dplyr::group_by(rlang::UQS(rlang::syms(c('file','status_type'))))%>%
+           dplyr::summarise_at(dplyr::vars(rlang::UQS(rlang::syms(c('n','time','status')))),
+                               dplyr::funs(sum))%>%
+           tidyr::spread(key = rlang::UQ(rlang::sym('status_type')),value=rlang::UQ(rlang::sym('status')))%>%
            dplyr::ungroup()%>%
-           dplyr::mutate(file=sprintf('[%s](testthat/%s)',file,file))
+           dplyr::mutate(file=sprintf('[%s](testthat/%s)',
+                                      rlang::UQ(rlang::sym('file')),
+                                      rlang::UQ(rlang::sym('file'))))
+         
        },
        'long'={
          
          x%>%
-           dplyr::mutate(status=ifelse(failed,'FAIL','PASS'))%>%
-           dplyr::select(file,test,context,status,n=nb,time=real,failed)%>%
-           dplyr::mutate(file=sprintf('[%s](testthat/%s)',file,file))%>%
-           dplyr::select(-c(failed))
+           dplyr::mutate(status=ifelse(rlang::UQ(rlang::sym('failed')),'FAIL','PASS'))%>%
+           dplyr::select(rlang::UQS(rlang::syms(c('file','test','context','status'))),
+                         n=rlang::UQ(rlang::sym('nb')),time=rlang::UQ(rlang::sym('real')))%>%
+           dplyr::mutate(file=sprintf('[%s](testthat/%s)',
+                                      rlang::UQ(rlang::sym('file')),
+                                      rlang::UQ(rlang::sym('file'))))
          
        })
 
@@ -79,13 +93,16 @@ covr_print_to_df <- function(x, group = c("filename", "functions"), by = "line")
 #'  \code{\link[covr]{package_coverage}}
 #' @rdname covr_summary
 #' @export 
-#' @importFrom dplyr mutate
+#' @import dplyr
+#' @importFrom rlang UQ sym
 covr_summary <- function(x){
 
   x%>%
     covr_print_to_df()%>%
-    dplyr::mutate(name=ifelse(grepl('^R/',name),
-                              sprintf('[%s](../%s)',name,name),
-                              name)
+    dplyr::mutate(name=ifelse(grepl('^R/',rlang::UQ(rlang::sym('name'))),
+                              sprintf('[%s](../%s)',
+                                      rlang::UQ(rlang::sym('name')),
+                                      rlang::UQ(rlang::sym('name'))),
+                              rlang::UQ(rlang::sym('name')))
                   )
 }
