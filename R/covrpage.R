@@ -74,7 +74,7 @@ check_for_pkgs <- function(){
   
   pkgs <- rownames(utils::installed.packages())
   
-  chk_pkgs <- c('dplyr','tidyr','covr','devtools','knitr')
+  chk_pkgs <- c('dplyr','tidyr','covr','testthat','knitr')
   
   setdiff(chk_pkgs,pkgs)
   
