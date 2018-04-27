@@ -1,6 +1,6 @@
 # covrpage
 
-Healthy packages use [testthat](https://github.com/r-lib/testthat) and [covr](https://github.com/r-lib/covr) to develop stable R packages. 
+Healthy R packages use [testthat](https://github.com/r-lib/testthat) and [covr](https://github.com/r-lib/covr) to develop stable packages. 
 
 This package extends the information that is communicated with the potential user with a cover page for the tests in the form of summary tables of results from covr and testthat. 
 

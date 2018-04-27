@@ -69,9 +69,10 @@ check_for_tests <- function(testdir){
   return(res)
 }
 
+#'@importFrom utils installed.packages
 check_for_pkgs <- function(){
   
-  pkgs <- rownames(installed.packages())
+  pkgs <- rownames(utils::installed.packages())
   
   chk_pkgs <- c('dplyr','tidyr','covr','devtools','knitr')
   

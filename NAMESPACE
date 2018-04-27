@@ -2,3 +2,4 @@
 
 export(covrpage)
 importFrom(rmarkdown,render)
+importFrom(utils,installed.packages)
