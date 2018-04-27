@@ -23,25 +23,25 @@ covrpage <- function(pkg){
     setwd(thiswd)
     },add = TRUE)
   
-  setwd(pkg)
+  chk_pgks <- check_for_pkgs(pkg)
   
-  chk <- check_for_tests(testdir)
+  if(length(chk_pgks)>0){
+    stop(sprintf('The following packages must be installed: %s', 
+                 paste0(chk_pgks,collapse=','))
+    )
+  }
+  
+  chk <- check_for_tests(file.path(pkg,testdir))
   
   if(chk>0){
     if(chk==1)
       stop(sprintf("tests subdirectory does not exists in: '%s'", pkg))
     
     if(chk==2)
-      stop(sprintf("tests/testthat subdirectory does contain any files in: '%s'", pkg))
+      stop(sprintf("tests/testthat subdirectory does contain any test files in: '%s'", pkg))
   }
   
-  chk_pgks <- check_for_pkgs()
-  
-  if(length(chk_pgks)){
-    stop(sprintf('The following packages must be intalled: %s', 
-                 paste0(chk_pgks,collapse=','))
-         )
-  }
+  setwd(pkg)
   
   file.copy(system.file('covrpage.Rmd',package = 'covrpage'),
             'tests/_covrpage.Rmd')
@@ -70,12 +70,33 @@ check_for_tests <- function(testdir){
 }
 
 #'@importFrom utils installed.packages
-check_for_pkgs <- function(){
+check_for_pkgs <- function(pkg){
   
-  pkgs <- rownames(utils::installed.packages())
+  pkgs_current <- rownames(utils::installed.packages())
   
-  chk_pkgs <- c('testthat','knitr')
+  pkg <- normalizePath(pkg,mustWork = FALSE)
   
-  setdiff(chk_pkgs,pkgs)
+  if(!file.exists(file.path(pkg,'DESCRIPTION')))
+    stop(sprintf('No package DESCRIPTION file in %s',pkg))
+  
+  desc <- as.list(read.dcf(file.path(pkg,'DESCRIPTION'))[1,])
+  
+  dep_imp <- desc[intersect(c('Depends','Imports'),names(desc))]
+  
+  pkg_deps <- gsub('\\s(.*?)$','',unlist(lapply(dep_imp,strsplit,','),use.names = FALSE))
+  
+  pkg_deps <- union(pkg_deps,c('testthat','knitr'))
+  
+  pkg_deps <- pkg_deps[!grepl('R',pkg_deps)]
+  
+  ret <- setdiff(pkg_deps,pkgs_current)
+  
+  if(length(ret)==0)
+    return(c())
+  
+  if(!nzchar(ret))
+    return(c())
+  
+  ret
   
 }
