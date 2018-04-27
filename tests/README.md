@@ -1,6 +1,6 @@
 Tests and Coverage
 ================
-27 April, 2018 12:26:03
+27 April, 2018 12:32:44
 
 -   [Coverage](#coverage)
 -   [Unit Tests](#unit-tests)
@@ -14,8 +14,8 @@ Coverage summary is created using the [covr](https://github.com/r-lib/covr) pack
 
 | Object                                     | Coverage (%) |
 |:-------------------------------------------|:------------:|
-| covrpage                                   |     62.26    |
-| [R/covrpage.R](../R/covrpage.R)            |     31.58    |
+| covrpage                                   |     54.72    |
+| [R/covrpage.R](../R/covrpage.R)            |     17.54    |
 | [R/create\_chunks.R](../R/create_chunks.R) |     97.96    |
 
 <br>
@@ -27,13 +27,13 @@ Unit Test summary is created using the [testthat](https://github.com/r-lib/testt
 
 | file                                        |    n|   time|  error|  failed|  skipped|  warning|
 |:--------------------------------------------|----:|------:|------:|-------:|--------:|--------:|
-| [test-covrfuns.R](testthat/test-covrfuns.R) |    6|  0.134|      0|       0|        0|        0|
-| [test-covrpage.R](testthat/test-covrpage.R) |    4|  0.015|      0|       0|        0|        0|
+| [test-covrfuns.R](testthat/test-covrfuns.R) |    6|  0.167|      0|       0|        0|        0|
+| [test-covrpage.R](testthat/test-covrpage.R) |    3|  0.013|      0|       0|        0|        0|
 
 | file                                        | test                  | context                  | status |    n|   time|
 |:--------------------------------------------|:----------------------|:-------------------------|:-------|----:|------:|
-| [test-covrfuns.R](testthat/test-covrfuns.R) | covr\_summary         | check summary covr       | PASS   |    2|  0.045|
-| [test-covrfuns.R](testthat/test-covrfuns.R) | covr\_summary         | check summary covr       | PASS   |    3|  0.088|
+| [test-covrfuns.R](testthat/test-covrfuns.R) | covr\_summary         | check summary covr       | PASS   |    2|  0.055|
+| [test-covrfuns.R](testthat/test-covrfuns.R) | covr\_summary         | check summary covr       | PASS   |    3|  0.111|
 | [test-covrfuns.R](testthat/test-covrfuns.R) | covr object to df     | check covr to df         | PASS   |    1|  0.001|
-| [test-covrpage.R](testthat/test-covrpage.R) | tests are detected    | check if there are tests | PASS   |    1|  0.001|
-| [test-covrpage.R](testthat/test-covrpage.R) | packages are detected | check for packages       | PASS   |    3|  0.014|
+| [test-covrpage.R](testthat/test-covrpage.R) | tests are detected    | check if there are tests | PASS   |    1|  0.002|
+| [test-covrpage.R](testthat/test-covrpage.R) | packages are detected | check for packages       | PASS   |    2|  0.011|

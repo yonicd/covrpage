@@ -7,7 +7,6 @@ test_that("tests are detected", {
 context("check for packages")
 
 test_that("packages are detected", {
-  expect_length(covrpage:::check_for_pkgs('../..'),0)
   expect_error(covrpage:::check_for_pkgs('.'))
   expect_error(covrpage:::check_for_pkgs('..'))
 })
