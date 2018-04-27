@@ -2,29 +2,20 @@
 % Please edit documentation in R/create_chunks.R
 \name{covr_summary}
 \alias{covr_summary}
-\title{FUNCTION_TITLE}
+\title{Summary outputs for covr object}
 \usage{
 covr_summary(x)
 }
 \arguments{
-\item{x}{PARAM_DESCRIPTION}
+\item{x}{covr object}
 }
 \value{
-OUTPUT_DESCRIPTION
+data.frame
 }
 \description{
-FUNCTION_DESCRIPTION
-}
-\details{
-DETAILS
-}
-\examples{
-\dontrun{
-if(interactive()){
- #EXAMPLE1
- }
-}
+Creates a summary data.frame for covr object output that 
+mimics the console print method of \code{\link[covr]{package_coverage}}
 }
 \seealso{
-\code{\link[dplyr]{mutate}}
+\code{\link[covr]{package_coverage}}
 }

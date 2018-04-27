@@ -70,19 +70,13 @@ covr_print_to_df <- function(x, group = c("filename", "functions"), by = "line")
   return(tibble::enframe(c(overall_percentage,by_coverage)))
 }
 
-#' @title FUNCTION_TITLE
-#' @description FUNCTION_DESCRIPTION
-#' @param x PARAM_DESCRIPTION
-#' @return OUTPUT_DESCRIPTION
-#' @details DETAILS
-#' @examples 
-#' \dontrun{
-#' if(interactive()){
-#'  #EXAMPLE1
-#'  }
-#' }
+#' @title Summary outputs for covr object
+#' @description Creates a summary data.frame for covr object output that 
+#' mimics the console print method of \code{\link[covr]{package_coverage}}
+#' @param x covr object
+#' @return data.frame
 #' @seealso 
-#'  \code{\link[dplyr]{mutate}}
+#'  \code{\link[covr]{package_coverage}}
 #' @rdname covr_summary
 #' @export 
 #' @importFrom dplyr mutate
