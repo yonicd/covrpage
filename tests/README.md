@@ -1,6 +1,6 @@
 Tests and Coverage
 ================
-27 April, 2018 09:41:12
+27 April, 2018 10:10:40
 
 -   [Coverage](#coverage)
 -   [Unit Tests](#unit-tests)
@@ -14,9 +14,9 @@ Coverage summary is created using the [covr](https://github.com/r-lib/covr) pack
 
 | Object                                     | Coverage (%) |
 |:-------------------------------------------|:------------:|
-| covrpage                                   |     54.88    |
+| covrpage                                   |     60.64    |
 | [R/covrpage.R](../R/covrpage.R)            |     20.00    |
-| [R/create\_chunks.R](../R/create_chunks.R) |     97.30    |
+| [R/create\_chunks.R](../R/create_chunks.R) |     97.96    |
 
 <br>
 
