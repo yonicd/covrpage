@@ -1,6 +1,6 @@
 Tests and Coverage
 ================
-27 April, 2018 10:10:40
+27 April, 2018 10:12:43
 
 -   [Coverage](#coverage)
 -   [Unit Tests](#unit-tests)
@@ -27,8 +27,12 @@ Unit Test summary is created using the [testthat](https://github.com/r-lib/testt
 
 | file                                        |    n|   time|  error|  failed|  skipped|  warning|
 |:--------------------------------------------|----:|------:|------:|-------:|--------:|--------:|
-| [test-covrpage.R](testthat/test-covrpage.R) |    0|  0.002|      1|       0|        0|        0|
+| [test-covrfuns.R](testthat/test-covrfuns.R) |    0|  0.009|      3|       0|        0|        0|
+| [test-covrpage.R](testthat/test-covrpage.R) |    0|  0.001|      1|       0|        0|        0|
 
 | file                                        | test               | context                  | status |    n|   time|
 |:--------------------------------------------|:-------------------|:-------------------------|:-------|----:|------:|
-| [test-covrpage.R](testthat/test-covrpage.R) | tests are detected | check if there are tests | PASS   |    0|  0.002|
+| [test-covrfuns.R](testthat/test-covrfuns.R) | covr\_summary      | check summary covr       | PASS   |    0|  0.002|
+| [test-covrfuns.R](testthat/test-covrfuns.R) | covr\_summary      | check summary covr       | PASS   |    0|  0.001|
+| [test-covrfuns.R](testthat/test-covrfuns.R) | covr object to df  | check covr to df         | PASS   |    0|  0.006|
+| [test-covrpage.R](testthat/test-covrpage.R) | tests are detected | check if there are tests | PASS   |    0|  0.001|
