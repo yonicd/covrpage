@@ -19,3 +19,9 @@ test_that("check on remote repo",{
   expect_true(difftime(orig_time,new_time)<0)
   
 })
+
+context('snapshot')
+
+test_that('check covrpage from GH repo',{
+  expect_null(covrpage_snapshot(repo = 'hrbrmstr/slackr',preview = FALSE))
+})
