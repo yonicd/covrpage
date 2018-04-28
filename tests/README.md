@@ -1,6 +1,6 @@
 Tests and Coverage
 ================
-27 April, 2018 21:36:25
+27 April, 2018 22:04:57
 
 -   [Coverage](#coverage)
 -   [Unit Tests](#unit-tests)
@@ -25,16 +25,17 @@ Unit Tests
 
 Unit Test summary is created using the [testthat](https://github.com/r-lib/testthat) package.
 
-| file                                        |    n|   time|  error|  failed|  skipped|  warning|
-|:--------------------------------------------|----:|------:|------:|-------:|--------:|--------:|
-| [test-covrfuns.R](testthat/test-covrfuns.R) |    6|  0.131|      0|       0|        0|        0|
-| [test-covrpage.R](testthat/test-covrpage.R) |    4|  5.063|      0|       0|        0|        0|
+| file                                               |    n|   time|  error|  failed|  skipped|  warning|
+|:---------------------------------------------------|----:|------:|------:|-------:|--------:|--------:|
+| [test-check\_utils.R](testthat/test-check_utils.R) |    4|  0.036|      0|       0|        0|        0|
+| [test-covrfuns.R](testthat/test-covrfuns.R)        |    6|  0.125|      0|       0|        0|        0|
+| [test-covrpage.R](testthat/test-covrpage.R)        |    1|  4.603|      0|       0|        0|        0|
 
-| file                                        | test                  | context                                                 | status |    n|   time|
-|:--------------------------------------------|:----------------------|:--------------------------------------------------------|:-------|----:|------:|
-| [test-covrfuns.R](testthat/test-covrfuns.R) | covr\_summary         | check summary covr                                      | PASS   |    2|  0.030|
-| [test-covrfuns.R](testthat/test-covrfuns.R) | covr\_summary         | check summary covr                                      | PASS   |    3|  0.099|
-| [test-covrfuns.R](testthat/test-covrfuns.R) | covr object to df     | check covr to df                                        | PASS   |    1|  0.002|
-| [test-covrpage.R](testthat/test-covrpage.R) | tests are detected    | check if there are tests                                | PASS   |    1|  0.002|
-| [test-covrpage.R](testthat/test-covrpage.R) | packages are detected | check for packages                                      | PASS   |    2|  0.013|
-| [test-covrpage.R](testthat/test-covrpage.R) | check on remote repo  | check against remote repo that main function is working | PASS   |    1|  5.048|
+| file                                               | test                  | context                                                 | status |    n|   time|
+|:---------------------------------------------------|:----------------------|:--------------------------------------------------------|:-------|----:|------:|
+| [test-check\_utils.R](testthat/test-check_utils.R) | tests are detected    | check if there are tests                                | PASS   |    1|  0.005|
+| [test-check\_utils.R](testthat/test-check_utils.R) | packages are detected | check for packages                                      | PASS   |    3|  0.031|
+| [test-covrfuns.R](testthat/test-covrfuns.R)        | covr\_summary         | check summary covr                                      | PASS   |    2|  0.044|
+| [test-covrfuns.R](testthat/test-covrfuns.R)        | covr\_summary         | check summary covr                                      | PASS   |    3|  0.080|
+| [test-covrfuns.R](testthat/test-covrfuns.R)        | covr object to df     | check covr to df                                        | PASS   |    1|  0.001|
+| [test-covrpage.R](testthat/test-covrpage.R)        | check on remote repo  | check against remote repo that main function is working | PASS   |    1|  4.603|
