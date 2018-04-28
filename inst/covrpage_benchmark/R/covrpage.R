@@ -1,12 +1,13 @@
 #' @title render covrpage
 #' @description Render the template of the covrpage in the package directory.
 #' @param pkg path to package
+#' @param preview boolean, to open the output in viewer, Default: TRUE
 #' @seealso 
 #'  \code{\link[rmarkdown]{render}}
 #' @rdname covrpage
 #' @export 
 #' @importFrom rmarkdown render
-covrpage <- function(pkg){
+covrpage <- function(pkg, preview = TRUE){
   
   testdir <- file.path(pkg,'tests')
   
@@ -14,6 +15,12 @@ covrpage <- function(pkg){
   
   on.exit({
     
+    if(preview){
+      viewer <- getOption("viewer")
+      viewer('tests/README.html')
+      Sys.sleep(5)
+    }
+
     if(file.exists('tests/_covrpage.Rmd'))
       file.remove('tests/_covrpage.Rmd')
     
@@ -53,7 +60,7 @@ covrpage <- function(pkg){
       output_format = 'github_document',
       output_options = list(toc=TRUE,toc_depth=3)
     )
-    
+
 }
 
 check_for_tests <- function(testdir){

@@ -4,10 +4,12 @@
 \alias{covrpage}
 \title{render covrpage}
 \usage{
-covrpage(pkg)
+covrpage(pkg, preview = TRUE)
 }
 \arguments{
 \item{pkg}{path to package}
+
+\item{preview}{boolean, to open the output in viewer, Default: TRUE}
 }
 \description{
 Render the template of the covrpage in the package directory.

@@ -6,14 +6,15 @@ test_that("tests are detected", {
 
 context("check for packages")
 
+td <- system.file('covrpage_benchmark',package = 'covrpage')
+
 test_that("packages are detected", {
   expect_error(covrpage:::check_for_pkgs('.'))
   expect_error(covrpage:::check_for_pkgs('..'))
+  expect_null(covrpage:::check_for_pkgs(td))
 })
 
 context('check against remote repo that main function is working')
-
-td <- system.file('covrpage_benchmark',package = 'covrpage')
 
 test_that("check on remote repo",{
   
@@ -24,13 +25,11 @@ test_that("check on remote repo",{
   setwd(td)
   
   covrpage(td,preview = FALSE)
-
+  
   new_time <- file.info(file.path(td,'tests/README.md'))[['mtime']]
   
   setwd(thiswd)
   
   expect_true(difftime(orig_time,new_time)<0)
   
-  unlink(td,recursive = TRUE,force = TRUE)
-
 })
