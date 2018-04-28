@@ -1,0 +1,48 @@
+---
+title: "Tests and Coverage"
+date: "`r format(Sys.time(), '%d %B, %Y %H:%M:%S')`"
+---
+
+This output is created by [covrpage](https://github.com/yonicd/covrpage).
+
+```{r,include=FALSE}
+library(covr     , warn.conflicts = FALSE , quietly = TRUE)
+library(knitr    , warn.conflicts = FALSE , quietly = TRUE)
+
+```
+
+## Coverage
+
+Coverage summary is created using the [covr](https://github.com/r-lib/covr) package.
+
+```{r,echo=FALSE}
+covr::package_coverage()%>%
+  covrpage::covr_summary()%>%
+  knitr::kable(digits = 2,
+             col.names = c('Object','Coverage (%)'),align = c('l','c'))
+  
+```
+
+```{r,include=FALSE}
+x <- testthat::test_dir('../tests/testthat')
+```
+
+<br>
+
+## Unit Tests
+
+Unit Test summary is created using the [testthat](https://github.com/r-lib/testthat) package.
+
+
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+
+x%>%
+  covrpage::testthat_summary(type='short')%>%
+  knitr::kable()
+
+x%>%
+  covrpage::testthat_summary(type='long')%>%
+  knitr::kable()
+
+```
