@@ -27,6 +27,10 @@ covrpage('.')
 # assuming you are not in your package directory
 
 covrpage('another_directory')
+
+# peek at a R package on a Github Repository
+
+covrpage_snapshot(repo = 'user/repo')
 ```
 
 That's it!
