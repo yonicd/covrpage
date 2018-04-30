@@ -30,10 +30,15 @@ covrpage <- function(pkg, preview = TRUE, auto_push=FALSE){
       file.remove('tests/README.html')
     
     if(auto_push){
-      git2r::repository('.')%>%
-      git2r::add(path = c('tests/README.md'))%>%
-      git2r::commit(message='update tests readme [skip ci]')
+      
+      repo <- git2r::repository('.')
+      
+      repo%>%git2r::add(path = c('tests/README.md'))
+      
+      repo%>%git2r::commit(message='update tests readme [skip ci]')
+      
       system('git push')
+      
       }
     
     setwd(thiswd)
