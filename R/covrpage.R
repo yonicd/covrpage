@@ -2,12 +2,14 @@
 #' @description Render the template of the covrpage in the package directory.
 #' @param pkg path to package
 #' @param preview boolean, to open the output in viewer, Default: TRUE
+#' @param auto_push boolean, push to remote repo on exit, Default: FALSE
 #' @seealso 
 #'  \code{\link[rmarkdown]{render}}
 #' @rdname covrpage
 #' @export 
 #' @importFrom rmarkdown render
-covrpage <- function(pkg, preview = TRUE, commit_to){
+#' @importFrom git2r repository add commit push
+covrpage <- function(pkg, preview = TRUE, auto_push=FALSE){
   
   testdir <- file.path(pkg,'tests')
   
@@ -26,6 +28,13 @@ covrpage <- function(pkg, preview = TRUE, commit_to){
     
     if(file.exists('tests/README.html'))
       file.remove('tests/README.html')
+    
+    if(auto_push){
+      git2r::repository('.')%>%
+      git2r::add(path = c('tests/README.md'))%>%
+      git2r::commit(message='update tests readme [skip ci]')
+      system('git push')
+      }
     
     setwd(thiswd)
     },add = TRUE)
@@ -60,5 +69,5 @@ covrpage <- function(pkg, preview = TRUE, commit_to){
       output_format = 'github_document',
       output_options = list(toc=TRUE,toc_depth=3)
     )
-
+    
 }
