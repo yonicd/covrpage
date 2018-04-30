@@ -5,5 +5,5 @@ sudo: false
 cache: packages
 after_success:
   - Rscript -e 'covr::codecov()'
-  - Rscript --verbose -e "covrpage::covrpage(pkg = '.', preview = FALSE, auto_push = TRUE)"
+  - Rscript --verbose -e 'install.packages("remotes")' -e 'remotes::install_github("yonicd/covrpage")' -e "covrpage::covrpage(pkg = '.', preview = FALSE, auto_push = TRUE)"
   
