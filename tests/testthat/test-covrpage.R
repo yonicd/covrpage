@@ -30,7 +30,7 @@ td <- getwd()
 
 testthat::test_that('covrpage travis',{
   
-  if(grepl('travis',thiswd)){
+  if(grepl('travis',td)){
     setwd(thiswd)
     covrpage::covrpage(pkg = '.', preview = FALSE, auto_push = TRUE)
   }
