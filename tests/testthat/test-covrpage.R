@@ -28,11 +28,11 @@ test_that("check on remote repo",{
 
 
 # testthat::test_that('covrpage travis',{
-#   
-#   if(grepl('travis',td)){
+# 
+#   if(Sys.getenv("CI") == "true" && Sys.getenv("TRAVIS") == "true"){
 #     setwd('/home/travis/build/yonicd/covrpage')
 #     covrpage::covrpage(pkg = '.', preview = FALSE, auto_push = TRUE)
 #   }
-#     
+# 
 #   expect_true(2+2==4)
 # })

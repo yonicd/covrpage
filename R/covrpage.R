@@ -18,7 +18,7 @@ covrpage <- function(pkg, preview = TRUE, auto_push=FALSE){
   on.exit({
     
     if(preview){
-      viewer <- getOption("viewer")
+      viewer <- create_viewer()
       viewer('tests/README.html')
       Sys.sleep(5)
     }

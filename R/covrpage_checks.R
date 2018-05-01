@@ -42,3 +42,24 @@ check_for_pkgs <- function(pkg){
   ret
   
 }
+
+create_viewer <- function(){
+  
+  viewer <- getOption("viewer")
+  
+  if (!is.null(viewer)) {
+    
+    viewerFunc <- function(url) {
+      viewer(url)
+    }
+    
+  }
+  
+  else {
+    
+    viewerFunc <- utils::browseURL
+    
+  }
+  
+  return(viewerFunc)
+}
