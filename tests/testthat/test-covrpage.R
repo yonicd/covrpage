@@ -26,14 +26,13 @@ test_that("check on remote repo",{
 #   expect_null(covrpage_snapshot(repo = 'hrbrmstr/slackr',preview = FALSE))
 # })
 
-td <- getwd()
 
-testthat::test_that('covrpage travis',{
-  
-  #if(grepl('travis',td)){
-    setwd('/home/travis/build/yonicd/covrpage')
-    covrpage::covrpage(pkg = '.', preview = FALSE, auto_push = TRUE)
-  #}
-    
-  expect_true(2+2==4)
-})
+# testthat::test_that('covrpage travis',{
+#   
+#   if(grepl('travis',td)){
+#     setwd('/home/travis/build/yonicd/covrpage')
+#     covrpage::covrpage(pkg = '.', preview = FALSE, auto_push = TRUE)
+#   }
+#     
+#   expect_true(2+2==4)
+# })
