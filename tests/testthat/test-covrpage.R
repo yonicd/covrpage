@@ -48,10 +48,16 @@ testthat::test_that('covrpage travis',{
     setwd('/home/travis/build/yonicd/covrpage')
     system('git config --global user.email "yonicd@gmail.com"')
     system('git config --global user.name "yonicd"')
+    system('git checkout -b covrpage')
+    
     file.create('test.txt')
+    
     system('git add test.txt')
+    
+    system(sprintf('git remote add master-covrpages https://%s@github.com/yonicd/covrpage.git',Sys.getenv('GITHUB_PAT')))
+    
     system('git commit -m "try a test [skip ci]"')
-    system('git push')
+    system('git push --quiet --set-upstream master-covrpages covrpage ')
 
   }
 
