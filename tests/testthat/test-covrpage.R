@@ -54,10 +54,10 @@ testthat::test_that('covrpage travis',{
     
     system('git add test.txt')
     
-    system('git remote add master-covrpages https://705e636b0c9c8ae832a2e0663d5aee9299fe9df6@github.com/yonicd/covrpage.git')
+    system(sprintf('git remote add master-covrpages https://%s@github.com/yonicd/covrpage.git',Sys.getenv('GITHUB_PAT')))
     
     system('git commit -m "try a test [skip ci]"')
-    system('git push --quiet --set-upstream master-covrpages covrpage ')
+    system('git push --quiet --set-upstream master covrpage ')
 
   }
 
