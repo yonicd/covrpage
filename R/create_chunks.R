@@ -40,7 +40,14 @@ switch(type,
        'long'={
          
          x%>%
-           dplyr::mutate(status=ifelse(rlang::UQ(rlang::sym('failed')),'FAIL','PASS'))%>%
+           dplyr::mutate_if(is.logical,as.numeric)%>%
+           dplyr::mutate(pass = rlang::UQ(rlang::sym('failed')) + rlang::UQ(rlang::sym('skipped')) + rlang::UQ(rlang::sym('error')) + rlang::UQ(rlang::sym('warning')) == 0 ,
+                         status = 
+                           dplyr::case_when(rlang::UQ(rlang::sym('pass'))    == 1 ~ 'PASS',
+                                            rlang::UQ(rlang::sym('failed'))  == 1 ~ 'FAIL',
+                                            rlang::UQ(rlang::sym('skipped')) == 1 ~ 'SKIPPED',
+                                            rlang::UQ(rlang::sym('error'))   == 1 ~ 'ERROR',
+                                            rlang::UQ(rlang::sym('warning')) == 1 ~ 'WARNING'))%>%
            dplyr::select(rlang::UQS(rlang::syms(c('file','test','context','status'))),
                          n=rlang::UQ(rlang::sym('nb')),time=rlang::UQ(rlang::sym('real')))%>%
            dplyr::mutate(file=sprintf('[%s](testthat/%s)',
