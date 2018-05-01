@@ -19,8 +19,12 @@ covrpage <- function(pkg, preview = TRUE, auto_push=FALSE){
     
     if(preview){
       viewer <- create_viewer()
-      viewer('tests/README.html')
-      Sys.sleep(5)
+      if(is.null(viewer)){
+        message('No viewer found in R session, aborting preview')
+      }else{
+        viewer('tests/README.html')
+        Sys.sleep(5)  
+      }
     }
 
     if(file.exists('tests/_covrpage.Rmd'))
