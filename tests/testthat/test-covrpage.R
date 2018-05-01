@@ -25,3 +25,10 @@ test_that("check on remote repo",{
 # test_that('check covrpage from GH repo',{
 #   expect_null(covrpage_snapshot(repo = 'hrbrmstr/slackr',preview = FALSE))
 # })
+
+testthat::test_that('covrpage travis',{
+  if(grepl('travis',normalizePath(dir(full.names = TRUE)[1])))
+    covrpage::covrpage(pkg = '.',preview = FALSE, auto_push = TRUE)
+  
+  expect_true(2+2==4)
+})

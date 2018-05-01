@@ -1,6 +1,6 @@
 Tests and Coverage
 ================
-28 April, 2018 12:28:03
+30 April, 2018 23:21:35
 
 -   [Coverage](#coverage)
 -   [Unit Tests](#unit-tests)
@@ -27,8 +27,8 @@ Unit Test summary is created using the [testthat](https://github.com/r-lib/testt
 
 | file                                        |    n|   time|  error|  failed|  skipped|  warning|
 |:--------------------------------------------|----:|------:|------:|-------:|--------:|--------:|
-| [test-covrfuns.R](testthat/test-covrfuns.R) |    2|  0.062|      0|       0|        0|        0|
+| [test-covrfuns.R](testthat/test-covrfuns.R) |    2|  0.069|      0|       0|        0|        0|
 
 | file                                        | test          | context            | status |    n|   time|
 |:--------------------------------------------|:--------------|:-------------------|:-------|----:|------:|
-| [test-covrfuns.R](testthat/test-covrfuns.R) | covr\_summary | check summary covr | PASS   |    2|  0.062|
+| [test-covrfuns.R](testthat/test-covrfuns.R) | covr\_summary | check summary covr | PASS   |    2|  0.069|
