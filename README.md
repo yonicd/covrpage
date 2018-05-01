@@ -22,15 +22,19 @@ remotes::install_github('yonicd/covrpage')
 ```
 # assuming you are in your package directory
 
-covrpage('.')
+covrpage::covrpage('.')
+
+# create the covrpage and send diretly to remote repository
+
+covrpage::covrpage('.', auto_push = TRUE)
 
 # assuming you are not in your package directory
 
-covrpage('another_directory')
+covrpage::covrpage('another_directory')
 
 # peek at a R package on a Github Repository
 
-covrpage_snapshot(repo = 'user/repo')
+covrpage::covrpage_snapshot(repo = 'user/repo')
 ```
 
 That's it!
