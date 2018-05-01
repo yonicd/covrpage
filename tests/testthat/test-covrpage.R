@@ -26,9 +26,11 @@ test_that("check on remote repo",{
 #   expect_null(covrpage_snapshot(repo = 'hrbrmstr/slackr',preview = FALSE))
 # })
 
+thiswd <- getwd()
+
 testthat::test_that('covrpage travis',{
   if(grepl('travis',normalizePath(dir(full.names = TRUE)[1])))
-    covrpage::covrpage(pkg = '.',preview = FALSE, auto_push = TRUE)
+    covrpage::covrpage(pkg = thiswd, preview = FALSE, auto_push = TRUE)
   
   expect_true(2+2==4)
 })
