@@ -46,8 +46,8 @@ testthat::test_that('covrpage travis',{
     #covrpage::covrpage('.',preview = FALSE)
     
     setwd('/home/travis/build/yonicd/covrpage')
-    system('git config --global user.email "travis@travis-ci.org"')
-    system('git config --global user.name "Travis CI"')
+    system('git config --global user.email "yonicd@gmail.com"')
+    system('git config --global user.name "yonicd"')
     file.create('test.txt')
     system('git add test.txt')
     system('git commit -m "try a test [skip ci]"')
