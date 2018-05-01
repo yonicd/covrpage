@@ -31,7 +31,7 @@ td <- getwd()
 testthat::test_that('covrpage travis',{
   
   if(grepl('travis',td)){
-    setwd(thiswd)
+    setwd('/home/travis/build/yonicd/covrpage')
     covrpage::covrpage(pkg = '.', preview = FALSE, auto_push = TRUE)
   }
     
