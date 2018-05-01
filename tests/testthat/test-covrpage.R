@@ -42,15 +42,15 @@ test_that("check on remote repo",{
 testthat::test_that('covrpage travis',{
 
   if(Sys.getenv("CI") == "true" && Sys.getenv("TRAVIS") == "true"){
+    
     setwd('/home/travis/build/yonicd/covrpage')
-    #covrpage::covrpage(pkg = '.', preview = FALSE, auto_push = TRUE)
-    repo <- git2r::repository('.')
     
-    repo%>%git2r::add(path = c('tests/README.md'))
+    covrpage::covrpage('.',preview = FALSE)
     
-    repo%>%git2r::commit(message='update tests readme [skip ci]')
-    
+    system('git add tests/README.md')
+    system('git commit -m "update tests readme [skip ci]"')
     system('git push')
+    
   }
 
   expect_true(2+2==4)
