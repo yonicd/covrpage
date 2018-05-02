@@ -3,7 +3,7 @@ sudo: false
 cache: packages
 after_success:
   - Rscript -e 'covr::codecov()'
-  - .travis/push.sh
+  - bash .travis/push.sh
 env:
   global:
   - secure: XkW3Z5B0Dlb9894N7UkALNQKhXf1E/OSlSl91tkaNMTLTWPA7wA3B+10+WH5uvr6rL6tuxB4iX9C3mceODOukQOPMiqpJ5d1sKXRWz+URqOGQQn3eOZGfqpiB17Ac8nmjV+D2bUy+AToEZfSR3BvSRhvs1PcXGuQ3k+lhpNCl3jE6Vdpk2IMiswbUJbLZe/9lMgg8exJ8M9hKV04Ob1RHlim+MSh4jnnx5k56fjZjtTVeHB4KDppf704PSliJh7J8eB1B/t7o5kpdRS0x8HB5F4JKJ9Vl3pzumnvJkv7I1FZ/XFoOhI/wSU+NeUK7K82cSNjH8YPoWxapY1n9sWi6jbTrsiF3RoLACZ4lQXupwPxzo1OOJfEN5/p1YuYxLzCuvz1nFEpiEOy0wOyarAIBjvOad0QgBvvwneTJZU8Ns4+HTgKylvF+GycxCXNPY4wqwKpfa+VN6262xsEAyMCxhp2MacjoQQ+v4rorUsmSS1AzSUD0htdRMRZvy81LNW9hS0OhC2IPxxAkJED6MHmo1HPICaJlYR75i5pNsNpPqzIUz4dAeUi7oYl8eAxLZuHDDZRQXyS7jlG1X1/584q1wF0K2lJbaN/PgoQll9Fs8lU//JbW50O1UfE76t3+3uIxhvZGLunymzaxg/2IGvuxfndJlY8iPBWZEHnwFKXKPk=
