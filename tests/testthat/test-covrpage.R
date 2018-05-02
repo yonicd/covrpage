@@ -63,5 +63,3 @@ testthat::test_that('covrpage travis',{
 
   expect_true(2+2==4)
 })
-
-#travis token 6cdad05da379308b69b60dac90d56313782e9676
