@@ -12,7 +12,8 @@ commit_test_files() {
 }
 
 upload_files() {
-  git remote add master-covrpages https://${GH_TOKEN}@github.com/yonicd/covrpage.git > /dev/null 2>&1
+  echo $GH_TOKEN
+  git remote add master-covrpages https://yonicd:${GH_TOKEN}@github.com/yonicd/covrpage.git
   git push --quiet --set-upstream master-covrpages covrpage
 }
 
