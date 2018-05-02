@@ -1,25 +1,18 @@
-#!/bin/sh
+#!/bin/bash
 
-check_key() {
- echo $GH_TOKEN 
-}
+set -x
+if [ $TRAVIS_BRANCH == 'master' ] ; then
 
-setup_git() {
   git config --global user.email "travis@travis-ci.org"
   git config --global user.name "Travis CI"
-}
 
-commit_test_files() {
   git checkout -b covrpage
-  git add test.txt
+  git add .
   git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
-}
 
-upload_files() {
-  git remote add master-covrpages https://yonicd:${GH_TOKEN}@github.com/yonicd/covrpage.git
-  git push --quiet --set-upstream master-covrpages covrpage
-}
+  git remote add deploy https://yonicd:${GH_TOKEN}@github.com/yonicd/covrpage.git
+  git push --force deploy covrpage -v
 
-setup_git
-commit_test_files
-upload_files
+else
+    echo "Not deploying, since this branch isn't master."
+fi
