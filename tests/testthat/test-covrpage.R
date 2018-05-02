@@ -2,7 +2,8 @@ context('check against remote repo that main function is working')
 
 td <- system.file('covrpage_benchmark',package = 'covrpage')
 
-file.create('/home/travis/build/yonicd/covrpage/test.txt')
+if(Sys.getenv("CI") == "true" && Sys.getenv("TRAVIS") == "true")
+  file.create('/home/travis/build/yonicd/covrpage/test.txt')
 
 test_that("check on remote repo",{
   
