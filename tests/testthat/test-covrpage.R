@@ -54,7 +54,7 @@ testthat::test_that('covrpage travis',{
     
     system('git add test.txt')
     
-    system(sprintf('git remote add master-covrpages https://%s@github.com/yonicd/covrpage.git',Sys.getenv('GITHUB_PAT')))
+    system('git remote add master-covrpages https://${GH_TOKEN}@github.com/yonicd/covrpage.git')
     
     system('git commit -m "try a test [skip ci]"')
     system('git push --quiet --set-upstream master covrpage ')
@@ -63,3 +63,5 @@ testthat::test_that('covrpage travis',{
 
   expect_true(2+2==4)
 })
+
+#travis token 6cdad05da379308b69b60dac90d56313782e9676
