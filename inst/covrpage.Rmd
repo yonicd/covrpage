@@ -27,28 +27,12 @@ test_x_long <- test_x%>%
 
 ```
  
-```{r, include=FALSE}
-# test_skip <- test_x_long[test_x_long$status!='PASS',c('file','test')]
-# 
-# test_skip$file <- gsub('^(.*?)\\(|\\)$','',test_skip$file)
-# 
-# test_skip_lines <- mapply(FUN = function(x,y){
-#   p <- parse(file.path('../tests',x))
-#   pp <- utils::getParseData(p,includeText = TRUE)
-#   LINES <- as.numeric(pp[grep(y,pp$text)[1],c('line1','line2')])
-#   if(length(LINES))
-#     seq(LINES[1],LINES[2])
-# },test_skip$file,test_skip$test,SIMPLIFY = FALSE)
-# 
-```
-
-
 ## Coverage
 
 Coverage summary is created using the [covr](https://github.com/r-lib/covr) package.
 
 ```{r,echo=FALSE}
-covr::package_coverage()%>% # line_exclusions = test_skip_lines
+covr::package_coverage()%>%
   covrpage::covr_summary()%>%
   knitr::kable(digits = 2,
              col.names = c('Object','Coverage (%)'),align = c('l','c'))
@@ -60,8 +44,6 @@ covr::package_coverage()%>% # line_exclusions = test_skip_lines
 ## Unit Tests
 
 Unit Test summary is created using the [testthat](https://github.com/r-lib/testthat) package.
-
-
 
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
 

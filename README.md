@@ -37,6 +37,14 @@ covrpage::covrpage('another_directory')
 covrpage::covrpage_snapshot(repo = 'user/repo')
 ```
 
+## TODO
+
+  - run covrpage in travis ci env `after-success`.
+    - see [ci branch](https://github.com/yonicd/covrpage/tree/ci)
+    
+  - run `covr::package_coverage` excluding failing tests to avert fail on rmd build.
+    - see [skip branch](https://github.com/yonicd/covrpage/tree/skip)
+
 That's it!
 
 Any questions/comments are always welcome in the [issues](https://github.com/yonicd/covrpage/issues) section.
