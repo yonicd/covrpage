@@ -8,31 +8,38 @@ This output is created by [covrpage](https://github.com/yonicd/covrpage).
 ```{r,include=FALSE}
 library(covr     , warn.conflicts = FALSE , quietly = TRUE)
 library(knitr    , warn.conflicts = FALSE , quietly = TRUE)
+library(dplyr    , warn.conflicts = FALSE , quietly = TRUE)
 
 ```
 
-```{r,include=FALSE}
+```{r, include=FALSE}
 
 test_x <- testthat::test_dir('../tests/testthat')
 
+```
+ 
+```{r, include=FALSE}
 test_x_short <- test_x%>%
   covrpage::testthat_summary(type='short')
 
 test_x_long <- test_x%>%
   covrpage::testthat_summary(type='long')
 
-test_skip <- test_x_long[test_x_long$status!='PASS',c('file','test')]
-
-test_skip$file <- gsub('^(.*?)\\(|\\)$','',test_skip$file)
-
-test_skip_lines <- mapply(FUN = function(x,y){
-  p <- parse(file.path('../tests',x))
-  pp <- utils::getParseData(p,includeText = TRUE)
-  LINES <- as.numeric(pp[grep(y,pp$text)[1],c('line1','line2')])
-  if(length(LINES))
-    seq(LINES[1],LINES[2])
-},test_skip$file,test_skip$test,SIMPLIFY = FALSE)
-
+```
+ 
+```{r, include=FALSE}
+# test_skip <- test_x_long[test_x_long$status!='PASS',c('file','test')]
+# 
+# test_skip$file <- gsub('^(.*?)\\(|\\)$','',test_skip$file)
+# 
+# test_skip_lines <- mapply(FUN = function(x,y){
+#   p <- parse(file.path('../tests',x))
+#   pp <- utils::getParseData(p,includeText = TRUE)
+#   LINES <- as.numeric(pp[grep(y,pp$text)[1],c('line1','line2')])
+#   if(length(LINES))
+#     seq(LINES[1],LINES[2])
+# },test_skip$file,test_skip$test,SIMPLIFY = FALSE)
+# 
 ```
 
 
@@ -41,7 +48,7 @@ test_skip_lines <- mapply(FUN = function(x,y){
 Coverage summary is created using the [covr](https://github.com/r-lib/covr) package.
 
 ```{r,echo=FALSE}
-covr::package_coverage(line_exclusions = test_skip_lines)%>%
+covr::package_coverage()%>% # line_exclusions = test_skip_lines
   covrpage::covr_summary()%>%
   knitr::kable(digits = 2,
              col.names = c('Object','Coverage (%)'),align = c('l','c'))
