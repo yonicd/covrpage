@@ -1,6 +1,6 @@
 Package: covrpage
 Title: Readme Summary Page for Github testthat and covr outputs
-Version: 0.0.2
+Version: 0.0.3
 Authors@R: c(person("Jonathan", "Sidi", email = "yonicd@gmail.com", role =
         c("aut",'cre')))
 Description: Create a Readme file to place in package test subdirectory to
@@ -12,6 +12,6 @@ BugReports: https://github.com/yonicd/covrpage/issues
 Encoding: UTF-8
 LazyData: true
 Depends: R (>= 2.10)
-Imports: rmarkdown,utils,dplyr,tidyr,covr,tibble,rlang, git2r
+Imports: rmarkdown,utils,covr,tibble,rlang, git2r, magrittr,stats
 RoxygenNote: 6.0.1.9000
 Suggests: testthat, knitr

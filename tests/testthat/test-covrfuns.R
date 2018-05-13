@@ -11,8 +11,8 @@ context('check summary covr')
 
 test_that('covr_summary',{
   
-  expect_s3_class(covrpage::testthat_summary(covrpage:::testthat_test,'short'),'tbl_df')
-  expect_s3_class(covrpage::testthat_summary(covrpage:::testthat_test,'long'),'tbl_df')
+  expect_s3_class(covrpage::testthat_summary(covrpage:::testthat_test,'short'),'data.frame')
+  expect_s3_class(covrpage::testthat_summary(covrpage:::testthat_test,'long'),'data.frame')
   expect_null(covrpage::testthat_summary(covrpage:::testthat_test,'something'))
   
 })
