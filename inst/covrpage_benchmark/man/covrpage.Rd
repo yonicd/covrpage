@@ -4,12 +4,14 @@
 \alias{covrpage}
 \title{render covrpage}
 \usage{
-covrpage(pkg, preview = TRUE)
+covrpage(pkg, preview = TRUE, auto_push = FALSE)
 }
 \arguments{
 \item{pkg}{path to package}
 
 \item{preview}{boolean, to open the output in viewer, Default: TRUE}
+
+\item{auto_push}{boolean, push to remote repo on exit, Default: FALSE}
 }
 \description{
 Render the template of the covrpage in the package directory.

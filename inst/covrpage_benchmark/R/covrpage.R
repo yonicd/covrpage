@@ -2,12 +2,14 @@
 #' @description Render the template of the covrpage in the package directory.
 #' @param pkg path to package
 #' @param preview boolean, to open the output in viewer, Default: TRUE
+#' @param auto_push boolean, push to remote repo on exit, Default: FALSE
 #' @seealso 
 #'  \code{\link[rmarkdown]{render}}
 #' @rdname covrpage
 #' @export 
 #' @importFrom rmarkdown render
-covrpage <- function(pkg, preview = TRUE){
+#' @importFrom git2r repository add commit push
+covrpage <- function(pkg, preview = TRUE, auto_push=FALSE){
   
   testdir <- file.path(pkg,'tests')
   
@@ -16,9 +18,13 @@ covrpage <- function(pkg, preview = TRUE){
   on.exit({
     
     if(preview){
-      viewer <- getOption("viewer")
-      viewer('tests/README.html')
-      Sys.sleep(5)
+      viewer <- create_viewer()
+      if(is.null(viewer)){
+        message('No viewer found in R session, aborting preview')
+      }else{
+        viewer('tests/README.html')
+        Sys.sleep(5)  
+      }
     }
 
     if(file.exists('tests/_covrpage.Rmd'))
@@ -26,6 +32,20 @@ covrpage <- function(pkg, preview = TRUE){
     
     if(file.exists('tests/README.html'))
       file.remove('tests/README.html')
+    
+    if(auto_push){
+      
+      repo <- git2r::repository('.')
+      
+      repo%>%
+        git2r::add(path = c('tests/README.md'))
+      
+      repo%>%
+        git2r::commit(message='update tests readme [skip ci]')
+      
+      system('git push')
+      
+      }
     
     setwd(thiswd)
     },add = TRUE)
@@ -60,50 +80,5 @@ covrpage <- function(pkg, preview = TRUE){
       output_format = 'github_document',
       output_options = list(toc=TRUE,toc_depth=3)
     )
-
-}
-
-check_for_tests <- function(testdir){
-
-  res <- 0
-  
-  if(!dir.exists('tests/testthat'))
-    res <- 1
-  
-  if(length(list.files('tests/testthat'))==0)
-    res <- 2
-  
-  return(res)
-}
-
-#'@importFrom utils installed.packages
-check_for_pkgs <- function(pkg){
-  
-  pkgs_current <- rownames(utils::installed.packages())
-  
-  pkg <- normalizePath(pkg,mustWork = FALSE)
-  
-  if(!file.exists(file.path(pkg,'DESCRIPTION')))
-    stop(sprintf('No package DESCRIPTION file in %s',pkg))
-  
-  desc <- as.list(read.dcf(file.path(pkg,'DESCRIPTION'))[1,])
-  
-  dep_imp <- desc[intersect(c('Depends','Imports'),names(desc))]
-  
-  pkg_deps <- gsub('\\s(.*?)$','',unlist(lapply(dep_imp,strsplit,','),use.names = FALSE))
-  
-  pkg_deps <- union(pkg_deps,c('testthat','knitr'))
-  
-  pkg_deps <- pkg_deps[!grepl('R',pkg_deps)]
-  
-  ret <- setdiff(pkg_deps,pkgs_current)
-  
-  if(length(ret)==0)
-    return(c())
-  
-  if(!nzchar(ret))
-    return(c())
-  
-  ret
-  
+    
 }
