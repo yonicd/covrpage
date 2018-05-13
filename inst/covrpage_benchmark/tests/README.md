@@ -1,6 +1,6 @@
 Tests and Coverage
 ================
-12 May, 2018 21:12:42
+12 May, 2018 21:25:36
 
 This output is created by
 [covrpage](https://github.com/yonicd/covrpage).
@@ -26,8 +26,8 @@ package.
 
 |                 | file                                        | n |  time | error | failed | skipped | warning |
 | --------------- | :------------------------------------------ | -: | ----: | ----: | -----: | ------: | ------: |
-| test-covrfuns.R | [test-covrfuns.R](testthat/test-covrfuns.R) | 2 | 0.026 |     0 |      0 |       0 |       0 |
+| test-covrfuns.R | [test-covrfuns.R](testthat/test-covrfuns.R) | 2 | 0.029 |     0 |      0 |       0 |       0 |
 
 | file                                        | test          | context            | status | n |  time |
 | :------------------------------------------ | :------------ | :----------------- | :----- | -: | ----: |
-| [test-covrfuns.R](testthat/test-covrfuns.R) | covr\_summary | check summary covr | PASS   | 2 | 0.026 |
+| [test-covrfuns.R](testthat/test-covrfuns.R) | covr\_summary | check summary covr | PASS   | 2 | 0.029 |
