@@ -1,7 +1,7 @@
 [![Travis-CI Build Status](https://travis-ci.org/yonicd/covrpage.svg?branch=master)](https://travis-ci.org/yonicd/covrpage)
 [![Coverage Status](https://img.shields.io/codecov/c/github/yonicd/covrpage/master.svg)](https://codecov.io/github/yonicd/covrpage?branch=master)
 
-# covrpage
+# {covrpage}
 
 Healthy R packages use [testthat](https://github.com/r-lib/testthat) and [covr](https://github.com/r-lib/covr) to develop stable packages. 
 
@@ -77,21 +77,23 @@ You will need encrypt a [Github Public Access Token](https://github.com/settings
 
 The default of the function assumes you have defined a system environment variable `GITHUB_PAT` and will use it to define a [Travis environment variable](https://docs.travis-ci.com/user/environment-variables/) as `GH_PAT`.
 
+  - `R` Environment Variable
+
 To define the Github PAT as a R environment variable
 
 ```r
 Sys.setenv(GITHUB_PAT='PAT FROM GITHUB')
 ```
 
-This is created using travis command line. It is an encryption of the GitHub Personal Access Token (PAT). 
+  - Travis Environment Variable
 
-Run the following line in the terminal when you are in the root project directory (where the `.git` folder in located), the output should be appended directly to the `.travis.yml` file. Each time you run it a new secure line is added to the yml.
+Run the following line in the terminal when you are in the root project directory (where the `.git` folder in located), the output should be appended directly to the `.travis.yml` file. Each time you run it a new `secure` line is added to the yml.
 
 ```r
-travis encrypt GH_PAT = "[YOUR GITHUB PAT]" --add
+travis encrypt GH_PAT = "[PAT FROM GITHUB]" --add
 ```
 
-An additional utility function has been created to facilitate the command line call from within `R`
+These two commands are combined into a utility function.
 
 ```r
 covrpage::tencrypt(r_obj = Sys.getenv("GITHUB_PAT"),travis_env = "GH_PAT",add = TRUE)
