@@ -9,7 +9,9 @@ tencrypt <- function(r_obj = Sys.getenv('GITHUB_PAT'),
                            travis_env = 'GH_PAT', 
                            add = TRUE){
   
-  if(!nzchar(system('travis --version',intern = TRUE)))
+  try(x <- system('travis --version',intern = TRUE),silent = TRUE)
+  
+  if(class(x)=="try-error")
     stop('travis cli not installed')
   
   if(add){
