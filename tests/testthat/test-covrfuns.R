@@ -2,7 +2,7 @@ testthat::context('check summary covr')
 
 testthat::test_that('covr_summary',{
   
-  testthat::expect_s3_class(covrpage::covr_summary(covrpage:::covr_test),'tbl_df')
+  testthat::expect_s3_class(covrpage::covr_summary(covrpage:::covr_test),'data.frame')
   testthat::expect_error(covrpage::covr_summary())
   
 })

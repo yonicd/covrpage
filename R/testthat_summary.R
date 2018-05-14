@@ -30,22 +30,24 @@ sum_func <- function(x){
   x
 }
 
-sum_func_short <- function(x){
+testthat_sum_short <- function(x){
   
-x1 <- x[,c('file','nb','real','failed','skipped','error','warning')]
+  x1 <- data.frame(x,stringsAsFactors = FALSE)
+  
+  x1 <- x1[,c('file','nb','real','failed','skipped','error','warning')]
 
-names(x1)[c(2,3)] <- c('n','time')
+  names(x1)[c(2,3)] <- c('n','time')
 
-for(i in names(x1)[-1])
-  x1[[i]] <- as.numeric(x1[[i]])
+  for(i in names(x1)[-1])
+    x1[[i]] <- as.numeric(x1[[i]])
 
   do.call('rbind',lapply(split(x1,x1$file),sum_func))
 }
 
-sum_func_long <- function(x){
+testthat_sum_long <- function(x){
   
-  x1 <- x
-  
+  x1 <- data.frame(x,stringsAsFactors = FALSE)
+
   for(i in seq(1:ncol(x1)))
     if(is.logical(x1[[i]]))
       x1[[i]] <- as.numeric(x1[[i]]) 

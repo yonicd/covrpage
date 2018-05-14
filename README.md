@@ -37,11 +37,56 @@ covrpage::covrpage('another_directory')
 covrpage::covrpage_snapshot(repo = 'user/repo')
 ```
 
+## Using with Travis
+
+`{covrpage}` can be deployed in travis much the way `{covr::covrall}` is deployed. The only difference is that `{covrpage}` will push back the updated `README.md` file to the originating repository so it can be updated as part of the custom integration routine. 
+
+The follow `.travis.yml` is needed for the deployment
+
+```r
+language: R
+sudo: false
+cache: packages
+after_success:
+- Rscript -e 'covr::codecov()'
+- bash .travis/covrpage.sh
+r_github_packages: yonicd/covrpage
+env:
+  global:
+    secure: [travis encrypted Github PAT]
+
+```
+
+The new lines that are added to the standard `{covr}` travis yml are 
+
+```r
+- bash .travis/covrpage.sh
+```
+
+This file is created when running `covrpage::use_covrpage()`
+
+```r
+env:
+  global:
+    secure: IeWrPb9tC9oxkoceXs4NStZJFIJKtvi/qeErbv3OATeo+BylRwj9xzcmzQrV8ps...
+```
+
+This is created using travis command line. It is an encryption of the GitHub Personal Access Token (PAT). In order to let travis push back into the originating repository you will need to give it persmission to do so.
+
+Run the following line in the terminal when you are in the root project directory (where the `.git` folder in located), the output should be appended directly to the `.travis.yml` file. Each time you run it a new secure line is added to the yml.
+
+```r
+travis encrypt GH_PAT = "[YOUR GITHUB PAT]" --add
+```
+
+An additional utility function has been created to facilitate the command line call from within `R`
+
+```r
+covrpage::travis_encrypt(r_obj = Sys.getenv("GITHUB_PAT"),travis_env = "GH_PAT",add = TRUE)
+```
+
 ## TODO
 
-  - run covrpage in travis ci env `after-success`.
-    - see [ci branch](https://github.com/yonicd/covrpage/tree/ci)
-    
   - run `covr::package_coverage` excluding failing tests to avert fail on rmd build.
     - see [skip branch](https://github.com/yonicd/covrpage/tree/skip)
 
