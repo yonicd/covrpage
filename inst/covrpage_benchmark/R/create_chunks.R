@@ -5,19 +5,16 @@
 #' @return data.frame
 #' @rdname testthat_summary
 #' @export 
-#' @importFrom tibble as_data_frame
+
 testthat_summary <- function(x,type=c('short','long')){
 
-x <- tibble::as_data_frame(x)
-
 switch(type,
-       'short' = sum_func_short(x),
-       'long'  = sum_func_long(x)
+       'short' = testthat_sum_short(x),
+       'long'  = testthat_sum_long(x)
        )
 
 } 
 
-#' @importFrom tibble enframe
 #' @importFrom covr percent_coverage tally_coverage
 covr_print_to_df <- function(x, group = c("filename", "functions"), by = "line"){
   
@@ -47,7 +44,11 @@ covr_print_to_df <- function(x, group = c("filename", "functions"), by = "line")
   
   by_coverage <- percents[order(percents, names(percents))]
   
-  return(tibble::enframe(c(overall_percentage,by_coverage)))
+  ret <- c(overall_percentage,by_coverage)
+  
+  ret <- data.frame(name = names(ret), value = ret,stringsAsFactors = FALSE,row.names = NULL)
+  
+  return(ret)
 }
 
 #' @title Summary outputs for covr object
