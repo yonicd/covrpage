@@ -94,7 +94,7 @@ travis encrypt GH_PAT = "[YOUR GITHUB PAT]" --add
 An additional utility function has been created to facilitate the command line call from within `R`
 
 ```r
-covrpage::travis_encrypt(r_obj = Sys.getenv("GITHUB_PAT"),travis_env = "GH_PAT",add = TRUE)
+covrpage::tencrypt(r_obj = Sys.getenv("GITHUB_PAT"),travis_env = "GH_PAT",add = TRUE)
 ```
 
 ## TODO

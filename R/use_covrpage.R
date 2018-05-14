@@ -75,38 +75,3 @@ travis_encrypt(r_obj = Sys.getenv('GITHUB_PAT'),travis_env = 'GH_PAT')",file))
   }
   
 }
-
-#' @title encrypt travis environment variables
-#' @description add encrypted travis environment variable to git directory and .travis.yml
-#' @param r_obj object value to encrypt, Default: Sys.getenv("GITHUB_PAT")
-#' @param travis_env character, name of travis environment variable, Default: 'GH_PAT'
-#' @param add boolean, add directly to .travis.yml, Default: TRUE
-#' @param test boolean, print example of command to be run to console, Default: FALSE
-#' @rdname travis_encrypt
-#' @export 
-
-travis_encrypt <- function(r_obj = Sys.getenv('GITHUB_PAT'),
-                           travis_env = 'GH_PAT', 
-                           add = TRUE,
-                           test = FALSE){
-  
-  if(!nzchar(system('travis --version',intern = TRUE)))
-    stop('travis cli not installed')
-  
-  if(add){
-    add_str  <- ' --add'    
-  }else{
-    add_str <-''  
-  }
-
-  s <- sprintf("travis encrypt %s = '%s' %s",
-          travis_env,
-          r_obj, 
-          add_str)
-  
-  if(test)
-    return(s)
-  
-  system(s)
-  
-}

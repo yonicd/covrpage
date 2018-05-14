@@ -1,6 +1,6 @@
 Tests and Coverage
 ================
-14 May, 2018 09:39:19
+14 May, 2018 10:23:58
 
 This output is created by
 [covrpage](https://github.com/yonicd/covrpage).
@@ -30,13 +30,13 @@ package.
 
 |                     | file                                               | n |  time | error | failed | skipped | warning |
 | ------------------- | :------------------------------------------------- | -: | ----: | ----: | -----: | ------: | ------: |
-| test-check\_utils.R | [test-check\_utils.R](testthat/test-check_utils.R) | 3 | 0.017 |     0 |      0 |       0 |       0 |
-| test-covrfuns.R     | [test-covrfuns.R](testthat/test-covrfuns.R)        | 6 | 0.104 |     0 |      0 |       0 |       0 |
+| test-check\_utils.R | [test-check\_utils.R](testthat/test-check_utils.R) | 3 | 0.016 |     0 |      0 |       0 |       0 |
+| test-covrfuns.R     | [test-covrfuns.R](testthat/test-covrfuns.R)        | 6 | 0.078 |     0 |      0 |       0 |       0 |
 
 | file                                               | test                  | context                  | status | n |  time |
 | :------------------------------------------------- | :-------------------- | :----------------------- | :----- | -: | ----: |
-| [test-check\_utils.R](testthat/test-check_utils.R) | tests are detected    | check if there are tests | PASS   | 1 | 0.005 |
-| [test-check\_utils.R](testthat/test-check_utils.R) | packages are detected | check for packages       | PASS   | 2 | 0.012 |
-| [test-covrfuns.R](testthat/test-covrfuns.R)        | covr\_summary         | check summary covr       | PASS   | 2 | 0.058 |
-| [test-covrfuns.R](testthat/test-covrfuns.R)        | covr\_summary         | check summary covr       | PASS   | 3 | 0.045 |
+| [test-check\_utils.R](testthat/test-check_utils.R) | tests are detected    | check if there are tests | PASS   | 1 | 0.002 |
+| [test-check\_utils.R](testthat/test-check_utils.R) | packages are detected | check for packages       | PASS   | 2 | 0.014 |
+| [test-covrfuns.R](testthat/test-covrfuns.R)        | covr\_summary         | check summary covr       | PASS   | 2 | 0.040 |
+| [test-covrfuns.R](testthat/test-covrfuns.R)        | covr\_summary         | check summary covr       | PASS   | 3 | 0.037 |
 | [test-covrfuns.R](testthat/test-covrfuns.R)        | covr object to df     | check covr to df         | PASS   | 1 | 0.001 |
