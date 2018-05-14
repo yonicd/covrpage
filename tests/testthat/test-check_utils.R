@@ -23,9 +23,3 @@ testthat::test_that("test use_covrpage", {
 testthat::expect_is(use_covrpage(file=NULL),'character')
   
 })
-
-testthat::test_that("test travis encrypt", {
-  
-  testthat::expect_is(tencrypt(add = FALSE),'character')
-  
-})
