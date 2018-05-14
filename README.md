@@ -63,7 +63,7 @@ The new lines that are added to the standard `{covr}` travis yml are
 - bash .travis/covrpage.sh
 ```
 
-This file is created when running `covrpage::use_covrpage()`
+This file is created when running `covrpage::use_covrpage()` in the `.travis` subdirectory.
 
 ```r
 env:
@@ -71,7 +71,19 @@ env:
     secure: IeWrPb9tC9oxkoceXs4NStZJFIJKtvi/qeErbv3OATeo+BylRwj9xzcmzQrV8ps...
 ```
 
-This is created using travis command line. It is an encryption of the GitHub Personal Access Token (PAT). In order to let travis push back into the originating repository you will need to give it persmission to do so.
+In order to let travis push back into the originating repository you will need to give it persmission to do so.
+
+You will need encrypt a [Github Public Access Token](https://github.com/settings/tokens) (PAT) to allow Travis to push back to the remote repository. This is done using the Travis command line [function](https://docs.travis-ci.com/user/encryption-keys/).
+
+The default of the function assumes you have defined a system environment variable `GITHUB_PAT` and will use it to define a [Travis environment variable](https://docs.travis-ci.com/user/environment-variables/) as `GH_PAT`.
+
+To define the Github PAT as a R environment variable
+
+```r
+Sys.setenv(GITHUB_PAT='PAT FROM GITHUB')
+```
+
+This is created using travis command line. It is an encryption of the GitHub Personal Access Token (PAT). 
 
 Run the following line in the terminal when you are in the root project directory (where the `.git` folder in located), the output should be appended directly to the `.travis.yml` file. Each time you run it a new secure line is added to the yml.
 
