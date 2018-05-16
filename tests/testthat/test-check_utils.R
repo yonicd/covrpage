@@ -1,5 +1,3 @@
-testthat::context("check if there are tests")
-
 testthat::context('check for tests')
 
 testthat::test_that("tests are detected", {
@@ -8,7 +6,7 @@ testthat::test_that("tests are detected", {
 
 testthat::context("check for packages")
 
-td <- system.file('covrpage_benchmark',package = 'covrpage')
+td <- '../assets/covrpage_benchmark'
 
 testthat::test_that("packages are detected", {
   testthat::expect_error(covrpage:::check_for_pkgs('.'))
