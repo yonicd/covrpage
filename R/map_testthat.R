@@ -27,10 +27,16 @@ nest_test <- function(x,token_text = '^context$'){
 }
 
 get_expect <- function(x,token_text = '^expect_'){
-  ret <- x$text[which(grepl('^SYMBOL_FUNCTION_CALL$',x$token)&grepl(token_text,x$text)&x$terminal)]
+  
+  idx <- which(grepl('^SYMBOL_FUNCTION_CALL$',x$token)&grepl(token_text,x$text)&x$terminal)
+  
+  ret <- x$text[idx]
   
   if(length(ret)==0)
-    ret <- NULL
+    return(NULL)
+  
+  attr(ret,'line1') <- x$line1[idx-1]
+  attr(ret,'line2') <- x$line2[idx-1]
   
   ret
   
@@ -55,8 +61,15 @@ map_test <- function(path){
   x <- utils::getParseData(parse(path),includeText = TRUE)
   
   ret <- lapply(nest_test(x),function(xx){
-    nest_expect(nest_test(xx,token_text = '^test_that$'))
-    }) 
+            ret_ <- lapply(nest_test(xx,token_text = '^test_that$|^describe$'),
+                 function(y){
+                   nest_expect(nest_test(y,token_text = '^it$'))
+            })
+            
+            ret_ <- ret_[sapply(ret_,length)>0]
+            
+            ret_
+         })
   
   ret <- ret[sapply(ret,length)>0]
   
