@@ -2,7 +2,7 @@
 % Please edit documentation in R/use_covrpage.R
 \name{use_covrpage}
 \alias{use_covrpage}
-\title{add covrpage to travis ci for a git direcory}
+\title{Add covrpage to Travis CI for a git directory}
 \usage{
 use_covrpage(file = ".travis/covrpage.sh", gh_user = gsub("@(.*?)$", "",
   system("git config user.email", intern = TRUE)), push_branch = "test",
@@ -15,7 +15,7 @@ use_covrpage(file = ".travis/covrpage.sh", gh_user = gsub("@(.*?)$", "",
 \item{gh_user}{character, Github user name, 
 Default: gsub("@(.*?)$", "", system("git config user.email", intern = TRUE))}
 
-\item{push_branch}{character, branch travis will create to push updated covrpage readme file, Default: 'test'}
+\item{push_branch}{character, branch Travis will create to push updated covrpage readme file, Default: 'test'}
 
 \item{repo}{character, name of git repo that package is hosted on, Default: system("git config travis.slug", intern = TRUE)}
 
@@ -23,5 +23,5 @@ Default: gsub("@(.*?)$", "", system("git config user.email", intern = TRUE))}
 Default: system("git rev-parse --abbrev-ref HEAD", intern = TRUE) (usually 'master')}
 }
 \description{
-adds bash file to execute after travis test is successfully completed.
+Adds bash file to execute after Travis test is successfully completed.
 }

@@ -24,7 +24,7 @@ remotes::install_github('yonicd/covrpage')
 
 covrpage::covrpage('.')
 
-# create the covrpage and send diretly to remote repository
+# create the covrpage and send directly to remote repository
 
 covrpage::covrpage('.', auto_push = TRUE)
 
@@ -32,16 +32,16 @@ covrpage::covrpage('.', auto_push = TRUE)
 
 covrpage::covrpage('another_directory')
 
-# peek at a R package on a Github Repository
+# peek at an R package on a Github Repository
 
 covrpage::covrpage_snapshot(repo = 'user/repo')
 ```
 
 ## Travis
 
-`{covrpage}` can be deployed in travis much the way `{covr::covrall}` is deployed. The only difference is that `{covrpage}` will push back the updated `README.md` file to the originating repository so it can be updated as part of the custom integration routine. 
+`{covrpage}` can be deployed in Travis much the way `{covr::covrall}` is deployed. The only difference is that `{covrpage}` will push back the updated `README.md` file to the originating repository so it can be updated as part of the custom integration routine. 
 
-The follow `.travis.yml` is needed for the deployment
+The following `.travis.yml` is needed for the deployment:
 
 ```r
 language: R
@@ -53,17 +53,17 @@ after_success:
 r_github_packages: yonicd/covrpage
 env:
   global:
-    secure: [travis encrypted Github PAT]
+    secure: [Travis encrypted Github PAT]
 
 ```
 
-The new lines that are added to the standard `{covr}` travis yml are 
+covrpage adds one new line to the standard `{covr}` Travis YML:
 
 ```r
 - bash .travis/covrpage.sh
 ```
 
-This file is created when running `covrpage::use_covrpage()` in the `.travis` subdirectory.
+This file is created when running `covrpage::use_covrpage()` in the `.travis` subdirectory:
 
 ```r
 env:
@@ -71,15 +71,13 @@ env:
     secure: IeWrPb9tC9oxkoceXs4NStZJFIJKtvi/qeErbv3OATeo+BylRwj9xzcmzQrV8ps...
 ```
 
-In order to let travis push back into the originating repository you will need to give it persmission to do so.
+To allow Travis push back into the originating repository, you will need to give it permission to do so by providing an encrypted [GitHub Personal Access Token](https://github.com/settings/tokens) (PAT). This is done using the Travis command line [function](https://docs.travis-ci.com/user/encryption-keys/).
 
-You will need encrypt a [Github Public Access Token](https://github.com/settings/tokens) (PAT) to allow Travis to push back to the remote repository. This is done using the Travis command line [function](https://docs.travis-ci.com/user/encryption-keys/).
-
-The default of the function assumes you have defined a system environment variable `GITHUB_PAT` and will use it to define a [Travis environment variable](https://docs.travis-ci.com/user/environment-variables/) as `GH_PAT`.
+By default, the function assumes you have defined a system environment variable `GITHUB_PAT` and will use it to define a [Travis environment variable](https://docs.travis-ci.com/user/environment-variables/) as `GH_PAT`.
 
   - `R` Environment Variable
 
-To define the Github PAT as a R environment variable
+To define the Github PAT as an R environment variable:
 
 ```r
 Sys.setenv(GITHUB_PAT='PAT FROM GITHUB')
@@ -93,7 +91,7 @@ Run the following line in the terminal when you are in the root project director
 travis encrypt GH_PAT = "[PAT FROM GITHUB]" --add
 ```
 
-These two commands are combined into a utility function.
+These two commands are combined into a utility function:
 
 ```r
 covrpage::tencrypt(r_obj = Sys.getenv("GITHUB_PAT"),travis_env = "GH_PAT",add = TRUE)

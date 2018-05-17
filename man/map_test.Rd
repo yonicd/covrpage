@@ -2,7 +2,7 @@
 % Please edit documentation in R/map_testthat.R
 \name{map_test}
 \alias{map_test}
-\title{map a single test file}
+\title{Map a single test file}
 \usage{
 map_test(path)
 }
@@ -13,7 +13,7 @@ map_test(path)
 list
 }
 \description{
-return nested list of context/test/excpectation in testthat R file
+Return nested list of context/test/expectation in testthat R file
 }
 \seealso{
 \code{\link[utils]{getParseData}}

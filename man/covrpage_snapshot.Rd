@@ -2,7 +2,7 @@
 % Please edit documentation in R/covrpage_snapshot.R
 \name{covrpage_snapshot}
 \alias{covrpage_snapshot}
-\title{Create covrpages for pacakges on Github}
+\title{Create covrpages for packages on Github}
 \usage{
 covrpage_snapshot(repo, ...)
 }

@@ -1,5 +1,5 @@
 #' @title Summary outputs for testthat object
-#' @description summary outputs for testthat object that is used in rmd
+#' @description Summary outputs for testthat object that is used in rmd
 #' @param x list, testthat object output
 #' @param type character, format of the object output, Default: c("short", "long")
 #' @return data.frame
@@ -70,4 +70,3 @@ covr_summary <- function(x){
   
   return(ret)
 }
-

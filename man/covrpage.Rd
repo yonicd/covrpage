@@ -2,7 +2,7 @@
 % Please edit documentation in R/covrpage.R
 \name{covrpage}
 \alias{covrpage}
-\title{render covrpage}
+\title{Render covrpage}
 \usage{
 covrpage(pkg, preview = TRUE, auto_push = FALSE)
 }

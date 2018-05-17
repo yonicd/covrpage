@@ -1,4 +1,4 @@
-#' @title render covrpage
+#' @title Render covrpage
 #' @description Render the template of the covrpage in the package directory.
 #' @param pkg path to package
 #' @param preview boolean, to open the output in viewer, Default: TRUE
