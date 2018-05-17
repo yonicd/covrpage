@@ -15,5 +15,5 @@ testthat_summary(x, type = c("short", "long"))
 data.frame
 }
 \description{
-summary outputs for testthat object that is used in rmd
+Summary outputs for testthat object that is used in rmd
 }

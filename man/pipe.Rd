@@ -2,7 +2,7 @@
 % Please edit documentation in R/testthat_summary.R
 \name{\%>\%}
 \alias{\%>\%}
-\title{re-export magrittr pipe operators}
+\title{Re-export magrittr pipe operators}
 \description{
-re-export magrittr pipe operators
+Re-export magrittr pipe operators
 }

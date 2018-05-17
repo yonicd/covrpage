@@ -47,8 +47,8 @@ nest_expect <- function(x){
   ret[!sapply(ret,is.null)]
 }
 
-#' @title map a single test file
-#' @description return nested list of context/test/excpectation in testthat R file
+#' @title Map a single test file
+#' @description Return nested list of context/test/expectation in testthat R file
 #' @param path character, path to file
 #' @return list
 #' @seealso 
@@ -76,8 +76,8 @@ map_test <- function(path){
   return(ret)
 }
 
-#' @title Heirarchy structure of testthat tests
-#' @description return nested list of context/test/excpectation in testthat directory
+#' @title Hierarchy structure of testthat tests
+#' @description Return nested list of context/test/expectation in testthat directory
 #' @param path character, path to tests, Default: 'tests/testthat'
 #' @return list
 #' @seealso 

@@ -2,7 +2,7 @@
 % Please edit documentation in R/tencrypt.R
 \name{tencrypt}
 \alias{tencrypt}
-\title{encrypt travis environment variables}
+\title{Encrypt Travis environment variables}
 \usage{
 tencrypt(r_obj = Sys.getenv("GITHUB_PAT"), travis_env = "GH_PAT",
   add = TRUE)
@@ -10,10 +10,10 @@ tencrypt(r_obj = Sys.getenv("GITHUB_PAT"), travis_env = "GH_PAT",
 \arguments{
 \item{r_obj}{object value to encrypt}
 
-\item{travis_env}{character, name of travis environment variable}
+\item{travis_env}{character, name of Travis environment variable}
 
 \item{add}{boolean, add directly to .travis.yml, Default: TRUE}
 }
 \description{
-add encrypted travis environment variable to git directory and .travis.yml.
+Add encrypted Travis environment variable to git directory and .travis.yml.
 }

@@ -83,7 +83,7 @@ testthat_sum_long <- function(x){
     
 }
 
-#' @title re-export magrittr pipe operators
+#' @title Re-export magrittr pipe operators
 #'
 #' @importFrom magrittr %>%
 #' @name %>%
