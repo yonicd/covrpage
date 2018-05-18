@@ -7,7 +7,9 @@ testthat::test_that("check on remote repo",{
   orig_time <- file.info(file.path(td,'tests/README.md'))[['mtime']]
   
   thiswd <- getwd()
-
+  
+  testthat::skip_on_travis()
+  
   setwd(td)
   
   covrpage('.',preview = FALSE)
