@@ -4,7 +4,7 @@
 \alias{covrpage}
 \title{render covrpage}
 \usage{
-covrpage(pkg, add_lines = TRUE, preview = TRUE, auto_push = FALSE)
+covrpage(pkg, preview = TRUE, auto_push = FALSE)
 }
 \arguments{
 \item{pkg}{path to package}

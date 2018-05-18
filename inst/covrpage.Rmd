@@ -1,8 +1,6 @@
 ---
 title: "Tests and Coverage"
 date: "`r format(Sys.time(), '%d %B, %Y %H:%M:%S')`"
-params:
-  add_lines: true
 ---
 
 This output is created by [covrpage](https://github.com/yonicd/covrpage).

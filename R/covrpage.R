@@ -9,7 +9,7 @@
 #' @export 
 #' @importFrom rmarkdown render
 #' @importFrom git2r repository add commit push
-covrpage <- function(pkg, add_lines = TRUE, preview = TRUE, auto_push=FALSE){
+covrpage <- function(pkg, preview = TRUE, auto_push=FALSE){
   
   testdir <- file.path(pkg,'tests')
   
@@ -78,7 +78,6 @@ covrpage <- function(pkg, add_lines = TRUE, preview = TRUE, auto_push=FALSE){
       output_file = 'README.md',
       output_dir = 'tests',
       output_format = 'github_document',
-      params = list(add_lines = add_lines),
       output_options = list(toc=TRUE,toc_depth=3)
     )
     
