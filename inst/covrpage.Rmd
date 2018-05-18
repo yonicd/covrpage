@@ -1,6 +1,8 @@
 ---
 title: "Tests and Coverage"
 date: "`r format(Sys.time(), '%d %B, %Y %H:%M:%S')`"
+params:
+  add_lines: true
 ---
 
 This output is created by [covrpage](https://github.com/yonicd/covrpage).
@@ -24,6 +26,7 @@ test_x_short <- test_x%>%
 
 test_x_long <- test_x%>%
   covrpage::testthat_summary(type='long')
+
 
 ```
  
