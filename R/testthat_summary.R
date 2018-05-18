@@ -73,11 +73,16 @@ testthat_sum_long <- function(x){
       if(x1$warning[i]==1) 
         x1$status[i] <- 'WARNING'}
     
-    ret <- x1[,c('file','test','context','status','nb','real')]
+    ret <- x1[,c('file','context','test','status','nb','real')]
     
     names(ret)[c(5,6)] <- c('n','time')
     
-    ret$file <- sprintf('[%s](testthat/%s)',ret$file,ret$file)
+    lines <- sapply(x, function(x){
+      ret <- sprintf('L%s',unique(c(x$results[[1]]$src[1],x$results[[1]]$src[3])))
+      paste0(ret,collapse = '_')
+    })
+    
+    ret$file <- sprintf('[%s](testthat/%s#%s)',ret$file,ret$file,lines)
     
     ret
     

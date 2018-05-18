@@ -13,7 +13,16 @@ nest_test <- function(x,token_text = '^context$'){
 
   x2 <- split(x,x1)
   
-  names(x2) <- sapply(x2,function(x) eval(parse(text = x$text[grepl('^STR_CONST$',x$token)][1])))  
+  names(x2) <- sapply(x2,function(x){
+    add_text <- x$text[grep('^SYMBOL_FUNCTION_CALL$',x$token)[1]]
+    ret <- eval(parse(text = x$text[grepl('^STR_CONST$',x$token)][1])) 
+    
+    if(add_text%in%c('test_that','describe','it'))
+      ret <- sprintf('%s: %s',add_text,ret)  
+    
+    ret
+    
+  })  
   
   x2 <- lapply(x2,function(x){
     
@@ -35,8 +44,14 @@ get_expect <- function(x,token_text = '^expect_'){
   if(length(ret)==0)
     return(NULL)
   
-  attr(ret,'line1') <- x$line1[idx-1]
-  attr(ret,'line2') <- x$line2[idx-1]
+  line_ <- lapply(idx, function(y) x[min(tail(grep('expr',x$token[1:y]),2)),c('line1','line2')])
+  
+  line_ <- do.call('rbind',line_)
+  
+  ret <- data.frame(expectation = ret,
+                    line1 = line_$line1,
+                    line2 = line_$line2,
+                    stringsAsFactors = FALSE)
   
   ret
   
@@ -44,7 +59,17 @@ get_expect <- function(x,token_text = '^expect_'){
 
 nest_expect <- function(x){
   ret <- lapply(x,get_expect) 
-  ret[!sapply(ret,is.null)]
+  
+  ret <- ret[!sapply(ret,is.null)]
+  
+  if(length(ret)==0)
+    return(NULL)
+
+  ret <- lapply(names(ret), unrowname, ret = ret, label = 'test')
+
+  ret <- do.call('rbind',ret)
+  
+  ret
 }
 
 #' @title map a single test file
@@ -63,17 +88,57 @@ map_test <- function(path){
   ret <- lapply(nest_test(x),function(xx){
             ret_ <- lapply(nest_test(xx,token_text = '^test_that$|^describe$'),
                  function(y){
-                   nest_expect(nest_test(y,token_text = '^it$'))
+                   
+                   SYMB <- y$text[grep('^SYMBOL_FUNCTION_CALL$',y$token)[1]]
+                   
+                   switch(SYMB,
+                          describe = {
+                            nest_expect(nest_test(y,token_text = '^it$'))       
+                          },
+                          test_that = {
+                            nest_expect(setNames(list(y),' '))
+                          },
+                          {list()}
+                          )
             })
             
             ret_ <- ret_[sapply(ret_,length)>0]
+            
+            if(length(ret_)==0)
+              return(NULL)
+            
+            ret_ <- lapply(names(ret_), unrowname, ret = ret_, label = 'description')
+            
+            ret_ <- do.call('rbind',ret_)
             
             ret_
          })
   
   ret <- ret[sapply(ret,length)>0]
   
+  if(length(ret)==0)
+    return(NULL)
+  
+  ret <- lapply(names(ret), unrowname, ret = ret, label = 'context')
+  
+  ret <- do.call('rbind',ret)
+  
   return(ret)
+}
+
+unrowname <- function(el,ret,label){
+  
+  x <- ret[[el]]
+  
+  nc <- ncol(x)
+  
+  x[[label]] <- el
+  
+  rownames(x) <- NULL
+  
+  x <- x[,c(c(nc+1),1:nc)]
+  
+  return(x)
 }
 
 #' @title Heirarchy structure of testthat tests
@@ -90,6 +155,26 @@ map_testthat <- function(path = 'tests/testthat'){
   FILES <- list.files(path,full.names = TRUE,pattern = '^test(.*?)R$')
 
   ret <- stats::setNames(lapply(FILES,map_test),basename(FILES))
+  
+  ret <- ret[sapply(ret,length)>0]
+  
+  if(length(ret)==0)
+    return(NULL)
+  
+  ret <- lapply(names(ret), unrowname, ret = ret, label = 'file')
+  
+  ret <- do.call('rbind',ret)
+  
+  idx <- !(ret$test==' ')
+  
+  ret$description <- gsub('describe: |test_that: ','',ret$description)
+  ret$test <- gsub('it: ','',ret$test)
+  
+  ret$test[!idx] <- ret$description[!idx]
+  
+  ret$test[idx] <- sprintf('%s: %s',ret$description[idx],ret$test[idx])
+  
+  ret$description <- NULL
   
   ret
   
