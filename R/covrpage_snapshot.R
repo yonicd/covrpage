@@ -1,4 +1,4 @@
-#' @title Create covrpages for pacakges on Github
+#' @title Create covrpages for packages on Github
 #' @description Preview covrpages for R package repositories on Github
 #' @param repo character, user/repo
 #' @param ... arguments to pass to coverpage

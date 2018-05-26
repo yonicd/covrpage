@@ -1,5 +1,5 @@
 Package: covrpage
-Title: Readme Summary Page for Github testthat and covr outputs
+Title: Create a Readme Summary Page for GitHub testthat and covr Outputs
 Version: 0.0.4
 Authors@R: c(person("Jonathan", "Sidi", email = "yonicd@gmail.com", role =
           c("aut",'cre')))
