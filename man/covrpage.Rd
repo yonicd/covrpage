@@ -4,10 +4,10 @@
 \alias{covrpage}
 \title{Render covrpage}
 \usage{
-covrpage(pkg, preview = TRUE, auto_push = FALSE)
+covrpage(path = getwd(), preview = TRUE, auto_push = FALSE)
 }
 \arguments{
-\item{pkg}{path to package}
+\item{path}{path to package}
 
 \item{preview}{boolean, to open the output in viewer, Default: TRUE}
 

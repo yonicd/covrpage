@@ -1,6 +1,6 @@
 #' @title Render covrpage
 #' @description Render the template of the covrpage in the package directory.
-#' @param pkg path to package
+#' @param path path to package
 #' @param preview boolean, to open the output in viewer, Default: TRUE
 #' @param auto_push boolean, push to remote repo on exit, Default: FALSE
 #' @seealso 
@@ -9,9 +9,9 @@
 #' @export 
 #' @importFrom rmarkdown render
 #' @importFrom git2r repository add commit push
-covrpage <- function(pkg, preview = TRUE, auto_push=FALSE){
+covrpage <- function(path = getwd(), preview = TRUE, auto_push=FALSE){
   
-  testdir <- file.path(pkg,'tests')
+  testdir <- file.path(path,'tests')
   
   thiswd <- getwd()
   
@@ -50,7 +50,7 @@ covrpage <- function(pkg, preview = TRUE, auto_push=FALSE){
     setwd(thiswd)
     },add = TRUE)
   
-  chk_pgks <- check_for_pkgs(pkg)
+  chk_pgks <- check_for_pkgs(path)
   
   if(length(chk_pgks)>0){
     stop(sprintf('The following packages must be installed: %s', 
@@ -58,17 +58,17 @@ covrpage <- function(pkg, preview = TRUE, auto_push=FALSE){
     )
   }
   
-  chk <- check_for_tests(file.path(pkg,testdir))
+  chk <- check_for_tests(file.path(path,testdir))
   
   if(chk>0){
     if(chk==1)
-      stop(sprintf("tests subdirectory does not exists in: '%s'", pkg))
+      stop(sprintf("tests subdirectory does not exists in: '%s'", path))
     
     if(chk==2)
-      stop(sprintf("tests/testthat subdirectory does contain any test files in: '%s'", pkg))
+      stop(sprintf("tests/testthat subdirectory does contain any test files in: '%s'", path))
   }
   
-  setwd(pkg)
+  setwd(path)
   
   file.copy(system.file('covrpage.Rmd',package = 'covrpage'),
             'tests/_covrpage.Rmd')
