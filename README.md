@@ -20,7 +20,7 @@ remotes::install_github('yonicd/covrpage')
 ## Usage
 
 ```
-# assuming you are in your package directory
+# assuming you are in your package root directory
 
 covrpage::covrpage()
 
