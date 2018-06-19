@@ -57,7 +57,7 @@ covrpage <- function(path = getwd(), preview = TRUE, auto_push=FALSE) {
     ))
   }
 
-  chk <- check_for_tests(file.path(path, testdir))
+  chk <- check_for_tests(testdir)
 
   if (chk > 0) {
     if (chk == 1) {

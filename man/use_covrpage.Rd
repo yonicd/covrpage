@@ -12,14 +12,14 @@ use_covrpage(file = ".travis/covrpage.sh", gh_user = gsub("@(.*?)$", "",
 \arguments{
 \item{file}{character, file path to save bash script to, Default: '.travis/covrpage.sh'}
 
-\item{gh_user}{character, Github user name, 
+\item{gh_user}{character, Github user name,
 Default: gsub("@(.*?)$", "", system("git config user.email", intern = TRUE))}
 
 \item{push_branch}{character, branch Travis will create to push updated covrpage readme file, Default: 'test'}
 
 \item{repo}{character, name of git repo that package is hosted on, Default: system("git config travis.slug", intern = TRUE)}
 
-\item{deploy_branch}{character, name of branch that current package build is located, 
+\item{deploy_branch}{character, name of branch that current package build is located,
 Default: system("git rev-parse --abbrev-ref HEAD", intern = TRUE) (usually 'master')}
 }
 \description{

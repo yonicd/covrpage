@@ -1,11 +1,11 @@
 check_for_tests <- function(testdir) {
   res <- 0
 
-  if (!dir.exists("tests/testthat")) {
+  if (!dir.exists(file.path(testdir,"testthat"))) {
     res <- 1
   }
 
-  if (length(list.files("tests/testthat")) == 0) {
+  if (length(list.files(file.path(testdir,"testthat"))) == 0) {
     res <- 2
   }
 
