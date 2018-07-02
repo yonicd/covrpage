@@ -1,8 +1,8 @@
 badge_covrpage <- function(status = 'pass'){
   
   uri_colour <-switch(status,
-                      'error/failed' = 'red',
-                      'skipped/warning' = 'yellowgreen',
+                      '<!--- error/failed --->' = 'red',
+                      '<!--- skipped/warning --->' = 'yellowgreen',
                       'brightgreen'
   )
   
