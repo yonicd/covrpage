@@ -19,12 +19,12 @@ test_x <- testthat::test_dir('../tests/testthat')
 ```
  
 ```{r, include=FALSE}
+
 test_x_short <- test_x%>%
   covrpage::testthat_summary(type='short')
 
 test_x_long <- test_x%>%
   covrpage::testthat_summary(type='long')
-
 
 ```
  
@@ -55,3 +55,5 @@ test_x_long%>%
   knitr::kable()
 
 ```
+
+`r sprintf('<!--- Final Status : %s --->', test_to_badge(test_x_short))`

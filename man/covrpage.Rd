@@ -4,7 +4,8 @@
 \alias{covrpage}
 \title{Render covrpage}
 \usage{
-covrpage(path = getwd(), preview = TRUE, auto_push = FALSE)
+covrpage(path = getwd(), preview = TRUE, auto_push = FALSE,
+  update_badge = TRUE)
 }
 \arguments{
 \item{path}{path to package}
@@ -12,6 +13,9 @@ covrpage(path = getwd(), preview = TRUE, auto_push = FALSE)
 \item{preview}{boolean, to open the output in viewer, Default: TRUE}
 
 \item{auto_push}{boolean, push to remote repo on exit, Default: FALSE}
+
+\item{update_badge}{boolean, locate badge in README and update with 
+testthat results, Default: TRUE}
 }
 \description{
 Render the template of the covrpage in the package directory.

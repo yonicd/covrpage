@@ -3,13 +3,16 @@
 #' @param path path to package
 #' @param preview boolean, to open the output in viewer, Default: TRUE
 #' @param auto_push boolean, push to remote repo on exit, Default: FALSE
+#' @param update_badge boolean, locate badge in README and update with 
+#' testthat results, Default: TRUE
 #' @seealso
 #'  \code{\link[rmarkdown]{render}}
 #' @rdname covrpage
 #' @export
 #' @importFrom rmarkdown render
 #' @importFrom git2r repository add commit push
-covrpage <- function(path = getwd(), preview = TRUE, auto_push=FALSE) {
+#' @importFrom utils tail
+covrpage <- function(path = getwd(), preview = TRUE, auto_push=FALSE, update_badge = TRUE) {
   testdir <- file.path(path, "tests")
 
   thiswd <- getwd()
@@ -25,6 +28,36 @@ covrpage <- function(path = getwd(), preview = TRUE, auto_push=FALSE) {
       }
     }
 
+    if(update_badge){
+      if(check_badge()){
+      
+      status <- gsub('Final Status : ',
+                     '',
+                     utils::tail(readLines('tests/README.md'),1)
+                     )
+      
+      README <- find_readme()
+      
+      README_LINES <- readLines(README)
+      
+      cat(gsub('covrpage-(.*?)svg', 
+               badge_covrpage(status),
+               README_LINES),
+          sep = '\n',
+          file = README)
+      
+      if(grepl('RMD$',README,ignore.case = TRUE)){
+        rmarkdown::render(
+          input = 'README.Rmd',
+          output_format = 'github_document',
+          output_file = 'README.md',
+          run_pandoc = FALSE,
+          quiet = TRUE
+          )
+      }
+    }
+    }
+    
     if (file.exists("tests/_covrpage.Rmd")) {
       file.remove("tests/_covrpage.Rmd")
     }
