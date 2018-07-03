@@ -27,11 +27,15 @@ test_to_badge <-function(obj){
   status
 }
 
-find_readme <- function(use_rmd = TRUE){
+find_readme <- function(ROOT = '.', use_rmd = TRUE){
   
-  GIT_ROOT <- file.path(system('git rev-parse --show-toplevel',intern = TRUE))
+  ROOT <- normalizePath(ROOT)
   
-  README <- list.files(GIT_ROOT,pattern = 'README',full.names = TRUE)
+  README <- list.files(ROOT,pattern = 'README',full.names = TRUE)
+  
+  if(length(README)==0){
+    return(FALSE)
+  }
   
   if(use_rmd){
     use_rmd <- any(grepl('README.RMD$',README,ignore.case = TRUE))
@@ -47,6 +51,9 @@ find_readme <- function(use_rmd = TRUE){
 check_badge <- function(){
   
   README <- find_readme()
+  
+  if(is.logical(README))
+    return(FALSE)
   
   README_LINES <- readLines(README,warn = FALSE)
   
@@ -81,3 +88,7 @@ make_badge <- function(remote_origin = NULL, active_branch = NULL){
  sprintf('[![Covrpage Summary](https://img.shields.io/badge/covrpage-Initialized-orange.svg)](%s)',
          uri)
 }
+
+# is_git <- function(){
+#   system('git rev-parse --is-inside-work-tree',intern = TRUE)=='true'
+# }
