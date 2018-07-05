@@ -27,6 +27,16 @@ test_to_badge <-function(obj){
   status
 }
 
+test_details <- function(obj){
+  
+  if(test_to_badge(obj)=='pass'){
+    'closed'
+  }else{
+    'open'
+  }
+
+}
+
 find_readme <- function(ROOT = '.', use_rmd = TRUE){
   
   ROOT <- normalizePath(ROOT)
