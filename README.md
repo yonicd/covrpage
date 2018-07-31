@@ -10,6 +10,13 @@ This package extends the information that is communicated with the potential use
 
 The output is created in the [tests](tests) subdirectory as a [README.md](tests/README.md) file so it will show up in Github browser page. 
 
+## Packages that use {coverpage}
+
+  - [{slackr}](https://github.com/hrbrmstr/slackr/tree/master/tests)
+  - [{remedy}](https://github.com/thinkr-open/remedy/tree/master/tests)
+  - [{mathpix}](https://github.com/jonocarroll/mathpix/tree/master/tests)
+  
+
 ## Package Installation
 
 ```
