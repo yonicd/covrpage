@@ -117,13 +117,38 @@ covrpage::covrpage('another_directory')
 covrpage::covrpage_snapshot(repo = 'user/repo')
 ```
 
+## Test Results Indicators
+
+### Badge
+
+{covrpage} has its own reactive badge. After the README.md file is rendered a badge in the main README page is updated with the render date and the colour indicates the state of the tests. If you are using README.Rmd to compile the README file that is ok too, covrpage will update the rmd file and render it to update the md file for you. 
+
+  - [![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2018_07_05-brightgreen.svg)](https://github.com/yonicd/covrpage/tree/master/tests/README.md) all tests passed
+  - [![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2018_07_05-yellow.svg)](https://github.com/yonicd/covrpage/tree/master/tests/README.md) warning/skipped tests
+  - [![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2018_07_05-red.svg)](https://github.com/yonicd/covrpage/tree/master/tests/README.md) error/failed tests
+  
+To create the script for the badge to paste in the root README run the following, it will locate the `.git` and fill in the information it needs to build the uri.
+
+```r
+covrpage::make_badge()
+[1] "[![Covrpage Summary](https://img.shields.io/badge/covrpage-Initialized-orange.svg)](https://github.com/yonicd/covrpage/tree/master/tests/README.md)"
+```
+
+### Show Detailed Test Results
+
+If all the unit tests have passed then the table showing the detailed unit tests will be collapsed, else it will be open. 
+
+### Links to Tests
+
+All files and unit tests referenced in the output tables contain links back to the relevant file in the repository. In the detailed unit tests table the links have line anchors to where the relevant expectation block begins. 
+
 ## Travis
 
 `{covrpage}` can be deployed in Travis much the way `{covr::covrall}` is deployed. The only difference is that `{covrpage}` will push back the updated `README.md` file to the originating repository so it can be updated as part of the custom integration routine. 
 
 The following `.travis.yml` is needed for the deployment:
 
-```r
+```yml
 language: R
 sudo: false
 cache: packages
@@ -139,13 +164,13 @@ env:
 
 covrpage adds one new line to the standard `{covr}` Travis YML:
 
-```r
+```yml
 - bash .travis/covrpage.sh
 ```
 
 This file is created when running `covrpage::use_covrpage()` in the `.travis` subdirectory:
 
-```r
+```yml
 env:
   global:
     secure: IeWrPb9tC9oxkoceXs4NStZJFIJKtvi/qeErbv3OATeo+BylRwj9xzcmzQrV8ps...
