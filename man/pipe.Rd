@@ -4,5 +4,5 @@
 \alias{\%>\%}
 \title{Re-export magrittr pipe operators}
 \description{
-Re-export magrittr pipe operators
+magrittr pipe operators
 }

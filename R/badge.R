@@ -93,7 +93,7 @@ make_badge <- function(remote_origin = NULL, active_branch = NULL){
    remote_origin <- gsub('^(.*?)\\.com(:|/)|\\.git$', '', remote_origin) 
  }
 
- uri <- sprintf('https://github.com/%s/tree/master/tests/README.md',remote_origin)
+ uri <- sprintf('https://github.com/%s/tree/%s/tests/README.md',remote_origin,active_branch)
 
  sprintf('[![Covrpage Summary](https://img.shields.io/badge/covrpage-Initialized-orange.svg)](%s)',
          uri)
