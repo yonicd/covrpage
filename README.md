@@ -1,6 +1,6 @@
 [![Travis-CI Build Status](https://travis-ci.org/yonicd/covrpage.svg?branch=master)](https://travis-ci.org/yonicd/covrpage)
 [![Coverage Status](https://img.shields.io/codecov/c/github/yonicd/covrpage/master.svg)](https://codecov.io/github/yonicd/covrpage?branch=master)
-[![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2018_07_05-brightgreen.svg)](https://github.com/yonicd/covrpage/tree/master/tests/README.md)
+[![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2018_08_21-brightgreen.svg)](https://github.com/yonicd/covrpage/tree/master/tests/README.md)
 
 # {covrpage}
 
@@ -123,15 +123,15 @@ covrpage::covrpage_snapshot(repo = 'user/repo')
 
 {covrpage} has its own reactive badge. After the README.md file is rendered a badge in the main README page is updated with the render date and the colour indicates the state of the tests. If you are using README.Rmd to compile the README file that is ok too, covrpage will update the rmd file and render it to update the md file for you. 
 
-  - [![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2018_07_05-brightgreen.svg)](https://github.com/yonicd/covrpage/tree/master/tests/README.md) all tests passed
-  - [![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2018_07_05-yellow.svg)](https://github.com/yonicd/covrpage/tree/master/tests/README.md) warning/skipped tests
-  - [![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2018_07_05-red.svg)](https://github.com/yonicd/covrpage/tree/master/tests/README.md) error/failed tests
+  - [![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2018_08_21-brightgreen.svg)](https://github.com/yonicd/covrpage/tree/master/tests/README.md) all tests passed
+  - [![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2018_08_21-brightgreen.svg)](https://github.com/yonicd/covrpage/tree/master/tests/README.md) warning/skipped tests
+  - [![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2018_08_21-brightgreen.svg)](https://github.com/yonicd/covrpage/tree/master/tests/README.md) error/failed tests
   
 To create the script for the badge to paste in the root README run the following, it will locate the `.git` and fill in the information it needs to build the uri.
 
 ```r
 covrpage::make_badge()
-[1] "[![Covrpage Summary](https://img.shields.io/badge/covrpage-Initialized-orange.svg)](https://github.com/yonicd/covrpage/tree/master/tests/README.md)"
+[1] "[![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2018_08_21-brightgreen.svg)](https://github.com/yonicd/covrpage/tree/master/tests/README.md)"
 ```
 
 ### Show Detailed Test Results
