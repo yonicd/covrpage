@@ -52,7 +52,7 @@ Coverage summary is created using the [covr](https://github.com/r-lib/covr) pack
 if(length(test_skip_lines)>0){
   for(nx in names(test_skip_lines)){
     FILE <- file.path('../tests/testthat',nx)
-    TEST <- readLines(FILE)
+    TEST <- readLines(FILE,warn = FALSE)
     LINES <- test_skip_lines[[nx]]
     TEST[LINES] <- sprintf('#%s',TEST[LINES])
     cat(TEST,file=file.path('../tests/testthat',nx),sep='\n')
@@ -67,7 +67,7 @@ covr::package_coverage()%>%
 if(length(test_skip_lines)>0){
   for(nx in names(test_skip_lines)){
     FILE <- file.path('../tests/testthat',nx)
-    TEST <- readLines(FILE)
+    TEST <- readLines(FILE,warn = FALSE)
     LINES <- test_skip_lines[[nx]]
     TEST[LINES] <- gsub('^#','',TEST[LINES])
     cat(TEST,file=file.path('../tests/testthat',nx),sep='\n')
