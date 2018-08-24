@@ -8,17 +8,18 @@ This output is created by [covrpage](https://github.com/yonicd/covrpage).
 ```{r,include=FALSE}
 library(covr     , warn.conflicts = FALSE , quietly = TRUE)
 library(knitr    , warn.conflicts = FALSE , quietly = TRUE)
-library(dplyr    , warn.conflicts = FALSE , quietly = TRUE)
+library(magrittr , warn.conflicts = FALSE , quietly = TRUE)
 
 ```
 
 ```{r, include=FALSE}
 
 test_x <- testthat::test_dir('../tests/testthat')
-
+test_m <- covrpage::map_testthat('../tests/testthat')
 ```
  
 ```{r, include=FALSE}
+
 test_x_short <- test_x%>%
   covrpage::testthat_summary(type='short')
 
@@ -30,29 +31,49 @@ test_x_long <- test_x%>%
 ```{r, include=FALSE}
 test_skip <- test_x_long[test_x_long$status!='PASS',c('file','test')]
 
-test_skip$file <- gsub('^(.*?)\\(|\\)$','',test_skip$file)
+test_skip$file <- gsub('#(.*?)$','',basename(test_skip$file))
 
-test_skip_lines <- mapply(FUN = function(x,y){
-  p <- parse(file.path('../tests',x))
-  pp <- utils::getParseData(p,includeText = TRUE)
-  LINES <- as.numeric(pp[grep(y,pp$text)[1],c('line1','line2')])
-  if(length(LINES))
-    seq(LINES[1],LINES[2])
-},test_skip$file,test_skip$test,SIMPLIFY = FALSE)
+test_skip <- merge(test_skip,test_m)
+
+test_skip_lines <- lapply(
+  split(test_skip,test_skip$file),
+    function(x){
+      unlist(mapply(seq,from=x$line1,to=x$line2))
+    }
+  )
 
 ```
-
 
 ## Coverage
 
 Coverage summary is created using the [covr](https://github.com/r-lib/covr) package.
 
 ```{r,echo=FALSE}
-covr::package_coverage(line_exclusions = test_skip_lines)%>%
+if(length(test_skip_lines)>0){
+  for(nx in names(test_skip_lines)){
+    FILE <- file.path('../tests/testthat',nx)
+    TEST <- readLines(FILE)
+    LINES <- test_skip_lines[[nx]]
+    TEST[LINES] <- sprintf('#%s',TEST[LINES])
+    cat(TEST,file=file.path('../tests/testthat',nx),sep='\n')
+  }
+}
+
+covr::package_coverage()%>%
   covrpage::covr_summary()%>%
   knitr::kable(digits = 2,
              col.names = c('Object','Coverage (%)'),align = c('l','c'))
   
+if(length(test_skip_lines)>0){
+  for(nx in names(test_skip_lines)){
+    FILE <- file.path('../tests/testthat',nx)
+    TEST <- readLines(FILE)
+    LINES <- test_skip_lines[[nx]]
+    TEST[LINES] <- gsub('^#','',TEST[LINES])
+    cat(TEST,file=file.path('../tests/testthat',nx),sep='\n')
+  }
+}
+
 ```
 
 <br>
@@ -61,14 +82,41 @@ covr::package_coverage(line_exclusions = test_skip_lines)%>%
 
 Unit Test summary is created using the [testthat](https://github.com/r-lib/testthat) package.
 
-
-
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
 
 test_x_short%>%
   knitr::kable()
 
+```
+
+<details `r sprintf('%s',test_details(test_x_short))`>
+  <summary> Show Detailed Test Results </summary>
+ 
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+
 test_x_long%>%
   knitr::kable()
 
 ```
+
+</details>
+
+<details>
+  <summary> Session Info </summary>
+  
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+
+x <- covrpage:::sinfo()
+
+x$info%>%
+  knitr::kable()
+
+x$pkgs%>%
+  knitr::kable()
+
+```
+
+</details>
+
+
+`r sprintf('<!--- Final Status : %s --->', test_to_badge(test_x_short))`

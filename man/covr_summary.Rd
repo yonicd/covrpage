@@ -13,7 +13,7 @@ covr_summary(x)
 data.frame
 }
 \description{
-Creates a summary data.frame for covr object output that 
+Creates a summary data.frame for covr object output that
 mimics the console print method of \code{\link[covr]{package_coverage}}
 }
 \seealso{

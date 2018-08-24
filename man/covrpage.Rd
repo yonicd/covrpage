@@ -2,16 +2,20 @@
 % Please edit documentation in R/covrpage.R
 \name{covrpage}
 \alias{covrpage}
-\title{render covrpage}
+\title{Render covrpage}
 \usage{
-covrpage(pkg, preview = TRUE, auto_push = FALSE)
+covrpage(path = getwd(), preview = TRUE, auto_push = FALSE,
+  update_badge = TRUE)
 }
 \arguments{
-\item{pkg}{path to package}
+\item{path}{path to package}
 
 \item{preview}{boolean, to open the output in viewer, Default: TRUE}
 
 \item{auto_push}{boolean, push to remote repo on exit, Default: FALSE}
+
+\item{update_badge}{boolean, locate badge in README and update with 
+testthat results, Default: TRUE}
 }
 \description{
 Render the template of the covrpage in the package directory.

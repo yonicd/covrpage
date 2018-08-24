@@ -1,24 +1,38 @@
-context('check summary covr')
+testthat::context("check summary covr")
 
-test_that('covr_summary',{
-  
-  expect_s3_class(covrpage::covr_summary(covrpage:::covr_test),'tbl_df')
-  expect_error(covrpage::covr_summary())
-  
+testthat::describe("covr_summary", {
+  it("standard input", {
+    testthat::expect_s3_class(covrpage::covr_summary(covrpage:::covr_test), "data.frame")
+  })
+
+  it("empty input", {
+    testthat::expect_error({
+      covrpage::covr_summary()
+      })
+  })
 })
 
-context('check summary covr')
+testthat::context("check summary output types")
 
-test_that('covr_summary',{
-  
-  expect_s3_class(covrpage::testthat_summary(covrpage:::testthat_test,'short'),'tbl_df')
-  expect_s3_class(covrpage::testthat_summary(covrpage:::testthat_test,'long'),'tbl_df')
-  expect_null(covrpage::testthat_summary(covrpage:::testthat_test,'something'))
-  
+testthat::describe("with data", {
+  it("short", {
+    testthat::expect_s3_class(covrpage::testthat_summary(covrpage:::testthat_test, "short"), "data.frame")
+  })
+
+  it("long", {
+    testthat::expect_s3_class(covrpage::testthat_summary(covrpage:::testthat_test, "long"), "data.frame")
+  })
+
+  it("no data", {
+    testthat::expect_null(covrpage::testthat_summary(covrpage:::testthat_test, "something"))
+  })
 })
 
-context('check covr to df')
 
-test_that('covr object to df',{
-  expect_null(covrpage:::covr_print_to_df(c()))
+testthat::context("check covr to df")
+
+testthat::describe("covr object to df", {
+  it("empty input", {
+    testthat::expect_null(covrpage:::covr_print_to_df(c()))
+  })
 })
