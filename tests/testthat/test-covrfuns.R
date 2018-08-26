@@ -28,7 +28,6 @@ testthat::describe("with data", {
   })
 })
 
-
 testthat::context("check covr to df")
 
 testthat::describe("covr object to df", {
