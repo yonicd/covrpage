@@ -42,7 +42,7 @@ test_skip <- merge(test_skip,test_m)
 Coverage summary is created using the [covr](https://github.com/r-lib/covr) package.
 
 ```{r,echo=FALSE}
-covrpage::coverage_skip(test_skip = test_skip)%>%
+covrpage::coverage_skip(test_path = '../tests/testthat', test_skip = test_skip)%>%
   covrpage::covr_summary()%>%
   knitr::kable(digits = 2,
              col.names = c('Object','Coverage (%)'),align = c('l','c'))

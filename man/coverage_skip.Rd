@@ -4,10 +4,10 @@
 \alias{coverage_skip}
 \title{Run covr with failing tests}
 \usage{
-coverage_skip(test_path = "../tests/testthat", test_skip = NULL)
+coverage_skip(test_path = "tests/testthat", test_skip = NULL)
 }
 \arguments{
-\item{test_path}{character, path to test directory, Default: '../tests/testthat'}
+\item{test_path}{character, path to test directory, Default: 'tests/testthat'}
 
 \item{test_skip}{data.frame, mapping of failing tests, PARAM_DESCRIPTION, Default: NULL}
 }

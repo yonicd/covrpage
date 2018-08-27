@@ -1,6 +1,6 @@
 #' @title Run covr with failing tests
 #' @description Run \code{\link[covr]{package_coverage}} ignoring failing tests from \code{\link[testthat]{test_dir}}.
-#' @param test_path character, path to test directory, Default: '../tests/testthat'
+#' @param test_path character, path to test directory, Default: 'tests/testthat'
 #' @param test_skip data.frame, mapping of failing tests, PARAM_DESCRIPTION, Default: NULL
 #' @return NULL
 #' @details If test_skip is NULL then a new test_dir will be run internally checking
@@ -13,7 +13,7 @@
 #' @importFrom testthat test_dir
 #' @importFrom covr package_coverage
 coverage_skip <- function(
-  test_path = '../tests/testthat',
+  test_path = 'tests/testthat',
   test_skip = NULL){
   
   if(is.null(test_skip)){
