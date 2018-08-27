@@ -202,11 +202,6 @@ These two commands are combined into a utility function:
 covrpage::tencrypt(r_obj = Sys.getenv("GITHUB_PAT"),travis_env = "GH_PAT",add = TRUE)
 ```
 
-## TODO
-
-  - run `covr::package_coverage` excluding failing tests to avert fail on rmd build.
-    - see [skip branch](https://github.com/yonicd/covrpage/tree/skip)
-
 That's it!
 
 Any questions/comments are always welcome in the [issues](https://github.com/yonicd/covrpage/issues) section.
