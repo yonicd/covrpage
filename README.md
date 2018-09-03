@@ -88,6 +88,7 @@ package.
   - [{slackr}](https://github.com/hrbrmstr/slackr/tree/master/tests)
   - [{remedy}](https://github.com/thinkr-open/remedy/tree/master/tests)
   - [{mathpix}](https://github.com/jonocarroll/mathpix/tree/master/tests)
+  - [{carbonate}](https://github.com/yonicd/carbonate/tree/master/tests)
 
 ## Package Installation
 
