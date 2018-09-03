@@ -6,7 +6,9 @@ testthat::describe("covr_summary", {
   })
 
   it("empty input", {
-    testthat::expect_error(covrpage::covr_summary())
+    testthat::expect_error({
+      covrpage::covr_summary()
+      })
   })
 })
 
@@ -25,7 +27,6 @@ testthat::describe("with data", {
     testthat::expect_null(covrpage::testthat_summary(covrpage:::testthat_test, "something"))
   })
 })
-
 
 testthat::context("check covr to df")
 

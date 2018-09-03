@@ -2,8 +2,10 @@
 nest_test <- function(x, token_text = "^context$") {
   rx <- rownames(x)
 
-  idx <- which(rx %in% x$parent[grepl("^SYMBOL_FUNCTION_CALL$", x$token) & grepl(token_text, x$text) & x$terminal]) - 1
+  idx <- which(rx %in% x$parent[grepl("^SYMBOL_FUNCTION_CALL$", x$token) & grepl(token_text, x$text) & x$terminal])
 
+  idx <- which(rx %in% x$parent[idx])
+  
   x1 <- rep(0, nrow(x))
 
   x1[idx] <- 1
@@ -43,7 +45,11 @@ get_expect <- function(x, token_text = "^expect_") {
     return(NULL)
   }
 
-  line_ <- lapply(idx, function(y) x[min(tail(grep("expr", x$token[1:y]), 2)), c("line1", "line2")])
+  line_ <- lapply(idx, function(y){
+    this_idx <- tail(grep("expr", x$token[1:y]), 2)
+    this_exp <- min(grep(sprintf('%s',x$text[y]),x$text[this_idx]))
+    x[this_idx[this_exp], c("line1", "line2")]
+  })
 
   line_ <- do.call("rbind", line_)
 
