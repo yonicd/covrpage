@@ -1,6 +1,6 @@
 Tests and Coverage
 ================
-04 September, 2018 07:11:22
+04 September, 2018 09:48:26
 
 This output is created by
 [covrpage](https://github.com/yonicd/covrpage).
@@ -12,7 +12,7 @@ Coverage summary is created using the
 
 | Object                                             | Coverage (%) |
 | :------------------------------------------------- | :----------: |
-| covrpage                                           |    22.55     |
+| covrpage                                           |    22.22     |
 | [R/badge.R](../R/badge.R)                          |     0.00     |
 | [R/coverage\_skip.R](../R/coverage_skip.R)         |     0.00     |
 | [R/covrpage\_snapshot.R](../R/covrpage_snapshot.R) |     0.00     |
@@ -35,8 +35,8 @@ package.
 
 |                     | file                                               | n |  time | error | failed | skipped | warning |
 | ------------------- | :------------------------------------------------- | -: | ----: | ----: | -----: | ------: | ------: |
-| test-check\_utils.R | [test-check\_utils.R](testthat/test-check_utils.R) | 5 | 0.043 |     0 |      0 |       0 |       0 |
-| test-covrfuns.R     | [test-covrfuns.R](testthat/test-covrfuns.R)        | 6 | 0.061 |     0 |      0 |       0 |       0 |
+| test-check\_utils.R | [test-check\_utils.R](testthat/test-check_utils.R) | 5 | 0.070 |     0 |      0 |       0 |       0 |
+| test-covrfuns.R     | [test-covrfuns.R](testthat/test-covrfuns.R)        | 6 | 0.065 |     0 |      0 |       0 |       0 |
 
 <details closed>
 
@@ -46,14 +46,14 @@ package.
 | file                                                   | context                    | test                           | status | n |  time |
 | :----------------------------------------------------- | :------------------------- | :----------------------------- | :----- | -: | ----: |
 | [test-check\_utils.R](testthat/test-check_utils.R#L4)  | check for tests            | tests are detected             | PASS   | 1 | 0.002 |
-| [test-check\_utils.R](testthat/test-check_utils.R#L12) | check for packages         | packages are detected          | PASS   | 3 | 0.014 |
-| [test-check\_utils.R](testthat/test-check_utils.R#L22) | use covrpage               | test use\_covrpage             | PASS   | 1 | 0.027 |
-| [test-covrfuns.R](testthat/test-covrfuns.R#L5)         | check summary covr         | covr\_summary: standard input  | PASS   | 1 | 0.033 |
-| [test-covrfuns.R](testthat/test-covrfuns.R#L9_L11)     | check summary covr         | covr\_summary: empty input     | PASS   | 1 | 0.001 |
-| [test-covrfuns.R](testthat/test-covrfuns.R#L19)        | check summary output types | with data: short               | PASS   | 1 | 0.015 |
-| [test-covrfuns.R](testthat/test-covrfuns.R#L23)        | check summary output types | with data: long                | PASS   | 1 | 0.010 |
+| [test-check\_utils.R](testthat/test-check_utils.R#L12) | check for packages         | packages are detected          | PASS   | 3 | 0.026 |
+| [test-check\_utils.R](testthat/test-check_utils.R#L22) | use covrpage               | test use\_covrpage             | PASS   | 1 | 0.042 |
+| [test-covrfuns.R](testthat/test-covrfuns.R#L5)         | check summary covr         | covr\_summary: standard input  | PASS   | 1 | 0.028 |
+| [test-covrfuns.R](testthat/test-covrfuns.R#L9_L11)     | check summary covr         | covr\_summary: empty input     | PASS   | 1 | 0.002 |
+| [test-covrfuns.R](testthat/test-covrfuns.R#L19)        | check summary output types | with data: short               | PASS   | 1 | 0.018 |
+| [test-covrfuns.R](testthat/test-covrfuns.R#L23)        | check summary output types | with data: long                | PASS   | 1 | 0.014 |
 | [test-covrfuns.R](testthat/test-covrfuns.R#L27)        | check summary output types | with data: no data             | PASS   | 1 | 0.001 |
-| [test-covrfuns.R](testthat/test-covrfuns.R#L35)        | check covr to df           | covr object to df: empty input | PASS   | 1 | 0.001 |
+| [test-covrfuns.R](testthat/test-covrfuns.R#L35)        | check covr to df           | covr object to df: empty input | PASS   | 1 | 0.002 |
 
 </details>
 
