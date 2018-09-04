@@ -3,3 +3,5 @@
 ^\.travis\.yml$
 ^codecov\.yml$
 .travis/*
+^_pkgdown\.yml$
+^docs$

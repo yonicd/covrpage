@@ -5,6 +5,8 @@
 #' @param auto_push boolean, push to remote repo on exit, Default: FALSE
 #' @param update_badge boolean, locate badge in README and update with 
 #' testthat results, Default: TRUE
+#' @param vignette boolean, if TRUE then the covrpage README will be copied 
+#' as a vignette of the package, Default: FALSE
 #' @seealso
 #'  \code{\link[rmarkdown]{render}}
 #' @rdname covrpage
@@ -12,7 +14,7 @@
 #' @importFrom rmarkdown render
 #' @importFrom git2r repository add commit push
 #' @importFrom utils tail
-covrpage <- function(path = getwd(), preview = TRUE, auto_push=FALSE, update_badge = TRUE) {
+covrpage <- function(path = getwd(), preview = TRUE, auto_push=FALSE, update_badge = TRUE, vignette = FALSE) {
   testdir <- file.path(path, "tests")
 
   thiswd <- getwd()
@@ -56,6 +58,10 @@ covrpage <- function(path = getwd(), preview = TRUE, auto_push=FALSE, update_bad
           )
       }
     }
+    }
+    
+    if(vignette){
+      use_covrpage_vignette()
     }
     
     if (file.exists("tests/_covrpage.Rmd")) {

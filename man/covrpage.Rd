@@ -5,7 +5,7 @@
 \title{Render covrpage}
 \usage{
 covrpage(path = getwd(), preview = TRUE, auto_push = FALSE,
-  update_badge = TRUE)
+  update_badge = TRUE, vignette = FALSE)
 }
 \arguments{
 \item{path}{path to package}
@@ -16,6 +16,9 @@ covrpage(path = getwd(), preview = TRUE, auto_push = FALSE,
 
 \item{update_badge}{boolean, locate badge in README and update with 
 testthat results, Default: TRUE}
+
+\item{vignette}{boolean, if TRUE then the covrpage README will be copied 
+as a vignette of the package, Default: FALSE}
 }
 \description{
 Render the template of the covrpage in the package directory.
