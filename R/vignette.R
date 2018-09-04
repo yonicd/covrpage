@@ -12,7 +12,7 @@ covrpage_vignette <- function(path = '.'){
     sep = '\n',append = TRUE
   )
   
-  invisible(file.copy(tf,file.path(path,'covrpage.Rmd'),overwrite = TRUE))
+  invisible(file.copy(tf,file.path(path,'tests_and_coverage.Rmd'),overwrite = TRUE))
   
 }
 
@@ -46,7 +46,7 @@ use_covrpage_vignette <- function(path = '.'){
     cat(c('*.html','*.R'),sep='\n',file = vgit)
   }
   
-  message(sprintf('copying covrpage.Rmd into %s',fv))
+  message(sprintf('copying tests_and_coverage.Rmd into %s',fv))
   
   covrpage_vignette(fv)
   

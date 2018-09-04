@@ -1,5 +1,18 @@
-language: R
-sudo: false
+language: r
 cache: packages
+
 after_success:
-- Rscript -e 'covr::codecov()'
+  - Rscript -e 'covr::codecov()'
+  - Rscript -e 'covrpage::covrpage(pkg = '.',preview = FALSE,vignette = TRUE)'
+  - Rscript -e 'pkgdown::build_site()'
+
+r_github_packages: yonicd/covrpage
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_PAT
+  keep-history: true
+  local-dir: docs
+  on:
+    branch: master
