@@ -7,7 +7,7 @@ covrpage_vignette <- function(path = '.'){
   file.copy(system.file('covrpage_vignette.Rmd',package = 'covrpage'),to = tf)
   
   cat(
-    readLines('tests/README.md'),
+    readLines('tests/README.md')[-c(1:4)],
     file = tf,
     sep = '\n',append = TRUE
   )
