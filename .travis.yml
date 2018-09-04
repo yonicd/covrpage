@@ -3,10 +3,12 @@ cache: packages
 
 after_success:
   - Rscript -e 'covr::codecov()'
-  - Rscript -e 'covrpage::covrpage(pkg = '.',preview = FALSE,vignette = TRUE)'
+  - Rscript -e 'covrpage::covrpage(path = '.',preview = FALSE,vignette = TRUE)'
   - Rscript -e 'pkgdown::build_site()'
 
-r_github_packages: yonicd/covrpage
+r_github_packages: 
+  - yonicd/covrpage@2fd720e
+  - r-lib/pkgdown
 
 deploy:
   provider: pages
