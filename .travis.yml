@@ -5,16 +5,19 @@ after_success:
   - Rscript -e 'covr::codecov()'
 # - Rscript -e 'devtools::install(); list.files(recursive = TRUE,full.names = TRUE); covrpage::covrpage(update_badge = FALSE,vignette = TRUE)'
   - Rscript -e 'pkgdown::build_site()'
-
-r_github_packages: 
+  
+r_github_packages:
 #  - yonicd/covrpage@2fd720e
   - r-lib/pkgdown
-
+  
 deploy:
   provider: pages
   skip-cleanup: true
-  github-token: $GITHUB_PAT
+  github-token: "$GH_PAT"
   keep-history: true
   local-dir: docs
-  on:
-    branch: master
+    on:
+      branch: master
+env:
+  global:
+    secure: KFyqf7dLQaCrPUBhSDiwQYc0F3F/H5yxOLpmbLLC+BaCx7m8X1iD/7jmXFVWRwjZN8/4UZ5+UF5PXYCXEDEV1vjfcg7KCQnVdClucfIZmp7KMATR25hcwl0KeLluEQBkcRM32B78XoHiA2Ln0MHJCL/+BQmeOix+H9PQXyorkRFGG48oczrliGmIiLKCJCzbJ7yqRlPeKbpMTs7lhzuEV71UE7h26ncWv6rvqKMw5bXeinEuAXE/Dpe/Du6SkQsuRYuBvAIGshA9cS0M9siP/9XyMl1/96ixIDuray+S7ixO1pPBjXDJWKWnjNe9e5/9iTU4nDjg3EE5iCs1u82Mha3+n/JH8EPyksaHx8KBwB3DlDHP/w9Qsu0wBRN6DvL+B6iUe353qlyGv8A1KwxLvRWAkjzUHlfQ7FUrDYd4eNrA1/baDonw+hkoeWT/1wlNXcsa+QxjlX/+Vwkobh6YAe8VJV/49euugTsBv81a1am64gO+jTWBrWPveA8bQovhOvI4zm+4EpofSozE8nmqMGLg58Q2mXBSrxTs6osaUB0YmnUNs5nWW6GCQeOcW6Yx1h1YgDrngpYX4Ce2bpq4gYirWUuTM2uKTW3wrVSKpQOOYdlu9TKN4Ve2Lhjo9RiF3LkaU4k0Zyz8uDEX2NFgao5H6xy65xNPGKeddSTclf0=
