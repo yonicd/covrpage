@@ -42,9 +42,11 @@ covrpage <- function(path = getwd(), preview = TRUE, auto_push=FALSE, update_bad
       
       README_LINES <- readLines(README)
       
-      cat(gsub('covrpage-(.*?)svg', 
-               badge_covrpage(status),
-               README_LINES),
+      README_LINE <- grep('covrpage-(.*?)svg',README_LINES)[1]
+      
+      README_LINES[README_LINE] <- gsub('covrpage-(.*?)svg', badge_covrpage(status),README_LINES[README_LINE])
+      
+      cat(README_LINES,
           sep = '\n',
           file = README)
       
