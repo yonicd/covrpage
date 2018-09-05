@@ -16,7 +16,7 @@ nest_test <- function(x, token_text = "^context$") {
 
   names(x2) <- sapply(x2, function(x) {
     add_text <- x$text[grep("^SYMBOL_FUNCTION_CALL$", x$token)[1]]
-    ret <- eval(parse(text = x$text[grepl("^STR_CONST$", x$token)][1]))
+    ret <- eval(parse(text = x$text[grepl("^STR_CONST$", x$token)][1],keep.source = TRUE))
 
     if (add_text %in% c("test_that", "describe", "it")) {
       ret <- sprintf("%s: %s", add_text, ret)
@@ -89,7 +89,7 @@ nest_expect <- function(x) {
 #' @export
 #' @importFrom utils getParseData
 map_test <- function(path) {
-  x <- utils::getParseData(parse(path), includeText = TRUE)
+  x <- utils::getParseData(parse(path,keep.source = TRUE), includeText = TRUE)
   
   if(is.null(x))
     return(NULL)
