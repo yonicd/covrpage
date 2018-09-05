@@ -3,3 +3,17 @@ cache: packages
 
 after_success:
   - Rscript -e 'covr::codecov()'
+  - Rscript -e 'devtools::install(); covrpage::covrpage(preview=FALSE,update_badge = FALSE,vignette = TRUE)'
+  - Rscript -e 'pkgdown::build_site()'
+
+r_github_packages:
+  - r-lib/pkgdown
+  
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GH_PAT
+  keep-history: true
+  local-dir: docs
+  on:
+    branch: master
