@@ -4,10 +4,12 @@
 \alias{covrpage_ci}
 \title{covrpage for travis}
 \usage{
-covrpage_ci(path = getwd())
+covrpage_ci(path = getwd(), ...)
 }
 \arguments{
 \item{path}{character, path to package, Default: getwd()}
+
+\item{\dots}{arguments to pass to covrpage}
 }
 \description{
 wrapper for covrpage call with switches for running
