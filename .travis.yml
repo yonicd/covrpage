@@ -3,7 +3,7 @@ cache: packages
 
 after_success:
   - Rscript -e 'covr::codecov()'
-  - Rscript -e 'devtools::install(); covrpage::covrpage_ci()'
+  - Rscript -e 'devtools::install(keep_source=TRUE); covrpage::covrpage_ci()'
   - Rscript -e 'pkgdown::build_site()'
 
 r_github_packages:
