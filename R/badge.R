@@ -96,9 +96,34 @@ make_badge <- function(remote_origin = NULL, active_branch = NULL){
  uri <- sprintf('https://github.com/%s/tree/%s/tests/README.md',remote_origin,active_branch)
 
  sprintf('[![Covrpage Summary](https://img.shields.io/badge/covrpage-Initialized-orange.svg)](%s)',
-         uri)
+         tiny(uri))
 }
 
 # is_git <- function(){
 #   system('git rev-parse --is-inside-work-tree',intern = TRUE)=='true'
 # }
+
+#' @importFrom curl nslookup curl
+tiny <- function(uri){
+
+  host <- 'tinyurl.com'
+  
+  if(!is.null(curl::nslookup(host, error = FALSE))){
+    
+    base <- sprintf('http://%s/api-create.php',host)
+    
+    x <- curl::curl(sprintf('%s?url=%s',base,uri))  
+    
+    on.exit(close(x),add = TRUE)
+    
+    uri_raw <- uri
+    
+    uri <- readLines(x,warn = FALSE)
+    
+    message(sprintf('masking %s with %s',uri_raw,uri))
+    
+  }
+  
+  uri
+  
+}

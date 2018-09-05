@@ -1,6 +1,6 @@
 [![Travis-CI Build Status](https://travis-ci.org/yonicd/covrpage.svg?branch=master)](https://travis-ci.org/yonicd/covrpage)
 [![Coverage Status](https://img.shields.io/codecov/c/github/yonicd/covrpage/master.svg)](https://codecov.io/github/yonicd/covrpage?branch=master)
-[![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2018_08_26-brightgreen.svg)](https://github.com/yonicd/covrpage/tree/master/tests/README.md)
+[![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2018_09_04-brightgreen.svg)](http://tinyurl.com/y965gzrq)
 
 # {covrpage}
 
@@ -109,6 +109,10 @@ covrpage::covrpage()
 
 covrpage::covrpage(auto_push = TRUE)
 
+# Copy output as a vignette to use in pkgdown
+
+covrpage::covrpage_snapshot(vignette = TRUE)
+
 # assuming you are not in your package directory
 
 covrpage::covrpage('another_directory')
@@ -124,15 +128,15 @@ covrpage::covrpage_snapshot(repo = 'user/repo')
 
 {covrpage} has its own reactive badge. After the README.md file is rendered a badge in the main README page is updated with the render date and the colour indicates the state of the tests. If you are using README.Rmd to compile the README file that is ok too, covrpage will update the rmd file and render it to update the md file for you. 
 
-  - [![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2018_08_26-brightgreen.svg)](https://github.com/yonicd/covrpage/tree/master/tests/README.md) all tests passed
-  - [![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2018_08_26-yellow.svg)](https://github.com/yonicd/covrpage/tree/master/tests/README.md) warning/skipped tests
-  - [![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2018_08_26-red.svg)](https://github.com/yonicd/covrpage/tree/master/tests/README.md) error/failed tests
+  - [![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2018_09_04-brightgreen.svg)](http://tinyurl.com/y965gzrq) all tests passed
+  - [![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2018_09_04-yellow.svg)](http://tinyurl.com/y965gzrq) warning/skipped tests
+  - [![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2018_09_04-red.svg)](http://tinyurl.com/y965gzrq) error/failed tests
   
 To create the script for the badge to paste in the root README run the following, it will locate the `.git` and fill in the information it needs to build the uri.
 
 ```r
 covrpage::make_badge()
-[1] "[![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2018_08_26-brightgreen.svg)](https://github.com/yonicd/covrpage/tree/master/tests/README.md)"
+[1] "[![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2018_09_04-brightgreen.svg)](https://github.com/yonicd/covrpage/tree/master/tests/README.md)"
 ```
 
 ### Show Detailed Test Results
@@ -144,6 +148,8 @@ If all the unit tests have passed then the table showing the detailed unit tests
 All files and unit tests referenced in the output tables contain links back to the relevant file in the repository. In the detailed unit tests table the links have line anchors to where the relevant expectation block begins. 
 
 ## Travis
+
+<details><summary>Direct</summary>
 
 `{covrpage}` can be deployed in Travis much the way `{covr::covrall}` is deployed. The only difference is that `{covrpage}` will push back the updated `README.md` file to the originating repository so it can be updated as part of the custom integration routine. 
 
@@ -202,6 +208,38 @@ These two commands are combined into a utility function:
 ```r
 covrpage::tencrypt(r_obj = Sys.getenv("GITHUB_PAT"),travis_env = "GH_PAT",add = TRUE)
 ```
+
+</details>
+
+<details><summary>Deploy + pkgdown</summary>
+
+You can also use [pkgdown](https://www.github.com/r-lib/pkgdown) to create a covrpage readme with Travis. Use the follow travis yml script
+
+```yml
+language: r
+cache: packages
+
+after_success:
+  - Rscript -e 'covr::codecov()'
+  - Rscript -e 'devtools::install(); covrpage::covrpage(update_badge = FALSE,vignette = TRUE)'
+  - Rscript -e 'pkgdown::build_site()'
+
+r_github_packages: 
+  - yonicd/covrpage
+  - r-lib/pkgdown #either put this here or in Suggests in the DESCRIPTION file
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_PAT
+  keep-history: true
+  local-dir: docs
+  on:
+    branch: master
+```
+
+</details>
+
 
 That's it!
 

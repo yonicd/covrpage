@@ -19,5 +19,5 @@ testthat::test_that("packages are detected", {
 testthat::context("use covrpage")
 
 testthat::test_that("test use_covrpage", {
-  testthat::expect_is(use_covrpage(file = NULL), "character")
+  testthat::expect_is(covrpage:::use_covrpage(file = NULL), "character")
 })

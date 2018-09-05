@@ -1,0 +1,8 @@
+pandoc: 2.2.1
+pkgdown: 1.1.0.9000
+pkgdown_sha: ~
+articles:
+  Continuous_Integration: Continuous_Integration.html
+  Test_Results: Test_Results.html
+  tests_and_coverage: tests_and_coverage.html
+
