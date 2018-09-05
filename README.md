@@ -221,7 +221,7 @@ cache: packages
 
 after_success:
   - Rscript -e 'covr::codecov()'
-  - Rscript -e 'devtools::install(); covrpage::covrpage(update_badge = FALSE,vignette = TRUE)'
+  - Rscript -e 'devtools::install(); covrpage::covrpage_travis()'
   - Rscript -e 'pkgdown::build_site()'
 
 r_github_packages: 
@@ -231,15 +231,12 @@ r_github_packages:
 deploy:
   provider: pages
   skip-cleanup: true
-  github-token: $GITHUB_PAT
+  github-token: $GH_PAT
   keep-history: true
   local-dir: docs
   on:
     branch: master
-    
-env:
-  global:
-    secure: IeWrPb9tC9oxkoceXs4NStZJFIJKtvi/qeErbv3OATeo+BylRwj9xzcmzQrV8ps...
+
 ```
 
 </details>

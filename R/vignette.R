@@ -91,3 +91,26 @@ use_covrpage_vignette <- function(path = '.'){
   }
   
 }
+
+#' @title covrpage for travis
+#' @description wrapper for covrpage call with switches for running
+#' after-success on travis and deploying gh-pages.
+#' @param path character, path to package, Default: getwd()
+#' @return NULL
+#' @examples 
+#' \dontrun{
+#' if(interactive()){
+#'  covrpage_ci()
+#'  }
+#' }
+#' @rdname covrpage_ci
+#' @export 
+covrpage_ci <- function(path = getwd()){
+  
+  covrpage(path         = path,
+           preview      = FALSE,
+           update_badge = FALSE,
+           vignette     = TRUE
+  )
+  
+}
