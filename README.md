@@ -236,6 +236,10 @@ deploy:
   local-dir: docs
   on:
     branch: master
+    
+env:
+  global:
+    secure: IeWrPb9tC9oxkoceXs4NStZJFIJKtvi/qeErbv3OATeo+BylRwj9xzcmzQrV8ps...
 ```
 
 </details>
