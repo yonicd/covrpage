@@ -53,6 +53,12 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
+      <a href="articles/Continuous_Integration.html">Continuous Integration</a>
+    </li>
+    <li>
+      <a href="articles/Test_Results.html">Test Results Indicators</a>
+    </li>
+    <li>
       <a href="articles/tests_and_coverage.html">Tests and Coverage</a>
     </li>
   </ul>
@@ -174,6 +180,10 @@ covrpage::covrpage()
 
 covrpage::covrpage(auto_push = TRUE)
 
+# Copy output as a vignette to use in pkgdown
+
+covrpage::covrpage_snapshot(vignette = TRUE)
+
 # assuming you are not in your package directory
 
 covrpage::covrpage('another_directory')
@@ -215,40 +225,94 @@ covrpage::covrpage_snapshot(repo = 'user/repo')</a></code></pre>
 <div id="travis" class="section level2">
 <h2 class="hasAnchor">
 <a href="#travis" class="anchor"></a>Travis</h2>
-<p><code>{covrpage}</code> can be deployed in Travis much the way <code>{covr::covrall}</code> is deployed. The only difference is that <code>{covrpage}</code> will push back the updated <code>README.md</code> file to the originating repository so it can be updated as part of the custom integration routine.</p>
-<p>The following <code>.travis.yml</code> is needed for the deployment:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode yml"><code class="sourceCode yaml"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="fu">language:</span><span class="at"> R</span></a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="fu">sudo:</span><span class="at"> false</span></a>
-<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="fu">cache:</span><span class="at"> packages</span></a>
-<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="fu">after_success:</span></a>
-<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="kw">-</span> <span class="fu">Rscript -e 'covr:</span><span class="at">:codecov()'</span></a>
-<a class="sourceLine" id="cb4-6" data-line-number="6"><span class="kw">-</span> bash .travis/covrpage.sh</a>
-<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="fu">r_github_packages:</span><span class="at"> yonicd/covrpage</span></a>
-<a class="sourceLine" id="cb4-8" data-line-number="8"><span class="fu">env:</span></a>
-<a class="sourceLine" id="cb4-9" data-line-number="9">  <span class="fu">global:</span></a>
-<a class="sourceLine" id="cb4-10" data-line-number="10">    <span class="fu">secure:</span><span class="at"> </span><span class="kw">[</span>Travis encrypted Github PAT<span class="kw">]</span></a></code></pre></div>
-<p>covrpage adds one new line to the standard <code>{covr}</code> Travis YML:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode yml"><code class="sourceCode yaml"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">-</span> bash .travis/covrpage.sh</a></code></pre></div>
-<p>This file is created when running <code><a href="reference/use_covrpage.html">covrpage::use_covrpage()</a></code> in the <code>.travis</code> subdirectory:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode yml"><code class="sourceCode yaml"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="fu">env:</span></a>
-<a class="sourceLine" id="cb6-2" data-line-number="2">  <span class="fu">global:</span></a>
-<a class="sourceLine" id="cb6-3" data-line-number="3">    <span class="fu">secure:</span><span class="at"> IeWrPb9tC9oxkoceXs4NStZJFIJKtvi/qeErbv3OATeo+BylRwj9xzcmzQrV8ps...</span></a></code></pre></div>
-<p>To allow Travis push back into the originating repository, you will need to give it permission to do so by providing an encrypted <a href="https://github.com/settings/tokens">GitHub Personal Access Token</a> (PAT). This is done using the Travis command line <a href="https://docs.travis-ci.com/user/encryption-keys/">function</a>.</p>
-<p>By default, the function assumes you have defined a system environment variable <code>GITHUB_PAT</code> and will use it to define a <a href="https://docs.travis-ci.com/user/environment-variables/">Travis environment variable</a> as <code>GH_PAT</code>.</p>
-<ul>
-<li>
-<code>R</code> Environment Variable</li>
-</ul>
-<p>To define the Github PAT as an R environment variable:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">Sys.setenv</span>(<span class="dt">GITHUB_PAT=</span><span class="st">'PAT FROM GITHUB'</span>)</a></code></pre></div>
-<ul>
-<li>Travis Environment Variable</li>
-</ul>
-<p>Run the following line in the terminal when you are in the root project directory (where the <code>.git</code> folder in located), the output should be appended directly to the <code>.travis.yml</code> file. Each time you run it a new <code>secure</code> line is added to the yml.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">travis encrypt GH_PAT =<span class="st"> "[PAT FROM GITHUB]"</span> <span class="op">--</span>add</a></code></pre></div>
-<p>These two commands are combined into a utility function:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">covrpage<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/covrpage/topics/tencrypt">tencrypt</a></span>(<span class="dt">r_obj =</span> <span class="kw">Sys.getenv</span>(<span class="st">"GITHUB_PAT"</span>),<span class="dt">travis_env =</span> <span class="st">"GH_PAT"</span>,<span class="dt">add =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
-<p>That’s it!</p>
+<details><summary>Direct</summary>
+
+`{covrpage}` can be deployed in Travis much the way `{covr::covrall}` is deployed. The only difference is that `{covrpage}` will push back the updated `README.md` file to the originating repository so it can be updated as part of the custom integration routine. 
+
+The following `.travis.yml` is needed for the deployment:
+
+```yml
+language: R
+sudo: false
+cache: packages
+after_success:
+- Rscript -e 'covr::codecov()'
+- bash .travis/covrpage.sh
+r_github_packages: yonicd/covrpage
+env:
+  global:
+    secure: [Travis encrypted Github PAT]
+
+```
+
+covrpage adds one new line to the standard `{covr}` Travis YML:
+
+```yml
+- bash .travis/covrpage.sh
+```
+
+This file is created when running `covrpage::use_covrpage()` in the `.travis` subdirectory:
+
+```yml
+env:
+  global:
+    secure: IeWrPb9tC9oxkoceXs4NStZJFIJKtvi/qeErbv3OATeo+BylRwj9xzcmzQrV8ps...
+```
+
+To allow Travis push back into the originating repository, you will need to give it permission to do so by providing an encrypted [GitHub Personal Access Token](https://github.com/settings/tokens) (PAT). This is done using the Travis command line [function](https://docs.travis-ci.com/user/encryption-keys/).
+
+By default, the function assumes you have defined a system environment variable `GITHUB_PAT` and will use it to define a [Travis environment variable](https://docs.travis-ci.com/user/environment-variables/) as `GH_PAT`.
+
+  - `R` Environment Variable
+
+To define the Github PAT as an R environment variable:
+
+```r
+Sys.setenv(GITHUB_PAT='PAT FROM GITHUB')
+```
+
+  - Travis Environment Variable
+
+Run the following line in the terminal when you are in the root project directory (where the `.git` folder in located), the output should be appended directly to the `.travis.yml` file. Each time you run it a new `secure` line is added to the yml.
+
+```r
+travis encrypt GH_PAT = "[PAT FROM GITHUB]" --add
+```
+
+These two commands are combined into a utility function:
+
+```r
+covrpage::tencrypt(r_obj = Sys.getenv("GITHUB_PAT"),travis_env = "GH_PAT",add = TRUE)
+```
+
+</details><details><summary>Deploy + pkgdown</summary>
+
+You can also use [pkgdown](https://www.github.com/r-lib/pkgdown) to create a covrpage readme with Travis. Use the follow travis yml script
+
+```yml
+language: r
+cache: packages
+
+after_success:
+  - Rscript -e 'covr::codecov()'
+  - Rscript -e 'devtools::install(); covrpage::covrpage(update_badge = FALSE,vignette = TRUE)'
+  - Rscript -e 'pkgdown::build_site()'
+
+r_github_packages: 
+  - yonicd/covrpage
+  - r-lib/pkgdown #either put this here or in Suggests in the DESCRIPTION file
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_PAT
+  keep-history: true
+  local-dir: docs
+  on:
+    branch: master
+```
+
+</details><p>That’s it!</p>
 <p>Any questions/comments are always welcome in the <a href="https://github.com/yonicd/covrpage/issues">issues</a> section.</p>
 </div>
 </div>
