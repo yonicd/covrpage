@@ -1,15 +1,15 @@
 r_github_packages: 
-- yonicd/covrpage   
-- r-lib/pkgdown
+  - yonicd/covrpage   
+  - r-lib/pkgdown
 
 after_success:
-- Rscript -e 'covr::codecov()'
-- Rscript -e 'devtools::install(); covrpage::covrpage_ci()'
-- Rscript -e 'pkgdown::build_site()'
+  - Rscript -e 'covr::codecov()'
+  - Rscript -e 'devtools::install(); covrpage::covrpage_ci()'
+  - Rscript -e 'pkgdown::build_site()'
 
 after_failure:
-- Rscript -e 'devtools::install(); covrpage::covrpage_ci()'
-- Rscript -e 'pkgdown::build_site()'
+  - Rscript -e 'devtools::install(); covrpage::covrpage_ci()'
+  - Rscript -e 'pkgdown::build_site()'
 
 deploy:
   provider: pages
