@@ -73,9 +73,9 @@ use_covrpage_vignette <- function(path = '.'){
     message(sprintf('adding %s to Suggests field in %s',paste0(ADD_SUGG,collapse = ', '),fd))
   
     if(!is.na(DESC['Suggests'])){
-      NEW_SUGG <- data.frame(Suggets = c(DESC['Suggests'],ADD_SUGG))
+      NEW_SUGG <- data.frame(Suggests = c(DESC['Suggests'],ADD_SUGG))
     }else{
-      NEW_SUGG <- data.frame(Suggets = ADD_SUGG)
+      NEW_SUGG <- data.frame(Suggests = ADD_SUGG)
     }
   
     write.dcf(x = data.frame(Suggests = NEW_SUGG),file=fd,append = TRUE)
