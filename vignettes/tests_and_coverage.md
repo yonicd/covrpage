@@ -1,6 +1,6 @@
 ---
 title: "Tests and Coverage"
-date: "`r format(Sys.time(), '%d %B, %Y %H:%M:%S')`"
+date: "05 September, 2018 19:58:15"
 output: 
   rmarkdown::html_vignette: 
     keep_md: true
@@ -10,13 +10,7 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
   
-```{r setup, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  eval = FALSE
-)
-```
+
 
 <!--- Placeholder for tests/README.md Do Not Edit--->
 This output is created by

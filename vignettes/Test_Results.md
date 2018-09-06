@@ -1,7 +1,7 @@
 ---
 title: "Test Results Indicators"
 author: "Jonathan Sidi"
-date: "`r Sys.Date()`"
+date: "2018-09-05"
 output: 
   rmarkdown::html_vignette: 
     keep_md: true
@@ -11,13 +11,7 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r setup, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  eval = FALSE
-)
-```
+
 
 ## Badge
 
