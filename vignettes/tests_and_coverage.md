@@ -1,6 +1,6 @@
 ---
 title: "Tests and Coverage"
-date: "05 September, 2018 19:58:15"
+date: "06 September, 2018 13:37:10"
 output: 
   rmarkdown::html_vignette: 
     keep_md: true

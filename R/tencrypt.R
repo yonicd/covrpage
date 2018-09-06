@@ -21,7 +21,7 @@ tencrypt <- function(r_obj = Sys.getenv("GITHUB_PAT"),
   }
 
   s <- sprintf(
-    "travis encrypt %s = '%s' %s",
+    "travis encrypt %s = %s %s",
     travis_env,
     r_obj,
     add_str
