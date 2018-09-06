@@ -1,0 +1,8 @@
+Add to .travs.yml 
+
+  r_github_packages: 
+  - yonicd/covrpage
+  
+  {{success}}
+  {{failure}}
+  {{deploy_ghpages}}

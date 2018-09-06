@@ -4,13 +4,21 @@
 \alias{use_covrpage}
 \title{Add covrpage to Travis CI for a git directory}
 \usage{
-use_covrpage(file = ".travis/covrpage.sh", gh_user = gsub("@(.*?)$", "",
+use_covrpage(file = ".travis/covrpage.sh", travis_type = c("bash",
+  "pkgdown"), travis_blocks = c("after_success", "after_failure",
+  "deploy_ghpages"), gh_user = gsub("@(.*?)$", "",
   system("git config user.email", intern = TRUE)), push_branch = "test",
   repo = system("git config travis.slug", intern = TRUE),
   deploy_branch = system("git rev-parse --abbrev-ref HEAD", intern = TRUE))
 }
 \arguments{
 \item{file}{character, file path to save bash script to, Default: '.travis/covrpage.sh'}
+
+\item{travis_type}{character, build .travis.yml template for bash or pkgdown deployment, 
+Default: c('bash','pkgdown')}
+
+\item{travis_blocks}{character, vector that defines what .travis.yml blocks tocreate, 
+Default: c('after_success','after_failure','deploy_ghpages')}
 
 \item{gh_user}{character, Github user name,
 Default: gsub("@(.*?)$", "", system("git config user.email", intern = TRUE))}
@@ -24,4 +32,16 @@ Default: system("git rev-parse --abbrev-ref HEAD", intern = TRUE) (usually 'mast
 }
 \description{
 Adds bash file to execute after Travis test is successfully completed.
+}
+\examples{
+
+use_covrpage(travis_type = 'bash',file=file.path(tempdir(),'myfile.sh'))
+
+#does not write to disk
+use_covrpage(travis_type = 'bash',file=NULL)
+
+use_covrpage(travis_type = 'pkgdown') 
+use_covrpage(travis_type = 'pkgdown',travis_block = 'after_success')
+use_covrpage(travis_type = 'pkgdown',travis_block = 'after_failure')
+use_covrpage(travis_type = 'pkgdown',travis_block = c('after_success','after_failure'))
 }

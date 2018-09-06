@@ -1,0 +1,3 @@
+  after_sucess: 
+  - Rscript -e 'covr::codecov()'
+  - bash {{file}}

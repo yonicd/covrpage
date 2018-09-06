@@ -1,6 +1,21 @@
-language: r
-cache: packages
+r_github_packages: 
+- yonicd/covrpage   
+- r-lib/pkgdown
 
 after_success:
-  - Rscript -e 'covr::codecov()'
-  - bash .travis/covrpage.sh
+- Rscript -e 'covr::codecov()'
+- Rscript -e 'devtools::install(); covrpage::covrpage_ci()'
+- Rscript -e 'pkgdown::build_site()'
+
+after_failure:
+- Rscript -e 'devtools::install(); covrpage::covrpage_ci()'
+- Rscript -e 'pkgdown::build_site()'
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GH_PAT
+  keep-history: true
+  local-dir: docs
+  on:
+    branch: master

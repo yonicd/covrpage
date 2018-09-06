@@ -1,0 +1,2 @@
+  after_failure:
+  - bash {{file}}
