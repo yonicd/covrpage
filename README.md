@@ -49,8 +49,10 @@ covrpage::covrpage('another_directory')
 covrpage::covrpage_snapshot(repo = 'user/repo')
 ```
 
-  - [Test Results](http://tinyurl.com/ycqn68xx)
-  - [Continuous Integration](http://tinyurl.com/ydcvy5kp)
+## Articles
+
+  - [Test Results](https://yonicd.github.io/covrpage/articles/Test_Results.html)
+  - [Continuous Integration](https://yonicd.github.io/covrpage/articles/Continuous_Integration.html)
 
 
 That's it!
