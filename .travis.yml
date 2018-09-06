@@ -1,24 +1,23 @@
 language: r
 cache: packages
-
-r_github_packages: 
-  - yonicd/covrpage   
-  - r-lib/pkgdown
-
+r_github_packages:
+- yonicd/covrpage
+- r-lib/pkgdown
 after_success:
-  - Rscript -e 'covr::codecov()'
-  - Rscript -e 'devtools::install(); covrpage::covrpage_ci()'
-  - Rscript -e 'pkgdown::build_site()'
-
+- Rscript -e 'covr::codecov()'
+- Rscript -e 'devtools::install(); covrpage::covrpage_ci()'
+- Rscript -e 'pkgdown::build_site()'
 after_failure:
-  - Rscript -e 'devtools::install(); covrpage::covrpage_ci()'
-  - Rscript -e 'pkgdown::build_site()'
-
+- Rscript -e 'devtools::install(); covrpage::covrpage_ci()'
+- Rscript -e 'pkgdown::build_site()'
 deploy:
   provider: pages
   skip-cleanup: true
-  github-token: $GH_PAT
+  github-token: "$GH_KEY"
   keep-history: true
   local-dir: docs
   on:
     branch: master
+env:
+  global:
+    secure: QhwYlD1p3Tw7ZLzUfmuknQ0tZPePzyPgrAkc2oMwhwg/7AIVDfmPr1DU7wNhxN2pWUyPZ9HshsbSQzyOelJR72KJeeTDD4tkgqcMA8zbIDeBM2hJQ2PFcPoDZpa1agHQnhaM6FiiabjSTBDDc93NZCP1yuDrhvQkYJ0ErU3fUfMHECOzPfxHmOfENW1rYZ3mfpVrI7ICfBxotl59+GqF+OjPukYQUGnhEe3EpBuCvIQ2WvmnwCwCx3YTDBT5hnAIeK4bXmqr82xhDhyoGPzLlvFFYbZs73McG6FON8iTd5tgDqFWgM988fkhvnvcQ+5ruY8/v7TBjzUYxGoyf3gZPNO3IPZrJdiVP5LeWxL/OTk6Nmj98RFKbmpJz47R+ZgCY9chJZSbCZjEmaYAjcdRIVVOphbJ593Xe6dc03fsAQD4Ha5gyCuPnRw+NowFXNrA5YaHVJVeHXYLGtoYD2+Q2soJ24+RWtyiEjrqKbib55ahb3wLvHsBS7fUEz1r9voMoPeKGeVd5C1AOiPGGtDgvw83jcbZRxmfnZXI1N9PJYHuDoyhIvcjR5O+qMy6ul2w7XkQK4Z/8/4mEqp/9i9h4seBNle7rC1VhI2kgyJOxTKcgwCsJ4r3uV+HX4uOd8hdelGtqPz0om0XHWZ0ezvv/YiM6cGAYB0diuKm36KpMIY=
