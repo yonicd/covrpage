@@ -49,8 +49,8 @@ covrpage::covrpage('another_directory')
 covrpage::covrpage_snapshot(repo = 'user/repo')
 ```
 
-  - [Test Results](vignettes/Test_Results.md)
-  - [Continuous Integration](vignettes/Continuous_Integration.md)
+  - [Test Results](http://tinyurl.com/ycqn68xx)
+  - [Continuous Integration](http://tinyurl.com/ydcvy5kp)
 
 
 That's it!

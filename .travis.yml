@@ -6,6 +6,10 @@ after_success:
   - Rscript -e 'devtools::install(); covrpage::covrpage_ci()'
   - Rscript -e 'pkgdown::build_site()'
 
+after_failure:
+  - Rscript -e 'devtools::install(); covrpage::covrpage_ci()'
+  - Rscript -e 'pkgdown::build_site()'
+
 r_github_packages:
   - r-lib/pkgdown
   
