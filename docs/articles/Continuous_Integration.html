@@ -29,7 +29,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covrpage</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.0.53</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.0.55</span>
       </span>
     </div>
 
@@ -85,7 +85,7 @@
       <h1>Continuous Integration</h1>
                         <h4 class="author">Jonathan Sidi</h4>
             
-            <h4 class="date">2018-09-05</h4>
+            <h4 class="date">2018-09-12</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/yonicd/covrpage/blob/master/vignettes/Continuous_Integration.Rmd"><code>vignettes/Continuous_Integration.Rmd</code></a></small>
       <div class="hidden name"><code>Continuous_Integration.Rmd</code></div>
@@ -130,7 +130,7 @@
 <li>Travis Environment Variable</li>
 </ul>
 <p>Run the following line in the terminal when you are in the root project directory (where the <code>.git</code> folder in located), the output should be appended directly to the <code>.travis.yml</code> file. Each time you run it a new <code>secure</code> line is added to the yml.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="ex">travis</span> encrypt GH_PAT = <span class="st">"[PAT FROM GITHUB]"</span> --add</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">travis encrypt GH_PAT =<span class="st"> "[PAT FROM GITHUB]"</span> <span class="op">--</span>add</a></code></pre></div>
 <p>These two commands are combined into a utility function:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">covrpage<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/covrpage/topics/tencrypt">tencrypt</a></span>(<span class="dt">r_obj =</span> <span class="kw">Sys.getenv</span>(<span class="st">"GITHUB_PAT"</span>),<span class="dt">travis_env =</span> <span class="st">"GH_PAT"</span>,<span class="dt">add =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 </div>
@@ -143,7 +143,7 @@
 <a class="sourceLine" id="cb7-3" data-line-number="3"></a>
 <a class="sourceLine" id="cb7-4" data-line-number="4"><span class="fu">after_success:</span></a>
 <a class="sourceLine" id="cb7-5" data-line-number="5">  <span class="kw">-</span> <span class="fu">Rscript -e 'covr:</span><span class="at">:codecov()'</span></a>
-<a class="sourceLine" id="cb7-6" data-line-number="6">  <span class="kw">-</span> <span class="fu">Rscript -e 'devtools:</span><span class="at">:install(); covrpage::covrpage(update_badge = FALSE,vignette = TRUE)'</span></a>
+<a class="sourceLine" id="cb7-6" data-line-number="6">  <span class="kw">-</span> <span class="fu">Rscript -e 'devtools:</span><span class="at">:install(); covrpage::covrpage_travis()'</span></a>
 <a class="sourceLine" id="cb7-7" data-line-number="7">  <span class="kw">-</span> <span class="fu">Rscript -e 'pkgdown:</span><span class="at">:build_site()'</span></a>
 <a class="sourceLine" id="cb7-8" data-line-number="8"></a>
 <a class="sourceLine" id="cb7-9" data-line-number="9"><span class="fu">r_github_packages:</span><span class="at"> </span></a>
@@ -153,7 +153,7 @@
 <a class="sourceLine" id="cb7-13" data-line-number="13"><span class="fu">deploy:</span></a>
 <a class="sourceLine" id="cb7-14" data-line-number="14">  <span class="fu">provider:</span><span class="at"> pages</span></a>
 <a class="sourceLine" id="cb7-15" data-line-number="15">  <span class="fu">skip-cleanup:</span><span class="at"> true</span></a>
-<a class="sourceLine" id="cb7-16" data-line-number="16">  <span class="fu">github-token:</span><span class="at"> $GITHUB_PAT</span></a>
+<a class="sourceLine" id="cb7-16" data-line-number="16">  <span class="fu">github-token:</span><span class="at"> $GH_PAT</span></a>
 <a class="sourceLine" id="cb7-17" data-line-number="17">  <span class="fu">keep-history:</span><span class="at"> true</span></a>
 <a class="sourceLine" id="cb7-18" data-line-number="18">  <span class="fu">local-dir:</span><span class="at"> docs</span></a>
 <a class="sourceLine" id="cb7-19" data-line-number="19">  <span class="fu">on:</span></a>
