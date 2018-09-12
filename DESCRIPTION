@@ -15,4 +15,3 @@ Imports: utils,git2r,rmarkdown,covr,stats,magrittr,testthat,curl,whisker
 RoxygenNote: 6.0.1
 Suggests: knitr
 VignetteBuilder: knitr
-HexURL: https://github.com/yonicd/covrpage/blob/master/inst/logo/covrpage.png?raw=true

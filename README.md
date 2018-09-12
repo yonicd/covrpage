@@ -2,7 +2,7 @@
 [![Coverage Status](https://img.shields.io/codecov/c/github/yonicd/covrpage/master.svg)](https://codecov.io/github/yonicd/covrpage?branch=master)
 [![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2018_09_05-brightgreen.svg)](http://tinyurl.com/y965gzrq)
 
-# {covrpage}
+# {covrpage} <img src="https://github.com/yonicd/covrpage/blob/master/inst/logo/covrpage_small.png?raw=true" align="right" />
 
 Healthy R packages use [testthat](https://github.com/r-lib/testthat) and [covr](https://github.com/r-lib/covr) to develop stable packages. 
 
