@@ -15,7 +15,7 @@ library(magrittr , warn.conflicts = FALSE , quietly = TRUE)
 ```{r tests, include=FALSE}
 #test_x <- testthat::test_dir('testthat')
 this_pkg <- basename(normalizePath('..'))
-test_x <- testthat::test_check(this_pkg,reporter = default_reporter(),stop_on_failure = FALSE,stop_on_warning = FALSE)
+test_x <- testthat::test_check(this_pkg,reporter = testthat::default_reporter(),stop_on_failure = FALSE,stop_on_warning = FALSE)
 test_m <- covrpage::map_testthat('testthat')
 ```
 
