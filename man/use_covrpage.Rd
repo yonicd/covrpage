@@ -9,7 +9,8 @@ use_covrpage(file = ".travis/covrpage.sh", travis_type = c("bash",
   "deploy_ghpages"), gh_user = gsub("@(.*?)$", "",
   system("git config user.email", intern = TRUE)), push_branch = "test",
   repo = system("git config travis.slug", intern = TRUE),
-  deploy_branch = system("git rev-parse --abbrev-ref HEAD", intern = TRUE))
+  deploy_branch = system("git rev-parse --abbrev-ref HEAD", intern =
+  TRUE))
 }
 \arguments{
 \item{file}{character, file path to save bash script to, Default: '.travis/covrpage.sh'}

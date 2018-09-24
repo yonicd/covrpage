@@ -1,6 +1,7 @@
 [![Travis-CI Build Status](https://travis-ci.org/yonicd/covrpage.svg?branch=master)](https://travis-ci.org/yonicd/covrpage)
 [![Coverage Status](https://img.shields.io/codecov/c/github/yonicd/covrpage/master.svg)](https://codecov.io/github/yonicd/covrpage?branch=master)
-[![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2018_09_05-brightgreen.svg)](http://tinyurl.com/y7qge5ta)
+[![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2018_09_17-brightgreen.svg)](http://tinyurl.com/y7qge5ta)
+
 
 # {covrpage} <img src="https://github.com/yonicd/covrpage/blob/master/inst/logo/covrpage_small.png?raw=true" align="right" />
 
@@ -16,6 +17,7 @@ The output is created in the [tests](tests) subdirectory as a [README.md](tests/
   - [{remedy}](https://github.com/thinkr-open/remedy/tree/master/tests)
   - [{mathpix}](https://github.com/jonocarroll/mathpix/tree/master/tests)
   - [{carbonate}](https://github.com/yonicd/carbonate/tree/master/tests)
+  - [{GSEAdv}](https://github.com/llrs/GSEAdv)
 
 ## Package Installation
 
@@ -49,7 +51,11 @@ covrpage::covrpage('another_directory')
 covrpage::covrpage_snapshot(repo = 'user/repo')
 ```
 
-## Articles
+### Vignette
+
+covrpage can be outputed as a vignette called `Tests and Coverage` making it part of the package help documentation and can be viewed as an [article](https://yonicd.github.io/covrpage/articles/tests_and_coverage.html) in a [{pkgdown}](https://github.com/r-lib/pkgdown) site.
+
+### Articles
 
   - [Test Results](https://yonicd.github.io/covrpage/articles/Test_Results.html)
   - [Continuous Integration](https://yonicd.github.io/covrpage/articles/Continuous_Integration.html)
