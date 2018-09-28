@@ -75,28 +75,50 @@ check_badge <- function(){
 #' @description Create covrpage badge for test status and date that is connected to
 #' the README.md created in the tests directory.
 #' @param remote_origin character, username/repo of the remote origin, Default: NULL
-#' @param active_branch characer, current active git branch, Default: NULL
+#' @param active_branch character, current active git branch, Default: NULL
+#' @param tinyurl boolean, convert badge uri to tinyurl link, Default: TRUE
 #' @return character
 #' @details if either inputs are NULL then the .git file is inspected to gather the 
 #' information
 #' @rdname make_badge
 #' @export 
 
-make_badge <- function(remote_origin = NULL, active_branch = NULL){
+make_badge <- function(remote_origin = NULL, active_branch = NULL, tinyurl = TRUE){
   
- if(is.null(active_branch))
-  active_branch <- system('git rev-parse --abbrev-ref HEAD',intern = TRUE)
+  uri <- get_uri(remote_origin,active_branch)  
+  
+  uri <- sprintf('%s/tests/README.md',uri)
+  
+ if(tinyurl)
+   uri <- tiny(uri)
 
- if(is.null(remote_origin)){
-   remote_origin <- system('git config --get remote.origin.url',intern = TRUE)
+  prefix <- '[![Covrpage Summary](https://img.shields.io/badge/covrpage-Initialized-orange.svg)]'
    
-   remote_origin <- gsub('^(.*?)\\.com(:|/)|\\.git$', '', remote_origin) 
- }
+  sprintf('%s(%s)', prefix, uri)
+}
 
- uri <- sprintf('https://github.com/%s/tree/%s/tests/README.md',remote_origin,active_branch)
+get_remote_origin <- function(){
+  
+  remote_origin <- system('git config --get remote.origin.url',intern = TRUE)
+  
+  remote_origin <- gsub('^(https://|git@)|\\.git$','',remote_origin)
+  
+  endpoint <- gsub('(:|/)(.*?)$','',remote_origin)
+  
+  sprintf('https://%s/%s',endpoint,gsub('^(/|:)','',gsub(endpoint, '', remote_origin)))
+  
+}
 
- sprintf('[![Covrpage Summary](https://img.shields.io/badge/covrpage-Initialized-orange.svg)](%s)',
-         tiny(uri))
+get_uri <- function(remote_origin = NULL, active_branch = NULL){
+  
+  if(is.null(active_branch))
+    active_branch <- system('git rev-parse --abbrev-ref HEAD',intern = TRUE)
+  
+  if(is.null(remote_origin)){
+    remote_origin <- get_remote_origin()
+  }
+  
+  sprintf('%s/tree/%s',remote_origin,active_branch)
 }
 
 # is_git <- function(){

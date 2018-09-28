@@ -6,8 +6,15 @@ covrpage_vignette <- function(path = '.'){
   
   file.copy(system.file('covrpage_vignette.Rmd',package = 'covrpage'),to = tf)
   
+  LINES <- readLines('tests/README.md')[-c(1:4)]
+
+  this_uri <- get_uri()
+    
+  LINES <- gsub('testthat/',sprintf('%s/tests/testthat/',this_uri),LINES)
+  LINES <- gsub('../R',sprintf('%s/R',this_uri),LINES)
+  
   cat(
-    readLines('tests/README.md')[-c(1:4)],
+    LINES,
     file = tf,
     sep = '\n',append = TRUE
   )
