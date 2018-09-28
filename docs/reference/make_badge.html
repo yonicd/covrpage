@@ -128,7 +128,8 @@ the README.md created in the tests directory.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>make_badge</span>(<span class='kw'>remote_origin</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>active_branch</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>make_badge</span>(<span class='kw'>remote_origin</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>active_branch</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>tinyurl</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -139,7 +140,11 @@ the README.md created in the tests directory.</p>
     </tr>
     <tr>
       <th>active_branch</th>
-      <td><p>characer, current active git branch, Default: NULL</p></td>
+      <td><p>character, current active git branch, Default: NULL</p></td>
+    </tr>
+    <tr>
+      <th>tinyurl</th>
+      <td><p>boolean, convert badge uri to tinyurl link, Default: TRUE</p></td>
     </tr>
     </table>
     

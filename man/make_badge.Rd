@@ -4,12 +4,15 @@
 \alias{make_badge}
 \title{Create covrpage Badge}
 \usage{
-make_badge(remote_origin = NULL, active_branch = NULL)
+make_badge(remote_origin = NULL, active_branch = NULL,
+  tinyurl = TRUE)
 }
 \arguments{
 \item{remote_origin}{character, username/repo of the remote origin, Default: NULL}
 
-\item{active_branch}{characer, current active git branch, Default: NULL}
+\item{active_branch}{character, current active git branch, Default: NULL}
+
+\item{tinyurl}{boolean, convert badge uri to tinyurl link, Default: TRUE}
 }
 \value{
 character
