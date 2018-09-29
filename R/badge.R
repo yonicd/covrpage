@@ -14,6 +14,10 @@ badge_covrpage <- function(status = 'pass'){
 
 test_to_badge <-function(obj){
   
+  if(is.null(obj)){
+    return('skipped')
+  }
+  
   x <- apply(obj[,c('error','failed','skipped','warning')],2,sum)>0
   
   status <- 'pass'

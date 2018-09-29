@@ -28,6 +28,10 @@ sum_func <- function(x) {
 }
 
 testthat_sum_short <- function(x) {
+  
+  if(length(x)==0)
+    return(NULL)
+  
   x1 <- data.frame(x, stringsAsFactors = FALSE)
 
   x1 <- x1[, c("file", "nb", "real", "failed", "skipped", "error", "warning")]
@@ -41,6 +45,10 @@ testthat_sum_short <- function(x) {
 }
 
 testthat_sum_long <- function(x) {
+  
+  if(length(x)==0)
+    return(NULL)
+  
   x1 <- data.frame(x, stringsAsFactors = FALSE)
 
   for (i in seq(1:ncol(x1)))
