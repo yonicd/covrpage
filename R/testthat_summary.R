@@ -65,19 +65,19 @@ testthat_sum_long <- function(x) {
       x1$status[i] <- "PASS"
     }
 
-    if (x1$failed[i] == 1) {
+    if (x1$failed[i] != 0) {
       x1$status[i] <- "FAILED"
     }
 
-    if (x1$error[i] == 1) {
+    if (x1$error[i] != 0) {
       x1$status[i] <- "ERROR"
     }
 
-    if (x1$skipped[i] == 1) {
+    if (x1$skipped[i] != 0) {
       x1$status[i] <- "SKIPPED"
     }
 
-    if (x1$warning[i] == 1) {
+    if (x1$warning[i] != 0) {
       x1$status[i] <- "WARNING"
     }
   }
