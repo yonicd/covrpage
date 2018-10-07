@@ -96,7 +96,6 @@ testthat_sum_long <- function(x) {
   ret
 }
 
-
 enfram <- function(x,name = 'name',value = 'value'){
   nm <- names(x)
   names(x) <- NULL
@@ -125,7 +124,6 @@ sinfo <- function(){
   list(info = sinfo, pkgs = pkgs)
     
 }
-
 
 #' @title Re-export magrittr pipe operators
 #' @description magrittr pipe operators

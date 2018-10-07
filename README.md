@@ -1,6 +1,6 @@
 [![Travis-CI Build Status](https://travis-ci.org/yonicd/covrpage.svg?branch=master)](https://travis-ci.org/yonicd/covrpage)
 [![Coverage Status](https://img.shields.io/codecov/c/github/yonicd/covrpage/master.svg)](https://codecov.io/github/yonicd/covrpage?branch=master)
-[![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2018_10_04-brightgreen.svg)](http://tinyurl.com/y7qge5ta)
+[![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2018_10_07-brightgreen.svg)](http://tinyurl.com/y7qge5ta)
 
 
 # {covrpage} <img src="https://github.com/yonicd/covrpage/blob/master/inst/logo/covrpage_small.png?raw=true" align="right" />
