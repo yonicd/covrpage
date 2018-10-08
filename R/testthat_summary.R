@@ -41,7 +41,18 @@ testthat_sum_short <- function(x) {
   for (i in names(x1)[-1])
     x1[[i]] <- as.numeric(x1[[i]])
 
-  do.call("rbind", lapply(split(x1, x1$file), sum_func))
+  ret <- do.call("rbind", lapply(split(x1, x1$file), sum_func))
+  
+  fail_idx <- ret$failed>0
+  
+  if(any(fail_idx)){
+    ret$file[fail_idx] <- gsub('^\\[','[\U0001f534',ret$file[fail_idx])  
+  }
+  
+  rownames(ret) <- NULL
+  
+  ret
+  
 }
 
 testthat_sum_long <- function(x) {
@@ -93,7 +104,14 @@ testthat_sum_long <- function(x) {
 
   ret$file <- sprintf("[%s](testthat/%s#%s)", ret$file, ret$file, lines)
 
+  fail_idx <- ret$status=='FAILED'
+  
+  if(any(fail_idx)){
+    ret$file[fail_idx] <- gsub('^\\[','[\U0001f534',ret$file[fail_idx])  
+  }
+  
   ret
+  
 }
 
 enfram <- function(x,name = 'name',value = 'value'){

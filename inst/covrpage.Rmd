@@ -59,16 +59,16 @@ Coverage summary is created using the [covr](https://github.com/r-lib/covr) pack
 cvr <- covrpage::coverage_skip(test_path = '../tests/testthat', test_skip = test_skip)
 ```
 
+```{r,echo=FALSE,eval=failed}
+cat('\U0001f534 Tests Failed\n  Coverage statistics are approximations of the non-failing tests.\n  Use with caution\n\n For further investigation check in testthat summary tables.')
+```
+
 ```{r,echo=FALSE}
 cvr%>%
   covrpage::covr_summary(failed = failed)%>%
   knitr::kable(digits = 2,
              col.names = c('Object','Coverage (%)'),align = c('l','c'))
 
-```
-
-```{r,echo=FALSE,eval=failed}
-cat('\U0001f534 Tests Failed\n  Coverage statistics are approximations of the non-failing tests.\n  Use with caution')
 ```
 
 <br>
