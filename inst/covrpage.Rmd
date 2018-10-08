@@ -102,6 +102,11 @@ test_x_long%>%
 
 ```
 
+```{r,echo=FALSE}
+if(names(test_x_long)[1]=='icon')
+  knitr::kable(t(c('Failed' = covrpage:::emos[['FAILED']],'Warning' = covrpage:::emos[['WARNING']], 'Skipped' = covrpage:::emos[['SKIPPED']])))
+```
+
 </details>
 
 <details>
@@ -120,6 +125,5 @@ x$pkgs%>%
 ```
 
 </details>
-
 
 `r sprintf('<!--- Final Status : %s --->', test_to_badge(test_x_short))`

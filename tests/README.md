@@ -1,6 +1,6 @@
 Tests and Coverage
 ================
-08 October, 2018 10:53:52
+08 October, 2018 12:42:19
 
 This output is created by
 [covrpage](https://github.com/yonicd/covrpage).
@@ -35,8 +35,8 @@ package.
 
 | file                                               | n |  time | error | failed | skipped | warning |
 | :------------------------------------------------- | -: | ----: | ----: | -----: | ------: | ------: |
-| [test-check\_utils.R](testthat/test-check_utils.R) | 5 | 0.087 |     0 |      0 |       0 |       0 |
-| [test-covrfuns.R](testthat/test-covrfuns.R)        | 6 | 0.051 |     0 |      0 |       0 |       0 |
+| [test-check\_utils.R](testthat/test-check_utils.R) | 5 | 0.095 |     0 |      0 |       0 |       0 |
+| [test-covrfuns.R](testthat/test-covrfuns.R)        | 6 | 0.074 |     0 |      0 |       0 |       0 |
 
 <details closed>
 
@@ -45,15 +45,15 @@ package.
 
 | file                                                   | context                    | test                           | status | n |  time |
 | :----------------------------------------------------- | :------------------------- | :----------------------------- | :----- | -: | ----: |
-| [test-check\_utils.R](testthat/test-check_utils.R#L4)  | check for tests            | tests are detected             | PASS   | 1 | 0.016 |
-| [test-check\_utils.R](testthat/test-check_utils.R#L12) | check for packages         | packages are detected          | PASS   | 3 | 0.026 |
-| [test-check\_utils.R](testthat/test-check_utils.R#L22) | use covrpage               | test use\_covrpage             | PASS   | 1 | 0.045 |
-| [test-covrfuns.R](testthat/test-covrfuns.R#L5)         | check summary covr         | covr\_summary: standard input  | PASS   | 1 | 0.026 |
+| [test-check\_utils.R](testthat/test-check_utils.R#L4)  | check for tests            | tests are detected             | PASS   | 1 | 0.015 |
+| [test-check\_utils.R](testthat/test-check_utils.R#L12) | check for packages         | packages are detected          | PASS   | 3 | 0.023 |
+| [test-check\_utils.R](testthat/test-check_utils.R#L22) | use covrpage               | test use\_covrpage             | PASS   | 1 | 0.057 |
+| [test-covrfuns.R](testthat/test-covrfuns.R#L5)         | check summary covr         | covr\_summary: standard input  | PASS   | 1 | 0.044 |
 | [test-covrfuns.R](testthat/test-covrfuns.R#L9_L11)     | check summary covr         | covr\_summary: empty input     | PASS   | 1 | 0.001 |
-| [test-covrfuns.R](testthat/test-covrfuns.R#L19)        | check summary output types | with data: short               | PASS   | 1 | 0.014 |
+| [test-covrfuns.R](testthat/test-covrfuns.R#L19)        | check summary output types | with data: short               | PASS   | 1 | 0.018 |
 | [test-covrfuns.R](testthat/test-covrfuns.R#L23)        | check summary output types | with data: long                | PASS   | 1 | 0.009 |
 | [test-covrfuns.R](testthat/test-covrfuns.R#L27)        | check summary output types | with data: no data             | PASS   | 1 | 0.001 |
-| [test-covrfuns.R](testthat/test-covrfuns.R#L35)        | check covr to df           | covr object to df: empty input | PASS   | 1 | 0.000 |
+| [test-covrfuns.R](testthat/test-covrfuns.R#L35)        | check covr to df           | covr object to df: empty input | PASS   | 1 | 0.001 |
 
 </details>
 
