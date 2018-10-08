@@ -17,7 +17,9 @@ The output is created in the [tests](tests) subdirectory as a [README.md](tests/
   - [{remedy}](https://github.com/thinkr-open/remedy/tree/master/tests)
   - [{mathpix}](https://github.com/jonocarroll/mathpix/tree/master/tests)
   - [{carbonate}](https://github.com/yonicd/carbonate/tree/master/tests)
-  - [{GSEAdv}](https://github.com/llrs/GSEAdv)
+  - [{GSEAdv}](https://github.com/llrs/GSEAdv/tree/master/tests)
+  - [{rfm}](https://github.com/rsquaredacademy/rfm/tree/master/tests)
+  - [{ggstatsplot}](https://github.com/IndrajeetPatil/ggstatsplot/tree/master/tests)
 
 ## Package Installation
 
