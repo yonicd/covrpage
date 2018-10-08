@@ -41,7 +41,16 @@ testthat_sum_short <- function(x) {
   for (i in names(x1)[-1])
     x1[[i]] <- as.numeric(x1[[i]])
 
-  do.call("rbind", lapply(split(x1, x1$file), sum_func))
+  ret <- do.call("rbind", lapply(split(x1, x1$file), sum_func))
+  
+  ret <- emo_result(ret,'FAILED', type='short')
+  ret <- emo_result(ret,'SKIPPED',type='short')
+  ret <- emo_result(ret,'WARNING',type='short')
+  
+  rownames(ret) <- NULL
+
+  ret
+  
 }
 
 testthat_sum_long <- function(x) {
@@ -93,9 +102,38 @@ testthat_sum_long <- function(x) {
 
   ret$file <- sprintf("[%s](testthat/%s#%s)", ret$file, ret$file, lines)
 
+  ret <- emo_result(ret,'FAILED',type='long')
+  ret <- emo_result(ret,'SKIPPED',type='long')
+  ret <- emo_result(ret,'WARNING',type='long')
+
   ret
+  
 }
 
+emo_result <- function(dat,status,type = 'short'){
+  
+  if(type=='short'){
+    idx <- dat[[tolower(status)]]>0
+  }
+  
+  if(type=='long'){
+    idx <- dat$status==status
+  }
+    
+  if(any(idx)){
+      
+    if(!'icon'%in%names(dat)){
+      dat[['icon']] <- ''
+      n <- ncol(dat)
+      dat <- dat[,c(n,1:(n-1))]
+    }
+      
+    dat$icon[idx] <- emos[[status]]
+  }
+  
+  dat
+  
+}
 
 enfram <- function(x,name = 'name',value = 'value'){
   nm <- names(x)
@@ -125,6 +163,7 @@ sinfo <- function(){
   list(info = sinfo, pkgs = pkgs)
     
 }
+
 
 
 #' @title Re-export magrittr pipe operators

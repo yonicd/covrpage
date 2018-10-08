@@ -4,10 +4,12 @@
 \alias{covr_summary}
 \title{Summary outputs for covr object}
 \usage{
-covr_summary(x)
+covr_summary(x, failed = FALSE)
 }
 \arguments{
 \item{x}{covr object}
+
+\item{failed}{flag for failed test, Default: FALSE}
 }
 \value{
 data.frame

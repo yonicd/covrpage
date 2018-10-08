@@ -52,12 +52,14 @@ covr_print_to_df <- function(x, group = c("filename", "functions"), by = "line")
 #' @description Creates a summary data.frame for covr object output that
 #' mimics the console print method of \code{\link[covr]{package_coverage}}
 #' @param x covr object
+#' @param failed flag for failed test, Default: FALSE
 #' @return data.frame
 #' @seealso
 #'  \code{\link[covr]{package_coverage}}
 #' @rdname covr_summary
 #' @export
-covr_summary <- function(x) {
+covr_summary <- function(x,failed = FALSE) {
+  
   ret <- covr_print_to_df(x)
 
   ret$name <- ifelse(grepl("^R/", ret$name),
