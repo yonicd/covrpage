@@ -110,17 +110,6 @@ testthat_sum_long <- function(x) {
   
 }
 
-emos <- function(name){
-
-  switch (name,
-          'SKIPPED' = '\U0001f536', # 'large orange diamond'
-          'FAILED'  = '\U0001f6d1', # 'stop sign',
-          'ERROR'   = '\U0001f6d1', # 'stop sign'
-          'WARNING' = '\u26a0️' ,    # 'warning sign'
-  )
-  
-}
-
 emo_result <- function(dat,status,type = 'short'){
   
   if(type=='short'){
@@ -139,7 +128,7 @@ emo_result <- function(dat,status,type = 'short'){
       dat <- dat[,c(n,1:(n-1))]
     }
       
-    dat$icon[idx] <- emos(status)
+    dat$icon[idx] <- emos[[status]]
   }
   
   dat

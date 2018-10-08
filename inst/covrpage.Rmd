@@ -60,7 +60,7 @@ cvr <- covrpage::coverage_skip(test_path = '../tests/testthat', test_skip = test
 ```
 
 ```{r,echo=FALSE,eval=failed}
-cat(sprintf('%s Tests Failed\n  Coverage statistics are approximations of the non-failing tests.\n  Use with caution\n\n For further investigation check in testthat summary tables.',covrpage:::emos('WARNING')))
+cat(sprintf('%s Tests Failed\n  Coverage statistics are approximations of the non-failing tests.\n  Use with caution\n\n For further investigation check in testthat summary tables.',covrpage:::emos[['WARNING']]))
 ```
 
 ```{r,echo=FALSE}
