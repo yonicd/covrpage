@@ -43,14 +43,12 @@ testthat_sum_short <- function(x) {
 
   ret <- do.call("rbind", lapply(split(x1, x1$file), sum_func))
   
-  fail_idx <- ret$failed>0
-  
-  if(any(fail_idx)){
-    ret$file[fail_idx] <- gsub('^\\[','[\U0001f534',ret$file[fail_idx])  
-  }
+  ret <- emo_result(ret,'FAILED', type='short')
+  ret <- emo_result(ret,'SKIPPED',type='short')
+  ret <- emo_result(ret,'WARNING',type='short')
   
   rownames(ret) <- NULL
-  
+
   ret
   
 }
@@ -104,13 +102,47 @@ testthat_sum_long <- function(x) {
 
   ret$file <- sprintf("[%s](testthat/%s#%s)", ret$file, ret$file, lines)
 
-  fail_idx <- ret$status=='FAILED'
+  ret <- emo_result(ret,'FAILED',type='long')
+  ret <- emo_result(ret,'SKIPPED',type='long')
+  ret <- emo_result(ret,'WARNING',type='long')
+
+  ret
   
-  if(any(fail_idx)){
-    ret$file[fail_idx] <- gsub('^\\[','[\U0001f534',ret$file[fail_idx])  
+}
+
+emos <- function(name){
+
+  switch (name,
+          'SKIPPED' = '\U0001f536', # 'large orange diamond'
+          'FAILED'  = '\U0001f6d1', # 'stop sign',
+          'ERROR'   = '\U0001f6d1', # 'stop sign'
+          'WARNING' = '\u26a0️' ,    # 'warning sign'
+  )
+  
+}
+
+emo_result <- function(dat,status,type = 'short'){
+  
+  if(type=='short'){
+    idx <- dat[[tolower(status)]]>0
   }
   
-  ret
+  if(type=='long'){
+    idx <- dat$status==status
+  }
+    
+  if(any(idx)){
+      
+    if(!'icon'%in%names(dat)){
+      dat[['icon']] <- ''
+      n <- ncol(dat)
+      dat <- dat[,c(n,1:(n-1))]
+    }
+      
+    dat$icon[idx] <- emos(status)
+  }
+  
+  dat
   
 }
 
@@ -142,6 +174,8 @@ sinfo <- function(){
   list(info = sinfo, pkgs = pkgs)
     
 }
+
+
 
 #' @title Re-export magrittr pipe operators
 #' @description magrittr pipe operators

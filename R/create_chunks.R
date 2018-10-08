@@ -67,9 +67,5 @@ covr_summary <- function(x,failed = FALSE) {
     ret$name
   )
 
-  if(failed){
-    ret$name[1] <- sprintf('%s \U0001f534',ret$name[1])
-  }
-  
   return(ret)
 }
