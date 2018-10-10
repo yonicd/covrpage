@@ -127,8 +127,8 @@ emo_result <- function(dat,status,type = 'short'){
       n <- ncol(dat)
       dat <- dat[,c(n,1:(n-1))]
     }
-      
-    dat$icon[idx] <- emos[[status]]
+    
+    dat$icon[idx] <- emos[[platform()]][[status]]
   }
   
   dat
@@ -173,3 +173,12 @@ sinfo <- function(){
 #' @rdname pipe
 #' @export
 NULL
+
+platform <- function(){
+
+  if(.Platform[['OS.type']]=='windows'){
+    'windows'
+  }else{
+    'unix'
+  }
+}
