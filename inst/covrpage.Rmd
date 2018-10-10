@@ -104,11 +104,12 @@ test_x_long%>%
 ```
 
 ```{r,echo=FALSE}
+if(length(names('test_x_long'))>0){
 if(names(test_x_long)[1]=='icon'){
   emos <- covrpage:::emos[[covrpage:::platform()]]
   knitr::kable(t(c('Failed' = emos[['FAILED']],'Warning' = emos[['WARNING']], 'Skipped' = emos[['SKIPPED']])))
+}  
 }
-  
 ```
 
 </details>
