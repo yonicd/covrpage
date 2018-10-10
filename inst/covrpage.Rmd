@@ -18,6 +18,7 @@ this_pkg <- basename(normalizePath('..'))
 test_x <- testthat::test_check(this_pkg,reporter = testthat::default_reporter(),stop_on_failure = FALSE,stop_on_warning = FALSE)
 
 skip <- length(test_x)>0
+failed <- FALSE
 ```
 
 ```{r maps, include=FALSE}
