@@ -124,11 +124,10 @@ emo_result <- function(dat,status,type = 'short'){
       
     if(!'icon'%in%names(dat)){
       dat[['icon']] <- ''
-      n <- ncol(dat)
-      dat <- dat[,c(n,1:(n-1))]
     }
     
     dat$icon[idx] <- emos[[platform()]][[status]]
+    names(dat)[ncol(dat)] <- ''
   }
   
   dat
@@ -158,11 +157,10 @@ sinfo <- function(){
     
   sinfo <- enfram(sinfo, name = 'Field',value = 'Value')
 
-  if(identical(Sys.getenv("TRAVIS"), "true")){
-    sinfo$Value[sinfo$Field=='Platform'] <- sprintf('%s ![](%s)',
-                                                    sinfo$Value[sinfo$Field=='Platform'],
-                                                    'https://github.com/yonicd/covrpage/blob/travis_logo/inst/logo/travis.png?raw=true'
-                                                    )
+  if(!identical(Sys.getenv("TRAVIS"), "true")){
+    sinfo$Icon <- ''
+    sinfo$Icon[sinfo$Field=='Platform'] <- sprintf('![](%s)','https://github.com/yonicd/covrpage/blob/travis_logo/inst/logo/travis.png?raw=true')
+    names(sinfo)[3] <- ''
   }
   
   pkgs <- enfram(pkgs, name = 'Package',value = 'Version')
