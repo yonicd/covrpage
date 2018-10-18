@@ -127,7 +127,6 @@ emo_result <- function(dat,status,type = 'short'){
     }
     
     dat$icon[idx] <- emos[[platform()]][[status]]
-    names(dat)[ncol(dat)] <- ''
   }
   
   dat
@@ -157,7 +156,7 @@ sinfo <- function(){
     
   sinfo <- enfram(sinfo, name = 'Field',value = 'Value')
 
-  if(!identical(Sys.getenv("TRAVIS"), "true")){
+  if(identical(Sys.getenv("TRAVIS"), "true")){
     sinfo$Icon <- ''
     sinfo$Icon[sinfo$Field=='Platform'] <- sprintf('![](%s)','https://github.com/yonicd/covrpage/blob/travis_logo/inst/logo/travis.png?raw=true')
     names(sinfo)[3] <- ''
