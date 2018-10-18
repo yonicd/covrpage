@@ -7,16 +7,10 @@
 #' @export
 
 testthat_summary <- function(x, type=c("short", "long")) {
-  ret <- switch(type,
+  switch(type,
     "short" = testthat_sum_short(x),
     "long" = testthat_sum_long(x)
   )
-  
-  if(grep('icon',names(ret))){
-    names(ret)[grep('icon',names(ret))] <- ''
-  }
-  
-  ret
 }
 
 #' @importFrom covr percent_coverage tally_coverage
