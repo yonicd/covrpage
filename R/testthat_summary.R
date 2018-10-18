@@ -158,6 +158,13 @@ sinfo <- function(){
     
   sinfo <- enfram(sinfo, name = 'Field',value = 'Value')
 
+  if(identical(Sys.getenv("TRAVIS"), "true")){
+    sinfo$Value[sinfo$Field=='Platform'] <- sprintf('%s ![](%s)',
+                                                    sinfo$Value[sinfo$Field=='Platform'],
+                                                    'https://github.com/yonicd/covrpage/blob/travis_logo/inst/logo/travis.png?raw=true'
+                                                    )
+  }
+  
   pkgs <- enfram(pkgs, name = 'Package',value = 'Version')
   
   list(info = sinfo, pkgs = pkgs)
