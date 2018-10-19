@@ -126,7 +126,7 @@ emo_result <- function(dat,status,type = 'short'){
       dat[['icon']] <- ''
     }
     
-    dat$icon[idx] <- emos[[platform()]][[status]]
+    dat$icon[idx] <- paste0(dat$icon[idx],emos[[platform()]][[status]])
   }
   
   dat
