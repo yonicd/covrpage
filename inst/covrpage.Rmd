@@ -42,7 +42,7 @@ test_skip$file <- gsub('#(.*?)$','',basename(test_skip$file))
 
 test_skip <- merge(test_skip,test_m)
 
-failed <- nrow(test_skip)>0
+failed <- any(test_x_long$status%in%c('ERROR','FAILED'))
 
 ```
 
@@ -104,8 +104,8 @@ test_x_long%>%
 ```
 
 ```{r,echo=FALSE}
-if(length(names('test_x_long'))>0){
-if(names(test_x_long)[1]=='icon'){
+if(length(names(test_x_long))>0){
+if('icon'%in%names(test_x_long)){
   emos <- covrpage:::emos[[covrpage:::platform()]]
   knitr::kable(t(c('Failed' = emos[['FAILED']],'Warning' = emos[['WARNING']], 'Skipped' = emos[['SKIPPED']])))
 }  
