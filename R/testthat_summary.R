@@ -158,9 +158,7 @@ sinfo <- function(){
 
   if(is_travis()){
     sinfo$Icon <- ''
-    sinfo$Icon[sinfo$Field=='Platform'] <- sprintf('<a href="%s"><span title="Built on Travis">![](%s)</span></a>',
-                                                   Sys.getenv("TRAVIS_JOB_WEB_URL"),
-                                                   'https://github.com/yonicd/covrpage/blob/master/inst/logo/travis.png?raw=true')
+    sinfo$Icon[sinfo$Field=='Platform'] <- travis_image()
     names(sinfo)[3] <- ''
   }
   
@@ -191,4 +189,10 @@ platform <- function(){
 
 is_travis <- function(){
   identical(Sys.getenv("TRAVIS"), "true")
+}
+
+travis_image <- function(){
+  sprintf('<a href="%s" target="_blank"><span title="Built on Travis">![](%s)</span></a>',
+          Sys.getenv("TRAVIS_JOB_WEB_URL"),
+          'https://github.com/yonicd/covrpage/blob/master/inst/logo/travis.png?raw=true')
 }
