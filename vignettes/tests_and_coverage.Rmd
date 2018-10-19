@@ -27,18 +27,18 @@ Coverage summary is created using the
 
 | Object                                             | Coverage (%) |
 | :------------------------------------------------- | :----------: |
-| covrpage                                           |    22.50     |
-| [R/badge.R](https://github.com/yonicd/covrpage/tree/master/R/badge.R)                          |     0.00     |
-| [R/coverage\_skip.R](https://github.com/yonicd/covrpage/tree/master/R/coverage_skip.R)         |     0.00     |
-| [R/covrpage\_snapshot.R](https://github.com/yonicd/covrpage/tree/master/R/covrpage_snapshot.R) |     0.00     |
-| [R/covrpage.R](https://github.com/yonicd/covrpage/tree/master/R/covrpage.R)                    |     0.00     |
-| [R/map\_testthat.R](https://github.com/yonicd/covrpage/tree/master/R/map_testthat.R)           |     0.00     |
-| [R/tencrypt.R](https://github.com/yonicd/covrpage/tree/master/R/tencrypt.R)                    |     0.00     |
-| [R/vignette.R](https://github.com/yonicd/covrpage/tree/master/R/vignette.R)                    |     0.00     |
-| [R/covrpage\_checks.R](https://github.com/yonicd/covrpage/tree/master/R/covrpage_checks.R)     |    64.29     |
-| [R/testthat\_summary.R](https://github.com/yonicd/covrpage/tree/master/R/testthat_summary.R)   |    68.18     |
-| [R/use\_covrpage.R](https://github.com/yonicd/covrpage/tree/master/R/use_covrpage.R)           |    79.41     |
-| [R/create\_chunks.R](https://github.com/yonicd/covrpage/tree/master/R/create_chunks.R)         |    92.59     |
+| covrpage                                           |    21.68     |
+| [R/badge.R](https://github.com/yonicd/covrpage/tree/travis_logo/R/badge.R)                          |     0.00     |
+| [R/coverage\_skip.R](https://github.com/yonicd/covrpage/tree/travis_logo/R/coverage_skip.R)         |     0.00     |
+| [R/covrpage\_snapshot.R](https://github.com/yonicd/covrpage/tree/travis_logo/R/covrpage_snapshot.R) |     0.00     |
+| [R/covrpage.R](https://github.com/yonicd/covrpage/tree/travis_logo/R/covrpage.R)                    |     0.00     |
+| [R/map\_testthat.R](https://github.com/yonicd/covrpage/tree/travis_logo/R/map_testthat.R)           |     0.00     |
+| [R/tencrypt.R](https://github.com/yonicd/covrpage/tree/travis_logo/R/tencrypt.R)                    |     0.00     |
+| [R/vignette.R](https://github.com/yonicd/covrpage/tree/travis_logo/R/vignette.R)                    |     0.00     |
+| [R/covrpage\_checks.R](https://github.com/yonicd/covrpage/tree/travis_logo/R/covrpage_checks.R)     |    21.43     |
+| [R/testthat\_summary.R](https://github.com/yonicd/covrpage/tree/travis_logo/R/testthat_summary.R)   |    64.13     |
+| [R/use\_covrpage.R](https://github.com/yonicd/covrpage/tree/travis_logo/R/use_covrpage.R)           |    79.41     |
+| [R/create\_chunks.R](https://github.com/yonicd/covrpage/tree/travis_logo/R/create_chunks.R)         |    96.00     |
 
 <br>
 
@@ -48,27 +48,31 @@ Unit Test summary is created using the
 [testthat](https://github.com/r-lib/testthat)
 package.
 
-|                     | file                                               | n |  time | error | failed | skipped | warning |
-| ------------------- | :------------------------------------------------- | -: | ----: | ----: | -----: | ------: | ------: |
-| test-check\_utils.R | [test-check\_utils.R](https://github.com/yonicd/covrpage/tree/master/tests/testthat/test-check_utils.R) | 5 | 0.087 |     0 |      0 |       0 |       0 |
-| test-covrfuns.R     | [test-covrfuns.R](https://github.com/yonicd/covrpage/tree/master/tests/testthat/test-covrfuns.R)        | 6 | 0.079 |     0 |      0 |       0 |       0 |
+| file                                               | n |  time | error | failed | skipped | warning | icon |
+| :------------------------------------------------- | -: | ----: | ----: | -----: | ------: | ------: | :--- |
+| [test-check\_utils.R](https://github.com/yonicd/covrpage/tree/travis_logo/tests/testthat/test-check_utils.R) | 5 | 0.102 |     0 |      0 |       1 |       0 | 🔶    |
+| [test-covrfuns.R](https://github.com/yonicd/covrpage/tree/travis_logo/tests/testthat/test-covrfuns.R)        | 6 | 0.072 |     0 |      0 |       0 |       0 |      |
 
-<details closed>
+<details open>
 
 <summary> Show Detailed Test Results
 </summary>
 
-| file                                                   | context                    | test                           | status | n |  time |
-| :----------------------------------------------------- | :------------------------- | :----------------------------- | :----- | -: | ----: |
-| [test-check\_utils.R](https://github.com/yonicd/covrpage/tree/master/tests/testthat/test-check_utils.R#L4)  | check for tests            | tests are detected             | PASS   | 1 | 0.017 |
-| [test-check\_utils.R](https://github.com/yonicd/covrpage/tree/master/tests/testthat/test-check_utils.R#L12) | check for packages         | packages are detected          | PASS   | 3 | 0.025 |
-| [test-check\_utils.R](https://github.com/yonicd/covrpage/tree/master/tests/testthat/test-check_utils.R#L22) | use covrpage               | test use\_covrpage             | PASS   | 1 | 0.045 |
-| [test-covrfuns.R](https://github.com/yonicd/covrpage/tree/master/tests/testthat/test-covrfuns.R#L5)         | check summary covr         | covr\_summary: standard input  | PASS   | 1 | 0.031 |
-| [test-covrfuns.R](https://github.com/yonicd/covrpage/tree/master/tests/testthat/test-covrfuns.R#L9_L11)     | check summary covr         | covr\_summary: empty input     | PASS   | 1 | 0.001 |
-| [test-covrfuns.R](https://github.com/yonicd/covrpage/tree/master/tests/testthat/test-covrfuns.R#L19)        | check summary output types | with data: short               | PASS   | 1 | 0.022 |
-| [test-covrfuns.R](https://github.com/yonicd/covrpage/tree/master/tests/testthat/test-covrfuns.R#L23)        | check summary output types | with data: long                | PASS   | 1 | 0.023 |
-| [test-covrfuns.R](https://github.com/yonicd/covrpage/tree/master/tests/testthat/test-covrfuns.R#L27)        | check summary output types | with data: no data             | PASS   | 1 | 0.001 |
-| [test-covrfuns.R](https://github.com/yonicd/covrpage/tree/master/tests/testthat/test-covrfuns.R#L35)        | check covr to df           | covr object to df: empty input | PASS   | 1 | 0.001 |
+| file                                                   | context                    | test                           | status  | n |  time | icon |
+| :----------------------------------------------------- | :------------------------- | :----------------------------- | :------ | -: | ----: | :--- |
+| [test-check\_utils.R](https://github.com/yonicd/covrpage/tree/travis_logo/tests/testthat/test-check_utils.R#L4)  | check for tests            | tests are detected             | PASS    | 1 | 0.013 |      |
+| [test-check\_utils.R](https://github.com/yonicd/covrpage/tree/travis_logo/tests/testthat/test-check_utils.R#L12) | check for packages         | packages are detected          | SKIPPED | 3 | 0.040 | 🔶    |
+| [test-check\_utils.R](https://github.com/yonicd/covrpage/tree/travis_logo/tests/testthat/test-check_utils.R#L23) | use covrpage               | test use\_covrpage             | PASS    | 1 | 0.049 |      |
+| [test-covrfuns.R](https://github.com/yonicd/covrpage/tree/travis_logo/tests/testthat/test-covrfuns.R#L5)         | check summary covr         | covr\_summary: standard input  | PASS    | 1 | 0.038 |      |
+| [test-covrfuns.R](https://github.com/yonicd/covrpage/tree/travis_logo/tests/testthat/test-covrfuns.R#L9_L11)     | check summary covr         | covr\_summary: empty input     | PASS    | 1 | 0.002 |      |
+| [test-covrfuns.R](https://github.com/yonicd/covrpage/tree/travis_logo/tests/testthat/test-covrfuns.R#L19)        | check summary output types | with data: short               | PASS    | 1 | 0.020 |      |
+| [test-covrfuns.R](https://github.com/yonicd/covrpage/tree/travis_logo/tests/testthat/test-covrfuns.R#L23)        | check summary output types | with data: long                | PASS    | 1 | 0.010 |      |
+| [test-covrfuns.R](https://github.com/yonicd/covrpage/tree/travis_logo/tests/testthat/test-covrfuns.R#L27)        | check summary output types | with data: no data             | PASS    | 1 | 0.001 |      |
+| [test-covrfuns.R](https://github.com/yonicd/covrpage/tree/travis_logo/tests/testthat/test-covrfuns.R#L35)        | check covr to df           | covr object to df: empty input | PASS    | 1 | 0.001 |      |
+
+| Failed | Warning | Skipped |
+| :----- | :------ | :------ |
+| 🛑      | ⚠️      | 🔶       |
 
 </details>
 
@@ -88,8 +92,8 @@ package.
 | :------- | :--------- |
 | testthat | 2.0.0.9000 |
 | covr     | 3.2.0      |
-| covrpage | 0.0.60     |
+| covrpage | 0.0.61     |
 
 </details>
 
-<!--- Final Status : pass --->
+<!--- Final Status : skipped/warning --->

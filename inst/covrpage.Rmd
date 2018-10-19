@@ -42,7 +42,7 @@ test_skip$file <- gsub('#(.*?)$','',basename(test_skip$file))
 
 test_skip <- merge(test_skip,test_m)
 
-failed <- nrow(test_skip)>0
+failed <- any(test_x_long$status%in%c('ERROR','FAILED'))
 
 ```
 
@@ -61,7 +61,7 @@ cvr <- covrpage::coverage_skip(test_path = '../tests/testthat', test_skip = test
 ```
 
 ```{r,echo=FALSE,eval=failed}
-cat(sprintf('%s Tests Failed\n  Coverage statistics are approximations of the non-failing tests.\n  Use with caution\n\n For further investigation check in testthat summary tables.',covrpage:::emos[[platform()]][['WARNING']]))
+cat(sprintf('%s Not All Tests Passed\n  Coverage statistics are approximations of the non-failing tests.\n  Use with caution\n\n For further investigation check in testthat summary tables.',covrpage:::emos[[platform()]][['WARNING']]))
 ```
 
 ```{r,echo=FALSE}
@@ -104,8 +104,8 @@ test_x_long%>%
 ```
 
 ```{r,echo=FALSE}
-if(length(names('test_x_long'))>0){
-if(names(test_x_long)[1]=='icon'){
+if(length(names(test_x_long))>0){
+if('icon'%in%names(test_x_long)){
   emos <- covrpage:::emos[[covrpage:::platform()]]
   knitr::kable(t(c('Failed' = emos[['FAILED']],'Warning' = emos[['WARNING']], 'Skipped' = emos[['SKIPPED']])))
 }  

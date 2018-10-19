@@ -124,11 +124,9 @@ emo_result <- function(dat,status,type = 'short'){
       
     if(!'icon'%in%names(dat)){
       dat[['icon']] <- ''
-      n <- ncol(dat)
-      dat <- dat[,c(n,1:(n-1))]
     }
     
-    dat$icon[idx] <- emos[[platform()]][[status]]
+    dat$icon[idx] <- paste0(dat$icon[idx],emos[[platform()]][[status]])
   }
   
   dat
@@ -158,6 +156,13 @@ sinfo <- function(){
     
   sinfo <- enfram(sinfo, name = 'Field',value = 'Value')
 
+  if(is_travis()){
+    sinfo$Icon <- ''
+    sinfo$Icon[sinfo$Field=='Platform'] <- sprintf('<span title="Built on Travis">![](%s)</span>',
+                                                   'https://github.com/yonicd/covrpage/blob/travis_logo/inst/logo/travis.png?raw=true')
+    names(sinfo)[3] <- ''
+  }
+  
   pkgs <- enfram(pkgs, name = 'Package',value = 'Version')
   
   list(info = sinfo, pkgs = pkgs)
@@ -181,4 +186,8 @@ platform <- function(){
   }else{
     'unix'
   }
+}
+
+is_travis <- function(){
+  identical(Sys.getenv("TRAVIS"), "true")
 }
