@@ -159,7 +159,7 @@ sinfo <- function(){
   if(is_travis()){
     sinfo$Icon <- ''
     sinfo$Icon[sinfo$Field=='Platform'] <- sprintf('<span title="Built on Travis">![](%s)</span>',
-                                                   'https://github.com/yonicd/covrpage/blob/travis_logo/inst/logo/travis.png?raw=true')
+                                                   'https://github.com/yonicd/covrpage/blob/master/inst/logo/travis.png?raw=true')
     names(sinfo)[3] <- ''
   }
   
