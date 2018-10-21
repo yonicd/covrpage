@@ -13,6 +13,7 @@ knitr::opts_chunk$set(
 ```
 
 [![Travis-CI Build Status](https://travis-ci.org/yonicd/covrpage.svg?branch=master)](https://travis-ci.org/yonicd/covrpage)
+[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/yonicd/covrpage?branch=master&svg=true)](https://ci.appveyor.com/project/yonicd/covrpage)
 [![Coverage Status](https://img.shields.io/codecov/c/github/yonicd/covrpage/master.svg)](https://codecov.io/github/yonicd/covrpage?branch=master)
 [![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2018_10_19-yellowgreen.svg)](http://tinyurl.com/y7qge5ta)
 
