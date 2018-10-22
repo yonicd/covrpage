@@ -9,17 +9,14 @@ after_success:
 - Rscript -e 'covr::codecov()'
 - Rscript -e 'devtools::install(); covrpage::covrpage_ci()'
 - Rscript -e 'pkgdown::build_site()'
-after_failure:
-- Rscript -e 'devtools::install(); covrpage::covrpage_ci()'
-- Rscript -e 'pkgdown::build_site()'
 deploy:
   provider: pages
   skip-cleanup: true
-  github-token: "$GH_KEY"
+  github-token: "$GITHUB_PAT"
   keep-history: true
   local-dir: docs
   on:
     branch: master
 env:
   global:
-    secure: B4iEumoZ5niHckJYpM704ANGEDiFda09dkRCJzuOt9uXpv2lIJyqdPRBiXgYy88P71stxdl3ff6GSUWzrgJ+2/0rVdr+ma/B5OKMkzK2GQNGOAMKGioEkGlyCmPSkg2IYCTuEG1YK9fl+tdytcOlyeU35GIYyKOxApfDdyhfwSa/fU5QyoV+fiAqkmQRlDTMn/PbGnucXpqyRDE0U6ci8lYkhZajDObtvQ8k1xSezPCIBVFh8qVvwobetdaCKTTHeKUpLuUr7vhvSc71UCVe1G1XdeP5nogWSpmgCC1vCrTKVBrAK56VBZmJqoFyH/WmkSdyiF0QEWj2vXjjTurhr3kthKcQwAyaFj/VMuwq9Zj0vUgzVrpix17WSBxHEsFF5Rbi6QvibnozxlGm4uT3A5DNeyq5XiVandkEs/emVU1MfEHNgqvxig45d/HxIT/YLsUelCQcsOjAUXca+i1mTSLticfOgEyOSllb+dJqK3LffJOfVzgrFwltHgGlpNorLHGbBWj50c4m8ono9HRyOXdzYnUhbfeX2ek2Yn8zxfkYq8g5meUTrkOWYRlwnhMkKwe+KZnAuV/y/8o31GvhCUMxcypobQGF+FThezBlaTVXQ8dLwOR42xSoR+dLEoASZk7r67vT5sXzghsYZQU6KpTlbZEB6/ZfYdlUqAwwPNg=
+  - secure: MUiYZS+PH+l+nPeUemJXfXuELRRajFymegGxyR8taSY5BahyY0dk0VlQcqpPOL2AkXrBhGHkQVMQ0u7lpSct06wbhSUGnxcxrNmDtr4u2r4yQiYl1Oc58Ti2M0M3QSfky2io6Is64NqlNIzrXEipKx/D11xx9iJ3M2Ncm+s/CT6qLvSxMMT8y6ewygg0dJcRtDhbpZ97RDebmPWTVPKRctWlQUB0GrJrZDRUybZpHJbs2ntnybAPGHpxjoWQNbTGR6DiQ+04P2tVZ09RabQnE5OxsImhqGxi6aQdlmM63+Ye9QtnZhhhRG4lavkHnURMbK/4ufm+Fbog3WlPwgBuKHuxD9iqok8cc3I/TwiIs+3Un6yjFmiNp/UFa5o+fm7hqgW5sArFQlWNd/6yAv087HicXAjDvhwAAG8yca8ewNFLlPWj21DrHxaFFQF7U+4sRe0qnVrCyoC2f2NA01QCf3OhVkbRuYIwECjvjB7p3lZ4QHxCiwFn+N23REMaLFumcvX+/ubXvLH6qAofPUhmh85QONQygq49YAxVhSUgV6HpH5TkySG+QI9GYkd3AWR/2EstugiVW7A/d+YoB/3bgR//9SH3gRuKn8aCrICoeTp/3en2VFolDdWIFaMcLkZeRXRxZXxoc0ozzGahQCMzPAFTOEsdgIAilzWAyj1rEus=
