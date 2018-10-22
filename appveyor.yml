@@ -25,6 +25,13 @@ on_failure:
   - 7z a failure.zip *.Rcheck\*
   - appveyor PushArtifact failure.zip
 
+environment:
+  GITHUB_PAT:
+    secure: rnXHOhvUNGlkqpMIlBhXq5bRY/I4wpi4Fqu6hf0bxPwLSFQHxnDWobG4rYUc6aG4
+  R_ARCH: x64
+  RCMDCHECK: TRUE
+  _R_CHECK_FORCE_SUGGESTS_: false
+
 #deploy:
 #  release: appveyor-v$(appveyor_build_version)
 #  description: 'covrpage'

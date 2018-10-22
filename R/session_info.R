@@ -13,10 +13,10 @@ sinfo <- function(){
   
   sinfo <- enfram(sinfo, name = 'Field',value = 'Value')
   
-  if(is_travis()){
-    sinfo$Icon <- ''
-    sinfo$Icon[sinfo$Field=='Platform'] <- travis_image()
-    names(sinfo)[3] <- ''
+  if(is_ci()){
+    
+    sinfo <- ci_img(sinfo)
+    
   }
   
   pkgs <- enfram(pkgs, name = 'Package',value = 'Version')
