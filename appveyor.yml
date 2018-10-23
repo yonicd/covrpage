@@ -43,7 +43,6 @@ before_test:
  - initexmf --set-config-value "[MPM]AutoInstall=1"
  - R -q -e "tic::before_script()"
 test_script: R -q -e "tic::script()"
-after_success: R -q -e "tic::after_success()"
 before_deploy: R -q -e "tic::before_deploy()"
 deploy_script: R -q -e "tic::deploy()"
 after_deploy: R -q -e "tic::after_deploy()"
