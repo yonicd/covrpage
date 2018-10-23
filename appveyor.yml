@@ -71,7 +71,7 @@ deploy:
   provider: GitHub
   auth_token:
     secure: rnXHOhvUNGlkqpMIlBhXq5bRY/I4wpi4Fqu6hf0bxPwLSFQHxnDWobG4rYUc6aG4 # your encrypted token from GitHub
-  artifact: /doc           # upload all NuGet packages to release assets
+  artifact: /docs           # upload all NuGet packages to release assets
   draft: false
   prerelease: false
   on:
@@ -96,3 +96,6 @@ artifacts:
 
   - path: '\*_*.zip'
     name: Bits
+    
+  - path: 'docs'
+    name: Docs
