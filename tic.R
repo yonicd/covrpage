@@ -3,7 +3,7 @@
 get_stage("after_script") %>%
   add_code_step(system("rm -rf $HOME/R/Library/00LOCK-*"))
 
-get_stage("before_deploy") %>%
+get_stage("after_build") %>%
   add_code_step(devtools::install())%>%
   add_code_step(covrpage::covrpage_ci())
 
