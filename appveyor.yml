@@ -26,7 +26,7 @@ cache:
 
 before_build: R -q -e "tic::before_install()"
 build_script: R -q -e "tic::install()"
-# after_build: R -q -e "tic::after_install()"
+after_build: R -q -e "tic::after_build()"
 before_test:
  - ps: >-
       if (-Not (Test-Path "C:\Program Files\Pandoc\")) {
