@@ -9,7 +9,7 @@ get_stage("before_deploy") %>%
 
 get_stage("deploy") %>%
   add_step(step_build_pkgdown())%>%
-  add_step(step_push_deploy(commit_paths = "docs/*"))
+  add_step(step_push_deploy(commit_paths = "docs/*",branch = "gh-pages"))
 
 # condition on env variable
 
