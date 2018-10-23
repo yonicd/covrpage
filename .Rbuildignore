@@ -8,3 +8,4 @@
 ^README\.Rmd$
 ^README-.*\.png$
 ^appveyor\.yml$
+tic.R
