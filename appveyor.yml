@@ -45,11 +45,7 @@ before_test:
 test_script: R -q -e "tic::script()"
 after_test: R -q -e "tic::after_success()"
 before_deploy: R -q -e "tic::before_deploy()"
-deploy:
-  provider: script
-  script: R -q -e "tic::deploy()"
-  on:
-    appveyor_repo_tag: false
+#deploy_script: R -q -e "tic::deploy()"
 after_deploy: R -q -e "tic::after_deploy()"
 on_finish: R -q -e "tic::after_script()"
 
@@ -69,18 +65,18 @@ environment:
   _R_CHECK_FORCE_SUGGESTS_: false
   WARMUPPKGS: 'roxygen2 pander knitr rmarkdown testthat'
 
-#deploy:
-#  release: appveyor-v$(appveyor_build_version)
-#  description: 'covrpage'
-#  provider: GitHub
-#  auth_token:
-#    secure: rnXHOhvUNGlkqpMIlBhXq5bRY/I4wpi4Fqu6hf0bxPwLSFQHxnDWobG4rYUc6aG4 # your encrypted token from GitHub
-#  artifact: /doc           # upload all NuGet packages to release assets
-#  draft: false
-#  prerelease: false
-#  on:
-#    branch: appveyor                 
-#    appveyor_repo_tag: true        # deploy on tag push only
+deploy:
+  release: appveyor-v$(appveyor_build_version)
+  description: 'covrpage'
+  provider: GitHub
+  auth_token:
+    secure: rnXHOhvUNGlkqpMIlBhXq5bRY/I4wpi4Fqu6hf0bxPwLSFQHxnDWobG4rYUc6aG4 # your encrypted token from GitHub
+  artifact: /doc           # upload all NuGet packages to release assets
+  draft: false
+  prerelease: false
+  on:
+    branch: appveyor                 
+    appveyor_repo_tag: false        # deploy on tag push only
 
 artifacts:
   - path: '*.Rcheck\**\*.log'
