@@ -5,7 +5,8 @@ get_stage("after_script") %>%
 
 get_stage("deploy") %>%
   add_step(step_build_pkgdown())%>%
-  add_step(step_push_deploy(commit_paths = "docs",branch = "gh-pages",orphan = TRUE))
+  add_step(step_setup_push_deploy(branch = "gh-pages",orphan = TRUE))%>%
+  add_step(step_do_push_deploy(commit_paths = "docs"))
 
 # condition on env variable
 
