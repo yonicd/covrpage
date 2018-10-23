@@ -23,6 +23,7 @@ if (Sys.getenv("RCMDCHECK") == "TRUE") {
   
   if (!ci()$is_interactive()) {
   get_stage("after_success") %>%
+    add_code_step(devtools::install())%>%
     add_code_step(covrpage::covrpage_ci())
   }
 }
