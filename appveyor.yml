@@ -60,6 +60,7 @@ environment:
     secure: rnXHOhvUNGlkqpMIlBhXq5bRY/I4wpi4Fqu6hf0bxPwLSFQHxnDWobG4rYUc6aG4
   R_ARCH: x64
   RCMDCHECK: TRUE
+  USE_RTOOLS: true
   _R_CHECK_FORCE_SUGGESTS_: false
   WARMUPPKGS: 'roxygen2 pander knitr rmarkdown testthat'
 
