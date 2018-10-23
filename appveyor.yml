@@ -20,7 +20,7 @@ install:
   
 cache:
   - C:\RLibrary
-  - C:\Program Files\Pandoc\
+  - C:\Program Files (x86)\Pandoc\
   - C:\miktex
 
 # Adapt as necessary starting from here
@@ -29,10 +29,10 @@ before_build: R -q -e "tic::before_install()"
 build_script: R -q -e "tic::install()"
 before_test:
  - ps: >-
-      if (-Not (Test-Path "C:\Program Files\Pandoc\")) {
+      if (-Not (Test-Path "C:\Program Files (x86)\Pandoc\")) {
         cinst pandoc
       }
- - ps: $env:Path += ";C:\Program Files\Pandoc\"
+ - ps: $env:Path += ";C:\Program Files (x86)\Pandoc\"
  - pandoc -v
  # Install miktex to get pdflatex, if we don't get it from the cache
  - if not exist c:\miktex\texmfs\install\miktex\bin\pdflatex.exe appveyor DownloadFile https://miktex.org/download/ctan/systems/win32/miktex/setup/windows-x86/miktex-portable-2.9.6753.exe
@@ -53,13 +53,13 @@ on_failure:
   - 7z a failure.zip *.Rcheck\*
   - appveyor PushArtifact failure.zip
 
-platform: x64
+platform: x86
 image: Visual Studio 2017
 
 environment:
   GITHUB_PAT:
     secure: rnXHOhvUNGlkqpMIlBhXq5bRY/I4wpi4Fqu6hf0bxPwLSFQHxnDWobG4rYUc6aG4
-  R_ARCH: x64
+  R_ARCH: x86
   RCMDCHECK: TRUE
   USE_RTOOLS: true
   _R_CHECK_FORCE_SUGGESTS_: false
@@ -76,8 +76,7 @@ deploy:
   prerelease: false
   tag: $(APPVEYOR_REPO_TAG_NAME)
   on:
-    branch: appveyor                 
-    appveyor_repo_tag: true
+    branch: appveyor
 
 artifacts:
   - path: '*.Rcheck\**\*.log'
