@@ -45,7 +45,11 @@ before_test:
 test_script: R -q -e "tic::script()"
 after_test: R -q -e "tic::after_success()"
 before_deploy: R -q -e "tic::before_deploy()"
-deploy_script: R -q -e "tic::deploy()"
+deploy:
+  provider: script
+  script: R -q -e "tic::deploy()"
+  on:
+    appveyor_repo_tag: false
 after_deploy: R -q -e "tic::after_deploy()"
 on_finish: R -q -e "tic::after_script()"
 
