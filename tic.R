@@ -20,11 +20,8 @@ if (Sys.getenv("RCMDCHECK") == "TRUE") {
     ) %>%
     add_code_step(devtools::update_packages(TRUE))
   
-  add_package_checks()
-  
   if (!ci()$is_interactive()) {
   get_stage("after_success") %>%
-    add_code_step(devtools::install())%>%
     add_code_step(covrpage::covrpage_ci())
   }
 }
