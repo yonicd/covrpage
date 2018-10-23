@@ -8,7 +8,7 @@ get_stage("before_deploy") %>%
   add_code_step(covrpage::covrpage_ci())
 
 get_stage("deploy") %>%
-  add_step(step_build_pkgdown()) #%>%
+  add_step(step_build_pkgdown())%>%
   add_step(step_push_deploy(commit_paths = "docs/*"))
 
 # condition on env variable
