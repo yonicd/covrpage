@@ -3,10 +3,6 @@
 get_stage("after_script") %>%
   add_code_step(system("rm -rf $HOME/R/Library/00LOCK-*"))
 
-get_stage("after_build") %>%
-  add_code_step(devtools::install())%>%
-  add_code_step(covrpage::covrpage_ci())
-
 get_stage("deploy") %>%
   add_step(step_build_pkgdown())%>%
   add_step(step_push_deploy(commit_paths = "docs/*",branch = "gh-pages"))
@@ -24,7 +20,13 @@ if (Sys.getenv("RCMDCHECK") == "TRUE") {
     ) %>%
     add_code_step(devtools::update_packages(TRUE))
   
-
+  add_package_checks()
+  
+  if (!ci()$is_interactive()) {
+  get_stage("after_success") %>%
+    add_code_step(devtools::install())%>%
+    add_code_step(covrpage::covrpage_ci())
+  }
 }
 
 if (Sys.getenv("TUTORIAL") == "HTML") {
