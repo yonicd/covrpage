@@ -66,17 +66,18 @@ environment:
   WARMUPPKGS: 'roxygen2 pander knitr rmarkdown testthat'
 
 deploy:
-  release: appveyor-v$(appveyor_build_version)
-  description: 'covrpage'
+#  release: appveyor-v$(appveyor_build_version)
+  description: 'covrpage $(appveyor_repo_tag_name) has been released.'
   provider: GitHub
   auth_token:
     secure: rnXHOhvUNGlkqpMIlBhXq5bRY/I4wpi4Fqu6hf0bxPwLSFQHxnDWobG4rYUc6aG4 # your encrypted token from GitHub
   artifact: /docs           # upload all NuGet packages to release assets
   draft: false
+  tag: $(APPVEYOR_REPO_TAG_NAME)
   prerelease: false
   on:
     branch: appveyor                 
-    appveyor_repo_tag: false        # deploy on tag push only
+    appveyor_repo_tag: true
 
 artifacts:
   - path: '*.Rcheck\**\*.log'
