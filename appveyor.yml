@@ -20,7 +20,7 @@ install:
   
 cache:
   - C:\RLibrary
-  - C:\Program Files\Pandoc\
+  - C:\Program Files (x86)\Pandoc\
   - C:\miktex
 
 # Adapt as necessary starting from here
@@ -30,10 +30,10 @@ build_script: R -q -e "tic::install()"
 after_build: R -q -e "tic::after_success()"
 before_test:
  - ps: >-
-      if (-Not (Test-Path "C:\Program Files\Pandoc\")) {
+      if (-Not (Test-Path "C:\Program Files (x86)\Pandoc\")) {
         cinst pandoc
       }
- - ps: $env:Path += ";C:\Program Files\Pandoc\"
+ - ps: $env:Path += ";C:\Program Files (x86)\Pandoc\"
  - pandoc -v
  # Install miktex to get pdflatex, if we don't get it from the cache
  - if not exist c:\miktex\texmfs\install\miktex\bin\pdflatex.exe appveyor DownloadFile https://miktex.org/download/ctan/systems/win32/miktex/setup/windows-x86/miktex-portable-2.9.6753.exe
