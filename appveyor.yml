@@ -1,11 +1,26 @@
 # DO NOT CHANGE the "init" and "install" sections below
 
+environment:
+  GITHUB_PAT:
+    secure: rnXHOhvUNGlkqpMIlBhXq5bRY/I4wpi4Fqu6hf0bxPwLSFQHxnDWobG4rYUc6aG4
+  R_ARCH: x64
+  RCMDCHECK: TRUE
+  USE_RTOOLS: true
+  _R_CHECK_FORCE_SUGGESTS_: false
+  WARMUPPKGS: 'roxygen2 pander knitr rmarkdown testthat'
+  APPVEYOR_REPO_TAG_NAME: 'appveyor'
+
 # Download script file from GitHub
 init:
   ps: |
         $ErrorActionPreference = "Stop"
         Invoke-WebRequest http://raw.github.com/krlmlr/r-appveyor/master/scripts/appveyor-tool.ps1 -OutFile "..\appveyor-tool.ps1"
         Import-Module '..\appveyor-tool.ps1'
+
+cache:
+  - C:\RLibrary
+  - C:\Program Files\Pandoc\
+  - C:\miktex
 
 install:
   - ps: Bootstrap
@@ -18,15 +33,14 @@ install:
   - cmd: R -q -e "devtools::install_github('yonicd/covrpage');"  
   - cmd: R -q -e "devtools::install_github('ropenscilabs/tic@rcmdcheck'); tic::prepare_all_stages()"
   
-cache:
-  - C:\RLibrary
-  - C:\Program Files\Pandoc\
-  - C:\miktex
+
 
 # Adapt as necessary starting from here
 
 before_build: R -q -e "tic::before_install()"
+
 build_script: R -q -e "tic::install()"
+
 before_test:
  - ps: >-
       if (-Not (Test-Path "C:\Program Files\Pandoc\")) {
@@ -43,10 +57,11 @@ before_test:
  - initexmf --set-config-value "[MPM]AutoInstall=1"
  - R -q -e "tic::before_script()"
  - R -q -e "tic::after_success()"
+ 
 test_script: R -q -e "tic::script()"
 #after_test: R -q -e "tic::after_success()"
 before_deploy: R -q -e "tic::before_deploy()"
-#deploy_script: R -q -e "tic::deploy()"
+deploy_script: R -q -e "tic::deploy()"
 after_deploy: R -q -e "tic::after_deploy()"
 on_finish: R -q -e "tic::after_script()"
 
@@ -57,27 +72,19 @@ on_failure:
 platform: x64
 image: Visual Studio 2017
 
-environment:
-  GITHUB_PAT:
-    secure: rnXHOhvUNGlkqpMIlBhXq5bRY/I4wpi4Fqu6hf0bxPwLSFQHxnDWobG4rYUc6aG4
-  R_ARCH: x64
-  RCMDCHECK: TRUE
-  USE_RTOOLS: true
-  _R_CHECK_FORCE_SUGGESTS_: false
-  WARMUPPKGS: 'roxygen2 pander knitr rmarkdown testthat'
 
-deploy:
+#deploy:
 #  release: appveyor-v$(appveyor_build_version)
-  description: 'covrpage $(appveyor_repo_tag_name) has been released.'
-  provider: GitHub
-  auth_token:
-    secure: rnXHOhvUNGlkqpMIlBhXq5bRY/I4wpi4Fqu6hf0bxPwLSFQHxnDWobG4rYUc6aG4 # your encrypted token from GitHub
-  artifact: /docs           # upload all NuGet packages to release assets
-  draft: false
-  prerelease: false
-  tag: $(APPVEYOR_REPO_TAG_NAME)
-  on:
-    branch: appveyor
+#  description: 'covrpage $(appveyor_repo_tag_name) has been released.'
+#  provider: GitHub
+#  auth_token:
+#    secure: rnXHOhvUNGlkqpMIlBhXq5bRY/I4wpi4Fqu6hf0bxPwLSFQHxnDWobG4rYUc6aG4 # your encrypted token from GitHub
+#  artifact: /docs           # upload all NuGet packages to release assets
+#  draft: false
+#  prerelease: false
+#  tag: $(APPVEYOR_REPO_TAG_NAME)
+#  on:
+#    branch: appveyor
 
 artifacts:
   - path: '*.Rcheck\**\*.log'
