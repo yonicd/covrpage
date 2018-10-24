@@ -31,7 +31,7 @@ install:
   - cmd: R -q -e "if (!requireNamespace('curl')) install.packages('curl')"
   - cmd: R -q -e "devtools::install_github('metrumresearchgroup/pkgdown');"  
   - cmd: R -q -e "devtools::install_github('yonicd/covrpage');"  
-  - cmd: R -q -e "devtools::install_github('ropenscilabs/tic@rcmdcheck'); tic::prepare_all_stages()"
+  - cmd: R -q -e "devtools::install_github('yonicd/tic'); tic::prepare_all_stages()"
   
 
 
