@@ -1,12 +1,12 @@
 ---
 title: "Continuous Integration"
 author: "Jonathan Sidi"
-date: "2018-09-24"
+date: "2018-10-24"
 output: 
   rmarkdown::html_vignette: 
     keep_md: true
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{Continuous Integration}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

@@ -1,12 +1,12 @@
 ---
 title: "Test Results Indicators"
 author: "Jonathan Sidi"
-date: "2018-09-17"
+date: "2018-10-24"
 output: 
   rmarkdown::html_vignette: 
     keep_md: true
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{Test Results Indicators}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
