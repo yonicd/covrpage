@@ -3,12 +3,10 @@
 get_stage("after_script") %>%
   add_code_step(system("rm -rf $HOME/R/Library/00LOCK-*"))
 
-get_stage("before_deploy") %>%
+get_stage("deploy") %>%
   add_step(step_build_pkgdown())%>%
-  add_step(step_setup_push_deploy(branch = "gh-pages",orphan = TRUE))
-
-# %>%
-#    add_step(step_do_push_deploy(path = 'docs'))
+  add_step(step_setup_push_deploy(branch = "gh-pages",orphan = TRUE))%>%
+  add_step(step_do_push_deploy(path = 'docs'))
 
 get_stage("after_success") %>%
   add_code_step(setwd('c:/projects/covrpage'))%>%
