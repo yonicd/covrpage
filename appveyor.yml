@@ -61,20 +61,21 @@ after_test: R -q -e "tic::after_success()"
 
 
 before_deploy: R -q -e "tic::before_deploy()"
-deploy_script: R -q -e "tic::deploy()"
+#deploy_script: R -q -e "tic::deploy()"
 
-# deploy:
-#  release: appveyor-v$(appveyor_build_version)
-#  description: 'covrpage $(appveyor_repo_tag_name) has been released.'
-#  provider: GitHub
-#  auth_token:
-#    secure: rnXHOhvUNGlkqpMIlBhXq5bRY/I4wpi4Fqu6hf0bxPwLSFQHxnDWobG4rYUc6aG4 # your encrypted token from GitHub
-#  artifact: /docs           # upload all NuGet packages to release assets
-#  draft: false
-#  prerelease: false
-#  on:
-#    branch: appveyor
-#    appveyor_repo_tag: true
+deploy:
+  description: 'covrpage $(appveyor_repo_tag_name) has been released.'
+  provider: GitHub
+  auth_token:
+    secure: rnXHOhvUNGlkqpMIlBhXq5bRY/I4wpi4Fqu6hf0bxPwLSFQHxnDWobG4rYUc6aG4
+  artifact: /docs           
+  draft: false
+  prerelease: false
+  tag: $(APPVEYOR_REPO_TAG_NAME)
+  force_update: true
+  on:
+    branch: test
+    appveyor_repo_tag: true
 
 after_deploy: R -q -e "tic::after_deploy()"
 
