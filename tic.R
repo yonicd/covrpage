@@ -5,7 +5,8 @@ get_stage("after_script") %>%
 
 get_stage("deploy") %>%
   add_step(step_build_pkgdown())%>%
-  add_step(step_setup_push_deploy(branch = "gh-pages",orphan = TRUE))
+  add_step(step_setup_push_deploy(branch = "test",orphan = TRUE))%>%
+  add_step(step_do_push_deploy(path = 'docs'))
 
 get_stage("after_success") %>%
   add_code_step(setwd('c:/projects/covrpage'))%>%
