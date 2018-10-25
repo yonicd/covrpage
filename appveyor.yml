@@ -16,6 +16,10 @@ cache:
   - C:\Program Files\Pandoc\
   - C:\miktex
 
+branches:
+  only:
+    - appveyor
+
 # Download script file from GitHub
 init:
   ps: |
@@ -64,15 +68,16 @@ before_deploy: R -q -e "tic::before_deploy()"
 #deploy_script: R -q -e "tic::deploy()"
 
 deploy:
-  description: 'covrpage $(appveyor_repo_tag_name) has been released.'
   provider: GitHub
+  #tag: $(APPVEYOR_REPO_TAG_NAME)
+  release: appveyor-v$(appveyor_build_version)
+  description: 'Deployed $(appveyor_repo_tag_name)'
   auth_token:
     secure: rnXHOhvUNGlkqpMIlBhXq5bRY/I4wpi4Fqu6hf0bxPwLSFQHxnDWobG4rYUc6aG4
   artifact: /docs           
-  draft: false
-  prerelease: false
-  tag: $(APPVEYOR_REPO_TAG_NAME)
+  draft: true
   force_update: true
+  prerelease: false
   on:
     branch: appveyor
     appveyor_repo_tag: true
