@@ -9,6 +9,6 @@ get_stage("deploy") %>%
   add_step(step_do_push_deploy(commit_paths = "docs/*"))
 
 get_stage("after_success") %>%
-  add_code_step(setwd('c:\projects\covrpage'))%>%
+  add_code_step(setwd('c:/projects/covrpage'))%>%
   add_code_step(devtools::install())%>%
   add_code_step(covrpage::covrpage_ci())
