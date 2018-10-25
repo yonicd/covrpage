@@ -1,5 +1,8 @@
 # DO NOT CHANGE the "init" and "install" sections below
 
+platform: x64
+image: Visual Studio 2017
+
 environment:
   GITHUB_PAT:
     secure: rnXHOhvUNGlkqpMIlBhXq5bRY/I4wpi4Fqu6hf0bxPwLSFQHxnDWobG4rYUc6aG4
@@ -7,8 +10,11 @@ environment:
   RCMDCHECK: TRUE
   USE_RTOOLS: true
   _R_CHECK_FORCE_SUGGESTS_: false
-  WARMUPPKGS: 'roxygen2 pander knitr rmarkdown testthat'
-  APPVEYOR_REPO_TAG_NAME: 'appveyor'
+
+cache:
+  - C:\RLibrary
+  - C:\Program Files\Pandoc\
+  - C:\miktex
 
 # Download script file from GitHub
 init:
@@ -16,11 +22,6 @@ init:
         $ErrorActionPreference = "Stop"
         Invoke-WebRequest http://raw.github.com/krlmlr/r-appveyor/master/scripts/appveyor-tool.ps1 -OutFile "..\appveyor-tool.ps1"
         Import-Module '..\appveyor-tool.ps1'
-
-cache:
-  - C:\RLibrary
-  - C:\Program Files\Pandoc\
-  - C:\miktex
 
 install:
   - ps: Bootstrap
@@ -31,10 +32,8 @@ install:
   - cmd: R -q -e "if (!requireNamespace('curl')) install.packages('curl')"
   - cmd: R -q -e "devtools::install_github('metrumresearchgroup/pkgdown');"  
   - cmd: R -q -e "devtools::install_github('yonicd/covrpage');"  
-  - cmd: R -q -e "devtools::install_github('yonicd/tic'); tic::prepare_all_stages()"
+  - cmd: R -q -e "devtools::install_github('ropenscilabs/tic'); tic::prepare_all_stages()"
   
-
-
 # Adapt as necessary starting from here
 
 before_build: R -q -e "tic::before_install()"
@@ -56,22 +55,20 @@ before_test:
  # this adds this to the registry!
  - initexmf --set-config-value "[MPM]AutoInstall=1"
  - R -q -e "tic::before_script()"
- - R -q -e "tic::after_success()"
- 
+
 test_script: R -q -e "tic::script()"
-#after_test: R -q -e "tic::after_success()"
+after_test: R -q -e "tic::after_success()" 
+
+
 before_deploy: R -q -e "tic::before_deploy()"
 deploy_script: R -q -e "tic::deploy()"
 after_deploy: R -q -e "tic::after_deploy()"
+
 on_finish: R -q -e "tic::after_script()"
 
 on_failure:
   - 7z a failure.zip *.Rcheck\*
   - appveyor PushArtifact failure.zip
-
-platform: x64
-image: Visual Studio 2017
-
 
 #deploy:
 #  release: appveyor-v$(appveyor_build_version)

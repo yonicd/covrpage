@@ -6,48 +6,9 @@ get_stage("after_script") %>%
 get_stage("deploy") %>%
   add_step(step_build_pkgdown())%>%
   add_step(step_setup_push_deploy(branch = "gh-pages",orphan = TRUE))%>%
-  add_step(step_do_push_deploy(commit_paths = "docs"))
+  add_step(step_do_push_deploy(commit_paths = "docs/*"))
 
-# condition on env variable
-
-if (Sys.getenv("RCMDCHECK") == "TRUE") {
-  
-  get_stage("install") %>%
-    add_step(step_install_cran("stringi", type = "both")) %>%
-    add_code_step(if (length(trimws(strsplit(Sys.getenv("WARMUPPKGS"), " ")[[1]])[!trimws(strsplit(Sys.getenv("WARMUPPKGS"), " ")[[1]]) %in% installed.packages()]) > 0) {
-      paste0("Installing WARMUPPKGS", trimws(strsplit(Sys.getenv("WARMUPPKGS"), " ")[[1]])[!trimws(strsplit(Sys.getenv("WARMUPPKGS"), " ")[[1]]) %in% installed.packages()])
-      install.packages(trimws(strsplit(Sys.getenv("WARMUPPKGS"), " ")[[1]])[!trimws(strsplit(Sys.getenv("WARMUPPKGS"), " ")[[1]]) %in% installed.packages()])
-    }
-    ) %>%
-    add_code_step(devtools::update_packages(TRUE))
-  
-  if (!ci()$is_interactive()) {
-  get_stage("after_success") %>%
-    add_code_step(devtools::install())%>%
-    add_code_step(covrpage::covrpage_ci())
-  }
-}
-
-if (Sys.getenv("TUTORIAL") == "HTML") {
-  
-  get_stage("install") %>%
-    add_code_step(if (length(trimws(strsplit(Sys.getenv("WARMUPPKGS"), " ")[[1]])[!trimws(strsplit(Sys.getenv("WARMUPPKGS"), " ")[[1]]) %in% installed.packages()]) > 0)
-      install.packages(trimws(strsplit(Sys.getenv("WARMUPPKGS"), " ")[[1]])[!trimws(strsplit(Sys.getenv("WARMUPPKGS"), " ")[[1]]) %in% installed.packages()])) %>%
-    add_code_step(system2("java", args = c("-cp", "$HOME/R/Library/RWekajars/java/weka.jar weka.core.WekaPackageManager",
-                                           "-install-package", "thirdparty/XMeans1.0.4.zip")))
-  
-  get_stage("install") %>%
-    add_step(step_install_cran("magick")) %>% # favicon creation
-    add_step(step_install_cran("pander"))
-  
-  if (!Sys.getenv("TRAVIS_EVENT_TYPE") == "cron") {
-    
-    get_stage("before_deploy") %>%
-      add_step(step_setup_ssh())
-    
-    get_stage("deploy") %>%
-      add_step(step_build_pkgdown()) #%>%
-      add_step(step_push_deploy(commit_paths = "docs/*"))
-    
-  }
-}
+get_stage("after_success") %>%
+  add_code_step(setwd('c:\projects\covrpage'))%>%
+  add_code_step(devtools::install())%>%
+  add_code_step(covrpage::covrpage_ci())
