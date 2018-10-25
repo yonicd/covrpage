@@ -74,7 +74,7 @@ deploy:
   tag: $(APPVEYOR_REPO_TAG_NAME)
   force_update: true
   on:
-    branch: test
+    branch: appveyor
     appveyor_repo_tag: true
 
 after_deploy: R -q -e "tic::after_deploy()"
