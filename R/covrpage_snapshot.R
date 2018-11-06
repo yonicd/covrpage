@@ -1,17 +1,16 @@
-#' @title Create covrpages for packages on Github
-#' @description Preview covrpages for R package repositories on Github
-#' @param repo character, user/repo
-#' @param ... arguments to pass to coverpage
-#' @details This function only works for public repositories.
-#' @examples
-#' \dontrun{
-#' if(interactive()){
-#'  covrpage_snapshot(repo = 'hrbrmstr/slackr')
-#'  }
-#' }
-#' @rdname covrpage_snapshot
-#' @export
-#' @importFrom utils download.file unzip
+# @title Create covrpages for packages on Github
+# @description Preview covrpages for R package repositories on Github
+# @param repo character, user/repo
+# @param ... arguments to pass to coverpage
+# @details This function only works for public repositories.
+# @examples
+# \dontrun{
+# if(interactive()){
+#  covrpage_snapshot(repo = 'hrbrmstr/slackr')
+#  }
+# }
+# @rdname covrpage_snapshot
+# @importFrom utils download.file unzip
 covrpage_snapshot <- function(repo, ...) {
   repo_url <- sprintf("https://github.com/%s/archive/master.zip", repo)
 
