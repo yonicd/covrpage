@@ -58,15 +58,12 @@ covrpage::covrpage(auto_push = TRUE)
 
 # Copy output as a vignette to use in pkgdown
 
-covrpage::covrpage_snapshot(vignette = TRUE)
+covrpage::covrpage(vignette = TRUE)
 
 # assuming you are not in your package directory
 
-covrpage::covrpage('another_directory')
+covrpage::covrpage(path = 'another_directory')
 
-# peek at an R package on a Github Repository
-
-covrpage::covrpage_snapshot(repo = 'user/repo')
 ```
 
 ### Vignette
