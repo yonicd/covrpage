@@ -5,7 +5,8 @@
 Status](https://travis-ci.org/yonicd/covrpage.svg?branch=master)](https://travis-ci.org/yonicd/covrpage)
 [![Coverage
 Status](https://img.shields.io/codecov/c/github/yonicd/covrpage/master.svg)](https://codecov.io/github/yonicd/covrpage?branch=master)
-[![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2018_11_06-yellowgreen.svg)](http://tinyurl.com/y7qge5ta)
+[![Covrpage
+Summary](https://img.shields.io/badge/covrpage-Last_Build_2018_11_06-yellowgreen.svg)](http://tinyurl.com/y7qge5ta)
 
 # {covrpage} <img src="https://github.com/yonicd/covrpage/blob/master/inst/logo/covrpage_small.png?raw=true" align="right"/>
 
@@ -29,6 +30,8 @@ page.
   - [{GSEAdv}](https://github.com/llrs/GSEAdv/tree/master/tests)
   - [{rfm}](https://github.com/rsquaredacademy/rfm/tree/master/tests)
   - [{ggstatsplot}](https://github.com/IndrajeetPatil/ggstatsplot/tree/master/tests)
+  - [Full
+    List…](https://github.com/search?l=Markdown&o=desc&q=covrpage+filename%3AREADME.md+path%3Atests&s=indexed&type=Code)
 
 If you also have {covrpage} on your site and want to add it to the list
 you can submit a [Pull

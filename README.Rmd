@@ -34,6 +34,7 @@ The output is created in the [tests](tests) subdirectory as a [README.md](tests/
   - [{GSEAdv}](https://github.com/llrs/GSEAdv/tree/master/tests)
   - [{rfm}](https://github.com/rsquaredacademy/rfm/tree/master/tests)
   - [{ggstatsplot}](https://github.com/IndrajeetPatil/ggstatsplot/tree/master/tests)
+  - [Full List...](https://github.com/search?l=Markdown&o=desc&q=covrpage+filename%3AREADME.md+path%3Atests&s=indexed&type=Code)
 
 If you also have {covrpage} on your site and want to add it to the list you can submit a [Pull Request](https://github.com/yonicd/covrpage/pulls?utf8=%E2%9C%93&q=is%3Apr) to this README.
 
