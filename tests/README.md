@@ -1,6 +1,6 @@
 Tests and Coverage
 ================
-09 November, 2018 00:04:29
+09 November, 2018 00:21:54
 
 This output is created by
 [covrpage](https://github.com/yonicd/covrpage).
@@ -12,15 +12,15 @@ Coverage summary is created using the
 
 | Object                                           | Coverage (%) |
 | :----------------------------------------------- | :----------: |
-| covrpage                                         |    70.45     |
+| covrpage                                         |    74.95     |
 | [R/vignette.R](../R/vignette.R)                  |     0.00     |
-| [R/badge.R](../R/badge.R)                        |    49.12     |
 | [R/covrpage\_cleanup.R](../R/covrpage_cleanup.R) |    51.22     |
 | [R/covrpage\_checks.R](../R/covrpage_checks.R)   |    64.29     |
 | [R/coverage\_skip.R](../R/coverage_skip.R)       |    75.00     |
 | [R/covrpage.R](../R/covrpage.R)                  |    77.14     |
 | [R/use\_covrpage.R](../R/use_covrpage.R)         |    79.41     |
 | [R/testthat\_summary.R](../R/testthat_summary.R) |    88.30     |
+| [R/badge.R](../R/badge.R)                        |    89.47     |
 | [R/tencrypt.R](../R/tencrypt.R)                  |    92.31     |
 | [R/map\_testthat.R](../R/map_testthat.R)         |    95.05     |
 | [R/create\_chunks.R](../R/create_chunks.R)       |    96.00     |
@@ -35,9 +35,10 @@ package.
 
 | file                                               | n |  time | error | failed | skipped | warning |
 | :------------------------------------------------- | -: | ----: | ----: | -----: | ------: | ------: |
-| [test-check\_utils.R](testthat/test-check_utils.R) | 5 | 0.192 |     0 |      0 |       0 |       0 |
-| [test-covrfuns.R](testthat/test-covrfuns.R)        | 6 | 0.077 |     0 |      0 |       0 |       0 |
-| [test-tencrypt.R](testthat/test-tencrypt.R)        | 2 | 1.729 |     0 |      0 |       0 |       0 |
+| [test-badge.R](testthat/test-badge.R)              | 2 | 0.525 |     0 |      0 |       0 |       0 |
+| [test-check\_utils.R](testthat/test-check_utils.R) | 5 | 0.067 |     0 |      0 |       0 |       0 |
+| [test-covrfuns.R](testthat/test-covrfuns.R)        | 6 | 0.128 |     0 |      0 |       0 |       0 |
+| [test-tencrypt.R](testthat/test-tencrypt.R)        | 2 | 1.580 |     0 |      0 |       0 |       0 |
 
 <details closed>
 
@@ -46,16 +47,18 @@ package.
 
 | file                                                   | context                    | test                           | status | n |  time |
 | :----------------------------------------------------- | :------------------------- | :----------------------------- | :----- | -: | ----: |
+| [test-badge.R](testthat/test-badge.R#L15)              | badge                      | create badge: create           | PASS   | 1 | 0.306 |
+| [test-badge.R](testthat/test-badge.R#L20)              | badge                      | create badge: output message   | PASS   | 1 | 0.219 |
 | [test-check\_utils.R](testthat/test-check_utils.R#L4)  | check for tests            | tests are detected             | PASS   | 1 | 0.002 |
-| [test-check\_utils.R](testthat/test-check_utils.R#L15) | check for packages         | packages are detected          | PASS   | 3 | 0.014 |
-| [test-check\_utils.R](testthat/test-check_utils.R#L24) | use covrpage               | test use\_covrpage             | PASS   | 1 | 0.176 |
-| [test-covrfuns.R](testthat/test-covrfuns.R#L5)         | check summary covr         | covr\_summary: standard input  | PASS   | 1 | 0.041 |
+| [test-check\_utils.R](testthat/test-check_utils.R#L15) | check for packages         | packages are detected          | PASS   | 3 | 0.017 |
+| [test-check\_utils.R](testthat/test-check_utils.R#L24) | use covrpage               | test use\_covrpage             | PASS   | 1 | 0.048 |
+| [test-covrfuns.R](testthat/test-covrfuns.R#L5)         | check summary covr         | covr\_summary: standard input  | PASS   | 1 | 0.060 |
 | [test-covrfuns.R](testthat/test-covrfuns.R#L9_L11)     | check summary covr         | covr\_summary: empty input     | PASS   | 1 | 0.001 |
-| [test-covrfuns.R](testthat/test-covrfuns.R#L19)        | check summary output types | with data: short               | PASS   | 1 | 0.020 |
-| [test-covrfuns.R](testthat/test-covrfuns.R#L23)        | check summary output types | with data: long                | PASS   | 1 | 0.013 |
+| [test-covrfuns.R](testthat/test-covrfuns.R#L19)        | check summary output types | with data: short               | PASS   | 1 | 0.019 |
+| [test-covrfuns.R](testthat/test-covrfuns.R#L23)        | check summary output types | with data: long                | PASS   | 1 | 0.046 |
 | [test-covrfuns.R](testthat/test-covrfuns.R#L27)        | check summary output types | with data: no data             | PASS   | 1 | 0.001 |
 | [test-covrfuns.R](testthat/test-covrfuns.R#L35)        | check covr to df           | covr object to df: empty input | PASS   | 1 | 0.001 |
-| [test-tencrypt.R](testthat/test-tencrypt.R#L17)        | encryption of PAT          | testing tencrypt: no add       | PASS   | 1 | 1.727 |
+| [test-tencrypt.R](testthat/test-tencrypt.R#L17)        | encryption of PAT          | testing tencrypt: no add       | PASS   | 1 | 1.578 |
 | [test-tencrypt.R](testthat/test-tencrypt.R#L23)        | encryption of PAT          | testing tencrypt: with add     | PASS   | 1 | 0.002 |
 
 </details>
