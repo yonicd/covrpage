@@ -1,6 +1,6 @@
 Package: covrpage
 Title: Create a Readme Summary Page for GitHub testthat and covr Outputs
-Version: 0.0.62
+Version: 0.0.63
 Authors@R: c(person("Jonathan", "Sidi", email = "yonicd@gmail.com", role =
           c("aut",'cre')))
 Description: Create a README file to place in package test subdirectory to communicate

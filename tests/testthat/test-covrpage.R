@@ -2,22 +2,17 @@ testthat::context("check against remote repo that main function is working")
 
 testthat::describe("check on remote repo", {
 
-  file.copy("../assets/covrpage_benchmark",tempdir(),recursive = TRUE)
+  file.copy("../assets/covrpage_benchmark/covrpage",tempdir(),recursive = TRUE)
 
-  td <- file.path(tempdir(),'covrpage_benchmark')
+  td <- file.path(tempdir(),'covrpage')
       
   orig_time <- file.info(file.path(td, "tests/README.md"))[["mtime"]]
-
-  testthat::skip('something')
   
-  # testthat::skip_on_travis()
-  # skip_if_not_rstudio()
-
   wd <- getwd()
   
   setwd(td)
   
-  covrpage(preview = FALSE)
+  covrpage::covrpage(preview = FALSE)
 
   setwd(wd)
   

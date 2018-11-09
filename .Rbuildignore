@@ -7,4 +7,4 @@
 ^docs$
 ^README\.Rmd$
 ^README-.*\.png$
-repo_count.R
+ignore
