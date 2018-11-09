@@ -71,61 +71,50 @@ use_covrpage_vignette <- function(path = '.'){
     cat('inst/doc',file = rgit,append = TRUE,sep='\n')
   }
  
-  DESC <- read.dcf(fd,fields = c('Depends','Imports','Suggests','VignetteBuilder'))
+  DESC <- read.dcf(fd)
   
-  ADD_SUGG <- names(which(sapply(c('knitr','rmarkdown'),function(x) !any(grepl(x,DESC[-4])))))
+  ADD_SUGG <- names(which(sapply(c('knitr','rmarkdown'),function(x){
+    
+    idx <- match(c('Depends','Imports','Suggests'),colnames(DESC))
+    
+    THIS_DESC <- DESC[,idx]
+
+    !any(grepl(x,THIS_DESC))
+  })))
     
   if(length(ADD_SUGG)>0){
     
+    ADD_SUGG <- paste0(ADD_SUGG,collapse = ',')
+    
     message(sprintf('adding %s to Suggests field in %s',paste0(ADD_SUGG,collapse = ', '),fd))
   
-    if(!is.na(DESC['Suggests'])){
-      NEW_SUGG <- data.frame(Suggests = c(DESC['Suggests'],ADD_SUGG))
+    if(any(grepl('Suggests',colnames(DESC)))){
+      NEW_SUGG <- sprintf('%s,%s',DESC[,'Suggests'],ADD_SUGG)
+      
     }else{
-      NEW_SUGG <- data.frame(Suggests = ADD_SUGG)
+      
+      NEW_SUGG <- ADD_SUGG
+      
+      NEW_MAT <- matrix(NA,1)
+      
+      colnames(NEW_MAT) <- 'Suggests'
+      
+      DESC <- cbind(DESC,NEW_MAT)
+      
     }
   
-    write.dcf(x = data.frame(Suggests = NEW_SUGG),file=fd,append = TRUE)
+    DESC[,'Suggests'] <- NEW_SUGG
+    
+    write.dcf(x = DESC, file = fd)
     
   }
     
-  if(is.na(DESC[4])){
+  if(!any(grepl('VignetteBuilder',colnames(DESC)))){
     
     message(sprintf('adding VignetteBuilder: knitr to %s',fd))
     
     write.dcf(x = data.frame(VignetteBuilder = 'knitr'),file=fd,append = TRUE)
     
   }
-  
-}
-
-#' @title covrpage for travis
-#' @description wrapper for covrpage call with switches for running
-#' after-success on travis and deploying gh-pages.
-#' @param path character, path to package, Default: getwd()
-#' @param \dots arguments to pass to covrpage
-#' @return NULL
-#' @examples 
-#' \dontrun{
-#' if(interactive()){
-#'  covrpage_ci()
-#'  }
-#' }
-#' @rdname covrpage_ci
-#' @export 
-covrpage_ci <- function(path = getwd(),...){
-
-  preview      <- FALSE
-  auto_push    <- FALSE
-  update_badge <- TRUE
-  vignette     <- TRUE
-    
-  list2env(list(...),envir = environment())
-  
-  covrpage(path         = path,
-           preview      = preview,
-           update_badge = update_badge,
-           vignette     = vignette
-  )
   
 }
