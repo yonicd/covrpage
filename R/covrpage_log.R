@@ -1,0 +1,53 @@
+#' @title Log of covrpage outputs
+#' @description Retrieve log of covrpage README.md files commited to git
+#' version control
+#' @return list
+#' @examples 
+#' \dontrun{
+#' covrpage_log()
+#' }
+#' @rdname covrpage_log
+#' @export 
+
+covrpage_log <- function(){
+  x <- system('git log --pretty=format:"%h" -- tests/README.md',intern = TRUE)
+  lapply(x,function(hash) system(sprintf('git cat-file -p %s:tests/README.md',hash),intern = TRUE))  
+}
+
+#' @title Log of code coverage
+#' @description Retrieve log of code coverages evalulated by covrpage that
+#' were commited to git version control.
+#' @return data.frame
+#' @examples 
+#' \dontrun{
+#' covr_log()
+#' }
+#' @rdname covr_log
+#' @export 
+
+covr_log <- function(){
+  
+  do.call(rbind,lapply(covrpage_log(),covr_md_df)) 
+  
+}
+
+
+covr_md_df <- function(md){
+  date               <- as.Date(md[3],format = '%d %B,%Y %H:%M:%S')
+  covr_table         <- md[(grep('^\\| Object',md)+2):(grep('^<br>$',md)-2)]
+  covr_table         <- gsub('^\\||\\|$|\\s','',covr_table)
+  covr_table         <- strsplit(covr_table,'\\|')
+  covr_table_name    <- basename(gsub(pattern     = '^(.*?)\\(|\\)$',
+                                      replacement = '',
+                                      sapply(covr_table,'[',1))
+                                 )
+  covr_table_percent <- as.numeric(sapply(covr_table,'[',2))
+  ret                <- data.frame(
+                                    date             = date, 
+                                    file             = covr_table_name,
+                                    percent          = covr_table_percent,
+                                    stringsAsFactors = FALSE)
+  ret                <- ret[!is.na(covr_table_percent),]
+  ret$file[1]        <- sprintf('%s (Package)',ret$file[1])
+  ret
+}

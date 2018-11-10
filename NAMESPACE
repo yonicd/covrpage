@@ -2,9 +2,11 @@
 
 export("%>%")
 export(coverage_skip)
+export(covr_log)
 export(covr_summary)
 export(covrpage)
 export(covrpage_ci)
+export(covrpage_log)
 export(make_badge)
 export(map_test)
 export(map_testthat)
