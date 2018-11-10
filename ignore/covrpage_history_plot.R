@@ -1,6 +1,7 @@
-x <- covrpage::covr_log()
-
-x$file_fac <-  factor(x$file,levels = rev(unique(x$file)))
+x <- covrpage::covr_log()%>%
+  dplyr::mutate(
+    file_fac =  factor(file,levels = rev(unique(file)))  
+  )
 
 x%>%
   ggplot2::ggplot(
@@ -13,7 +14,12 @@ x%>%
     colour = 'white',
     width  = .95,
     alpha  = 0.75
-    )+
+    ) +
+  ggplot2::geom_text(data = x%>%
+                       dplyr::filter(date==max(date)),
+                     colour = 'white',
+                     size=2,
+                     ggplot2::aes(label = floor(percent))) +
   ggplot2::geom_hline(
     yintercept = c(0,(1:length(unique(x$file)))+0.5),
     colour     = 'grey90'
