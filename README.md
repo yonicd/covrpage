@@ -8,7 +8,7 @@ Status](https://img.shields.io/codecov/c/github/yonicd/covrpage/master.svg)](htt
 [![Covrpage
 Summary](https://img.shields.io/badge/covrpage-Last_Build_2018_11_10-brightgreen.svg)](http://tinyurl.com/y7qge5ta)
 
-# {covrpage} <img src="https://github.com/yonicd/covrpage/blob/master/inst/logo/covrpage_small.png?raw=true" align="right"/>
+# covrpage <img src="https://github.com/yonicd/covrpage/blob/master/inst/logo/covrpage_small.png?raw=true" align="right"/>
 
 Healthy R packages use [testthat](https://github.com/r-lib/testthat) and
 [covr](https://github.com/r-lib/covr) to develop stable packages.
@@ -20,23 +20,6 @@ tables of results from covr and testthat.
 The output is created in the [tests](tests) subdirectory as a
 [README.md](tests/README.md) file so it will show up in Github browser
 page.
-
-## Repositories using {covrpage}
-
-  - [{slackr}](https://github.com/hrbrmstr/slackr/tree/master/tests)
-  - [{remedy}](https://github.com/thinkr-open/remedy/tree/master/tests)
-  - [{mathpix}](https://github.com/jonocarroll/mathpix/tree/master/tests)
-  - [{carbonate}](https://github.com/yonicd/carbonate/tree/master/tests)
-  - [{GSEAdv}](https://github.com/llrs/GSEAdv/tree/master/tests)
-  - [{rfm}](https://github.com/rsquaredacademy/rfm/tree/master/tests)
-  - [{ggstatsplot}](https://github.com/IndrajeetPatil/ggstatsplot/tree/master/tests)
-  - [Full
-    List…](https://github.com/search?l=Markdown&o=desc&q=covrpage+filename%3AREADME.md+path%3Atests&s=indexed&type=Code)
-
-If you also have {covrpage} on your site and want to add it to the list
-you can submit a [Pull
-Request](https://github.com/yonicd/covrpage/pulls?utf8=%E2%9C%93&q=is%3Apr)
-to this README.
 
 ## Package Installation
 
@@ -62,21 +45,40 @@ to this README.
     
     covrpage::covrpage(path = 'another_directory')
 
-### Vignette
+## Vignette
 
 covrpage can be outputed as a vignette called `Tests and Coverage`
 making it part of the package help documentation and can be viewed as an
 [article](https://yonicd.github.io/covrpage/articles/tests_and_coverage.html)
-in a [{pkgdown}](https://github.com/r-lib/pkgdown) site.
+in a [pkgdown](https://github.com/r-lib/pkgdown) site.
 
-### Articles
+## Articles
 
   - [Test
     Results](https://yonicd.github.io/covrpage/articles/Test_Results.html)
   - [Continuous
     Integration](https://yonicd.github.io/covrpage/articles/Continuous_Integration.html)
 
-That’s it\!
+## Repositories using covrpage
+
+  - [slackr](https://github.com/hrbrmstr/slackr/tree/master/tests)
+  - [remedy](https://github.com/thinkr-open/remedy/tree/master/tests)
+  - [mathpix](https://github.com/jonocarroll/mathpix/tree/master/tests)
+  - [carbonate](https://github.com/yonicd/carbonate/tree/master/tests)
+  - [GSEAdv](https://github.com/llrs/GSEAdv/tree/master/tests)
+  - [rfm](https://github.com/rsquaredacademy/rfm/tree/master/tests)
+  - [ggstatsplot](https://github.com/IndrajeetPatil/ggstatsplot/tree/master/tests)
+  - [Full
+    List…](https://github.com/search?l=Markdown&o=desc&q=covrpage+filename%3AREADME.md+path%3Atests&s=indexed&type=Code)
+
+If you also have `covrpage` on your site and want to add it to the list
+you can submit a [Pull
+Request](https://github.com/yonicd/covrpage/pulls?utf8=%E2%9C%93&q=is%3Apr)
+to this README.
+
+Please note that this project is released with a [Contributor Code of
+Conduct](CONDUCT.md). By participating in this project you agree to
+abide by its terms.
 
 Any questions/comments are always welcome in the
 [issues](https://github.com/yonicd/covrpage/issues) section.

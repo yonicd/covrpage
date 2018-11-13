@@ -1,3 +1,55 @@
+title: covrpage
+
+development:
+  mode: auto
+
+navbar:
+  structure:
+    left:  [home, reference, articleindex, news]
+    right: [github, twitter]
+  components:
+    articles: ~
+    articleindex:
+      text: Articles
+      href: articles/index.html
+    twitter:
+      icon: fa-lg fa-twitter
+      href: http://twitter.com/yoniceedee
+
 hexURL:
   https://github.com/yonicd/covrpage/blob/master/inst/logo/covrpage_small.png?raw=true
-  
+
+reference:
+  - title: "Setup"
+    contents:
+      - 'make_badge'
+      - 'tencrypt'
+      - 'use_covrpage'
+      - 'use_covrpage_vignette'
+  - title: "Invoking"
+    contents:
+      - 'covrpage'
+      - 'covrpage_ci'
+  - title: "Postprocess"
+    contents:
+      - 'covrpage_log'
+      - 'covr_log'
+  - title: "Covrpage Utilities"
+    contents:
+      - 'coverage_skip'
+      - 'map_test'
+      - 'map_testthat'
+      - 'covr_summary'
+      - 'testthat_summary'      
+  - title: "Imported Utilities"
+    contents:
+      - 'sinfo'
+      - '%>%'
+
+articles:
+  - title: "Output"
+    contents: tests_and_coverage
+  - title: "Usage"
+    contents: 
+      - Continuous_Integration
+      - Test_Results

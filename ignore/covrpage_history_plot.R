@@ -1,7 +1,8 @@
 x <- covrpage::covr_log()%>%
   dplyr::mutate(
     file_fac =  factor(file,levels = rev(unique(file)))  
-  )
+  )%>%
+  dplyr::filter(!is.na(date))
 
 x%>%
   ggplot2::ggplot(
@@ -16,8 +17,8 @@ x%>%
     alpha  = 0.75
     ) +
   ggplot2::geom_text(data = x%>%
-                       dplyr::filter(date==max(date)),
-                     colour = 'white',
+                       dplyr::filter(date==max(date,na.rm = TRUE)),
+                     colour = 'black',
                      size=2,
                      ggplot2::aes(label = floor(percent))) +
   ggplot2::geom_hline(

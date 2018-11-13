@@ -34,6 +34,9 @@ covr_log <- function(){
 
 covr_md_df <- function(md){
   date               <- strptime(md[3],format = '%d %B,%Y %H:%M:%S')
+  if(length(grep('^\\| Object',md))==0){
+    return(NULL)
+  }
   covr_table         <- md[(grep('^\\| Object',md)+2):(grep('^<br>$',md)-2)]
   covr_table         <- gsub('^\\||\\|$|\\s','',covr_table)
   covr_table         <- strsplit(covr_table,'\\|')
