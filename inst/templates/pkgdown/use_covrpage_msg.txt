@@ -1,4 +1,4 @@
-Add to .travs.yml 
+Add to .travis.yml 
 
   r_github_packages: 
   - yonicd/covrpage   
