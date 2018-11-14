@@ -1,0 +1,32 @@
+---
+title: "Get started"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Why use covrpage when developing a package?
+
+Trust is earned not ~~inherited~~ importedFrom. Now that you've built a cool package, you want potential users to trust it so that they might adopt it. How to build trust in your piece of software? Unit testing is part of the components building trustworthiness of your package. Imagine you're at the point where you've tested most lines of your code with thorough assertions, including checks of edge cases. Proof of that hard work will be a high test coverage, that potential users of your package might notice thanks to a bright green coverage badge. But how would they know your tests are thorough? That's what `covrpage` helps you with, by creating a summary report of your tests that goes beyond the coverage percentage. This way, potential users can see at a glance how good the unit testing of your package is.
+
+## Why use covrpage on top of say Codecov and Coveralls?
+
+The coverage badge provided by coverage services displays only the percentage of lines covered by tests, but is also clickable, providing access to a nifty report. `covrpage` report for your package helps with two potential limitations of such reports:
+
+* it shows tests that exist but are skipped on Travis, e.g. tests of RStudio add-ins that require RStudio to be installed; whereas most often Codecov and Coveralls only know what Travis reported to them.
+
+* it displays a lot of information in a single page whereas the interactive reports of Codecov and Coveralls need a lot of clicking. Besides, you can make `covrpage` report an actual part of the documentation of your package, as a vignette, whereas Codecov and Coveralls reports are external information.
+
+## Is `covrpage` report only for users?
+
+No, it can also inform your work on your package, by helping you track progress of the unit tests you're working on, and it can show to potential _contributors_ where help is needed.
