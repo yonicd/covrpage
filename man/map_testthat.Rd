@@ -21,4 +21,9 @@ Return data.frame containing which expecations are in the testthat directory
 }
 \seealso{
 \code{\link[stats]{setNames}}
+
+Other utility: \code{\link{coverage_skip}},
+  \code{\link{covr_summary}}, \code{\link{map_test}},
+  \code{\link{testthat_summary}}
 }
+\concept{utility}

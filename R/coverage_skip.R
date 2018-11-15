@@ -9,6 +9,7 @@
 #'  \code{\link[testthat]{test_dir}}
 #'  \code{\link[covr]{package_coverage}}
 #' @rdname coverage_skip
+#' @family utility
 #' @export 
 #' @importFrom testthat test_dir
 #' @importFrom covr package_coverage

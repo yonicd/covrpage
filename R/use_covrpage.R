@@ -23,6 +23,7 @@
 #' use_covrpage(travis_type = 'pkgdown',travis_block = 'after_failure')
 #' use_covrpage(travis_type = 'pkgdown',travis_block = c('after_success','after_failure'))
 #' @rdname use_covrpage
+#' @family setup
 #' @importFrom whisker whisker.render
 #' @export
 

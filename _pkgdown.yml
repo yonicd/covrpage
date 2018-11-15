@@ -22,25 +22,16 @@ hexURL:
 reference:
   - title: "Setup"
     contents:
-      - 'use_covrpage'
-      - 'use_covrpage_vignette'
-      - 'make_badge'
-      - 'tencrypt'
+      - has_concept("setup")
   - title: "Invoking"
     contents:
-      - 'covrpage'
-      - 'covrpage_ci'
+      - has_concept("invoke")
   - title: "Covrpage Trends"
     contents:
-      - 'covrpage_log'
-      - 'covr_log'
+      - has_concept("log")
   - title: "Covrpage Utilities"
     contents:
-      - 'coverage_skip'
-      - 'map_test'
-      - 'map_testthat'
-      - 'covr_summary'
-      - 'testthat_summary'
+      - has_concept("utility")
 
 articles:
   - title: "Output"

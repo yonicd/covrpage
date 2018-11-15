@@ -22,3 +22,7 @@ if(interactive()){
  }
 }
 }
+\seealso{
+Other invoke: \code{\link{covrpage}}
+}
+\concept{invoke}

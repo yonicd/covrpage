@@ -18,3 +18,8 @@ vingettes subdirectory
 use_covrpage_vignette()
 }
 }
+\seealso{
+Other setup: \code{\link{make_badge}},
+  \code{\link{tencrypt}}, \code{\link{use_covrpage}}
+}
+\concept{setup}

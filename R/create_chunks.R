@@ -4,6 +4,7 @@
 #' @param type character, format of the object output, Default: c("short", "long")
 #' @return data.frame
 #' @rdname testthat_summary
+#' @family utility
 #' @export
 
 testthat_summary <- function(x, type=c("short", "long")) {
@@ -57,6 +58,7 @@ covr_print_to_df <- function(x, group = c("filename", "functions"), by = "line")
 #' @seealso
 #'  \code{\link[covr]{package_coverage}}
 #' @rdname covr_summary
+#' @family utility
 #' @export
 covr_summary <- function(x,failed = FALSE) {
   

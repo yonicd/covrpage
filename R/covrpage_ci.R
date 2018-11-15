@@ -11,6 +11,7 @@
 #'  }
 #' }
 #' @rdname covrpage_ci
+#' @family invoke
 #' @export 
 covrpage_ci <- function(path = getwd(),...){
   

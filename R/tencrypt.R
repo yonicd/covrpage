@@ -4,6 +4,7 @@
 #' @param travis_env character, name of Travis environment variable
 #' @param add boolean, add directly to .travis.yml, Default: TRUE
 #' @rdname tencrypt
+#' @family setup
 #' @export
 tencrypt <- function(r_obj = Sys.getenv("GITHUB_PAT"),
                      travis_env = "GH_PAT",

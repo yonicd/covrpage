@@ -21,4 +21,9 @@ for failing tests.
 \seealso{
 \code{\link[testthat]{test_dir}}
  \code{\link[covr]{package_coverage}}
+
+Other utility: \code{\link{covr_summary}},
+  \code{\link{map_testthat}}, \code{\link{map_test}},
+  \code{\link{testthat_summary}}
 }
+\concept{utility}

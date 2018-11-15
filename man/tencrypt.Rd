@@ -17,3 +17,9 @@ tencrypt(r_obj = Sys.getenv("GITHUB_PAT"), travis_env = "GH_PAT",
 \description{
 Add encrypted Travis environment variable to git directory and .travis.yml.
 }
+\seealso{
+Other setup: \code{\link{make_badge}},
+  \code{\link{use_covrpage_vignette}},
+  \code{\link{use_covrpage}}
+}
+\concept{setup}

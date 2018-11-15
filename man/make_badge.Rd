@@ -25,3 +25,9 @@ the README.md created in the tests directory.
 if either inputs are NULL then the .git file is inspected to gather the 
 information
 }
+\seealso{
+Other setup: \code{\link{tencrypt}},
+  \code{\link{use_covrpage_vignette}},
+  \code{\link{use_covrpage}}
+}
+\concept{setup}

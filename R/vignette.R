@@ -34,6 +34,7 @@ covrpage_vignette <- function(path = '.'){
 #' use_covrpage_vignette()
 #' }
 #' @rdname use_covrpage_vignette
+#' @family setup
 #' @export 
 use_covrpage_vignette <- function(path = '.'){
   

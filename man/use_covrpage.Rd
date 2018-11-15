@@ -46,3 +46,9 @@ use_covrpage(travis_type = 'pkgdown',travis_block = 'after_success')
 use_covrpage(travis_type = 'pkgdown',travis_block = 'after_failure')
 use_covrpage(travis_type = 'pkgdown',travis_block = c('after_success','after_failure'))
 }
+\seealso{
+Other setup: \code{\link{make_badge}},
+  \code{\link{tencrypt}},
+  \code{\link{use_covrpage_vignette}}
+}
+\concept{setup}

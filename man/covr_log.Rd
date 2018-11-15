@@ -18,3 +18,7 @@ were commited to git version control.
 covr_log()
 }
 }
+\seealso{
+Other log: \code{\link{covrpage_log}}
+}
+\concept{log}

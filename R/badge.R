@@ -84,6 +84,7 @@ check_badge <- function(){
 #' @return character
 #' @details if either inputs are NULL then the .git file is inspected to gather the 
 #' information
+#' @family setup
 #' @rdname make_badge
 #' @export 
 

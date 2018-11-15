@@ -7,6 +7,7 @@
 #' covrpage_log()
 #' }
 #' @rdname covrpage_log
+#' @family log
 #' @export 
 
 covrpage_log <- function(){
@@ -23,6 +24,7 @@ covrpage_log <- function(){
 #' covr_log()
 #' }
 #' @rdname covr_log
+#' @family log
 #' @export 
 
 covr_log <- function(){

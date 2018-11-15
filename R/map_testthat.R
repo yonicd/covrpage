@@ -88,6 +88,7 @@ nest_expect <- function(x) {
 #' @seealso
 #'  \code{\link[utils]{getParseData}}
 #' @rdname map_test
+#' @family utility
 #' @export
 #' @importFrom utils getParseData
 map_test <- function(path) {
@@ -164,6 +165,7 @@ unrowname <- function(el, ret, label) {
 #' @seealso
 #'  \code{\link[stats]{setNames}}
 #' @rdname map_testthat
+#' @family utility
 #' @export
 #' @importFrom stats setNames
 map_testthat <- function(path = "tests/testthat") {

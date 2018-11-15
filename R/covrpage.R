@@ -10,6 +10,7 @@
 #' @seealso
 #'  \code{\link[rmarkdown]{render}}
 #' @rdname covrpage
+#' @family invoke
 #' @export
 #' @importFrom rmarkdown render
 #' @importFrom git2r repository add commit push
