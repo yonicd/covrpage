@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Hierarchy structure of testthat tests — map_testthat • covrpage</title>
+<title>Map the hierarchy structure of testthat directory — map_testthat • covrpage</title>
 
 <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
 
@@ -32,9 +32,9 @@
 
 
 
-<meta property="og:title" content="Hierarchy structure of testthat tests — map_testthat" />
+<meta property="og:title" content="Map the hierarchy structure of testthat directory — map_testthat" />
 
-<meta property="og:description" content="Return nested list of context/test/expectation in testthat directory" />
+<meta property="og:description" content="Query a testthat directory for the unit test structure." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -109,14 +109,14 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Hierarchy structure of testthat tests</h1>
+    <h1>Map the hierarchy structure of testthat directory</h1>
     <small class="dont-index">Source: <a href='https://github.com/yonicd/covrpage/blob/master/R/map_testthat.R'><code>R/map_testthat.R</code></a></small>
     <div class="hidden name"><code>map_testthat.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Return nested list of context/test/expectation in testthat directory</p>
+    <p>Query a testthat directory for the unit test structure.</p>
     
     </div>
 
@@ -133,7 +133,12 @@
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>list</p>
+    <p>data.frame</p>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>Return data.frame containing which expecations are in the testthat directory
+ by file/context/description/test/expectation/linerange</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
@@ -147,6 +152,8 @@
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#details">Details</a></li>
 
       <li><a href="#see-also">See also</a></li>
           </ul>

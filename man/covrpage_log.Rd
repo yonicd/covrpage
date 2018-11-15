@@ -2,7 +2,7 @@
 % Please edit documentation in R/covrpage_log.R
 \name{covrpage_log}
 \alias{covrpage_log}
-\title{Log of covrpage outputs}
+\title{Query 'git log' for covrpage history}
 \usage{
 covrpage_log()
 }

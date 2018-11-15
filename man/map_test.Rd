@@ -2,7 +2,7 @@
 % Please edit documentation in R/map_testthat.R
 \name{map_test}
 \alias{map_test}
-\title{Map a single test file}
+\title{Map the hierarchy structure of a testthat test file}
 \usage{
 map_test(path)
 }
@@ -10,10 +10,14 @@ map_test(path)
 \item{path}{character, path to file}
 }
 \value{
-list
+data.frame
 }
 \description{
-Return nested list of context/test/expectation in testthat R file
+Query a test file to see what expectations are defined in it.
+}
+\details{
+Return data.frame containing which expecations are in the test file
+ by context/description/test/expectation/linerange
 }
 \seealso{
 \code{\link[utils]{getParseData}}

@@ -2,7 +2,7 @@
 % Please edit documentation in R/covrpage_log.R
 \name{covr_log}
 \alias{covr_log}
-\title{Log of code coverage}
+\title{Query 'git log' for code coverage history}
 \usage{
 covr_log()
 }

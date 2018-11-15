@@ -79,10 +79,12 @@ nest_expect <- function(x) {
   ret
 }
 
-#' @title Map a single test file
-#' @description Return nested list of context/test/expectation in testthat R file
+#' @title Map the hierarchy structure of a testthat test file
+#' @description Query a test file to see what expectations are defined in it.
 #' @param path character, path to file
-#' @return list
+#' @details Return data.frame containing which expecations are in the test file
+#'  by context/description/test/expectation/linerange  
+#' @return data.frame
 #' @seealso
 #'  \code{\link[utils]{getParseData}}
 #' @rdname map_test
@@ -153,10 +155,12 @@ unrowname <- function(el, ret, label) {
   return(x)
 }
 
-#' @title Hierarchy structure of testthat tests
-#' @description Return nested list of context/test/expectation in testthat directory
+#' @title Map the hierarchy structure of testthat directory
+#' @description Query a testthat directory for the unit test structure.
 #' @param path character, path to tests, Default: 'tests/testthat'
-#' @return list
+#' @details Return data.frame containing which expecations are in the testthat directory
+#'  by file/context/description/test/expectation/linerange  
+#' @return data.frame
 #' @seealso
 #'  \code{\link[stats]{setNames}}
 #' @rdname map_testthat

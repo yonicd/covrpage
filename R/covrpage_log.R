@@ -1,4 +1,4 @@
-#' @title Log of covrpage outputs
+#' @title Query 'git log' for covrpage history
 #' @description Retrieve log of covrpage README.md files commited to git
 #' version control
 #' @return list
@@ -14,7 +14,7 @@ covrpage_log <- function(){
   lapply(x,function(hash) system(sprintf('git cat-file -p %s:tests/README.md',hash),intern = TRUE))  
 }
 
-#' @title Log of code coverage
+#' @title Query 'git log' for code coverage history
 #' @description Retrieve log of code coverages evalulated by covrpage that
 #' were commited to git version control.
 #' @return data.frame

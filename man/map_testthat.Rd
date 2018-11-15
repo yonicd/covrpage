@@ -2,7 +2,7 @@
 % Please edit documentation in R/map_testthat.R
 \name{map_testthat}
 \alias{map_testthat}
-\title{Hierarchy structure of testthat tests}
+\title{Map the hierarchy structure of testthat directory}
 \usage{
 map_testthat(path = "tests/testthat")
 }
@@ -10,10 +10,14 @@ map_testthat(path = "tests/testthat")
 \item{path}{character, path to tests, Default: 'tests/testthat'}
 }
 \value{
-list
+data.frame
 }
 \description{
-Return nested list of context/test/expectation in testthat directory
+Query a testthat directory for the unit test structure.
+}
+\details{
+Return data.frame containing which expecations are in the testthat directory
+ by file/context/description/test/expectation/linerange
 }
 \seealso{
 \code{\link[stats]{setNames}}

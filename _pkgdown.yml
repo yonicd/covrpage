@@ -22,15 +22,15 @@ hexURL:
 reference:
   - title: "Setup"
     contents:
-      - 'make_badge'
-      - 'tencrypt'
       - 'use_covrpage'
       - 'use_covrpage_vignette'
+      - 'make_badge'
+      - 'tencrypt'
   - title: "Invoking"
     contents:
       - 'covrpage'
       - 'covrpage_ci'
-  - title: "Postprocess"
+  - title: "Covrpage Trends"
     contents:
       - 'covrpage_log'
       - 'covr_log'
@@ -40,11 +40,7 @@ reference:
       - 'map_test'
       - 'map_testthat'
       - 'covr_summary'
-      - 'testthat_summary'      
-  - title: "Imported Utilities"
-    contents:
-      - 'sinfo'
-      - '%>%'
+      - 'testthat_summary'
 
 articles:
   - title: "Output"

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Map a single test file — map_test • covrpage</title>
+<title>Map the hierarchy structure of a testthat test file — map_test • covrpage</title>
 
 <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
 
@@ -32,9 +32,9 @@
 
 
 
-<meta property="og:title" content="Map a single test file — map_test" />
+<meta property="og:title" content="Map the hierarchy structure of a testthat test file — map_test" />
 
-<meta property="og:description" content="Return nested list of context/test/expectation in testthat R file" />
+<meta property="og:description" content="Query a test file to see what expectations are defined in it." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -109,14 +109,14 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Map a single test file</h1>
+    <h1>Map the hierarchy structure of a testthat test file</h1>
     <small class="dont-index">Source: <a href='https://github.com/yonicd/covrpage/blob/master/R/map_testthat.R'><code>R/map_testthat.R</code></a></small>
     <div class="hidden name"><code>map_test.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Return nested list of context/test/expectation in testthat R file</p>
+    <p>Query a test file to see what expectations are defined in it.</p>
     
     </div>
 
@@ -133,7 +133,12 @@
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>list</p>
+    <p>data.frame</p>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>Return data.frame containing which expecations are in the test file
+ by context/description/test/expectation/linerange</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
@@ -147,6 +152,8 @@
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#details">Details</a></li>
 
       <li><a href="#see-also">See also</a></li>
           </ul>
