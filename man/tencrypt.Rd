@@ -4,7 +4,7 @@
 \alias{tencrypt}
 \title{Encrypt Travis environment variables}
 \usage{
-tencrypt(r_obj = Sys.getenv("GITHUB_PAT"), travis_env = "GH_PAT",
+tencrypt(r_obj = Sys.getenv("GITHUB_PAT"), travis_env = "GITHUB_PAT",
   add = TRUE)
 }
 \arguments{

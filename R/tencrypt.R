@@ -7,7 +7,7 @@
 #' @family setup
 #' @export
 tencrypt <- function(r_obj = Sys.getenv("GITHUB_PAT"),
-                     travis_env = "GH_PAT",
+                     travis_env = "GITHUB_PAT",
                      add = TRUE) {
   try(x <- system("travis --version", intern = TRUE), silent = TRUE)
 
