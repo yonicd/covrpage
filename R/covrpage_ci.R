@@ -4,7 +4,7 @@
 #' @param path character, path to package, Default: getwd()
 #' @param \dots arguments to pass to covrpage
 #' @return NULL
-#' @examples 
+#' @examples
 #' \dontrun{
 #' if(interactive()){
 #'  covrpage_ci()
@@ -12,20 +12,19 @@
 #' }
 #' @rdname covrpage_ci
 #' @family invoke
-#' @export 
-covrpage_ci <- function(path = getwd(),...){
-  
-  preview      <- FALSE
-  auto_push    <- FALSE
+#' @export
+covrpage_ci <- function(path = getwd(), ...) {
+  preview <- FALSE
+  auto_push <- FALSE
   update_badge <- TRUE
-  vignette     <- TRUE
-  
-  list2env(list(...),envir = environment())
-  
-  covrpage(path         = path,
-           preview      = preview,
-           update_badge = update_badge,
-           vignette     = vignette
+  vignette <- TRUE
+
+  list2env(list(...), envir = environment())
+
+  covrpage(
+    path = path,
+    preview = preview,
+    update_badge = update_badge,
+    vignette = vignette
   )
-  
 }

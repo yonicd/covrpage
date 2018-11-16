@@ -10,8 +10,8 @@ covr_log()
 data.frame
 }
 \description{
-Retrieve log of code coverages evalulated by covrpage that
-were commited to git version control.
+Retrieve log of code coverages evaluated by covrpage that
+were committed to git version control.
 }
 \examples{
 \dontrun{

@@ -22,7 +22,7 @@ Create covrpage badge for test status and date that is connected to
 the README.md created in the tests directory.
 }
 \details{
-if either inputs are NULL then the .git file is inspected to gather the 
+if either inputs are NULL then the .git file is inspected to gather the
 information
 }
 \seealso{

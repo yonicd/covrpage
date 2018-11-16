@@ -7,7 +7,7 @@
 #' @family utility
 #' @export
 
-testthat_summary <- function(x, type=c("short", "long")) {
+testthat_summary <- function(x, type = c("short", "long")) {
   switch(type,
     "short" = testthat_sum_short(x),
     "long" = testthat_sum_long(x)
@@ -60,8 +60,7 @@ covr_print_to_df <- function(x, group = c("filename", "functions"), by = "line")
 #' @rdname covr_summary
 #' @family utility
 #' @export
-covr_summary <- function(x,failed = FALSE) {
-  
+covr_summary <- function(x, failed = FALSE) {
   ret <- covr_print_to_df(x)
 
   ret$name <- ifelse(grepl("^R/", ret$name),

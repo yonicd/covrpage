@@ -14,10 +14,10 @@ covrpage(path = getwd(), preview = TRUE, auto_push = FALSE,
 
 \item{auto_push}{boolean, push to remote repo on exit, Default: FALSE}
 
-\item{update_badge}{boolean, locate badge in README and update with 
+\item{update_badge}{boolean, locate badge in README and update with
 testthat results, Default: TRUE}
 
-\item{vignette}{boolean, if TRUE then the covrpage README will be copied 
+\item{vignette}{boolean, if TRUE then the covrpage README will be copied
 as a vignette of the package, Default: FALSE}
 }
 \description{

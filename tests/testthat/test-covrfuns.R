@@ -8,7 +8,7 @@ testthat::describe("covr_summary", {
   it("empty input", {
     testthat::expect_error({
       covrpage::covr_summary()
-      })
+    })
   })
 })
 

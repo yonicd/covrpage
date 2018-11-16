@@ -18,7 +18,7 @@ gath <- function(i, x) {
 sum_func <- function(x) {
   x <- do.call("rbind", lapply(4:7, gath, x))
 
-  x <- data.frame(stats::aggregate(.~file + status_type, x, sum), stringsAsFactors = FALSE)
+  x <- data.frame(stats::aggregate(. ~ file + status_type, x, sum), stringsAsFactors = FALSE)
 
   x <- sprea(x)
 
@@ -28,10 +28,10 @@ sum_func <- function(x) {
 }
 
 testthat_sum_short <- function(x) {
-  
-  if(length(x)==0)
+  if (length(x) == 0) {
     return(NULL)
-  
+  }
+
   x1 <- data.frame(x, stringsAsFactors = FALSE)
 
   x1 <- x1[, c("file", "nb", "real", "failed", "skipped", "error", "warning")]
@@ -42,22 +42,21 @@ testthat_sum_short <- function(x) {
     x1[[i]] <- as.numeric(x1[[i]])
 
   ret <- do.call("rbind", lapply(split(x1, x1$file), sum_func))
-  
-  ret <- emo_result(ret,'FAILED', type='short')
-  ret <- emo_result(ret,'SKIPPED',type='short')
-  ret <- emo_result(ret,'WARNING',type='short')
-  
+
+  ret <- emo_result(ret, "FAILED", type = "short")
+  ret <- emo_result(ret, "SKIPPED", type = "short")
+  ret <- emo_result(ret, "WARNING", type = "short")
+
   rownames(ret) <- NULL
 
   ret
-  
 }
 
 testthat_sum_long <- function(x) {
-  
-  if(length(x)==0)
+  if (length(x) == 0) {
     return(NULL)
-  
+  }
+
   x1 <- data.frame(x, stringsAsFactors = FALSE)
 
   for (i in seq(1:ncol(x1)))
@@ -102,70 +101,66 @@ testthat_sum_long <- function(x) {
 
   ret$file <- sprintf("[%s](testthat/%s#%s)", ret$file, ret$file, lines)
 
-  ret <- emo_result(ret,'FAILED',type='long')
-  ret <- emo_result(ret,'SKIPPED',type='long')
-  ret <- emo_result(ret,'WARNING',type='long')
+  ret <- emo_result(ret, "FAILED", type = "long")
+  ret <- emo_result(ret, "SKIPPED", type = "long")
+  ret <- emo_result(ret, "WARNING", type = "long")
 
   ret
-  
 }
 
-emo_result <- function(dat,status,type = 'short'){
-  
-  if(type=='short'){
-    idx <- dat[[tolower(status)]]>0
+emo_result <- function(dat, status, type = "short") {
+  if (type == "short") {
+    idx <- dat[[tolower(status)]] > 0
   }
-  
-  if(type=='long'){
-    idx <- dat$status==status
+
+  if (type == "long") {
+    idx <- dat$status == status
   }
-    
-  if(any(idx)){
-      
-    if(!'icon'%in%names(dat)){
-      dat[['icon']] <- ''
+
+  if (any(idx)) {
+    if (!"icon" %in% names(dat)) {
+      dat[["icon"]] <- ""
     }
-    
-    dat$icon[idx] <- paste0(dat$icon[idx],emos[[platform()]][[status]])
+
+    dat$icon[idx] <- paste0(dat$icon[idx], emos[[platform()]][[status]])
   }
-  
+
   dat
-  
 }
 
-enfram <- function(x,name = 'name',value = 'value'){
+enfram <- function(x, name = "name", value = "value") {
   nm <- names(x)
   names(x) <- NULL
-  ret <- data.frame(name = nm,value = x, stringsAsFactors = FALSE)
-  names(ret) <- c(name,value)
+  ret <- data.frame(name = nm, value = x, stringsAsFactors = FALSE)
+  names(ret) <- c(name, value)
   ret
 }
 
 #' importFrom utils sessionInfo packageVersion
-sinfo <- function(){
-  
+sinfo <- function() {
   x <- utils::sessionInfo()
-  
-  sinfo <- c(Version  = x$R.version$version.string,
-            Platform = x$platform,
-            Running  = x$running,
-            Language = gsub('\\.(.*?)$','',Sys.getlocale(category = 'LC_COLLATE')),
-            Timezone = Sys.timezone())
 
-  pkgs <- sapply(c('testthat','covr','covrpage'),function(x) as.character(utils::packageVersion(x)))
-    
-  sinfo <- enfram(sinfo, name = 'Field',value = 'Value')
+  sinfo <- c(
+    Version = x$R.version$version.string,
+    Platform = x$platform,
+    Running = x$running,
+    Language = gsub("\\.(.*?)$", "", Sys.getlocale(category = "LC_COLLATE")),
+    Timezone = Sys.timezone()
+  )
 
-  if(is_travis()){
-    sinfo$Icon <- ''
-    sinfo$Icon[sinfo$Field=='Platform'] <- travis_image()
-    names(sinfo)[3] <- ''
+  pkgs <- sapply(c("testthat", "covr", "covrpage"), function(x) as.character(utils::packageVersion(x)))
+
+  sinfo <- enfram(sinfo, name = "Field", value = "Value")
+
+  if (is_travis()) {
+    sinfo$Icon <- ""
+    sinfo$Icon[sinfo$Field == "Platform"] <- travis_image()
+    names(sinfo)[3] <- ""
   }
-  
-  pkgs <- enfram(pkgs, name = 'Package',value = 'Version')
-  
+
+  pkgs <- enfram(pkgs, name = "Package", value = "Version")
+
   list(info = sinfo, pkgs = pkgs)
-    
 }
 
 
@@ -178,21 +173,22 @@ sinfo <- function(){
 #' @export
 NULL
 
-platform <- function(){
-
-  if(.Platform[['OS.type']]=='windows'){
-    'windows'
-  }else{
-    'unix'
+platform <- function() {
+  if (.Platform[["OS.type"]] == "windows") {
+    "windows"
+  } else {
+    "unix"
   }
 }
 
-is_travis <- function(){
+is_travis <- function() {
   identical(Sys.getenv("TRAVIS"), "true")
 }
 
-travis_image <- function(){
-  sprintf('<a href="%s" target="_blank"><span title="Built on Travis">![](%s)</span></a>',
-          Sys.getenv("TRAVIS_JOB_WEB_URL"),
-          'https://github.com/yonicd/covrpage/blob/master/inst/logo/travis.png?raw=true')
+travis_image <- function() {
+  sprintf(
+    '<a href="%s" target="_blank"><span title="Built on Travis">![](%s)</span></a>',
+    Sys.getenv("TRAVIS_JOB_WEB_URL"),
+    "https://github.com/yonicd/covrpage/blob/master/inst/logo/travis.png?raw=true"
+  )
 }

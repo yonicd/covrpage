@@ -11,7 +11,7 @@ use_covrpage_vignette(path = ".")
 }
 \description{
 Perform general setup and copying of tests/README.md into
-vingettes subdirectory
+vignette subdirectory
 }
 \examples{
 \dontrun{

@@ -5,7 +5,7 @@ nest_test <- function(x, token_text = "^context$") {
   idx <- which(rx %in% x$parent[grepl("^SYMBOL_FUNCTION_CALL$", x$token) & grepl(token_text, x$text) & x$terminal])
 
   idx <- which(rx %in% x$parent[idx])
-  
+
   x1 <- rep(0, nrow(x))
 
   x1[idx] <- 1
@@ -16,7 +16,7 @@ nest_test <- function(x, token_text = "^context$") {
 
   names(x2) <- sapply(x2, function(x) {
     add_text <- x$text[grep("^SYMBOL_FUNCTION_CALL$", x$token)[1]]
-    ret <- eval(parse(text = x$text[grepl("^STR_CONST$", x$token)][1],keep.source = TRUE))
+    ret <- eval(parse(text = x$text[grepl("^STR_CONST$", x$token)][1], keep.source = TRUE))
 
     if (add_text %in% c("test_that", "describe", "it")) {
       ret <- sprintf("%s: %s", add_text, ret)
@@ -45,9 +45,9 @@ get_expect <- function(x, token_text = "^expect_") {
     return(NULL)
   }
 
-  line_ <- lapply(idx, function(y){
+  line_ <- lapply(idx, function(y) {
     this_idx <- tail(grep("expr", x$token[1:y]), 2)
-    this_exp <- min(grep(sprintf('%s',x$text[y]),x$text[this_idx]))
+    this_exp <- min(grep(sprintf("%s", x$text[y]), x$text[this_idx]))
     x[this_idx[this_exp], c("line1", "line2")]
   })
 
@@ -83,7 +83,7 @@ nest_expect <- function(x) {
 #' @description Query a test file to see what expectations are defined in it.
 #' @param path character, path to file
 #' @details Return data.frame containing which expecations are in the test file
-#'  by context/description/test/expectation/linerange  
+#'  by context/description/test/expectation/linerange
 #' @return data.frame
 #' @seealso
 #'  \code{\link[utils]{getParseData}}
@@ -92,11 +92,12 @@ nest_expect <- function(x) {
 #' @export
 #' @importFrom utils getParseData
 map_test <- function(path) {
-  x <- utils::getParseData(parse(path,keep.source = TRUE), includeText = TRUE)
-  
-  if(is.null(x))
+  x <- utils::getParseData(parse(path, keep.source = TRUE), includeText = TRUE)
+
+  if (is.null(x)) {
     return(NULL)
-  
+  }
+
   ret <- lapply(nest_test(x), function(xx) {
     ret_ <- lapply(
       nest_test(xx, token_text = "^test_that$|^describe$"),
@@ -160,7 +161,7 @@ unrowname <- function(el, ret, label) {
 #' @description Query a testthat directory for the unit test structure.
 #' @param path character, path to tests, Default: 'tests/testthat'
 #' @details Return data.frame containing which expecations are in the testthat directory
-#'  by file/context/description/test/expectation/linerange  
+#'  by file/context/description/test/expectation/linerange
 #' @return data.frame
 #' @seealso
 #'  \code{\link[stats]{setNames}}

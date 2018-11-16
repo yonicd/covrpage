@@ -15,10 +15,10 @@ use_covrpage(file = ".travis/covrpage.sh", travis_type = c("bash",
 \arguments{
 \item{file}{character, file path to save bash script to, Default: '.travis/covrpage.sh'}
 
-\item{travis_type}{character, build .travis.yml template for bash or pkgdown deployment, 
+\item{travis_type}{character, build .travis.yml template for bash or pkgdown deployment,
 Default: c('bash','pkgdown')}
 
-\item{travis_blocks}{character, vector that defines what .travis.yml blocks tocreate, 
+\item{travis_blocks}{character, vector that defines what .travis.yml blocks tocreate,
 Default: c('after_success','after_failure','deploy_ghpages')}
 
 \item{gh_user}{character, Github user name,
@@ -41,7 +41,7 @@ use_covrpage(travis_type = 'bash',file=file.path(tempdir(),'myfile.sh'))
 #does not write to disk
 use_covrpage(travis_type = 'bash',file=NULL)
 
-use_covrpage(travis_type = 'pkgdown') 
+use_covrpage(travis_type = 'pkgdown')
 use_covrpage(travis_type = 'pkgdown',travis_block = 'after_success')
 use_covrpage(travis_type = 'pkgdown',travis_block = 'after_failure')
 use_covrpage(travis_type = 'pkgdown',travis_block = c('after_success','after_failure'))

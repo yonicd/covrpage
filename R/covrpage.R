@@ -3,9 +3,9 @@
 #' @param path path to package
 #' @param preview boolean, to open the output in viewer, Default: TRUE
 #' @param auto_push boolean, push to remote repo on exit, Default: FALSE
-#' @param update_badge boolean, locate badge in README and update with 
+#' @param update_badge boolean, locate badge in README and update with
 #' testthat results, Default: TRUE
-#' @param vignette boolean, if TRUE then the covrpage README will be copied 
+#' @param vignette boolean, if TRUE then the covrpage README will be copied
 #' as a vignette of the package, Default: FALSE
 #' @seealso
 #'  \code{\link[rmarkdown]{render}}
@@ -22,11 +22,11 @@ covrpage <- function(path = getwd(), preview = TRUE, auto_push = FALSE, update_b
 
   on.exit({
     covrpage_cleanup(
-      preview      = preview,
-      auto_push    = auto_push,
+      preview = preview,
+      auto_push = auto_push,
       update_badge = update_badge,
-      vignette     = vignette
-      )
+      vignette = vignette
+    )
 
     setwd(thiswd)
   }, add = TRUE)

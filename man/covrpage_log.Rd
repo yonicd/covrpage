@@ -10,7 +10,7 @@ covrpage_log()
 list
 }
 \description{
-Retrieve log of covrpage README.md files commited to git
+Retrieve log of covrpage README.md files committed to git
 version control
 }
 \examples{
