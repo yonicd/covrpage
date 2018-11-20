@@ -56,7 +56,7 @@ There are two places where you can keep `covrpage` report, and it's advised to u
 
 * A README for the tests/ folder, which is the original report location. `covrpage::covrpage()` sets it up. Target audience: users or collaborators browsing the GitHub repo of your package, possibly guided there by a badge in the main README.
 
-* A vignette, that'll get inserted into the `pkgdown` website of your package. `covrpage::use_covrpage_vignette()` sets it up. Target audience: users reading the rendered documentation.
+* A vignette, that'll get inserted into the `pkgdown` website of your package, and the [CRAN page](https://cran.r-project.org/web/packages/texPreview/index.html) if/when your package is released on CRAN. `covrpage::use_covrpage_vignette()` sets it up. Target audience: users reading the rendered documentation.
 
 In both cases, you can also ensure the report stays up-to-date by having it deployed from Travis every time you push to your repository.
 
