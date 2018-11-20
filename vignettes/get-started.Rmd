@@ -68,7 +68,7 @@ Or point to CI vignette? I think it's better if the guidance can be summarized i
 
 # Conclusion
 
-`covrpage` report aims at providing more information about the testing of your package to potential users and collaborators, and can inform your own work on your package. Publishing the report with continuous integration will ensure it's always up-to-date. As a summary, in any package of yours, run <!-- having a summary would be nice. -->
+`covrpage` report aims at providing more information about the testing of your package to potential users and collaborators, and can inform your own work on your package. Publishing the report with continuous integration will ensure it's always up-to-date. As a summary, in any package of yours, run <!-- having a summary would be nice. Jonathan does this one make sense? -->
 
 ```r
 covrpage::covrpage()
