@@ -9,7 +9,7 @@ if (Sys.getenv("id_rsa") != "") {
   get_stage("before_deploy") %>%
     add_step(step_setup_ssh())
   
-  if (ci()$get_branch() == "master") {
+  if (ci()$get_branch() == "tic") {
     get_stage("deploy") %>%
       add_code_step(covr::codecov()) %>%
       add_code_step(devtools::install()) %>%

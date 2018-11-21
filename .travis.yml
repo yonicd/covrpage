@@ -33,9 +33,13 @@ after_failure: R -q -e 'tic::after_failure()'
 before_deploy: R -q -e 'tic::before_deploy()'
 deploy:
   provider: script
+  skip-cleanup: true
+  github-token: "$GITHUB_PAT"
+  keep-history: true
+  local-dir: docs
   script: R -q -e 'tic::deploy()'
   on:
-    all_branches: true
+    branch: tic
 after_deploy: R -q -e 'tic::after_deploy()'
 after_script: R -q -e 'tic::after_script()'
 # DO NOT CHANGE THE CODE ABOVE
