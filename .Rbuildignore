@@ -9,3 +9,4 @@
 ^README-.*\.png$
 ignore
 ^CONDUCT\.md$
+^tic\.R$
