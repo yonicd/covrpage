@@ -1,22 +1,41 @@
+# Custom parts:
+
+# Header
 language: r
 cache: packages
+r_packages:
+- remotes
+- curl
 r_github_packages:
+- ropenscilabs/tic
 - yonicd/covrpage
 - metrumresearchgroup/pkgdown
 os:
 - linux
-after_success:
-- Rscript -e 'covr::codecov()'
-- Rscript -e 'devtools::install(); covrpage::covrpage_ci()'
-- Rscript -e 'pkgdown::build_site()'
-deploy:
-  provider: pages
-  skip-cleanup: true
-  github-token: "$GITHUB_PAT"
-  keep-history: true
-  local-dir: docs
-  on:
-    branch: master
+
+#env
 env:
   global:
-    secure: Wx+5XqSOMlNJ0+ftDxRo0+NBMKzEnOkU0GY+rlRnjrAoC7e2rRygvGBSE9VyfPH3/Q0ZHHXk0xsy7gmk+/jg1FrmdT+sybRzqAIFG0GhiHpH/vDO045wYU+jcpkYKXqskFbTzXOlWC8XhIwUQu33136uzuHKXoDiOTKYlJFfXgFFH0UzxdJ1/j0i2desBuKlwFgtAWvEx/OovZSNqUUf4PVzx6iunji7YeihvPEn54eUPlBGOg5ZzrP8cIwsJcoX5dSb+STsXROcFbtV2DnLlusd6NHzxAvlCxf4ELKTfUjy2Blry7Zik2RutSRtDsxTH3029k9m0N5Lu+Oi+faqdLGMgytirUvM13VbTqMHPFz8DRaTEtbPoytMKkL7kHrnSUONmdScsd3GKUp8JtHUSFOhFsAt6L3kqrCbk5LcJaRhXpDMwlL5yQJxsbPif44Ykqxj41kDoqrbXkVp4X2UVAFd8LdTTJ4SRVAiaFzLgOX8wcp/6Uu9p+sleuM91f+VObwOJJYcZ4SHBKCJBsXz9sH027EhjLpa41SO8W2EJbu2srFfTIetY7PJuHMd1T9/fAqfiR4iNN5RJegBPl9+SsfngUV7LzH1zoFTg1iJoRts9ejBkAh5hIScDCV+qjIZ8Jybma0KLngPBLrXrubizLluvxsS7FgNnzEeBTetshI=
+    - secure: Wx+5XqSOMlNJ0+ftDxRo0+NBMKzEnOkU0GY+rlRnjrAoC7e2rRygvGBSE9VyfPH3/Q0ZHHXk0xsy7gmk+/jg1FrmdT+sybRzqAIFG0GhiHpH/vDO045wYU+jcpkYKXqskFbTzXOlWC8XhIwUQu33136uzuHKXoDiOTKYlJFfXgFFH0UzxdJ1/j0i2desBuKlwFgtAWvEx/OovZSNqUUf4PVzx6iunji7YeihvPEn54eUPlBGOg5ZzrP8cIwsJcoX5dSb+STsXROcFbtV2DnLlusd6NHzxAvlCxf4ELKTfUjy2Blry7Zik2RutSRtDsxTH3029k9m0N5Lu+Oi+faqdLGMgytirUvM13VbTqMHPFz8DRaTEtbPoytMKkL7kHrnSUONmdScsd3GKUp8JtHUSFOhFsAt6L3kqrCbk5LcJaRhXpDMwlL5yQJxsbPif44Ykqxj41kDoqrbXkVp4X2UVAFd8LdTTJ4SRVAiaFzLgOX8wcp/6Uu9p+sleuM91f+VObwOJJYcZ4SHBKCJBsXz9sH027EhjLpa41SO8W2EJbu2srFfTIetY7PJuHMd1T9/fAqfiR4iNN5RJegBPl9+SsfngUV7LzH1zoFTg1iJoRts9ejBkAh5hIScDCV+qjIZ8Jybma0KLngPBLrXrubizLluvxsS7FgNnzEeBTetshI=
+
+# R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
+# Default configuration for use with tic package
+# Usually you shouldn't need to change the first part of the file
+
+# DO NOT CHANGE THE CODE BELOW
+before_install: R -q -e 'tic::prepare_all_stages(); tic::before_install()'
+install: R -q -e 'tic::install()'
+after_install: R -q -e 'tic::after_install()'
+before_script: R -q -e 'tic::before_script()'
+script: R -q -e 'tic::script()'
+after_success: R -q -e 'tic::after_success()'
+after_failure: R -q -e 'tic::after_failure()'
+before_deploy: R -q -e 'tic::before_deploy()'
+deploy:
+  provider: script
+  script: R -q -e 'tic::deploy()'
+  on:
+    all_branches: true
+after_deploy: R -q -e 'tic::after_deploy()'
+after_script: R -q -e 'tic::after_script()'
+# DO NOT CHANGE THE CODE ABOVE
