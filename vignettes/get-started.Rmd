@@ -1,0 +1,78 @@
+---
+title: "Get started"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Why use covrpage when developing a package?
+
+Trust is earned not ~~inherited~~ importedFrom. Now that you've built a cool package, you want potential users to trust it so that they might adopt it. How to build trust in your piece of software? Unit testing is part of the components building trustworthiness of your package. Imagine you're at the point where you've tested most lines of your code with thorough assertions, including checks of edge cases. Proof of that hard work will be a high test coverage, that potential users of your package might notice thanks to a bright green coverage badge. But how would they know your tests are thorough? That's what `covrpage` helps you with, by creating a summary report of your tests that goes beyond the coverage percentage. This way, potential users can see at a glance how good the unit testing of your package is.
+
+## Why use covrpage on top of say Codecov and Coveralls?
+
+The coverage badge provided by coverage services displays only the percentage of lines covered by tests, but is also clickable, providing access to a nifty report. `covrpage` report for your package helps with two potential limitations of such reports:
+
+* it shows tests that exist but are skipped on Travis, e.g. tests of RStudio add-ins that require RStudio to be installed; whereas most often Codecov and Coveralls only know what Travis reported to them.
+
+* it displays a lot of information in a single page whereas the interactive reports of Codecov and Coveralls need a lot of clicking. Besides, you can make `covrpage` report an actual part of the documentation of your package, as a vignette, whereas Codecov and Coveralls reports are external information.
+
+## Is `covrpage` report only for users?
+
+No, it can also inform your work on your package, by helping you track progress of the unit tests you're working on, and it can show to potential _contributors_ where help is needed.
+
+# How is `covrpage` report built?
+
+To see how `covrpage`report looks like, the easiest thing to do is to run `covrpage::covrpage()` at the root of your package, or providing the path to your package as argument. 
+
+The functions powering the report are:
+
+* `testthat::test_check()` to actually run tests and get the results;
+
+* `covrpage::map_testthat()` to map the hierarchy structure of testthat directory;
+
+* `covrpage::testthat_summary()` to provide a summary for the output of `testthat::test_check()`;
+
+* `covrpage::covr_summary()` to run `covr` even with failing tests.
+
+You can see an example for the `remedy` package [here](https://github.com/ThinkR-open/remedy/tree/master/tests#tests-and-coverage). <!-- When it exists point to the vignette explaining how to read and interpret the report. -->
+
+Note that the different [`covrpage` utilities functions](https://yonicd.github.io/covrpage/reference/index.html#section-covrpage-utilities) mentioned above can be useful on their own whilst developing a package, or say, inspecting a new test file added by a collaborator in a PR.
+
+
+# How to publish `covrpage` report?
+
+There are two places where you can keep `covrpage` report, and it's advised to use both since they will get seen by different readers:
+
+* A README for the tests/ folder, which is the original report location. `covrpage::covrpage()` sets it up. Target audience: users or collaborators browsing the GitHub repo of your package, possibly guided there by a badge in the main README.
+
+* A vignette, that'll get inserted into the `pkgdown` website of your package, and the [CRAN page](https://cran.r-project.org/web/packages/texPreview/index.html) if/when your package is released on CRAN. `covrpage::use_covrpage_vignette()` sets it up. Target audience: users reading the rendered documentation.
+
+In both cases, you can also ensure the report stays up-to-date by having it deployed from Travis every time you push to your repository.
+
+The easiest solution is to run `travis::use_tic()` at the root of your repository, which will ensure your `pkgdown` website is deployed from Travis if you have one. Now, here are the steps to do to add building of the README in tests/. ADD STEPS, probably involving `tic::step_run_code()`.
+
+<!-- GHE stuff to be written by Jonathan. 
+
+Or point to CI vignette? I think it's better if the guidance can be summarized in a few lines here, except for maybe GHE that could go in an "advanced CI settings" vignette (current CI vignette).-->
+
+# Conclusion
+
+`covrpage` report aims at providing more information about the testing of your package to potential users and collaborators, and can inform your own work on your package. Publishing the report with continuous integration will ensure it's always up-to-date. As a summary, in any package of yours, run <!-- having a summary would be nice. Jonathan does this one make sense? -->
+
+```r
+covrpage::covrpage()
+# usethis::use_pkgdown()
+covrpage::use_covrpage_vignette()
+travis::use_tic/covrpage::use_covrpage()
+```
