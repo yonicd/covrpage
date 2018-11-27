@@ -1,0 +1,62 @@
+---
+title: "How to read covrpage report"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{How to read covrpage report}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+`covrpage` can help you choose whether to trust a package. As a potential user of a package whose repo or website features a `covrpage` report, this vignette will help you understand how can you use that information to make an informed decision on:
+
+* whether to use the package at all, or right now;
+
+* whether to stay away from some of its functionalities for the time being?
+
+As a package developer, this same information can help you assess what trustworthiness your own package is radiating.
+
+# Case 1: package with a passing Travis build/local R CMD check
+
+(i.e. a green Travis badge)
+
+* You can look at the test coverage percent but that number can be manipulated in too many ways to look good or bad.
+
+Now, in the `covrpage` report.
+
+* Look at distribution of coverage (table 1)
+    * check if there are whole groups of functionalities that were not tested.
+    * if you need the line by line coverage go to Codecov/Coveralls (linked from the test coverage badge) and dig in there. 
+
+* look at test stats in (table 2)
+    * summary of what tests contain a lot of skipped/warning, is it concentrated in only one or is it all over the tested files.
+
+* look at breakdown of tests (table 3)
+    * this table is hidden on a successful build and is open if any test is non-passing. It is a simple visual cue that informs you the reader if something is wrong.
+    * see if they make sense and seem robust
+    * see if any throw warnings or are skipped, and check why (skip_travis/skip_cran)
+    * use links to jump to actual problem tests/expectations to investigate further
+    
+# Case 2: package with a failing Travis build/local R CMD check
+
+(i.e. a red Travis badge)
+
+In the `covrpage` report,
+
+* you'll see a disclaimer at the top if tests failed, see [this example](https://github.com/llrs/GSEAdv/tree/19cbab3cff04c5c65bcef18c493a2cc650f441c2/tests#coverage).
+
+* look at (table 1) for the approximate distribution of coverage to see where it stands in the development (also have a look at the main README to see it contains a lifecycle or repo status badge)
+
+* find where the failed tests are located in (table 2), if failing tests are the reason for the build failure. Icons will help you locate them, see [this example](https://github.com/yonicd/ggstatsplot/tree/master/tests#unit-tests).
+
+* look at the expectations from (table 3) and have a better informed decision on wether to use that package and to know what functionality to stay away from.
+    * this table is hidden on a successful build and is open if any test is non-passing. It is a simple visual cue that informs you the reader if something is wrong.
+
+This should help you having an idea of what to expect from the developer of the package going forward what is going to be fixed.
