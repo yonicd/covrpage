@@ -1,7 +1,7 @@
 ---
 title: "Continuous Integration"
 author: "Jonathan Sidi"
-date: "2018-11-10"
+date: "2018-11-26"
 output: 
   rmarkdown::html_vignette: 
     keep_md: true

@@ -1,7 +1,17 @@
 Package: covrpage
 Title: Create a Readme Summary Page for GitHub testthat and covr Outputs
 Version: 0.0.66
-Authors@R: c(person("Jonathan", "Sidi", email = "yonicd@gmail.com", role = c("aut",'cre')))
+Authors@R: c(
+  person(given   = "Jonathan",
+         family  = "Sidi",
+         email   = "yonicd@gmail.com",
+         role    = c("aut",'cre'),
+         comment = c(ORCID = "0000-0002-4222-1819")
+         ),
+  person(given   = "Locke Data",
+         role    = "fnd",
+         comment = "https://itsalocke.com")
+  )
 Description: Create a README file to place in package test subdirectory to communicate with other users in more detail results of testthat and covr.
 License: MIT + file LICENSE
 URL: https://github.com/yonicd/covrpage

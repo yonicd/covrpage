@@ -1,9 +1,9 @@
 ---
-title: "Get started"
+title: "Getting Started"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{Getting Started}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -70,7 +70,7 @@ Or point to CI vignette? I think it's better if the guidance can be summarized i
 
 `covrpage` report aims at providing more information about the testing of your package to potential users and collaborators, and can inform your own work on your package. Publishing the report with continuous integration will ensure it's always up-to-date. As a summary, in any package of yours, run <!-- having a summary would be nice. Jonathan does this one make sense? -->
 
-```r
+```{r,eval=FALSE}
 covrpage::covrpage()
 # usethis::use_pkgdown()
 covrpage::use_covrpage_vignette()

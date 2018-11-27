@@ -17,13 +17,13 @@ knitr::opts_chunk$set(
 [![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2018_11_15-brightgreen.svg)](http://tinyurl.com/y7qge5ta)
 
 
-# covrpage `r if(knitr::opts_knit$get('rmarkdown.pandoc.to')=='gfm-ascii_identifiers') '<img src="https://github.com/yonicd/covrpage/blob/master/inst/logo/covrpage_small.png?raw=true" align="right"/>'`
+# covrpage `r if(knitr::opts_knit$get('rmarkdown.pandoc.to')=='gfm-ascii_identifiers') '<img src="https://github.com/yonicd/covrpage/blob/master/inst/logo/covrpageLogoSCREEN.png?raw=true" align="right"/>'`
 
-Healthy R packages use [testthat](https://github.com/r-lib/testthat) and [covr](https://github.com/r-lib/covr) to develop stable packages. 
+Trust is earned not ~~inherited~~ importedFrom. Now that you've built a cool package, you want potential users to trust it so that they might adopt it. How to build trust in your piece of software? Unit testing is part of the components building trustworthiness of your package. Imagine you're at the point where you've tested most lines of your code with thorough assertions, including checks of edge cases. Proof of that hard work will be a high test coverage, that potential users of your package might notice thanks to a bright green coverage badge. But how would they know your tests are thorough? That's what `covrpage` helps you with, by creating a [summary report](tests/README.md) of your tests that goes beyond the coverage percentage. This way, potential users can see at a glance how good the unit testing of your package is.
 
-This package extends the information that is communicated with the potential user with a cover page for the tests in the form of summary tables of results from covr and testthat. 
+## Is `covrpage` report only for users?
 
-The output is created in the [tests](tests) subdirectory as a [README.md](tests/README.md) file so it will show up in Github browser page. 
+No, it can also inform your work on your package, by helping you track progress of the unit tests you're working on, and it can show to potential _contributors_ where help is needed.
 
 ## Package Installation
 
@@ -60,6 +60,8 @@ covrpage can be outputed as a vignette called `Tests and Coverage` making it par
 
 ## Articles
 
+  - [Getting Started](https://yonicd.github.io/covrpage/articles/get-started.html)
+  - [How to read the report](https://yonicd.github.io/covrpage/articles/how-to-read-covrpage-report.html)
   - [Test Results](https://yonicd.github.io/covrpage/articles/Test_Results.html)
   - [Continuous Integration](https://yonicd.github.io/covrpage/articles/Continuous_Integration.html)
 

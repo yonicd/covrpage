@@ -1,9 +1,9 @@
 ---
-title: "How to read covrpage report"
+title: "How to read the covrpage report"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{How to read covrpage report}
+  %\VignetteIndexEntry{How to read the covrpage report}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
