@@ -13,9 +13,6 @@ knitr::opts_chunk$set(
 ```
 
 [![Travis-CI Build Status](https://travis-ci.org/yonicd/covrpage.svg?branch=master)](https://travis-ci.org/yonicd/covrpage)
-[![Coverage Status](https://img.shields.io/codecov/c/github/yonicd/covrpage/master.svg)](https://codecov.io/github/yonicd/covrpage?branch=master)
-[![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2018_11_15-brightgreen.svg)](http://tinyurl.com/y7qge5ta)
-
 
 # covrpage `r if(knitr::opts_knit$get('rmarkdown.pandoc.to')=='gfm-ascii_identifiers') '<img src="https://github.com/yonicd/covrpage/blob/master/inst/logo/covrpageLogoSCREEN.png?raw=true" align="right"/>'`
 
