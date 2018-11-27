@@ -83,9 +83,12 @@
 <div id="covrpage" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#covrpage" class="anchor"></a>covrpage</h1></div>
-<p>Healthy R packages use <a href="https://github.com/r-lib/testthat">testthat</a> and <a href="https://github.com/r-lib/covr">covr</a> to develop stable packages.</p>
-<p>This package extends the information that is communicated with the potential user with a cover page for the tests in the form of summary tables of results from covr and testthat.</p>
-<p>The output is created in the <a href="tests" class="uri">tests</a> subdirectory as a <a href="tests/README.html">README.md</a> file so it will show up in Github browser page.</p>
+<p>Trust is earned not <del>inherited</del> importedFrom. Now that you’ve built a cool package, you want potential users to trust it so that they might adopt it. How to build trust in your piece of software? Unit testing is part of the components building trustworthiness of your package. Imagine you’re at the point where you’ve tested most lines of your code with thorough assertions, including checks of edge cases. Proof of that hard work will be a high test coverage, that potential users of your package might notice thanks to a bright green coverage badge. But how would they know your tests are thorough? That’s what <code>covrpage</code> helps you with, by creating a <a href="tests/README.html">summary report</a> of your tests that goes beyond the coverage percentage. This way, potential users can see at a glance how good the unit testing of your package is.</p>
+<div id="is-covrpage-report-only-for-users" class="section level2">
+<h2 class="hasAnchor">
+<a href="#is-covrpage-report-only-for-users" class="anchor"></a>Is <code>covrpage</code> report only for users?</h2>
+<p>No, it can also inform your work on your package, by helping you track progress of the unit tests you’re working on, and it can show to potential <em>contributors</em> where help is needed.</p>
+</div>
 <div id="package-installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#package-installation" class="anchor"></a>Package Installation</h2>
@@ -122,6 +125,8 @@ covrpage::covrpage(path = 'another_directory')
 <h2 class="hasAnchor">
 <a href="#articles" class="anchor"></a>Articles</h2>
 <ul>
+<li><a href="https://yonicd.github.io/covrpage/articles/get-started.html">Getting Started</a></li>
+<li><a href="https://yonicd.github.io/covrpage/articles/how-to-read-covrpage-report.html">How to read the report</a></li>
 <li><a href="https://yonicd.github.io/covrpage/articles/Test_Results.html">Test Results</a></li>
 <li><a href="https://yonicd.github.io/covrpage/articles/Continuous_Integration.html">Continuous Integration</a></li>
 </ul>
@@ -150,7 +155,7 @@ covrpage::covrpage(path = 'another_directory')
     <div class="">
 <h2></h2>
 <ul class="list-unstyled">
-<li><img src="https://github.com/yonicd/covrpage/blob/master/inst/logo/covrpage_small.png?raw=true" alt=""></li>
+<li><img src="https://github.com/yonicd/covrpage/blob/master/inst/logo/covrpageLogoSCREEN.png?raw=true" alt=""></li>
 </ul>
 </div>
 <div class="links">
@@ -173,7 +178,9 @@ covrpage::covrpage(path = 'another_directory')
 <div class="developers">
 <h2>Developers</h2>
 <ul class="list-unstyled">
-<li>Jonathan Sidi <br><small class="roles"> Author, maintainer </small>  </li>
+<li>Jonathan Sidi <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-4222-1819" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID" height="16"></a> </li>
+<li>Locke Data <br><small class="roles"> Funder </small>  <br><small>(https://itsalocke.com)</small>
+</li>
 </ul>
 </div>
 
@@ -191,7 +198,7 @@ covrpage::covrpage(path = 'another_directory')
 
 
       <footer><div class="copyright">
-  <p>Developed by Jonathan Sidi.</p>
+  <p>Developed by Jonathan Sidi, Locke Data.</p>
 </div>
 
 <div class="pkgdown">
