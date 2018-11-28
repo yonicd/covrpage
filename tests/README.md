@@ -1,6 +1,6 @@
 Tests and Coverage
 ================
-21 November, 2018 13:59:59
+28 November, 2018 03:52:08
 
 This output is created by
 [covrpage](https://github.com/yonicd/covrpage).
@@ -12,7 +12,7 @@ Coverage summary is created using the
 
 | Object                                           | Coverage (%) |
 | :----------------------------------------------- | :----------: |
-| covrpage                                         |    16.01     |
+| covrpage                                         |    15.03     |
 | [R/badge.R](../R/badge.R)                        |     0.00     |
 | [R/coverage\_skip.R](../R/coverage_skip.R)       |     0.00     |
 | [R/covrpage\_ci.R](../R/covrpage_ci.R)           |     0.00     |
@@ -22,6 +22,7 @@ Coverage summary is created using the
 | [R/map\_testthat.R](../R/map_testthat.R)         |     0.00     |
 | [R/tencrypt.R](../R/tencrypt.R)                  |     0.00     |
 | [R/use\_covrpage.R](../R/use_covrpage.R)         |     0.00     |
+| [R/use\_tic.R](../R/use_tic.R)                   |     0.00     |
 | [R/vignette.R](../R/vignette.R)                  |     0.00     |
 | [R/covrpage\_checks.R](../R/covrpage_checks.R)   |    21.43     |
 | [R/testthat\_summary.R](../R/testthat_summary.R) |    60.20     |
@@ -37,8 +38,8 @@ package.
 
 | file                                               | n |  time | error | failed | skipped | warning | icon |
 | :------------------------------------------------- | -: | ----: | ----: | -----: | ------: | ------: | :--- |
-| [test-check\_utils.R](testthat/test-check_utils.R) | 4 | 0.055 |     0 |      0 |       1 |       1 | 🔶⚠️  |
-| [test-covrfuns.R](testthat/test-covrfuns.R)        | 6 | 0.078 |     0 |      0 |       0 |       0 |      |
+| [test-check\_utils.R](testthat/test-check_utils.R) | 4 | 0.056 |     0 |      0 |       1 |       1 | 🔶⚠️  |
+| [test-covrfuns.R](testthat/test-covrfuns.R)        | 6 | 0.083 |     0 |      0 |       0 |       0 |      |
 
 <details open>
 
@@ -49,13 +50,13 @@ package.
 | :----------------------------------------------------- | :------------------------- | :----------------------------- | :------ | -: | ----: | :--- |
 | [test-check\_utils.R](testthat/test-check_utils.R#L4)  | check for tests            | tests are detected             | PASS    | 1 | 0.003 |      |
 | [test-check\_utils.R](testthat/test-check_utils.R#L12) | check for packages         | packages are detected          | SKIPPED | 1 | 0.001 | 🔶    |
-| [test-check\_utils.R](testthat/test-check_utils.R#L23) | use covrpage               | test use\_covrpage             | WARNING | 2 | 0.051 | ⚠️   |
-| [test-covrfuns.R](testthat/test-covrfuns.R#L5)         | check summary covr         | covr\_summary: standard input  | PASS    | 1 | 0.034 |      |
-| [test-covrfuns.R](testthat/test-covrfuns.R#L9_L11)     | check summary covr         | covr\_summary: empty input     | PASS    | 1 | 0.003 |      |
-| [test-covrfuns.R](testthat/test-covrfuns.R#L19)        | check summary output types | with data: short               | PASS    | 1 | 0.027 |      |
-| [test-covrfuns.R](testthat/test-covrfuns.R#L23)        | check summary output types | with data: long                | PASS    | 1 | 0.011 |      |
-| [test-covrfuns.R](testthat/test-covrfuns.R#L27)        | check summary output types | with data: no data             | PASS    | 1 | 0.001 |      |
-| [test-covrfuns.R](testthat/test-covrfuns.R#L35)        | check covr to df           | covr object to df: empty input | PASS    | 1 | 0.002 |      |
+| [test-check\_utils.R](testthat/test-check_utils.R#L23) | use covrpage               | test use\_covrpage             | WARNING | 2 | 0.052 | ⚠️   |
+| [test-covrfuns.R](testthat/test-covrfuns.R#L5)         | check summary covr         | covr\_summary: standard input  | PASS    | 1 | 0.035 |      |
+| [test-covrfuns.R](testthat/test-covrfuns.R#L9_L11)     | check summary covr         | covr\_summary: empty input     | PASS    | 1 | 0.004 |      |
+| [test-covrfuns.R](testthat/test-covrfuns.R#L19)        | check summary output types | with data: short               | PASS    | 1 | 0.029 |      |
+| [test-covrfuns.R](testthat/test-covrfuns.R#L23)        | check summary output types | with data: long                | PASS    | 1 | 0.012 |      |
+| [test-covrfuns.R](testthat/test-covrfuns.R#L27)        | check summary output types | with data: no data             | PASS    | 1 | 0.002 |      |
+| [test-covrfuns.R](testthat/test-covrfuns.R#L35)        | check covr to df           | covr object to df: empty input | PASS    | 1 | 0.001 |      |
 
 | Failed | Warning | Skipped |
 | :----- | :------ | :------ |
@@ -71,7 +72,7 @@ package.
 | Field    | Value                         |                                                                                                                                                                                                           |
 | :------- | :---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Version  | R version 3.5.1 (2017-01-27)  |                                                                                                                                                                                                           |
-| Platform | x86\_64-pc-linux-gnu (64-bit) | <a href="https://travis-ci.org/yonicd/covrpage/jobs/457951905" target="_blank"><span title="Built on Travis">![](https://github.com/yonicd/covrpage/blob/master/inst/logo/travis.png?raw=true)</span></a> |
+| Platform | x86\_64-pc-linux-gnu (64-bit) | <a href="https://travis-ci.org/yonicd/covrpage/jobs/460592630" target="_blank"><span title="Built on Travis">![](https://github.com/yonicd/covrpage/blob/master/inst/logo/travis.png?raw=true)</span></a> |
 | Running  | Ubuntu 14.04.5 LTS            |                                                                                                                                                                                                           |
 | Language | en\_US                        |                                                                                                                                                                                                           |
 | Timezone | UTC                           |                                                                                                                                                                                                           |
