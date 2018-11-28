@@ -1,8 +1,9 @@
 #' @title Add covrpage to Travis CI for a git directory
 #' @description Adds bash file to execute after Travis test is successfully completed.
 #' @param file character, file path to save bash script to, Default: '.travis/covrpage.sh'
-#' @param travis_type character, build .travis.yml template for bash or pkgdown deployment,
-#' Default: c('bash','pkgdown')
+#' @param travis_type character, build .travis.yml template for bash script,
+#'  pkgdown deployment or using the 'tic' package from ropenscilabs on GitHub
+#'  Default: c('bash','pkgdown','tic')
 #' @param travis_blocks character, vector that defines what .travis.yml blocks tocreate,
 #' Default: c('after_success','after_failure','deploy_ghpages')
 #' @param gh_user character, Github user name,
@@ -28,19 +29,25 @@
 #' @export
 
 use_covrpage <- function(file = ".travis/covrpage.sh",
-                         travis_type = c("bash", "pkgdown"),
+                         travis_type = c("bash", "pkgdown","tic"),
                          travis_blocks = c("after_success", "after_failure", "deploy_ghpages"),
                          gh_user = gsub("@(.*?)$", "", system("git config user.email", intern = TRUE)),
                          push_branch = "test",
                          repo = system("git config travis.slug", intern = TRUE),
                          deploy_branch = system("git rev-parse --abbrev-ref HEAD", intern = TRUE)) {
-  as_render <- NULL
-  af_render <- NULL
+  
+  as_render     <- NULL
+  af_render     <- NULL
   deploy_render <- NULL
-  s_pr <- NULL
-
-  travis_type <- match.arg(travis_type, c("bash", "pkgdown"))
-
+  s_pr          <- NULL
+  
+  travis_type <- match.arg(travis_type, c("bash", "pkgdown","tic"))
+  
+  if(travis_type=='tic'){
+    use_tic()
+    return(invisible(NULL))
+  }
+  
   if ("after_success" %in% travis_blocks) {
     as_template <- readLines(system.file(sprintf("templates/%s/after_success.txt", travis_type), package = "covrpage"))
     as_render <- whisker::whisker.render(as_template, data = list(file = file))
