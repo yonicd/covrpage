@@ -1,6 +1,6 @@
 Package: covrpage
 Title: Create a Readme Summary Page for GitHub testthat and covr Outputs
-Version: 0.0.66
+Version: 0.0.67
 Authors@R: c(
   person(given   = "Jonathan",
          family  = "Sidi",
@@ -12,7 +12,8 @@ Authors@R: c(
          role    = "fnd",
          comment = "https://itsalocke.com")
   )
-Description: Create a README file to place in package test subdirectory to communicate with other users in more detail results of testthat and covr.
+Description: Create a README file to place in package test subdirectory to communicate 
+  with other users in more detail results of testthat and covr.
 License: MIT + file LICENSE
 URL: https://github.com/yonicd/covrpage
 BugReports: https://github.com/yonicd/covrpage/issues
