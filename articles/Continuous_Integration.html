@@ -93,7 +93,7 @@
 <div id="direct" class="section level3">
 <h3 class="hasAnchor">
 <a href="#direct" class="anchor"></a>Direct</h3>
-<p><code>{covrpage}</code> can be deployed in Travis much the way <code>{covr::covrall}</code> is deployed. The only difference is that <code>{covrpage}</code> will push back the updated <code>README.md</code> file to the originating repository so it can be updated as part of the custom integration routine.</p>
+<p><code>covrpage</code> can be deployed in Travis much the way <a href="https://covr.r-lib.org/reference/coveralls.html">covr::covralls</a> is deployed. The only difference is that <code>covrpage</code> will push back the updated <code>README.md</code> file to the originating repository so it can be updated as part of the custom integration routine.</p>
 <p>The following <code>.travis.yml</code> is needed for the deployment:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode yml"><code class="sourceCode yaml"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="fu">language:</span><span class="at"> R</span></a>
 <a class="sourceLine" id="cb1-2" data-line-number="2"><span class="fu">sudo:</span><span class="at"> false</span></a>
@@ -161,6 +161,59 @@
 <a class="sourceLine" id="cb7-22" data-line-number="22"><span class="fu">env:</span></a>
 <a class="sourceLine" id="cb7-23" data-line-number="23">  <span class="fu">global:</span></a>
 <a class="sourceLine" id="cb7-24" data-line-number="24">    <span class="fu">secure:</span><span class="at"> </span><span class="kw">[</span>Travis encrypted Github PAT<span class="kw">]</span></a></code></pre></div>
+</div>
+<div id="tic" class="section level3">
+<h3 class="hasAnchor">
+<a href="#tic" class="anchor"></a>tic</h3>
+<p>You can use the <a href="https://github.com/ropenscilabs/tic">tic</a> package to manage the steps taken in travis. It is simplest to install <code>tic</code> via the <a href="https://github.com/ropenscilabs/travis">travis</a> package with the function <a href="https://ropenscilabs.github.io/travis/reference/use_tic.html">travis::use_tic()</a>. This will take you through all the steps needed to set up the workflow in travis and github with the project repository.</p>
+<p>After running this function you can run <a href="https://yonicd.github.io/covrpage/reference/use_covrpage.html">covrpage::use_covrpage(travis_type=‘tic’)</a> to copy into the project root directory the two files needed to run covrpage on travis: <code>tic.R</code> and <code>.travis.yml</code>. They can always be found in the system folder of the package.</p>
+<div id="highlights" class="section level4">
+<h4 class="hasAnchor">
+<a href="#highlights" class="anchor"></a>Highlights</h4>
+<p>Some things to highlight in the setup of the templates.</p>
+<p>If the <code>commit</code> is pushed to <code>origin/master</code> then after a successful build covrpage is run and the resulting <code>tests/README.md</code> is deployed back into the <code>origin/master</code> and if there is a vignette output <a href="https://www.github.com/r-lib/pkgdown">pkgdown</a> will rebuild the <code>docs</code> folder and will be deployed into <code>gh-pages</code>.</p>
+<p>If the commit is <strong>not</strong> pushed to <code>origin/master</code>, ie a <code>origin/&lt;branch&gt;</code>, then after a successful build <code>covrpage</code> is run and the resulting <code>tests/README.md</code> is deployed back into the <code>origin/&lt;branch&gt;</code>.</p>
+<p>Again, if there is an unsuccesful build on travis, then no deployment will occur. In this case you would need to use the <a href="#direct">bash</a> option to deploy back into the <code>origin</code>.</p>
+</div>
+<div id="tic-r" class="section level4">
+<h4 class="hasAnchor">
+<a href="#tic-r" class="anchor"></a>tic.R</h4>
+<p><code>system.file('templates/tic/tic.R',package = 'covrpage')</code></p>
+<pre><code>  add_package_checks()
+  
+  if (Sys.getenv("id_rsa") != "") {
+    # pkgdown documentation can be built optionally. Other example criteria:
+    # - `inherits(ci(), "TravisCI")`: Only for Travis CI
+    # - `ci()$is_tag()`: Only for tags, not for branches
+    # - `Sys.getenv("BUILD_PKGDOWN") != ""`: If the env var "BUILD_PKGDOWN" is set
+    # - `Sys.getenv("TRAVIS_EVENT_TYPE") == "cron"`: Only for Travis cron jobs
+    get_stage("before_deploy") %&gt;%
+      add_step(step_setup_ssh())
+    
+    if (ci()$get_branch() == "master") {
+      get_stage("deploy") %&gt;%
+        add_code_step(covr::codecov()) %&gt;%
+        add_code_step(devtools::install()) %&gt;%
+        add_code_step(covrpage::covrpage_ci()) %&gt;%
+        add_step(step_push_deploy(commit_paths = "tests/README.md")) %&gt;%
+        add_step(step_build_pkgdown()) %&gt;%
+        add_step(step_push_deploy(path = "docs", branch = "gh-pages"))
+    }else{
+      get_stage("deploy") %&gt;%
+        add_code_step(covr::codecov()) %&gt;%
+        add_code_step(devtools::install()) %&gt;%
+        add_code_step(covrpage::covrpage_ci()) %&gt;%
+        add_step(step_push_deploy(commit_paths = "tests/README.md"))
+    }
+  }</code></pre>
+</div>
+<div id="tic_travis-yml" class="section level4">
+<h4 class="hasAnchor">
+<a href="#tic_travis-yml" class="anchor"></a>tic_travis.yml</h4>
+<p><code>system.file('templates/tic/tic_travis.yml',package = 'covrpage')</code></p>
+<pre><code>  Warning in file(con, "r"): file("") only supports open = "w+" and open = "w
+  +b": using the former</code></pre>
+</div>
 </div>
 </div>
   </div>
