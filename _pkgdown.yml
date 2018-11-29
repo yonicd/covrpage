@@ -17,7 +17,7 @@ navbar:
       href: http://twitter.com/yoniceedee
 
 hexURL:
-  https://github.com/yonicd/covrpage/blob/master/inst/logo/covrpage_small.png?raw=true
+  https://github.com/yonicd/covrpage/blob/master/inst/logo/covrpageLogoSCREEN.png?raw=true
 
 reference:
   - title: "Setup"
@@ -34,9 +34,14 @@ reference:
       - has_concept("utility")
 
 articles:
-  - title: "Output"
-    contents: tests_and_coverage
-  - title: "Usage"
-    contents: 
+  - title: "Basics"
+    contents:
+      - get-started
+      - how-to-read-covrpage-report
+  - title: "Advanced"
+    contents:
       - Continuous_Integration
       - Test_Results
+  - title: "The Output"
+    contents: 
+      - tests_and_coverage      

@@ -13,7 +13,7 @@ Rscript -e "devtools::install() ; covrpage::covrpage_ci()"
 git add .
 git commit --message "Travis build: $TRAVIS_BUILD_NUMBER [skip ci]"
 
-git remote add deploy https://{{gh_user}}:${GH_PAT}@github.com/{{repo}}.git
+git remote add deploy https://{{gh_user}}:${GITHUB_PAT}@github.com/{{repo}}.git
 git push -f deploy {{push_branch}} -v
 
 else

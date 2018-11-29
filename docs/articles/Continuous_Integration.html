@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covrpage</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.65</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.66</span>
       </span>
     </div>
 
@@ -78,7 +78,7 @@
       <h1>Continuous Integration</h1>
                         <h4 class="author">Jonathan Sidi</h4>
             
-            <h4 class="date">2018-11-15</h4>
+            <h4 class="date">2018-11-26</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/yonicd/covrpage/blob/master/vignettes/Continuous_Integration.Rmd"><code>vignettes/Continuous_Integration.Rmd</code></a></small>
       <div class="hidden name"><code>Continuous_Integration.Rmd</code></div>
@@ -95,27 +95,27 @@
 <a href="#direct" class="anchor"></a>Direct</h3>
 <p><code>{covrpage}</code> can be deployed in Travis much the way <code>{covr::covrall}</code> is deployed. The only difference is that <code>{covrpage}</code> will push back the updated <code>README.md</code> file to the originating repository so it can be updated as part of the custom integration routine.</p>
 <p>The following <code>.travis.yml</code> is needed for the deployment:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yml"><code class="sourceCode yaml"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="fu">language:</span><span class="at"> R</span></a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="fu">sudo:</span><span class="at"> false</span></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="fu">cache:</span><span class="at"> packages</span></a>
-<a class="sourceLine" id="cb1-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="fu">after_success:</span></a>
-<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="kw">-</span> <span class="fu">Rscript -e 'covr:</span><span class="at">:codecov()'</span></a>
-<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="kw">-</span> bash .travis/covrpage.sh</a>
-<a class="sourceLine" id="cb1-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb1-9" data-line-number="9"><span class="fu">after_failure:</span></a>
-<a class="sourceLine" id="cb1-10" data-line-number="10"><span class="kw">-</span> bash .travis/covrpage.sh</a>
-<a class="sourceLine" id="cb1-11" data-line-number="11"></a>
-<a class="sourceLine" id="cb1-12" data-line-number="12"><span class="fu">r_github_packages:</span><span class="at"> yonicd/covrpage</span></a>
-<a class="sourceLine" id="cb1-13" data-line-number="13"><span class="fu">env:</span></a>
-<a class="sourceLine" id="cb1-14" data-line-number="14">  <span class="fu">global:</span></a>
-<a class="sourceLine" id="cb1-15" data-line-number="15">    <span class="fu">secure:</span><span class="at"> </span><span class="kw">[</span>Travis encrypted Github PAT<span class="kw">]</span></a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode yml"><code class="sourceCode yaml"><span class="fu">language:</span><span class="at"> R</span>
+<span class="fu">sudo:</span><span class="at"> false</span>
+<span class="fu">cache:</span><span class="at"> packages</span>
+
+<span class="fu">after_success:</span>
+<span class="kw">-</span> <span class="fu">Rscript -e 'covr:</span><span class="at">:codecov()'</span>
+<span class="kw">-</span> bash .travis/covrpage.sh
+
+<span class="fu">after_failure:</span>
+<span class="kw">-</span> bash .travis/covrpage.sh
+
+<span class="fu">r_github_packages:</span><span class="at"> yonicd/covrpage</span>
+<span class="fu">env:</span>
+  <span class="fu">global:</span>
+    <span class="fu">secure:</span><span class="at"> </span><span class="kw">[</span>Travis encrypted Github PAT<span class="kw">]</span></code></pre></div>
 <p>covrpage adds one new line to the standard <code>{covr}</code> Travis YML:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode yml"><code class="sourceCode yaml"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">-</span> bash .travis/covrpage.sh</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode yml"><code class="sourceCode yaml"><span class="kw">-</span> bash .travis/covrpage.sh</code></pre></div>
 <p>This file is created when running <code><a href="../reference/use_covrpage.html">covrpage::use_covrpage()</a></code> in the <code>.travis</code> subdirectory:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode yml"><code class="sourceCode yaml"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="fu">env:</span></a>
-<a class="sourceLine" id="cb3-2" data-line-number="2">  <span class="fu">global:</span></a>
-<a class="sourceLine" id="cb3-3" data-line-number="3">    <span class="fu">secure:</span><span class="at"> IeWrPb9tC9oxkoceXs4NStZJFIJKtvi/qeErbv3OATeo+BylRwj9xzcmzQrV8ps...</span></a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode yml"><code class="sourceCode yaml"><span class="fu">env:</span>
+  <span class="fu">global:</span>
+    <span class="fu">secure:</span><span class="at"> IeWrPb9tC9oxkoceXs4NStZJFIJKtvi/qeErbv3OATeo+BylRwj9xzcmzQrV8ps...</span></code></pre></div>
 <p>The bash script can be run on a successful or failed build creating the covrpage report.</p>
 <p>To allow Travis push back into the originating repository, you will need to give it permission to do so by providing an encrypted <a href="https://github.com/settings/tokens">GitHub Personal Access Token</a> (PAT). This is done using the Travis command line <a href="https://docs.travis-ci.com/user/encryption-keys/">function</a>.</p>
 <p>By default, the function assumes you have defined a system environment variable <code>GITHUB_PAT</code> and will use it to define a <a href="https://docs.travis-ci.com/user/environment-variables/">Travis environment variable</a> as <code>GH_PAT</code>.</p>
@@ -124,43 +124,43 @@
 <code>R</code> Environment Variable</li>
 </ul>
 <p>To define the Github PAT as an R environment variable:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">Sys.setenv</span>(<span class="dt">GITHUB_PAT=</span><span class="st">'PAT FROM GITHUB'</span>)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">Sys.setenv</span>(<span class="dt">GITHUB_PAT=</span><span class="st">'PAT FROM GITHUB'</span>)</code></pre></div>
 <ul>
 <li>Travis Environment Variable</li>
 </ul>
 <p>Run the following line in the terminal when you are in the root project directory (where the <code>.git</code> folder in located), the output should be appended directly to the <code>.travis.yml</code> file. Each time you run it a new <code>secure</code> line is added to the yml.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">travis encrypt GH_PAT=<span class="st">"[PAT FROM GITHUB]"</span> <span class="op">--</span>add</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">travis encrypt GH_PAT=<span class="st">"[PAT FROM GITHUB]"</span> <span class="op">--</span>add</code></pre></div>
 <p>These two commands are combined into a utility function:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">covrpage<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/covrpage/topics/tencrypt">tencrypt</a></span>(<span class="dt">r_obj =</span> <span class="kw">Sys.getenv</span>(<span class="st">"GITHUB_PAT"</span>),<span class="dt">travis_env =</span> <span class="st">"GH_PAT"</span>,<span class="dt">add =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">covrpage<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/covrpage/topics/tencrypt">tencrypt</a></span>(<span class="dt">r_obj =</span> <span class="kw">Sys.getenv</span>(<span class="st">"GITHUB_PAT"</span>),<span class="dt">travis_env =</span> <span class="st">"GH_PAT"</span>,<span class="dt">add =</span> <span class="ot">TRUE</span>)</code></pre></div>
 </div>
 <div id="deploy-pkgdown" class="section level3">
 <h3 class="hasAnchor">
 <a href="#deploy-pkgdown" class="anchor"></a>Deploy + pkgdown</h3>
 <p>You can also use <a href="https://www.github.com/r-lib/pkgdown">pkgdown</a> to create a covrpage readme with Travis. This is relevant or successful builds only, since travis will not invoke a deploy on a failed build.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode yml"><code class="sourceCode yaml"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="fu">language:</span><span class="at"> r</span></a>
-<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="fu">cache:</span><span class="at"> packages</span></a>
-<a class="sourceLine" id="cb7-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="fu">after_success:</span></a>
-<a class="sourceLine" id="cb7-5" data-line-number="5"><span class="kw">-</span> <span class="fu">Rscript -e 'covr:</span><span class="at">:codecov()'</span></a>
-<a class="sourceLine" id="cb7-6" data-line-number="6"><span class="kw">-</span> <span class="fu">Rscript -e 'devtools:</span><span class="at">:install(); covrpage::covrpage_ci()'</span></a>
-<a class="sourceLine" id="cb7-7" data-line-number="7"><span class="kw">-</span> <span class="fu">Rscript -e 'pkgdown:</span><span class="at">:build_site()'</span></a>
-<a class="sourceLine" id="cb7-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb7-9" data-line-number="9"><span class="fu">r_github_packages:</span><span class="at"> </span></a>
-<a class="sourceLine" id="cb7-10" data-line-number="10">  <span class="kw">-</span> yonicd/covrpage</a>
-<a class="sourceLine" id="cb7-11" data-line-number="11">  <span class="kw">-</span> r-lib/pkgdown <span class="co">#either put this here or in Suggests in the DESCRIPTION file</span></a>
-<a class="sourceLine" id="cb7-12" data-line-number="12"></a>
-<a class="sourceLine" id="cb7-13" data-line-number="13"><span class="fu">deploy:</span></a>
-<a class="sourceLine" id="cb7-14" data-line-number="14">  <span class="fu">provider:</span><span class="at"> pages</span></a>
-<a class="sourceLine" id="cb7-15" data-line-number="15">  <span class="fu">skip-cleanup:</span><span class="at"> true</span></a>
-<a class="sourceLine" id="cb7-16" data-line-number="16">  <span class="fu">github-token:</span><span class="at"> </span><span class="st">"$GH_PAT"</span></a>
-<a class="sourceLine" id="cb7-17" data-line-number="17">  <span class="fu">keep-history:</span><span class="at"> true</span></a>
-<a class="sourceLine" id="cb7-18" data-line-number="18">  <span class="fu">local-dir:</span><span class="at"> docs</span></a>
-<a class="sourceLine" id="cb7-19" data-line-number="19">  <span class="fu">on:</span></a>
-<a class="sourceLine" id="cb7-20" data-line-number="20">    <span class="fu">branch:</span><span class="at"> master</span></a>
-<a class="sourceLine" id="cb7-21" data-line-number="21"></a>
-<a class="sourceLine" id="cb7-22" data-line-number="22"><span class="fu">env:</span></a>
-<a class="sourceLine" id="cb7-23" data-line-number="23">  <span class="fu">global:</span></a>
-<a class="sourceLine" id="cb7-24" data-line-number="24">    <span class="fu">secure:</span><span class="at"> </span><span class="kw">[</span>Travis encrypted Github PAT<span class="kw">]</span></a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode yml"><code class="sourceCode yaml"><span class="fu">language:</span><span class="at"> r</span>
+<span class="fu">cache:</span><span class="at"> packages</span>
+
+<span class="fu">after_success:</span>
+<span class="kw">-</span> <span class="fu">Rscript -e 'covr:</span><span class="at">:codecov()'</span>
+<span class="kw">-</span> <span class="fu">Rscript -e 'devtools:</span><span class="at">:install(); covrpage::covrpage_ci()'</span>
+<span class="kw">-</span> <span class="fu">Rscript -e 'pkgdown:</span><span class="at">:build_site()'</span>
+
+<span class="fu">r_github_packages:</span><span class="at"> </span>
+  <span class="kw">-</span> yonicd/covrpage
+  <span class="kw">-</span> r-lib/pkgdown <span class="co">#either put this here or in Suggests in the DESCRIPTION file</span>
+
+<span class="fu">deploy:</span>
+  <span class="fu">provider:</span><span class="at"> pages</span>
+  <span class="fu">skip-cleanup:</span><span class="at"> true</span>
+  <span class="fu">github-token:</span><span class="at"> </span><span class="st">"$GH_PAT"</span>
+  <span class="fu">keep-history:</span><span class="at"> true</span>
+  <span class="fu">local-dir:</span><span class="at"> docs</span>
+  <span class="fu">on:</span>
+    <span class="fu">branch:</span><span class="at"> master</span>
+
+<span class="fu">env:</span>
+  <span class="fu">global:</span>
+    <span class="fu">secure:</span><span class="at"> </span><span class="kw">[</span>Travis encrypted Github PAT<span class="kw">]</span></code></pre></div>
 </div>
 </div>
   </div>
@@ -179,7 +179,7 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by Jonathan Sidi.</p>
+  <p>Developed by Jonathan Sidi, Locke Data.</p>
 </div>
 
 <div class="pkgdown">

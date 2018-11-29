@@ -13,9 +13,13 @@ library(magrittr , warn.conflicts = FALSE , quietly = TRUE)
 ```
 
 ```{r tests, include=FALSE}
-#test_x <- testthat::test_dir('testthat')
-this_pkg <- basename(normalizePath('..'))
-test_x <- testthat::test_check(this_pkg,reporter = testthat::default_reporter(),stop_on_failure = FALSE,stop_on_warning = FALSE)
+
+test_x    <- testthat::test_check(
+  package         = package_name(path = '..'),
+  reporter        = testthat::default_reporter(),
+  stop_on_failure = FALSE,
+  stop_on_warning = FALSE
+)
 
 skip <- length(test_x)>0
 failed <- FALSE
