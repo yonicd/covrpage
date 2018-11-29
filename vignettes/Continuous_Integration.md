@@ -1,7 +1,7 @@
 ---
 title: "Continuous Integration"
 author: "Jonathan Sidi"
-date: "2018-11-26"
+date: "2018-11-29"
 output: 
   rmarkdown::html_vignette: 
     keep_md: true
@@ -17,7 +17,7 @@ vignette: >
 
 ### Direct
 
-`{covrpage}` can be deployed in Travis much the way `{covr::covrall}` is deployed. The only difference is that `{covrpage}` will push back the updated `README.md` file to the originating repository so it can be updated as part of the custom integration routine. 
+`covrpage` can be deployed in Travis much the way [covr::covralls](https://covr.r-lib.org/reference/coveralls.html) is deployed. The only difference is that `covrpage` will push back the updated `README.md` file to the originating repository so it can be updated as part of the custom integration routine. 
 
 The following `.travis.yml` is needed for the deployment:
 
@@ -112,4 +112,102 @@ deploy:
 env:
   global:
     secure: [Travis encrypted Github PAT]
+```
+
+### tic
+You can use the [tic](https://github.com/ropenscilabs/tic) package to manage the steps taken in travis. It is simplest to install `tic` via the [travis](https://github.com/ropenscilabs/travis) package with the function [travis::use_tic()](https://ropenscilabs.github.io/travis/reference/use_tic.html). This will take you through all the steps needed to set up the workflow in travis and github with the project repository. 
+
+After running this function you can run [covrpage::use_covrpage(travis_type='tic')](https://yonicd.github.io/covrpage/reference/use_covrpage.html) to copy into the project root directory the two files needed to run covrpage on travis: `tic.R` and `.travis.yml`. They can always be found in the system folder of the package.
+
+#### Highlights
+
+Some things to highlight in the setup of the templates. 
+
+If the `commit` is pushed to `origin/master` then after a successful build covrpage is run and the resulting `tests/README.md` is deployed back into the `origin/master` and if there is a vignette output [pkgdown](https://www.github.com/r-lib/pkgdown) will rebuild the `docs` folder and will be deployed into `gh-pages`.
+
+If the commit is **not** pushed to `origin/master`, ie a `origin/<branch>`, then after a successful build `covrpage` is run and the resulting `tests/README.md` is deployed back into the `origin/<branch>`.
+
+Again, if there is an unsuccesful build on travis, then no deployment will occur. In this case you would need to use the [bash](#direct) option to deploy back into the `origin`.
+
+#### tic.R
+
+`system.file('templates/tic/tic.R',package = 'covrpage')`
+
+
+```
+  add_package_checks()
+  
+  if (Sys.getenv("id_rsa") != "") {
+    # pkgdown documentation can be built optionally. Other example criteria:
+    # - `inherits(ci(), "TravisCI")`: Only for Travis CI
+    # - `ci()$is_tag()`: Only for tags, not for branches
+    # - `Sys.getenv("BUILD_PKGDOWN") != ""`: If the env var "BUILD_PKGDOWN" is set
+    # - `Sys.getenv("TRAVIS_EVENT_TYPE") == "cron"`: Only for Travis cron jobs
+    get_stage("before_deploy") %>%
+      add_step(step_setup_ssh())
+    
+    if (ci()$get_branch() == "master") {
+      get_stage("deploy") %>%
+        add_code_step(covr::codecov()) %>%
+        add_code_step(devtools::install()) %>%
+        add_code_step(covrpage::covrpage_ci()) %>%
+        add_step(step_push_deploy(commit_paths = "tests/README.md")) %>%
+        add_step(step_build_pkgdown()) %>%
+        add_step(step_push_deploy(path = "docs", branch = "gh-pages"))
+    }else{
+      get_stage("deploy") %>%
+        add_code_step(covr::codecov()) %>%
+        add_code_step(devtools::install()) %>%
+        add_code_step(covrpage::covrpage_ci()) %>%
+        add_step(step_push_deploy(commit_paths = "tests/README.md"))
+    }
+  }
+```
+
+#### tic_travis.yml
+
+`system.file('templates/tic/tic_travis.yml',package = 'covrpage')`
+
+
+```
+  # R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
+  # Default configuration for use with tic package
+  # Usually you shouldn't need to change the first part of the file
+  
+  # Header
+  language: r
+  cache: packages
+  r_github_packages:
+  - yonicd/covrpage
+  - r-lib/pkgdown
+  os:
+  - linux
+  
+  #env
+  env:
+    global:
+      - _R_CHECK_FORCE_SUGGESTS_=false
+      - MAKEFLAGS="-j 2"
+      
+  # R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
+  # Default configuration for use with tic package
+  # Usually you shouldn't need to change the first part of the file
+  
+  # DO NOT CHANGE THE CODE BELOW
+  before_install: R -q -e 'install.packages(c("remotes", "curl")); remotes::install_github("ropenscilabs/tic"); tic::prepare_all_stages(); tic::before_install()'
+  install: R -q -e 'tic::install()'
+  after_install: R -q -e 'tic::after_install()'
+  before_script: R -q -e 'tic::before_script()'
+  script: R -q -e 'tic::script()'
+  after_success: R -q -e 'tic::after_success()'
+  after_failure: R -q -e 'tic::after_failure()'
+  before_deploy: R -q -e 'tic::before_deploy()'
+  deploy:
+    provider: script
+    script: R -q -e 'tic::deploy()'
+    on:
+      all_branches: true
+  after_deploy: R -q -e 'tic::after_deploy()'
+  after_script: R -q -e 'tic::after_script()'
+  # DO NOT CHANGE THE CODE ABOVE
 ```

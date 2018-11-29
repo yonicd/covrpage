@@ -14,8 +14,7 @@ vignette: >
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>",
-  eval = FALSE
+  comment = "#>"
 )
 ```
 
@@ -23,7 +22,7 @@ knitr::opts_chunk$set(
 
 ### Direct
 
-`{covrpage}` can be deployed in Travis much the way `{covr::covrall}` is deployed. The only difference is that `{covrpage}` will push back the updated `README.md` file to the originating repository so it can be updated as part of the custom integration routine. 
+`covrpage` can be deployed in Travis much the way [covr::covralls](https://covr.r-lib.org/reference/coveralls.html) is deployed. The only difference is that `covrpage` will push back the updated `README.md` file to the originating repository so it can be updated as part of the custom integration routine. 
 
 The following `.travis.yml` is needed for the deployment:
 
@@ -118,4 +117,35 @@ deploy:
 env:
   global:
     secure: [Travis encrypted Github PAT]
+```
+
+### tic
+You can use the [tic](https://github.com/ropenscilabs/tic) package to manage the steps taken in travis. It is simplest to install `tic` via the [travis](https://github.com/ropenscilabs/travis) package with the function [travis::use_tic()](https://ropenscilabs.github.io/travis/reference/use_tic.html). This will take you through all the steps needed to set up the workflow in travis and github with the project repository. 
+
+After running this function you can run [covrpage::use_covrpage(travis_type='tic')](https://yonicd.github.io/covrpage/reference/use_covrpage.html) to copy into the project root directory the two files needed to run covrpage on travis: `tic.R` and `.travis.yml`. They can always be found in the system folder of the package.
+
+#### Highlights
+
+Some things to highlight in the setup of the templates. 
+
+If the `commit` is pushed to `origin/master` then after a successful build covrpage is run and the resulting `tests/README.md` is deployed back into the `origin/master` and if there is a vignette output [pkgdown](https://www.github.com/r-lib/pkgdown) will rebuild the `docs` folder and will be deployed into `gh-pages`.
+
+If the commit is **not** pushed to `origin/master`, ie a `origin/<branch>`, then after a successful build `covrpage` is run and the resulting `tests/README.md` is deployed back into the `origin/<branch>`.
+
+Again, if there is an unsuccesful build on travis, then no deployment will occur. In this case you would need to use the [bash](#direct) option to deploy back into the `origin`.
+
+#### tic.R
+
+`system.file('templates/tic/tic.R',package = 'covrpage')`
+
+```{r,comment=' ',echo=FALSE}
+cat(readLines(system.file('templates/tic/tic.R',package = 'covrpage')),sep='\n')
+```
+
+#### tic_travis.yml
+
+`system.file('templates/tic/tic_travis.yml',package = 'covrpage')`
+
+```{r,comment=' ',echo=FALSE}
+cat(readLines(system.file('templates/tic/tic_travis.yml',package = 'covrpage')),sep='\n')
 ```
