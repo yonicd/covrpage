@@ -5,7 +5,7 @@
 \title{Add covrpage to Travis CI for a git directory}
 \usage{
 use_covrpage(file = ".travis/covrpage.sh", travis_type = c("bash",
-  "pkgdown"), travis_blocks = c("after_success", "after_failure",
+  "pkgdown", "tic"), travis_blocks = c("after_success", "after_failure",
   "deploy_ghpages"), gh_user = gsub("@(.*?)$", "",
   system("git config user.email", intern = TRUE)), push_branch = "test",
   repo = system("git config travis.slug", intern = TRUE),
@@ -15,8 +15,9 @@ use_covrpage(file = ".travis/covrpage.sh", travis_type = c("bash",
 \arguments{
 \item{file}{character, file path to save bash script to, Default: '.travis/covrpage.sh'}
 
-\item{travis_type}{character, build .travis.yml template for bash or pkgdown deployment,
-Default: c('bash','pkgdown')}
+\item{travis_type}{character, build .travis.yml template for bash script,
+pkgdown deployment or using the 'tic' package from ropenscilabs on GitHub
+Default: c('bash','pkgdown','tic')}
 
 \item{travis_blocks}{character, vector that defines what .travis.yml blocks tocreate,
 Default: c('after_success','after_failure','deploy_ghpages')}
