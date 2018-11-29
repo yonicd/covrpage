@@ -121,7 +121,7 @@
     </div>
 
     <pre class="usage"><span class='fu'>use_covrpage</span>(<span class='kw'>file</span> <span class='kw'>=</span> <span class='st'>".travis/covrpage.sh"</span>, <span class='kw'>travis_type</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"bash"</span>,
-  <span class='st'>"pkgdown"</span>), <span class='kw'>travis_blocks</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"after_success"</span>, <span class='st'>"after_failure"</span>,
+  <span class='st'>"pkgdown"</span>, <span class='st'>"tic"</span>), <span class='kw'>travis_blocks</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"after_success"</span>, <span class='st'>"after_failure"</span>,
   <span class='st'>"deploy_ghpages"</span>), <span class='kw'>gh_user</span> <span class='kw'>=</span> <span class='fu'>gsub</span>(<span class='st'>"@(.*?)$"</span>, <span class='st'>""</span>,
   <span class='fu'>system</span>(<span class='st'>"git config user.email"</span>, <span class='kw'>intern</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)), <span class='kw'>push_branch</span> <span class='kw'>=</span> <span class='st'>"test"</span>,
   <span class='kw'>repo</span> <span class='kw'>=</span> <span class='fu'>system</span>(<span class='st'>"git config travis.slug"</span>, <span class='kw'>intern</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>),
@@ -137,8 +137,9 @@
     </tr>
     <tr>
       <th>travis_type</th>
-      <td><p>character, build .travis.yml template for bash or pkgdown deployment,
-Default: c('bash','pkgdown')</p></td>
+      <td><p>character, build .travis.yml template for bash script,
+pkgdown deployment or using the 'tic' package from ropenscilabs on GitHub
+Default: c('bash','pkgdown','tic')</p></td>
     </tr>
     <tr>
       <th>travis_blocks</th>
@@ -174,16 +175,16 @@ Default: system("git rev-parse --abbrev-ref HEAD", intern = TRUE) (usually 'mast
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='fu'>use_covrpage</span>(<span class='kw'>travis_type</span> <span class='kw'>=</span> <span class='st'>'bash'</span>,<span class='kw'>file</span><span class='kw'>=</span><span class='fu'>file.path</span>(<span class='fu'>tempdir</span>(),<span class='st'>'myfile.sh'</span>))</div><div class='output co'>#&gt; <span class='warning'>Warning: running command 'git config travis.slug' had status 1</span></div><div class='output co'>#&gt; <span class='message'>Writing myfile.sh bash script to /tmp/Rtmpq67hOz</span></div><div class='output co'>#&gt; <span class='message'>Add to .travs.yml </span>
+<span class='fu'>use_covrpage</span>(<span class='kw'>travis_type</span> <span class='kw'>=</span> <span class='st'>'bash'</span>,<span class='kw'>file</span><span class='kw'>=</span><span class='fu'>file.path</span>(<span class='fu'>tempdir</span>(),<span class='st'>'myfile.sh'</span>))</div><div class='output co'>#&gt; <span class='warning'>Warning: running command 'git config travis.slug' had status 1</span></div><div class='output co'>#&gt; <span class='message'>Writing myfile.sh bash script to /tmp/RtmpOACFPP</span></div><div class='output co'>#&gt; <span class='message'>Add to .travs.yml </span>
 #&gt; <span class='message'></span>
 #&gt; <span class='message'>  r_github_packages: </span>
 #&gt; <span class='message'>  - yonicd/covrpage</span>
 #&gt; <span class='message'>  </span>
 #&gt; <span class='message'>    after_sucess: </span>
 #&gt; <span class='message'>  - Rscript -e 'covr::codecov()'</span>
-#&gt; <span class='message'>  - bash /tmp/Rtmpq67hOz/myfile.sh</span>
+#&gt; <span class='message'>  - bash /tmp/RtmpOACFPP/myfile.sh</span>
 #&gt; <span class='message'>    after_failure:</span>
-#&gt; <span class='message'>  - bash /tmp/Rtmpq67hOz/myfile.sh</span>
+#&gt; <span class='message'>  - bash /tmp/RtmpOACFPP/myfile.sh</span>
 #&gt; <span class='message'>  deploy:</span>
 #&gt; <span class='message'>    provider: pages</span>
 #&gt; <span class='message'>    skip-cleanup: true</span>
