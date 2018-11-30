@@ -78,7 +78,7 @@
       <h1>Continuous Integration</h1>
                         <h4 class="author">Jonathan Sidi</h4>
             
-            <h4 class="date">2018-11-29</h4>
+            <h4 class="date">2018-11-30</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/yonicd/covrpage/blob/master/vignettes/Continuous_Integration.Rmd"><code>vignettes/Continuous_Integration.Rmd</code></a></small>
       <div class="hidden name"><code>Continuous_Integration.Rmd</code></div>
@@ -173,7 +173,7 @@
 <p>Some things to highlight in the setup of the templates.</p>
 <p>If the <code>commit</code> is pushed to <code>origin/master</code> then after a successful build covrpage is run and the resulting <code>tests/README.md</code> is deployed back into the <code>origin/master</code> and if there is a vignette output <a href="https://www.github.com/r-lib/pkgdown">pkgdown</a> will rebuild the <code>docs</code> folder and will be deployed into <code>gh-pages</code>.</p>
 <p>If the commit is <strong>not</strong> pushed to <code>origin/master</code>, ie a <code>origin/&lt;branch&gt;</code>, then after a successful build <code>covrpage</code> is run and the resulting <code>tests/README.md</code> is deployed back into the <code>origin/&lt;branch&gt;</code>.</p>
-<p>Again, if there is an unsuccesful build on travis, then no deployment will occur. In this case you would need to use the <a href="#direct">bash</a> option to deploy back into the <code>origin</code>.</p>
+<p>Again, if there is an unsuccessful build on travis, then no deployment will occur. In this case you would need to use the <a href="#direct">bash</a> option to deploy back into the <code>origin</code>.</p>
 </div>
 <div id="tic-r" class="section level4">
 <h4 class="hasAnchor">

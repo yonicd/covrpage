@@ -77,7 +77,7 @@
     <div class="page-header toc-ignore">
       <h1>Getting Started</h1>
             
-            <h4 class="date">2018-11-29</h4>
+            <h4 class="date">2018-11-30</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/yonicd/covrpage/blob/master/vignettes/get-started.Rmd"><code>vignettes/get-started.Rmd</code></a></small>
       <div class="hidden name"><code>get-started.Rmd</code></div>
@@ -116,7 +116,8 @@
 <li><p><code><a href="../reference/testthat_summary.html">covrpage::testthat_summary()</a></code> to provide a summary for the output of <code><a href="http://www.rdocumentation.org/packages/testthat/topics/test_dir">testthat::test_check()</a></code>;</p></li>
 <li><p><code><a href="../reference/covr_summary.html">covrpage::covr_summary()</a></code> to run <code>covr</code> even with failing tests.</p></li>
 </ul>
-<p>You can see an example for the <code>remedy</code> package <a href="https://github.com/ThinkR-open/remedy/tree/master/tests#tests-and-coverage">here</a>. <!-- When it exists point to the vignette explaining how to read and interpret the report. --></p>
+<p>You can see an example for the <code>remedy</code> package <a href="https://github.com/ThinkR-open/remedy/tree/master/tests#tests-and-coverage">here</a>.</p>
+<p>This <a href="https://yonicd.github.io/covrpage/articles/how-to-read-covrpage-report.html">vignette</a> is a guide how to read and leverage the report for both end users and polished developers. In addition you can read <a href="https://yonicd.github.io/covrpage/articles/Test_Results.html">Tests Results Indicators</a> to learn what visual cues <code>covrpage</code> gives to indicate statuses of tests both as badges and throughout the report itself.</p>
 <p>Note that the different <a href="https://yonicd.github.io/covrpage/reference/index.html#section-covrpage-utilities"><code>covrpage</code> utilities functions</a> mentioned above can be useful on their own whilst developing a package, or say, inspecting a new test file added by a collaborator in a PR.</p>
 </div>
 <div id="how-to-publish-covrpage-report" class="section level1">
@@ -128,19 +129,17 @@
 <li><p>A vignette, that’ll get inserted into the <code>pkgdown</code> website of your package, and the <a href="https://cran.r-project.org/web/packages/texPreview/index.html">CRAN page</a> if/when your package is released on CRAN. <code><a href="../reference/use_covrpage_vignette.html">covrpage::use_covrpage_vignette()</a></code> sets it up. Target audience: users reading the rendered documentation.</p></li>
 </ul>
 <p>In both cases, you can also ensure the report stays up-to-date by having it deployed from Travis every time you push to your repository.</p>
-<p>The easiest solution is to run <code>travis::use_tic()</code> at the root of your repository, which will ensure your <code>pkgdown</code> website is deployed from Travis if you have one. Now, here are the steps to do to add building of the README in tests/. ADD STEPS, probably involving <code>tic::step_run_code()</code>.</p>
-<!-- GHE stuff to be written by Jonathan. 
-
-Or point to CI vignette? I think it's better if the guidance can be summarized in a few lines here, except for maybe GHE that could go in an "advanced CI settings" vignette (current CI vignette).-->
+<p>The easiest solution is to run <code>travis::use_tic()</code> at the root of your repository, which will ensure your <code>pkgdown</code> website is deployed from Travis if you have one.</p>
+<p>For a detailed explanation on using <code>covrpage</code> with <code>tic</code> or more low level ways to use <code>covrpage</code> with <code>travis ci</code> you can read in the <a href="https://yonicd.github.io/covrpage/articles/Continuous_Integration.html">Continuous Integration</a> vignette.</p>
 </div>
 <div id="conclusion" class="section level1">
 <h1 class="hasAnchor">
 <a href="#conclusion" class="anchor"></a>Conclusion</h1>
-<p><code>covrpage</code> report aims at providing more information about the testing of your package to potential users and collaborators, and can inform your own work on your package. Publishing the report with continuous integration will ensure it’s always up-to-date. As a summary, in any package of yours, run <!-- having a summary would be nice. Jonathan does this one make sense? --></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">covrpage<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/covrpage/topics/covrpage">covrpage</a></span>()</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co"># usethis::use_pkgdown()</span></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3">covrpage<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/covrpage/topics/use_covrpage_vignette">use_covrpage_vignette</a></span>()</a>
-<a class="sourceLine" id="cb1-4" data-line-number="4">travis<span class="op">::</span>use_tic<span class="op">/</span>covrpage<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/covrpage/topics/use_covrpage">use_covrpage</a></span>()</a></code></pre></div>
+<p><code>covrpage</code> report aims at providing more information about the testing of your package to potential users and collaborators, and can inform your own work developing and maintaining your package. Publishing the report with continuous integration will ensure it’s always up-to-date. As a summary, in any package of yours, run</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co"># remotes::install_github('ropenscilabs/travis')</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co"># travis::use_tic()</span></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">covrpage<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/covrpage/topics/use_covrpage">use_covrpage</a></span>(<span class="dt">travis_type =</span> <span class="st">'tic'</span>)</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">covrpage<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/covrpage/topics/covrpage">covrpage</a></span>(<span class="dt">vignette =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 </div>
   </div>
 
