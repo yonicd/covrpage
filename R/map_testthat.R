@@ -82,7 +82,7 @@ nest_expect <- function(x) {
 #' @title Map the hierarchy structure of a testthat test file
 #' @description Query a test file to see what expectations are defined in it.
 #' @param path character, path to file
-#' @details Return data.frame containing which expecations are in the test file
+#' @details Return data.frame containing which expectations are in the test file
 #'  by context/description/test/expectation/linerange
 #' @return data.frame
 #' @seealso

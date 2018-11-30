@@ -56,7 +56,7 @@ In the `covrpage` report,
 
 * find where the failed tests are located in (table 2), if failing tests are the reason for the build failure. Icons will help you locate them, see [this example](https://github.com/yonicd/ggstatsplot/tree/master/tests#unit-tests).
 
-* look at the expectations from (table 3) and have a better informed decision on wether to use that package and to know what functionality to stay away from.
+* look at the expectations from (table 3) and have a better informed decision on whether to use that package and to know what functionality to stay away from.
     * this table is hidden on a successful build and is open if any test is non-passing. It is a simple visual cue that informs you the reader if something is wrong.
 
 This should help you having an idea of what to expect from the developer of the package going forward what is going to be fixed.

@@ -16,7 +16,7 @@ data.frame
 Query a test file to see what expectations are defined in it.
 }
 \details{
-Return data.frame containing which expecations are in the test file
+Return data.frame containing which expectations are in the test file
  by context/description/test/expectation/linerange
 }
 \seealso{

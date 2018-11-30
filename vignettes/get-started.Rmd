@@ -45,10 +45,11 @@ The functions powering the report are:
 
 * `covrpage::covr_summary()` to run `covr` even with failing tests.
 
-You can see an example for the `remedy` package [here](https://github.com/ThinkR-open/remedy/tree/master/tests#tests-and-coverage). <!-- When it exists point to the vignette explaining how to read and interpret the report. -->
+You can see an example for the `remedy` package [here](https://github.com/ThinkR-open/remedy/tree/master/tests#tests-and-coverage).
+
+This [vignette](https://yonicd.github.io/covrpage/articles/how-to-read-covrpage-report.html) is a guide how to read and leverage the report for both end users and polished developers. In addition you can read [Tests Results Indicators](https://yonicd.github.io/covrpage/articles/Test_Results.html) to learn what visual cues `covrpage` gives to indicate statuses of tests both as badges and throughout the report itself.
 
 Note that the different [`covrpage` utilities functions](https://yonicd.github.io/covrpage/reference/index.html#section-covrpage-utilities) mentioned above can be useful on their own whilst developing a package, or say, inspecting a new test file added by a collaborator in a PR.
-
 
 # How to publish `covrpage` report?
 
@@ -60,19 +61,17 @@ There are two places where you can keep `covrpage` report, and it's advised to u
 
 In both cases, you can also ensure the report stays up-to-date by having it deployed from Travis every time you push to your repository.
 
-The easiest solution is to run `travis::use_tic()` at the root of your repository, which will ensure your `pkgdown` website is deployed from Travis if you have one. Now, here are the steps to do to add building of the README in tests/. ADD STEPS, probably involving `tic::step_run_code()`.
+The easiest solution is to run `travis::use_tic()` at the root of your repository, which will ensure your `pkgdown` website is deployed from Travis if you have one. 
 
-<!-- GHE stuff to be written by Jonathan. 
-
-Or point to CI vignette? I think it's better if the guidance can be summarized in a few lines here, except for maybe GHE that could go in an "advanced CI settings" vignette (current CI vignette).-->
+For a detailed explanation on using `covrpage` with `tic` or more low level ways to use `covrpage` with `travis ci` you can read in the [Continuous Integration](https://yonicd.github.io/covrpage/articles/Continuous_Integration.html) vignette.
 
 # Conclusion
 
-`covrpage` report aims at providing more information about the testing of your package to potential users and collaborators, and can inform your own work on your package. Publishing the report with continuous integration will ensure it's always up-to-date. As a summary, in any package of yours, run <!-- having a summary would be nice. Jonathan does this one make sense? -->
+`covrpage` report aims at providing more information about the testing of your package to potential users and collaborators, and can inform your own work developing and maintaining your package. Publishing the report with continuous integration will ensure it's always up-to-date. As a summary, in any package of yours, run 
 
 ```{r,eval=FALSE}
-covrpage::covrpage()
-# usethis::use_pkgdown()
-covrpage::use_covrpage_vignette()
-travis::use_tic/covrpage::use_covrpage()
+# remotes::install_github('ropenscilabs/travis')
+# travis::use_tic()
+covrpage::use_covrpage(travis_type = 'tic')
+covrpage::covrpage(vignette = TRUE)
 ```

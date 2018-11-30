@@ -132,7 +132,7 @@ If the `commit` is pushed to `origin/master` then after a successful build covrp
 
 If the commit is **not** pushed to `origin/master`, ie a `origin/<branch>`, then after a successful build `covrpage` is run and the resulting `tests/README.md` is deployed back into the `origin/<branch>`.
 
-Again, if there is an unsuccesful build on travis, then no deployment will occur. In this case you would need to use the [bash](#direct) option to deploy back into the `origin`.
+Again, if there is an unsuccessful build on travis, then no deployment will occur. In this case you would need to use the [bash](#direct) option to deploy back into the `origin`.
 
 #### tic.R
 
