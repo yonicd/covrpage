@@ -175,16 +175,16 @@ Default: system("git rev-parse --abbrev-ref HEAD", intern = TRUE) (usually 'mast
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='fu'>use_covrpage</span>(<span class='kw'>travis_type</span> <span class='kw'>=</span> <span class='st'>'bash'</span>,<span class='kw'>file</span><span class='kw'>=</span><span class='fu'>file.path</span>(<span class='fu'>tempdir</span>(),<span class='st'>'myfile.sh'</span>))</div><div class='output co'>#&gt; <span class='warning'>Warning: running command 'git config travis.slug' had status 1</span></div><div class='output co'>#&gt; <span class='message'>Writing myfile.sh bash script to /tmp/RtmpOsub0S</span></div><div class='output co'>#&gt; <span class='message'>Add to .travs.yml </span>
+<span class='fu'>use_covrpage</span>(<span class='kw'>travis_type</span> <span class='kw'>=</span> <span class='st'>'bash'</span>,<span class='kw'>file</span><span class='kw'>=</span><span class='fu'>file.path</span>(<span class='fu'>tempdir</span>(),<span class='st'>'myfile.sh'</span>))</div><div class='output co'>#&gt; <span class='warning'>Warning: running command 'git config travis.slug' had status 1</span></div><div class='output co'>#&gt; <span class='message'>Writing myfile.sh bash script to /tmp/RtmpSdaX4U</span></div><div class='output co'>#&gt; <span class='message'>Add to .travs.yml </span>
 #&gt; <span class='message'></span>
 #&gt; <span class='message'>  r_github_packages: </span>
 #&gt; <span class='message'>  - yonicd/covrpage</span>
 #&gt; <span class='message'>  </span>
 #&gt; <span class='message'>    after_sucess: </span>
 #&gt; <span class='message'>  - Rscript -e 'covr::codecov()'</span>
-#&gt; <span class='message'>  - bash /tmp/RtmpOsub0S/myfile.sh</span>
+#&gt; <span class='message'>  - bash /tmp/RtmpSdaX4U/myfile.sh</span>
 #&gt; <span class='message'>    after_failure:</span>
-#&gt; <span class='message'>  - bash /tmp/RtmpOsub0S/myfile.sh</span>
+#&gt; <span class='message'>  - bash /tmp/RtmpSdaX4U/myfile.sh</span>
 #&gt; <span class='message'>  deploy:</span>
 #&gt; <span class='message'>    provider: pages</span>
 #&gt; <span class='message'>    skip-cleanup: true</span>
