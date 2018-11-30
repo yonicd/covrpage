@@ -28,15 +28,23 @@ covrpage_log <- function() {
 #' @export
 
 covr_log <- function() {
-  do.call(rbind, lapply(covrpage_log(), covr_md_df))
+  ret <- do.call(rbind, lapply(covrpage_log(), covr_md_df))
+  attr(ret,'branch') <- system("git rev-parse --abbrev-ref HEAD", intern = TRUE)
+  ret
 }
 
 
 covr_md_df <- function(md) {
   date <- strptime(md[3], format = "%d %B,%Y %H:%M:%S")
+  
+  if(is.na(date)){
+    return(NULL)
+  }
+  
   if (length(grep("^\\| Object", md)) == 0) {
     return(NULL)
   }
+  
   covr_table <- md[(grep("^\\| Object", md) + 2):(grep("^<br>$", md) - 2)]
   covr_table <- gsub("^\\||\\|$|\\s", "", covr_table)
   covr_table <- strsplit(covr_table, "\\|")

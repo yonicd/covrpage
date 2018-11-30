@@ -1,10 +1,13 @@
-x <- covrpage::covr_log()%>%
+library(magrittr)
+x <- covrpage::covr_log()
+  
+xx <- x%>%
   dplyr::mutate(
     file_fac =  factor(file,levels = rev(unique(file)))  
   )%>%
   dplyr::filter(!is.na(date))
 
-x%>%
+xx%>%
   ggplot2::ggplot(
     ggplot2::aes(
       x    = factor(date),
@@ -16,7 +19,7 @@ x%>%
     width  = .95,
     alpha  = 0.75
     ) +
-  ggplot2::geom_text(data = x%>%
+  ggplot2::geom_text(data = xx%>%
                        dplyr::filter(date==max(date,na.rm = TRUE)),
                      colour = 'black',
                      size=2,
@@ -30,8 +33,9 @@ x%>%
     ) +
   ggplot2::theme_minimal() +
   ggplot2::labs(
-    title = sprintf('History of code coverage results for: %s',
-                    gsub('\\s(.*?)$','',unique(grep('Package',x$file,value = TRUE)))),
+    title = sprintf('History of code coverage results for: %s/%s',
+                    gsub('\\s(.*?)$','',unique(grep('Package',xx$file,value = TRUE))),
+                    attr(x,'branch')),
     subtitle = 'Source: git log',
     caption = 'Created using covrpage'
   ) +
