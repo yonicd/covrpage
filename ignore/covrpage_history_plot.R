@@ -7,7 +7,7 @@ xx <- x%>%
   )%>%
   dplyr::filter(!is.na(date))
 
-xx%>%
+p <- xx%>%
   ggplot2::ggplot(
     ggplot2::aes(
       x    = factor(date),
@@ -48,3 +48,5 @@ xx%>%
     panel.grid.minor  = ggplot2::element_blank(),
     axis.title        = ggplot2::element_blank()
     )
+
+p
