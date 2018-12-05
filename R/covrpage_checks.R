@@ -1,15 +1,19 @@
 check_for_tests <- function(testdir) {
-  res <- 0
+  
+  res <- TRUE
 
+  on.exit(return(invisible(res)),add = TRUE)
+  
   if (!dir.exists(file.path(testdir, "testthat"))) {
-    res <- 1
+    res <- FALSE 
+    stop(sprintf("testthat subdirectory does not exists in: '%s'", testdir))
   }
 
   if (length(list.files(file.path(testdir, "testthat"))) == 0) {
-    res <- 2
+    res <- FALSE
+    stop(sprintf("tests/testthat subdirectory does contain any test files in: '%s'", testdir))
   }
 
-  return(res)
 }
 
 #' @importFrom utils installed.packages
@@ -34,15 +38,17 @@ check_for_pkgs <- function(pkg) {
 
   ret <- setdiff(pkg_deps, pkgs_current)
 
-  if (length(ret) == 0) {
-    return(c())
+  on.exit(invisible(ret),add = TRUE)
+  
+  if ( length(ret) > 0 ) {
+    
+    stop(
+      sprintf("The following packages must be installed: %s",
+      paste0(ret, collapse = ","))
+    )
+    
   }
 
-  if (!nzchar(ret)) {
-    return(c())
-  }
-
-  ret
 }
 
 create_viewer <- function() {

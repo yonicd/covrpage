@@ -31,26 +31,8 @@ covrpage <- function(path = getwd(), preview = TRUE, auto_push = FALSE, update_b
     setwd(thiswd)
   }, add = TRUE)
 
-  chk_pgks <- check_for_pkgs(path)
-
-  if (length(chk_pgks) > 0) {
-    stop(sprintf(
-      "The following packages must be installed: %s",
-      paste0(chk_pgks, collapse = ",")
-    ))
-  }
-
-  chk <- check_for_tests(testdir)
-
-  if (chk > 0) {
-    if (chk == 1) {
-      stop(sprintf("tests subdirectory does not exists in: '%s'", path))
-    }
-
-    if (chk == 2) {
-      stop(sprintf("tests/testthat subdirectory does contain any test files in: '%s'", path))
-    }
-  }
+  check_for_pkgs(path)
+  check_for_tests(testdir)
 
   setwd(path)
 
