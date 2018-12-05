@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Encrypt Travis environment variables — tencrypt • covrpage</title>
+<title>Run map_testthat on a GitHub Repository — map_testthat_snapshot • covrpage</title>
 
 <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
 
@@ -32,9 +32,9 @@
 
 
 
-<meta property="og:title" content="Encrypt Travis environment variables — tencrypt" />
+<meta property="og:title" content="Run map_testthat on a GitHub Repository — map_testthat_snapshot" />
 
-<meta property="og:description" content="Add encrypted Travis environment variable to git directory and .travis.yml." />
+<meta property="og:description" content="Runs a covrpage on a GitHub repository in a sterile environment" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -109,52 +109,75 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Encrypt Travis environment variables</h1>
-    <small class="dont-index">Source: <a href='https://github.com/yonicd/covrpage/blob/master/R/tencrypt.R'><code>R/tencrypt.R</code></a></small>
-    <div class="hidden name"><code>tencrypt.Rd</code></div>
+    <h1>Run map_testthat on a GitHub Repository</h1>
+    <small class="dont-index">Source: <a href='https://github.com/yonicd/covrpage/blob/master/R/map_testthat_snapshot.R'><code>R/map_testthat_snapshot.R</code></a></small>
+    <div class="hidden name"><code>map_testthat_snapshot.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Add encrypted Travis environment variable to git directory and .travis.yml.</p>
+    <p>Runs a covrpage on a GitHub repository in a sterile environment</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>tencrypt</span>(<span class='kw'>r_obj</span> <span class='kw'>=</span> <span class='fu'>Sys.getenv</span>(<span class='st'>"GITHUB_PAT"</span>), <span class='kw'>travis_env</span> <span class='kw'>=</span> <span class='st'>"GITHUB_PAT"</span>,
-  <span class='kw'>add</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>map_testthat_snapshot</span>(<span class='no'>repo</span>, <span class='kw'>branch</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>PAT</span> <span class='kw'>=</span> <span class='fu'>Sys.getenv</span>(<span class='st'>"GITHUB_PAT"</span>), <span class='kw'>host</span> <span class='kw'>=</span> <span class='st'>"api.github.com"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>r_obj</th>
-      <td><p>object value to encrypt</p></td>
+      <th>repo</th>
+      <td><p>character, Public GitHub repository</p></td>
     </tr>
     <tr>
-      <th>travis_env</th>
-      <td><p>character, name of Travis environment variable</p></td>
+      <th>branch</th>
+      <td><p>character, Name of the branch to checkout. Default: NULL</p></td>
     </tr>
     <tr>
-      <th>add</th>
-      <td><p>boolean, add directly to .travis.yml, Default: TRUE</p></td>
+      <th>PAT</th>
+      <td><p>character, GitHub Personal Access Token, Default: Sys.getenv("GITHUB_PAT")</p></td>
+    </tr>
+    <tr>
+      <th>host</th>
+      <td><p>character, GitHub API host to use, Default: "api.github.com"</p></td>
     </tr>
     </table>
     
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>tibble</p>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>Creates a markdown output that is sent to the internal viewer.</p>
+<p>Setting branch to NULL means that <code><a href='http://www.rdocumentation.org/packages/git2r/topics/clone'>clone</a></code> will use the remote's default branch.</p>
+    
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Other setup: <code><a href='make_badge.html'>make_badge</a></code>,
-  <code><a href='use_covrpage_vignette.html'>use_covrpage_vignette</a></code>,
-  <code><a href='use_covrpage.html'>use_covrpage</a></code></p></div>
+    <div class='dont-index'><p><code><a href='covrpage.html'>covrpage</a></code> <code><a href='http://www.rdocumentation.org/packages/git2r/topics/clone'>clone</a></code> <code><a href='http://www.rdocumentation.org/packages/remotes/topics/install_github'>install_github</a></code></p></div>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><span class='co'># NOT RUN {</span>
+<span class='kw'>if</span>(<span class='fu'>interactive</span>()){
+ <span class='fu'>map_testthat_snapshot</span>(<span class='st'>'tidyverse/purrr'</span>)
+ }
+<span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       
+      <li><a href="#value">Value</a></li>
+
+      <li><a href="#details">Details</a></li>
+
       <li><a href="#see-also">See also</a></li>
-          </ul>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>
