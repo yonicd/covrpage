@@ -5,8 +5,7 @@
 \title{Run map_testthat on a GitHub Repository}
 \usage{
 map_testthat_snapshot(repo, branch = NULL,
-  PAT = Sys.getenv("GITHUB_PAT"), host = "api.github.com",
-  preview = TRUE)
+  PAT = Sys.getenv("GITHUB_PAT"), host = "api.github.com")
 }
 \arguments{
 \item{repo}{character, Public GitHub repository}

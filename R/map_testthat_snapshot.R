@@ -27,8 +27,7 @@
 map_testthat_snapshot <- function(repo,
                               branch = NULL,
                               PAT = Sys.getenv("GITHUB_PAT"),
-                              host = "api.github.com",
-                              preview = TRUE
+                              host = "api.github.com"
 ){
   
   RET <- FALSE
