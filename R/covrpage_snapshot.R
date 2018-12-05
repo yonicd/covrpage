@@ -29,10 +29,11 @@ covrpage_snapshot <- function(repo){
     
     withr::with_temp_libpaths({
       remotes::install_github(repo)
+      setwd(basename(repo))
+      covrpage(update_badge = FALSE)
     })
     
-    setwd(basename(repo))
-    covrpage(update_badge = FALSE)
+
   })
 
 }
