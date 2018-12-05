@@ -6,7 +6,7 @@ check_for_tests <- function(testdir) {
   
   if (!dir.exists(file.path(testdir, "testthat"))) {
     res <- FALSE 
-    stop(sprintf("tests subdirectory does not exists in: '%s'", testdir))
+    stop(sprintf("testthat subdirectory does not exists in: '%s'", testdir))
   }
 
   if (length(list.files(file.path(testdir, "testthat"))) == 0) {

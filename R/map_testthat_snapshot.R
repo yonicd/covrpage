@@ -59,7 +59,7 @@ map_testthat_snapshot <- function(repo,
     )
     
     setwd(basename(repo))
-    
+    check_for_tests('tests')
     RET <- map_testthat()
   })
   
