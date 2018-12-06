@@ -1,0 +1,62 @@
+---
+title: "Remote Covrpage"
+author: "Jonathan Sidi"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Snapshots}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+When browsing GitHub for packages to install many times you want to kick the tires of the repository without wanting to _commit_ to it. 
+
+`Covrpage` has your back. 
+
+```{r}
+library(covrpage)
+```
+
+## Test Plans
+
+List of all the expectations defined in the `tests/testthat` directory.
+
+```{r,include=FALSE}
+testmap <- map_testthat_snapshot('tidyverse/purrr')
+```
+
+```{r,eval=FALSE}
+testmap <- map_testthat_snapshot('tidyverse/purrr')
+```
+ 
+
+First five tests 
+ 
+```{r}
+knitr::kable(head(testmap,5))
+```
+
+<details><summary>Click to see the rest of the tests</summary>
+
+```{r}
+knitr::kable(tail(testmap,-5))
+```
+
+</details>
+
+<br>
+
+## Test Report
+
+Run `covrpage` in a sterile environment to output the report `README`.
+
+```{r,eval=FALSE}
+covrpage_snapshot('tidyverse/purrr')
+```
