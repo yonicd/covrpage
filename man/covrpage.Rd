@@ -26,6 +26,7 @@ Render the template of the covrpage in the package directory.
 \seealso{
 \code{\link[rmarkdown]{render}}
 
-Other invoke: \code{\link{covrpage_ci}}
+Other invoke: \code{\link{covrpage_ci}},
+  \code{\link{covrpage_snapshot}}
 }
 \concept{invoke}

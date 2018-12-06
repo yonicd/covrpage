@@ -36,4 +36,9 @@ if(interactive()){
 }
 \seealso{
 \code{\link[covrpage]{covrpage}} \code{\link[git2r]{clone}} \code{\link[remotes]{install_github}}
+
+Other utility: \code{\link{coverage_skip}},
+  \code{\link{covr_summary}}, \code{\link{map_testthat}},
+  \code{\link{map_test}}, \code{\link{testthat_summary}}
 }
+\concept{utility}

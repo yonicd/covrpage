@@ -35,4 +35,8 @@ if(interactive()){
 }
 \seealso{
 \code{\link[covrpage]{covrpage}} \code{\link[git2r]{clone}} \code{\link[remotes]{install_github}}
+
+Other invoke: \code{\link{covrpage_ci}},
+  \code{\link{covrpage}}
 }
+\concept{invoke}

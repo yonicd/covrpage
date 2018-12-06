@@ -21,6 +21,7 @@
 #' @seealso
 #'  \code{\link[covrpage]{covrpage}} \code{\link[git2r]{clone}} \code{\link[remotes]{install_github}}
 #' @rdname covrpage_snapshot
+#' @family invoke
 #' @export 
 #' @importFrom withr with_dir with_temp_libpaths
 #' @importFrom git2r clone

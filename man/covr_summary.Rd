@@ -22,6 +22,7 @@ mimics the console print method of \code{\link[covr]{package_coverage}}
 \code{\link[covr]{package_coverage}}
 
 Other utility: \code{\link{coverage_skip}},
+  \code{\link{map_testthat_snapshot}},
   \code{\link{map_testthat}}, \code{\link{map_test}},
   \code{\link{testthat_summary}}
 }

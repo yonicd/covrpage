@@ -23,6 +23,7 @@ if(interactive()){
 }
 }
 \seealso{
-Other invoke: \code{\link{covrpage}}
+Other invoke: \code{\link{covrpage_snapshot}},
+  \code{\link{covrpage}}
 }
 \concept{invoke}

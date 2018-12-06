@@ -23,6 +23,7 @@ for failing tests.
  \code{\link[covr]{package_coverage}}
 
 Other utility: \code{\link{covr_summary}},
+  \code{\link{map_testthat_snapshot}},
   \code{\link{map_testthat}}, \code{\link{map_test}},
   \code{\link{testthat_summary}}
 }

@@ -20,6 +20,7 @@
 #' @seealso
 #'  \code{\link[covrpage]{covrpage}} \code{\link[git2r]{clone}} \code{\link[remotes]{install_github}}
 #' @rdname map_testthat_snapshot
+#' @family utility
 #' @export 
 #' @importFrom withr with_dir with_temp_libpaths
 #' @importFrom git2r clone
