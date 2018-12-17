@@ -30,7 +30,12 @@ check_for_pkgs <- function(pkg) {
 
   dep_imp <- desc[intersect(c("Depends", "Imports"), names(desc))]
 
-  pkg_deps <- gsub("\\s(.*?)$", "", unlist(lapply(dep_imp, strsplit, ","), use.names = FALSE))
+  dep_imp_clean <- lapply(dep_imp, function(x){
+    x <- gsub('\\s+|\\n','',x)
+    strsplit(x, ",") 
+  })
+  
+  pkg_deps <- gsub("\\s(.*?)$", "", unlist(dep_imp_clean, use.names = FALSE))
 
   pkg_deps <- union(pkg_deps, c("testthat", "knitr"))
 
