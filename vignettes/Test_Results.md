@@ -1,7 +1,7 @@
 ---
 title: "Test Results Indicators"
 author: "Jonathan Sidi"
-date: "2018-12-05"
+date: "2019-01-02"
 output: 
   rmarkdown::html_vignette: 
     keep_md: true
@@ -25,8 +25,8 @@ To create the script for the badge to paste in the root README run the following
 
 ```r
 covrpage::make_badge()
-masking https://github.com/yonicd/covrpage/tree/master/tests/README.md with http://tinyurl.com/ycoe59ud
-"[![Covrpage Summary](https://img.shields.io/badge/covrpage-Initialized-orange.svg)](http://tinyurl.com/ycoe59ud)"
+masking https://github.com/metrumresearchgroup/covrpage/tree/master/tests/README.md with http://tinyurl.com/yayrd3et
+[1] "[![Covrpage Summary](https://img.shields.io/badge/covrpage-Initialized-orange.svg)](http://tinyurl.com/yayrd3et)"
 ```
 
 ## Show Detailed Test Results

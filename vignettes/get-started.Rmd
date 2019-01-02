@@ -47,9 +47,9 @@ The functions powering the report are:
 
 You can see an example for the `remedy` package [here](https://github.com/ThinkR-open/remedy/tree/master/tests#tests-and-coverage).
 
-This [vignette](https://yonicd.github.io/covrpage/articles/how-to-read-covrpage-report.html) is a guide how to read and leverage the report for both end users and polished developers. In addition you can read [Tests Results Indicators](https://yonicd.github.io/covrpage/articles/Test_Results.html) to learn what visual cues `covrpage` gives to indicate statuses of tests both as badges and throughout the report itself.
+This [vignette](https://metrumresearchgroup.github.io/covrpage/articles/how-to-read-covrpage-report.html) is a guide how to read and leverage the report for both end users and polished developers. In addition you can read [Tests Results Indicators](https://metrumresearchgroup.github.io/covrpage/articles/Test_Results.html) to learn what visual cues `covrpage` gives to indicate statuses of tests both as badges and throughout the report itself.
 
-Note that the different [`covrpage` utilities functions](https://yonicd.github.io/covrpage/reference/index.html#section-covrpage-utilities) mentioned above can be useful on their own whilst developing a package, or say, inspecting a new test file added by a collaborator in a PR.
+Note that the different [`covrpage` utilities functions](https://metrumresearchgroup.github.io/covrpage/reference/index.html#section-covrpage-utilities) mentioned above can be useful on their own whilst developing a package, or say, inspecting a new test file added by a collaborator in a PR.
 
 # How to publish `covrpage` report?
 
@@ -63,7 +63,7 @@ In both cases, you can also ensure the report stays up-to-date by having it depl
 
 The easiest solution is to run `travis::use_tic()` at the root of your repository, which will ensure your `pkgdown` website is deployed from Travis if you have one. 
 
-For a detailed explanation on using `covrpage` with `tic` or more low level ways to use `covrpage` with `travis ci` you can read in the [Continuous Integration](https://yonicd.github.io/covrpage/articles/Continuous_Integration.html) vignette.
+For a detailed explanation on using `covrpage` with `tic` or more low level ways to use `covrpage` with `travis ci` you can read in the [Continuous Integration](https://metrumresearchgroup.github.io/covrpage/articles/Continuous_Integration.html) vignette.
 
 # Conclusion
 

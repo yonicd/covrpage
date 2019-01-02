@@ -8,7 +8,7 @@ testthat::describe("create badge", {
   wd <- getwd()
   setwd(td)
   repo <- git2r::init()
-  git2r::remote_add(repo, name = "origin", url = "git@github.com:yonicd/covrpage.git")
+  git2r::remote_add(repo, name = "origin", url = "git@github.com:metrumresearchgroup/covrpage.git")
 
   it("create", {
     testthat::expect_true(grepl("badge", make_badge(active_branch = "master")))

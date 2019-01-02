@@ -10,7 +10,7 @@ testthat::describe("testing vignette", {
   repo <- git2r::init()
   file.create(".gitgnore")
   git2r::add(repo, ".gitgnore")
-  git2r::remote_add(repo, name = "origin", url = "git@github.com:yonicd/covrpage.git")
+  git2r::remote_add(repo, name = "origin", url = "git@github.com:metrumresearchgroupcovrpage.git")
   git2r::commit(repo, message = "test commit")
 
   orig_time <- file.info(file.path(td, "vignettes/tests_and_coverage.Rmd"))[["mtime"]]

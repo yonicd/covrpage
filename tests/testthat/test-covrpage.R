@@ -36,7 +36,7 @@ testthat::describe("check ci wrapper on benchmark repo", {
   repo <- git2r::init()
   file.create(".travis.yml")
   git2r::add(repo, ".travis.yml")
-  git2r::remote_add(repo, name = "origin", url = "git@github.com:yonicd/covrpage.git")
+  git2r::remote_add(repo, name = "origin", url = "git@github.com:metrumresearchgroup/covrpage.git")
   git2r::commit(repo, message = "test commit")
 
   orig_time <- file.info(file.path(td, "tests/README.md"))[["mtime"]]

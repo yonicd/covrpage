@@ -54,7 +54,7 @@ In the `covrpage` report,
 
 * look at (table 1) for the approximate distribution of coverage to see where it stands in the development (also have a look at the main README to see it contains a lifecycle or repo status badge)
 
-* find where the failed tests are located in (table 2), if failing tests are the reason for the build failure. Icons will help you locate them, see [this example](https://github.com/yonicd/ggstatsplot/tree/master/tests#unit-tests).
+* find where the failed tests are located in (table 2), if failing tests are the reason for the build failure. Icons will help you locate them, see [this example](https://github.com/metrumresearchgroup/ggstatsplot/tree/master/tests#unit-tests).
 
 * look at the expectations from (table 3) and have a better informed decision on whether to use that package and to know what functionality to stay away from.
     * this table is hidden on a successful build and is open if any test is non-passing. It is a simple visual cue that informs you the reader if something is wrong.

@@ -6,7 +6,7 @@
 language: r
 cache: packages
 r_github_packages:
-- yonicd/covrpage
+- metrumresearchgroup/covrpage
 - r-lib/pkgdown
 os:
 - linux

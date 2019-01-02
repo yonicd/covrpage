@@ -38,7 +38,7 @@ after_success:
 after_failure:
 - bash .travis/covrpage.sh
 
-r_github_packages: yonicd/covrpage
+r_github_packages: metrumresearchgroup/covrpage
 env:
   global:
     secure: [Travis encrypted Github PAT]
@@ -102,7 +102,7 @@ after_success:
 - Rscript -e 'pkgdown::build_site()'
 
 r_github_packages: 
-  - yonicd/covrpage
+  - metrumresearchgroup/covrpage
   - r-lib/pkgdown #either put this here or in Suggests in the DESCRIPTION file
 
 deploy:
@@ -122,7 +122,7 @@ env:
 ### tic
 You can use the [tic](https://github.com/ropenscilabs/tic) package to manage the steps taken in travis. It is simplest to install `tic` via the [travis](https://github.com/ropenscilabs/travis) package with the function [travis::use_tic()](https://ropenscilabs.github.io/travis/reference/use_tic.html). This will take you through all the steps needed to set up the workflow in travis and github with the project repository. 
 
-After running this function you can run [covrpage::use_covrpage(travis_type='tic')](https://yonicd.github.io/covrpage/reference/use_covrpage.html) to copy into the project root directory the two files needed to run covrpage on travis: `tic.R` and `.travis.yml`. They can always be found in the system folder of the package.
+After running this function you can run [covrpage::use_covrpage(travis_type='tic')](https://metrumresearchgroup.github.io/covrpage/reference/use_covrpage.html) to copy into the project root directory the two files needed to run covrpage on travis: `tic.R` and `.travis.yml`. They can always be found in the system folder of the package.
 
 #### Highlights
 
