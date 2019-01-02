@@ -52,7 +52,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/yonicd/covrpage">
+  <a href="https://github.com/metrumresearchgroup/covrpage">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -78,9 +78,9 @@
       <h1>Continuous Integration</h1>
                         <h4 class="author">Jonathan Sidi</h4>
             
-            <h4 class="date">2018-12-17</h4>
+            <h4 class="date">2019-01-02</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/yonicd/covrpage/blob/master/vignettes/Continuous_Integration.Rmd"><code>vignettes/Continuous_Integration.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/metrumresearchgroup/covrpage/blob/master/vignettes/Continuous_Integration.Rmd"><code>vignettes/Continuous_Integration.Rmd</code></a></small>
       <div class="hidden name"><code>Continuous_Integration.Rmd</code></div>
 
     </div>
@@ -106,7 +106,7 @@
 <a class="sourceLine" id="cb1-9" data-line-number="9"><span class="fu">after_failure:</span></a>
 <a class="sourceLine" id="cb1-10" data-line-number="10"><span class="kw">-</span> bash .travis/covrpage.sh</a>
 <a class="sourceLine" id="cb1-11" data-line-number="11"></a>
-<a class="sourceLine" id="cb1-12" data-line-number="12"><span class="fu">r_github_packages:</span><span class="at"> yonicd/covrpage</span></a>
+<a class="sourceLine" id="cb1-12" data-line-number="12"><span class="fu">r_github_packages:</span><span class="at"> metrumresearchgroup/covrpage</span></a>
 <a class="sourceLine" id="cb1-13" data-line-number="13"><span class="fu">env:</span></a>
 <a class="sourceLine" id="cb1-14" data-line-number="14">  <span class="fu">global:</span></a>
 <a class="sourceLine" id="cb1-15" data-line-number="15">    <span class="fu">secure:</span><span class="at"> </span><span class="kw">[</span>Travis encrypted Github PAT<span class="kw">]</span></a></code></pre></div>
@@ -146,7 +146,7 @@
 <a class="sourceLine" id="cb7-7" data-line-number="7"><span class="kw">-</span> <span class="fu">Rscript -e 'pkgdown:</span><span class="at">:build_site()'</span></a>
 <a class="sourceLine" id="cb7-8" data-line-number="8"></a>
 <a class="sourceLine" id="cb7-9" data-line-number="9"><span class="fu">r_github_packages:</span><span class="at"> </span></a>
-<a class="sourceLine" id="cb7-10" data-line-number="10">  <span class="kw">-</span> yonicd/covrpage</a>
+<a class="sourceLine" id="cb7-10" data-line-number="10">  <span class="kw">-</span> metrumresearchgroup/covrpage</a>
 <a class="sourceLine" id="cb7-11" data-line-number="11">  <span class="kw">-</span> r-lib/pkgdown <span class="co">#either put this here or in Suggests in the DESCRIPTION file</span></a>
 <a class="sourceLine" id="cb7-12" data-line-number="12"></a>
 <a class="sourceLine" id="cb7-13" data-line-number="13"><span class="fu">deploy:</span></a>
@@ -166,7 +166,7 @@
 <h3 class="hasAnchor">
 <a href="#tic" class="anchor"></a>tic</h3>
 <p>You can use the <a href="https://github.com/ropenscilabs/tic">tic</a> package to manage the steps taken in travis. It is simplest to install <code>tic</code> via the <a href="https://github.com/ropenscilabs/travis">travis</a> package with the function <a href="https://ropenscilabs.github.io/travis/reference/use_tic.html">travis::use_tic()</a>. This will take you through all the steps needed to set up the workflow in travis and github with the project repository.</p>
-<p>After running this function you can run <a href="https://yonicd.github.io/covrpage/reference/use_covrpage.html">covrpage::use_covrpage(travis_type=‘tic’)</a> to copy into the project root directory the two files needed to run covrpage on travis: <code>tic.R</code> and <code>.travis.yml</code>. They can always be found in the system folder of the package.</p>
+<p>After running this function you can run <a href="https://metrumresearchgroup.github.io/covrpage/reference/use_covrpage.html">covrpage::use_covrpage(travis_type=‘tic’)</a> to copy into the project root directory the two files needed to run covrpage on travis: <code>tic.R</code> and <code>.travis.yml</code>. They can always be found in the system folder of the package.</p>
 <div id="highlights" class="section level4">
 <h4 class="hasAnchor">
 <a href="#highlights" class="anchor"></a>Highlights</h4>

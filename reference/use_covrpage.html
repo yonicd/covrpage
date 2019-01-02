@@ -86,7 +86,7 @@
       
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/yonicd/covrpage">
+  <a href="https://github.com/metrumresearchgroup/covrpage">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -110,7 +110,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Add covrpage to Travis CI for a git directory</h1>
-    <small class="dont-index">Source: <a href='https://github.com/yonicd/covrpage/blob/master/R/use_covrpage.R'><code>R/use_covrpage.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/metrumresearchgroup/covrpage/blob/master/R/use_covrpage.R'><code>R/use_covrpage.R</code></a></small>
     <div class="hidden name"><code>use_covrpage.Rd</code></div>
     </div>
 
@@ -175,16 +175,16 @@ Default: system("git rev-parse --abbrev-ref HEAD", intern = TRUE) (usually 'mast
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='fu'>use_covrpage</span>(<span class='kw'>travis_type</span> <span class='kw'>=</span> <span class='st'>'bash'</span>,<span class='kw'>file</span><span class='kw'>=</span><span class='fu'>file.path</span>(<span class='fu'>tempdir</span>(),<span class='st'>'myfile.sh'</span>))</div><div class='output co'>#&gt; <span class='warning'>Warning: running command 'git config travis.slug' had status 1</span></div><div class='output co'>#&gt; <span class='message'>Writing myfile.sh bash script to /tmp/Rtmp27Fk5A</span></div><div class='output co'>#&gt; <span class='message'>Add to .travs.yml </span>
+<span class='fu'>use_covrpage</span>(<span class='kw'>travis_type</span> <span class='kw'>=</span> <span class='st'>'bash'</span>,<span class='kw'>file</span><span class='kw'>=</span><span class='fu'>file.path</span>(<span class='fu'>tempdir</span>(),<span class='st'>'myfile.sh'</span>))</div><div class='output co'>#&gt; <span class='warning'>Warning: running command 'git config travis.slug' had status 1</span></div><div class='output co'>#&gt; <span class='message'>Writing myfile.sh bash script to /tmp/RtmpqqmCkQ</span></div><div class='output co'>#&gt; <span class='message'>Add to .travs.yml </span>
 #&gt; <span class='message'></span>
 #&gt; <span class='message'>  r_github_packages: </span>
-#&gt; <span class='message'>  - yonicd/covrpage</span>
+#&gt; <span class='message'>  - metrumresearchgroup/covrpage</span>
 #&gt; <span class='message'>  </span>
 #&gt; <span class='message'>    after_sucess: </span>
 #&gt; <span class='message'>  - Rscript -e 'covr::codecov()'</span>
-#&gt; <span class='message'>  - bash /tmp/Rtmp27Fk5A/myfile.sh</span>
+#&gt; <span class='message'>  - bash /tmp/RtmpqqmCkQ/myfile.sh</span>
 #&gt; <span class='message'>    after_failure:</span>
-#&gt; <span class='message'>  - bash /tmp/Rtmp27Fk5A/myfile.sh</span>
+#&gt; <span class='message'>  - bash /tmp/RtmpqqmCkQ/myfile.sh</span>
 #&gt; <span class='message'>  deploy:</span>
 #&gt; <span class='message'>    provider: pages</span>
 #&gt; <span class='message'>    skip-cleanup: true</span>
@@ -218,7 +218,7 @@ Default: system("git rev-parse --abbrev-ref HEAD", intern = TRUE) (usually 'mast
 <span class='fu'>use_covrpage</span>(<span class='kw'>travis_type</span> <span class='kw'>=</span> <span class='st'>'pkgdown'</span>)</div><div class='output co'>#&gt; <span class='message'>Add to .travs.yml </span>
 #&gt; <span class='message'></span>
 #&gt; <span class='message'>  r_github_packages: </span>
-#&gt; <span class='message'>  - yonicd/covrpage   </span>
+#&gt; <span class='message'>  - metrumresearchgroup/covrpage   </span>
 #&gt; <span class='message'>  - r-lib/pkgdown</span>
 #&gt; <span class='message'></span>
 #&gt; <span class='message'>  after_success:</span>
@@ -231,14 +231,14 @@ Default: system("git rev-parse --abbrev-ref HEAD", intern = TRUE) (usually 'mast
 #&gt; <span class='message'>  deploy:</span>
 #&gt; <span class='message'>    provider: pages</span>
 #&gt; <span class='message'>    skip-cleanup: true</span>
-#&gt; <span class='message'>    github-token: $GH_PAT</span>
+#&gt; <span class='message'>    github-token: $GITHUB_PAT</span>
 #&gt; <span class='message'>    keep-history: true</span>
 #&gt; <span class='message'>    local-dir: docs</span>
 #&gt; <span class='message'>    on:</span>
 #&gt; <span class='message'>      branch: master</span></div><div class='input'><span class='fu'>use_covrpage</span>(<span class='kw'>travis_type</span> <span class='kw'>=</span> <span class='st'>'pkgdown'</span>,<span class='kw'>travis_block</span> <span class='kw'>=</span> <span class='st'>'after_success'</span>)</div><div class='output co'>#&gt; <span class='message'>Add to .travs.yml </span>
 #&gt; <span class='message'></span>
 #&gt; <span class='message'>  r_github_packages: </span>
-#&gt; <span class='message'>  - yonicd/covrpage   </span>
+#&gt; <span class='message'>  - metrumresearchgroup/covrpage   </span>
 #&gt; <span class='message'>  - r-lib/pkgdown</span>
 #&gt; <span class='message'></span>
 #&gt; <span class='message'>  after_success:</span>
@@ -249,7 +249,7 @@ Default: system("git rev-parse --abbrev-ref HEAD", intern = TRUE) (usually 'mast
 #&gt; <span class='message'>  </span></div><div class='input'><span class='fu'>use_covrpage</span>(<span class='kw'>travis_type</span> <span class='kw'>=</span> <span class='st'>'pkgdown'</span>,<span class='kw'>travis_block</span> <span class='kw'>=</span> <span class='st'>'after_failure'</span>)</div><div class='output co'>#&gt; <span class='message'>Add to .travs.yml </span>
 #&gt; <span class='message'></span>
 #&gt; <span class='message'>  r_github_packages: </span>
-#&gt; <span class='message'>  - yonicd/covrpage   </span>
+#&gt; <span class='message'>  - metrumresearchgroup/covrpage   </span>
 #&gt; <span class='message'>  - r-lib/pkgdown</span>
 #&gt; <span class='message'></span>
 #&gt; <span class='message'>  </span>
@@ -259,7 +259,7 @@ Default: system("git rev-parse --abbrev-ref HEAD", intern = TRUE) (usually 'mast
 #&gt; <span class='message'>  </span></div><div class='input'><span class='fu'>use_covrpage</span>(<span class='kw'>travis_type</span> <span class='kw'>=</span> <span class='st'>'pkgdown'</span>,<span class='kw'>travis_block</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>'after_success'</span>,<span class='st'>'after_failure'</span>))</div><div class='output co'>#&gt; <span class='message'>Add to .travs.yml </span>
 #&gt; <span class='message'></span>
 #&gt; <span class='message'>  r_github_packages: </span>
-#&gt; <span class='message'>  - yonicd/covrpage   </span>
+#&gt; <span class='message'>  - metrumresearchgroup/covrpage   </span>
 #&gt; <span class='message'>  - r-lib/pkgdown</span>
 #&gt; <span class='message'></span>
 #&gt; <span class='message'>  after_success:</span>
