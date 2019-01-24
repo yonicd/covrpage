@@ -120,10 +120,6 @@ get_uri <- function(remote_origin = NULL, active_branch = NULL) {
   sprintf("%s/tree/%s", remote_origin, active_branch)
 }
 
-# is_git <- function(){
-#   system('git rev-parse --is-inside-work-tree',intern = TRUE)=='true'
-# }
-
 #' @importFrom curl nslookup curl
 tiny <- function(uri) {
   host <- "tinyurl.com"

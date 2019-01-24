@@ -4,10 +4,12 @@
 \alias{covr_summary}
 \title{Summary outputs for covr object}
 \usage{
-covr_summary(x, failed = FALSE)
+covr_summary(x, package, failed = FALSE)
 }
 \arguments{
 \item{x}{covr object}
+
+\item{package}{character, package name}
 
 \item{failed}{flag for failed test, Default: FALSE}
 }
