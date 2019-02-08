@@ -70,7 +70,7 @@ cat(sprintf('%s Not All Tests Passed\n  Coverage statistics are approximations o
 
 ```{r,echo=FALSE}
 cvr%>%
-  covrpage::covr_summary(failed = failed)%>%
+  covrpage::covr_summary(failed = failed,package = package_name(path = '..'))%>%
   knitr::kable(digits = 2,
              col.names = c('Object','Coverage (%)'),align = c('l','c'))
 

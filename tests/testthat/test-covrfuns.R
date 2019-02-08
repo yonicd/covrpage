@@ -32,6 +32,6 @@ testthat::context("check covr to df")
 
 testthat::describe("covr object to df", {
   it("empty input", {
-    testthat::expect_null(covrpage:::covr_print_to_df(c()))
+    testthat::expect_equal(covrpage:::covr_print_to_df(c(),'covrpage'),data.frame(name = 'covrpage',value = 0, stringsAsFactors = FALSE, row.names = NULL))
   })
 })

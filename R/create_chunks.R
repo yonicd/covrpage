@@ -15,9 +15,10 @@ testthat_summary <- function(x, type = c("short", "long")) {
 }
 
 #' @importFrom covr percent_coverage tally_coverage
-covr_print_to_df <- function(x, group = c("filename", "functions"), by = "line") {
+covr_print_to_df <- function(x, package, group = c("filename", "functions"), by = "line") {
   if (length(x) == 0) {
-    return()
+    ret <- data.frame(name = package, value = 0, stringsAsFactors = FALSE, row.names = NULL)
+    return(ret)
   }
 
   group <- match.arg(group)
@@ -53,6 +54,7 @@ covr_print_to_df <- function(x, group = c("filename", "functions"), by = "line")
 #' @description Creates a summary data.frame for covr object output that
 #' mimics the console print method of \code{\link[covr]{package_coverage}}
 #' @param x covr object
+#' @param package character, package name
 #' @param failed flag for failed test, Default: FALSE
 #' @return data.frame
 #' @seealso
@@ -60,8 +62,8 @@ covr_print_to_df <- function(x, group = c("filename", "functions"), by = "line")
 #' @rdname covr_summary
 #' @family utility
 #' @export
-covr_summary <- function(x, failed = FALSE) {
-  ret <- covr_print_to_df(x)
+covr_summary <- function(x, package, failed = FALSE) {
+  ret <- covr_print_to_df(x, package)
 
   ret$name <- ifelse(grepl("^R/", ret$name),
     sprintf("[%s](../%s)", ret$name, ret$name),
