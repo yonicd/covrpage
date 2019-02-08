@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covrpage</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.69</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.70</span>
       </span>
     </div>
 
@@ -78,7 +78,7 @@
       <h1>Remote Covrpage</h1>
                         <h4 class="author">Jonathan Sidi</h4>
             
-            <h4 class="date">2019-01-02</h4>
+            <h4 class="date">2019-02-08</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/metrumresearchgroup/covrpage/blob/master/vignettes/snapshots.Rmd"><code>vignettes/snapshots.Rmd</code></a></small>
       <div class="hidden name"><code>snapshots.Rmd</code></div>
@@ -2413,29 +2413,56 @@
 <td align="left">lmap output is list if input is list</td>
 <td align="left">expect_is</td>
 <td align="right">3</td>
-<td align="right">5</td>
+<td align="right">16</td>
 </tr>
 <tr class="even">
 <td>255</td>
 <td align="left">test-lmap.R</td>
 <td align="left">lmap</td>
-<td align="left">lmap output is tibble if input is data frame</td>
+<td align="left">lmap output is list if input is list</td>
 <td align="left">expect_is</td>
-<td align="right">7</td>
-<td align="right">9</td>
+<td align="right">15</td>
+<td align="right">15</td>
 </tr>
 <tr class="odd">
 <td>256</td>
 <td align="left">test-lmap.R</td>
 <td align="left">lmap</td>
-<td align="left">
-<code>.else</code> preserve-maps false elements</td>
-<td align="left">expect_identical</td>
-<td align="right">14</td>
-<td align="right">14</td>
+<td align="left">lmap output is tibble if input is data frame</td>
+<td align="left">expect_is</td>
+<td align="right">18</td>
+<td align="right">22</td>
 </tr>
 <tr class="even">
 <td>257</td>
+<td align="left">test-lmap.R</td>
+<td align="left">lmap</td>
+<td align="left">lmap output is tibble if input is data frame</td>
+<td align="left">expect_is</td>
+<td align="right">21</td>
+<td align="right">21</td>
+</tr>
+<tr class="odd">
+<td>258</td>
+<td align="left">test-lmap.R</td>
+<td align="left">lmap</td>
+<td align="left">lmap_at can use tidyselect</td>
+<td align="left">expect_equal</td>
+<td align="right">27</td>
+<td align="right">27</td>
+</tr>
+<tr class="even">
+<td>259</td>
+<td align="left">test-lmap.R</td>
+<td align="left">lmap</td>
+<td align="left">
+<code>.else</code> preserve-maps false elements</td>
+<td align="left">expect_identical</td>
+<td align="right">33</td>
+<td align="right">33</td>
+</tr>
+<tr class="odd">
+<td>260</td>
 <td align="left">test-map_n.R</td>
 <td align="left">pmap</td>
 <td align="left">input must be a list of vectors</td>
@@ -2443,8 +2470,8 @@
 <td align="right">3</td>
 <td align="right">6</td>
 </tr>
-<tr class="odd">
-<td>258</td>
+<tr class="even">
+<td>261</td>
 <td align="left">test-map_n.R</td>
 <td align="left">pmap</td>
 <td align="left">input must be a list of vectors</td>
@@ -2452,8 +2479,8 @@
 <td align="right">5</td>
 <td align="right">5</td>
 </tr>
-<tr class="even">
-<td>259</td>
+<tr class="odd">
+<td>262</td>
 <td align="left">test-map_n.R</td>
 <td align="left">pmap</td>
 <td align="left">elements must be same length</td>
@@ -2461,8 +2488,8 @@
 <td align="right">8</td>
 <td align="right">10</td>
 </tr>
-<tr class="odd">
-<td>260</td>
+<tr class="even">
+<td>263</td>
 <td align="left">test-map_n.R</td>
 <td align="left">pmap</td>
 <td align="left">handles any length 0 input</td>
@@ -2470,35 +2497,35 @@
 <td align="right">12</td>
 <td align="right">18</td>
 </tr>
-<tr class="even">
-<td>261</td>
-<td align="left">test-map_n.R</td>
-<td align="left">pmap</td>
-<td align="left">handles any length 0 input</td>
-<td align="left">expect_equal</td>
-<td align="right">14</td>
-<td align="right">14</td>
-</tr>
-<tr class="odd">
-<td>262</td>
-<td align="left">test-map_n.R</td>
-<td align="left">pmap</td>
-<td align="left">handles any length 0 input</td>
-<td align="left">expect_equal</td>
-<td align="right">16</td>
-<td align="right">16</td>
-</tr>
-<tr class="even">
-<td>263</td>
-<td align="left">test-map_n.R</td>
-<td align="left">pmap</td>
-<td align="left">handles any length 0 input</td>
-<td align="left">expect_equal</td>
-<td align="right">17</td>
-<td align="right">17</td>
-</tr>
 <tr class="odd">
 <td>264</td>
+<td align="left">test-map_n.R</td>
+<td align="left">pmap</td>
+<td align="left">handles any length 0 input</td>
+<td align="left">expect_equal</td>
+<td align="right">14</td>
+<td align="right">14</td>
+</tr>
+<tr class="even">
+<td>265</td>
+<td align="left">test-map_n.R</td>
+<td align="left">pmap</td>
+<td align="left">handles any length 0 input</td>
+<td align="left">expect_equal</td>
+<td align="right">16</td>
+<td align="right">16</td>
+</tr>
+<tr class="odd">
+<td>266</td>
+<td align="left">test-map_n.R</td>
+<td align="left">pmap</td>
+<td align="left">handles any length 0 input</td>
+<td align="left">expect_equal</td>
+<td align="right">17</td>
+<td align="right">17</td>
+</tr>
+<tr class="even">
+<td>267</td>
 <td align="left">test-map_n.R</td>
 <td align="left">pmap</td>
 <td align="left">length 1 elemetns are recycled</td>
@@ -2506,8 +2533,8 @@
 <td align="right">22</td>
 <td align="right">22</td>
 </tr>
-<tr class="even">
-<td>265</td>
+<tr class="odd">
+<td>268</td>
 <td align="left">test-map_n.R</td>
 <td align="left">pmap</td>
 <td align="left">.f called with named arguments</td>
@@ -2515,8 +2542,8 @@
 <td align="right">27</td>
 <td align="right">27</td>
 </tr>
-<tr class="odd">
-<td>266</td>
+<tr class="even">
+<td>269</td>
 <td align="left">test-map_n.R</td>
 <td align="left">pmap</td>
 <td align="left">names are preserved</td>
@@ -2524,8 +2551,8 @@
 <td align="right">32</td>
 <td align="right">32</td>
 </tr>
-<tr class="even">
-<td>267</td>
+<tr class="odd">
+<td>270</td>
 <td align="left">test-map_n.R</td>
 <td align="left">pmap</td>
 <td align="left">… are passed on</td>
@@ -2533,41 +2560,14 @@
 <td align="right">37</td>
 <td align="right">40</td>
 </tr>
-<tr class="odd">
-<td>268</td>
-<td align="left">test-map_n.R</td>
-<td align="left">pmap</td>
-<td align="left">outputs are suffixes have correct type</td>
-<td align="left">expect_is</td>
-<td align="right">45</td>
-<td align="right">45</td>
-</tr>
-<tr class="even">
-<td>269</td>
-<td align="left">test-map_n.R</td>
-<td align="left">pmap</td>
-<td align="left">outputs are suffixes have correct type</td>
-<td align="left">expect_is</td>
-<td align="right">46</td>
-<td align="right">46</td>
-</tr>
-<tr class="odd">
-<td>270</td>
-<td align="left">test-map_n.R</td>
-<td align="left">pmap</td>
-<td align="left">outputs are suffixes have correct type</td>
-<td align="left">expect_is</td>
-<td align="right">47</td>
-<td align="right">47</td>
-</tr>
 <tr class="even">
 <td>271</td>
 <td align="left">test-map_n.R</td>
 <td align="left">pmap</td>
 <td align="left">outputs are suffixes have correct type</td>
 <td align="left">expect_is</td>
-<td align="right">48</td>
-<td align="right">48</td>
+<td align="right">45</td>
+<td align="right">45</td>
 </tr>
 <tr class="odd">
 <td>272</td>
@@ -2575,8 +2575,8 @@
 <td align="left">pmap</td>
 <td align="left">outputs are suffixes have correct type</td>
 <td align="left">expect_is</td>
-<td align="right">49</td>
-<td align="right">49</td>
+<td align="right">46</td>
+<td align="right">46</td>
 </tr>
 <tr class="even">
 <td>273</td>
@@ -2584,8 +2584,8 @@
 <td align="left">pmap</td>
 <td align="left">outputs are suffixes have correct type</td>
 <td align="left">expect_is</td>
-<td align="right">50</td>
-<td align="right">50</td>
+<td align="right">47</td>
+<td align="right">47</td>
 </tr>
 <tr class="odd">
 <td>274</td>
@@ -2593,44 +2593,44 @@
 <td align="left">pmap</td>
 <td align="left">outputs are suffixes have correct type</td>
 <td align="left">expect_is</td>
-<td align="right">51</td>
-<td align="right">51</td>
+<td align="right">48</td>
+<td align="right">48</td>
 </tr>
 <tr class="even">
 <td>275</td>
 <td align="left">test-map_n.R</td>
 <td align="left">pmap</td>
-<td align="left">pmap on data frames performs rowwise operations</td>
-<td align="left">expect_length</td>
-<td align="right">56</td>
-<td align="right">56</td>
+<td align="left">outputs are suffixes have correct type</td>
+<td align="left">expect_is</td>
+<td align="right">49</td>
+<td align="right">49</td>
 </tr>
 <tr class="odd">
 <td>276</td>
 <td align="left">test-map_n.R</td>
 <td align="left">pmap</td>
-<td align="left">pmap on data frames performs rowwise operations</td>
+<td align="left">outputs are suffixes have correct type</td>
 <td align="left">expect_is</td>
-<td align="right">57</td>
-<td align="right">57</td>
+<td align="right">50</td>
+<td align="right">50</td>
 </tr>
 <tr class="even">
 <td>277</td>
 <td align="left">test-map_n.R</td>
 <td align="left">pmap</td>
-<td align="left">pmap on data frames performs rowwise operations</td>
+<td align="left">outputs are suffixes have correct type</td>
 <td align="left">expect_is</td>
-<td align="right">58</td>
-<td align="right">58</td>
+<td align="right">51</td>
+<td align="right">51</td>
 </tr>
 <tr class="odd">
 <td>278</td>
 <td align="left">test-map_n.R</td>
 <td align="left">pmap</td>
 <td align="left">pmap on data frames performs rowwise operations</td>
-<td align="left">expect_is</td>
-<td align="right">59</td>
-<td align="right">59</td>
+<td align="left">expect_length</td>
+<td align="right">56</td>
+<td align="right">56</td>
 </tr>
 <tr class="even">
 <td>279</td>
@@ -2638,8 +2638,8 @@
 <td align="left">pmap</td>
 <td align="left">pmap on data frames performs rowwise operations</td>
 <td align="left">expect_is</td>
-<td align="right">60</td>
-<td align="right">60</td>
+<td align="right">57</td>
+<td align="right">57</td>
 </tr>
 <tr class="odd">
 <td>280</td>
@@ -2647,11 +2647,38 @@
 <td align="left">pmap</td>
 <td align="left">pmap on data frames performs rowwise operations</td>
 <td align="left">expect_is</td>
-<td align="right">61</td>
-<td align="right">61</td>
+<td align="right">58</td>
+<td align="right">58</td>
 </tr>
 <tr class="even">
 <td>281</td>
+<td align="left">test-map_n.R</td>
+<td align="left">pmap</td>
+<td align="left">pmap on data frames performs rowwise operations</td>
+<td align="left">expect_is</td>
+<td align="right">59</td>
+<td align="right">59</td>
+</tr>
+<tr class="odd">
+<td>282</td>
+<td align="left">test-map_n.R</td>
+<td align="left">pmap</td>
+<td align="left">pmap on data frames performs rowwise operations</td>
+<td align="left">expect_is</td>
+<td align="right">60</td>
+<td align="right">60</td>
+</tr>
+<tr class="even">
+<td>283</td>
+<td align="left">test-map_n.R</td>
+<td align="left">pmap</td>
+<td align="left">pmap on data frames performs rowwise operations</td>
+<td align="left">expect_is</td>
+<td align="right">61</td>
+<td align="right">61</td>
+</tr>
+<tr class="odd">
+<td>284</td>
 <td align="left">test-map_n.R</td>
 <td align="left">pmap</td>
 <td align="left">pmap works with empty lists</td>
@@ -2659,8 +2686,8 @@
 <td align="right">64</td>
 <td align="right">66</td>
 </tr>
-<tr class="odd">
-<td>282</td>
+<tr class="even">
+<td>285</td>
 <td align="left">test-map_n.R</td>
 <td align="left">pmap</td>
 <td align="left">preserves S3 class of input vectors (#358)</td>
@@ -2668,8 +2695,8 @@
 <td align="right">70</td>
 <td align="right">70</td>
 </tr>
-<tr class="even">
-<td>283</td>
+<tr class="odd">
+<td>286</td>
 <td align="left">test-map_n.R</td>
 <td align="left">pmap</td>
 <td align="left">preserves S3 class of input vectors (#358)</td>
@@ -2677,44 +2704,98 @@
 <td align="right">71</td>
 <td align="right">71</td>
 </tr>
-<tr class="odd">
-<td>284</td>
-<td align="left">test-map_n.R</td>
-<td align="left">pmap</td>
-<td align="left">walk2() and pwalk() don’t evaluate symbolic objects</td>
-<td align="left">expect_identical</td>
-<td align="right">75</td>
-<td align="right">75</td>
-</tr>
-<tr class="even">
-<td>285</td>
-<td align="left">test-map_n.R</td>
-<td align="left">pmap</td>
-<td align="left">walk2() and pwalk() don’t evaluate symbolic objects</td>
-<td align="left">expect_identical</td>
-<td align="right">76</td>
-<td align="right">76</td>
-</tr>
-<tr class="odd">
-<td>286</td>
-<td align="left">test-map_n.R</td>
-<td align="left">pmap</td>
-<td align="left">map2() and pmap() don’t evaluate symbolic objects</td>
-<td align="left">expect_identical</td>
-<td align="right">80</td>
-<td align="right">80</td>
-</tr>
 <tr class="even">
 <td>287</td>
 <td align="left">test-map_n.R</td>
 <td align="left">pmap</td>
+<td align="left">walk2() and pwalk() don’t evaluate symbolic objects</td>
+<td align="left">expect_identical</td>
+<td align="right">75</td>
+<td align="right">75</td>
+</tr>
+<tr class="odd">
+<td>288</td>
+<td align="left">test-map_n.R</td>
+<td align="left">pmap</td>
+<td align="left">walk2() and pwalk() don’t evaluate symbolic objects</td>
+<td align="left">expect_identical</td>
+<td align="right">76</td>
+<td align="right">76</td>
+</tr>
+<tr class="even">
+<td>289</td>
+<td align="left">test-map_n.R</td>
+<td align="left">pmap</td>
+<td align="left">map2() and pmap() don’t evaluate symbolic objects</td>
+<td align="left">expect_identical</td>
+<td align="right">80</td>
+<td align="right">80</td>
+</tr>
+<tr class="odd">
+<td>290</td>
+<td align="left">test-map_n.R</td>
+<td align="left">pmap</td>
 <td align="left">map2() and pmap() don’t evaluate symbolic objects</td>
 <td align="left">expect_identical</td>
 <td align="right">81</td>
 <td align="right">81</td>
 </tr>
+<tr class="even">
+<td>291</td>
+<td align="left">test-map_n.R</td>
+<td align="left">pmap</td>
+<td align="left">pmap() with empty input copies names</td>
+<td align="left">expect_identical</td>
+<td align="right">86</td>
+<td align="right">86</td>
+</tr>
 <tr class="odd">
-<td>288</td>
+<td>292</td>
+<td align="left">test-map_n.R</td>
+<td align="left">pmap</td>
+<td align="left">pmap() with empty input copies names</td>
+<td align="left">expect_identical</td>
+<td align="right">87</td>
+<td align="right">87</td>
+</tr>
+<tr class="even">
+<td>293</td>
+<td align="left">test-map_n.R</td>
+<td align="left">pmap</td>
+<td align="left">pmap() with empty input copies names</td>
+<td align="left">expect_identical</td>
+<td align="right">88</td>
+<td align="right">88</td>
+</tr>
+<tr class="odd">
+<td>294</td>
+<td align="left">test-map_n.R</td>
+<td align="left">pmap</td>
+<td align="left">pmap() with empty input copies names</td>
+<td align="left">expect_identical</td>
+<td align="right">89</td>
+<td align="right">89</td>
+</tr>
+<tr class="even">
+<td>295</td>
+<td align="left">test-map_n.R</td>
+<td align="left">pmap</td>
+<td align="left">pmap() with empty input copies names</td>
+<td align="left">expect_identical</td>
+<td align="right">90</td>
+<td align="right">90</td>
+</tr>
+<tr class="odd">
+<td>296</td>
+<td align="left">test-map_n.R</td>
+<td align="left">pmap</td>
+<td align="left">pmap() with empty input copies names</td>
+<td align="left">expect_identical</td>
+<td align="right">91</td>
+<td align="right">91</td>
+</tr>
+<tr class="even">
+<td>297</td>
 <td align="left">test-map.R</td>
 <td align="left">map</td>
 <td align="left">preserves names</td>
@@ -2722,8 +2803,8 @@
 <td align="right">5</td>
 <td align="right">5</td>
 </tr>
-<tr class="even">
-<td>289</td>
+<tr class="odd">
+<td>298</td>
 <td align="left">test-map.R</td>
 <td align="left">map</td>
 <td align="left">creates simple call</td>
@@ -2731,8 +2812,8 @@
 <td align="right">10</td>
 <td align="right">10</td>
 </tr>
-<tr class="odd">
-<td>290</td>
+<tr class="even">
+<td>299</td>
 <td align="left">test-map.R</td>
 <td align="left">map</td>
 <td align="left">fails on non-vectors</td>
@@ -2740,8 +2821,8 @@
 <td align="right">13</td>
 <td align="right">16</td>
 </tr>
-<tr class="even">
-<td>291</td>
+<tr class="odd">
+<td>300</td>
 <td align="left">test-map.R</td>
 <td align="left">map</td>
 <td align="left">fails on non-vectors</td>
@@ -2749,26 +2830,26 @@
 <td align="right">15</td>
 <td align="right">15</td>
 </tr>
-<tr class="odd">
-<td>292</td>
+<tr class="even">
+<td>301</td>
 <td align="left">test-map.R</td>
 <td align="left">map</td>
 <td align="left">0 length input gives 0 length output</td>
 <td align="left">expect_equal</td>
 <td align="right">20</td>
 <td align="right">20</td>
+</tr>
+<tr class="odd">
+<td>302</td>
+<td align="left">test-map.R</td>
+<td align="left">map</td>
+<td align="left">0 length input gives 0 length output</td>
+<td align="left">expect_equal</td>
+<td align="right">23</td>
+<td align="right">23</td>
 </tr>
 <tr class="even">
-<td>293</td>
-<td align="left">test-map.R</td>
-<td align="left">map</td>
-<td align="left">0 length input gives 0 length output</td>
-<td align="left">expect_equal</td>
-<td align="right">23</td>
-<td align="right">23</td>
-</tr>
-<tr class="odd">
-<td>294</td>
+<td>303</td>
 <td align="left">test-map.R</td>
 <td align="left">map</td>
 <td align="left">map() always returns a list</td>
@@ -2776,8 +2857,8 @@
 <td align="right">26</td>
 <td align="right">28</td>
 </tr>
-<tr class="even">
-<td>295</td>
+<tr class="odd">
+<td>304</td>
 <td align="left">test-map.R</td>
 <td align="left">map</td>
 <td align="left">types automatically coerced upwards</td>
@@ -2785,8 +2866,8 @@
 <td align="right">30</td>
 <td align="right">42</td>
 </tr>
-<tr class="odd">
-<td>296</td>
+<tr class="even">
+<td>305</td>
 <td align="left">test-map.R</td>
 <td align="left">map</td>
 <td align="left">types automatically coerced upwards</td>
@@ -2794,8 +2875,8 @@
 <td align="right">32</td>
 <td align="right">32</td>
 </tr>
-<tr class="even">
-<td>297</td>
+<tr class="odd">
+<td>306</td>
 <td align="left">test-map.R</td>
 <td align="left">map</td>
 <td align="left">types automatically coerced upwards</td>
@@ -2803,8 +2884,8 @@
 <td align="right">34</td>
 <td align="right">34</td>
 </tr>
-<tr class="odd">
-<td>298</td>
+<tr class="even">
+<td>307</td>
 <td align="left">test-map.R</td>
 <td align="left">map</td>
 <td align="left">types automatically coerced upwards</td>
@@ -2812,8 +2893,8 @@
 <td align="right">35</td>
 <td align="right">35</td>
 </tr>
-<tr class="even">
-<td>299</td>
+<tr class="odd">
+<td>308</td>
 <td align="left">test-map.R</td>
 <td align="left">map</td>
 <td align="left">types automatically coerced upwards</td>
@@ -2821,8 +2902,8 @@
 <td align="right">36</td>
 <td align="right">36</td>
 </tr>
-<tr class="odd">
-<td>300</td>
+<tr class="even">
+<td>309</td>
 <td align="left">test-map.R</td>
 <td align="left">map</td>
 <td align="left">types automatically coerced upwards</td>
@@ -2830,8 +2911,8 @@
 <td align="right">38</td>
 <td align="right">38</td>
 </tr>
-<tr class="even">
-<td>301</td>
+<tr class="odd">
+<td>310</td>
 <td align="left">test-map.R</td>
 <td align="left">map</td>
 <td align="left">types automatically coerced upwards</td>
@@ -2839,26 +2920,26 @@
 <td align="right">39</td>
 <td align="right">39</td>
 </tr>
-<tr class="odd">
-<td>302</td>
+<tr class="even">
+<td>311</td>
 <td align="left">test-map.R</td>
 <td align="left">map</td>
 <td align="left">types automatically coerced upwards</td>
 <td align="left">expect_identical</td>
 <td align="right">40</td>
 <td align="right">40</td>
+</tr>
+<tr class="odd">
+<td>312</td>
+<td align="left">test-map.R</td>
+<td align="left">map</td>
+<td align="left">types automatically coerced upwards</td>
+<td align="left">expect_identical</td>
+<td align="right">41</td>
+<td align="right">41</td>
 </tr>
 <tr class="even">
-<td>303</td>
-<td align="left">test-map.R</td>
-<td align="left">map</td>
-<td align="left">types automatically coerced upwards</td>
-<td align="left">expect_identical</td>
-<td align="right">41</td>
-<td align="right">41</td>
-</tr>
-<tr class="odd">
-<td>304</td>
+<td>313</td>
 <td align="left">test-map.R</td>
 <td align="left">map</td>
 <td align="left">map_raw</td>
@@ -2866,8 +2947,8 @@
 <td align="right">44</td>
 <td align="right">46</td>
 </tr>
-<tr class="even">
-<td>305</td>
+<tr class="odd">
+<td>314</td>
 <td align="left">test-map.R</td>
 <td align="left">map</td>
 <td align="left">logical and integer NA become correct double NA</td>
@@ -2875,8 +2956,8 @@
 <td align="right">48</td>
 <td align="right">53</td>
 </tr>
-<tr class="odd">
-<td>306</td>
+<tr class="even">
+<td>315</td>
 <td align="left">test-map.R</td>
 <td align="left">map</td>
 <td align="left">map forces arguments in same way as base R</td>
@@ -2884,8 +2965,8 @@
 <td align="right">59</td>
 <td align="right">59</td>
 </tr>
-<tr class="even">
-<td>307</td>
+<tr class="odd">
+<td>316</td>
 <td align="left">test-map.R</td>
 <td align="left">map</td>
 <td align="left">map forces arguments in same way as base R</td>
@@ -2893,26 +2974,26 @@
 <td align="right">60</td>
 <td align="right">60</td>
 </tr>
-<tr class="odd">
-<td>308</td>
+<tr class="even">
+<td>317</td>
 <td align="left">test-map.R</td>
 <td align="left">map</td>
 <td align="left">row and column binding work</td>
 <td align="left">expect_length</td>
 <td align="right">68</td>
 <td align="right">68</td>
+</tr>
+<tr class="odd">
+<td>318</td>
+<td align="left">test-map.R</td>
+<td align="left">map</td>
+<td align="left">row and column binding work</td>
+<td align="left">expect_length</td>
+<td align="right">69</td>
+<td align="right">69</td>
 </tr>
 <tr class="even">
-<td>309</td>
-<td align="left">test-map.R</td>
-<td align="left">map</td>
-<td align="left">row and column binding work</td>
-<td align="left">expect_length</td>
-<td align="right">69</td>
-<td align="right">69</td>
-</tr>
-<tr class="odd">
-<td>310</td>
+<td>319</td>
 <td align="left">test-map.R</td>
 <td align="left">map</td>
 <td align="left">walk is used for side-effects</td>
@@ -2920,198 +3001,288 @@
 <td align="right">72</td>
 <td align="right">74</td>
 </tr>
-<tr class="even">
-<td>311</td>
-<td align="left">test-map.R</td>
-<td align="left">map</td>
-<td align="left">map_if() and map_at() always return a list</td>
-<td align="left">expect_identical</td>
-<td align="right">78</td>
-<td align="right">78</td>
-</tr>
-<tr class="odd">
-<td>312</td>
-<td align="left">test-map.R</td>
-<td align="left">map</td>
-<td align="left">map_if() and map_at() always return a list</td>
-<td align="left">expect_identical</td>
-<td align="right">79</td>
-<td align="right">79</td>
-</tr>
-<tr class="even">
-<td>313</td>
-<td align="left">test-map.R</td>
-<td align="left">map</td>
-<td align="left">negative .at omits locations</td>
-<td align="left">expect_equal</td>
-<td align="right">85</td>
-<td align="right">85</td>
-</tr>
-<tr class="odd">
-<td>314</td>
-<td align="left">test-map.R</td>
-<td align="left">map</td>
-<td align="left">map works with calls and pairlists</td>
-<td align="left">expect_equal</td>
-<td align="right">90</td>
-<td align="right">90</td>
-</tr>
-<tr class="even">
-<td>315</td>
-<td align="left">test-map.R</td>
-<td align="left">map</td>
-<td align="left">map works with calls and pairlists</td>
-<td align="left">expect_equal</td>
-<td align="right">93</td>
-<td align="right">93</td>
-</tr>
-<tr class="odd">
-<td>316</td>
-<td align="left">test-map.R</td>
-<td align="left">map</td>
-<td align="left">primitive dispatch correctly</td>
-<td align="left">expect_identical</td>
-<td align="right">101</td>
-<td align="right">101</td>
-</tr>
-<tr class="even">
-<td>317</td>
-<td align="left">test-map.R</td>
-<td align="left">map</td>
-<td align="left">map_if requires predicate functions</td>
-<td align="left">expect_error</td>
-<td align="right">104</td>
-<td align="right">106</td>
-</tr>
-<tr class="odd">
-<td>318</td>
-<td align="left">test-map.R</td>
-<td align="left">map</td>
-<td align="left">
-<code>.else</code> maps false elements</td>
-<td align="left">expect_identical</td>
-<td align="right">108</td>
-<td align="right">110</td>
-</tr>
-<tr class="even">
-<td>319</td>
-<td align="left">test-map.R</td>
-<td align="left">map</td>
-<td align="left">map_depth modifies values at specified depth</td>
-<td align="left">expect_equal</td>
-<td align="right">115</td>
-<td align="right">115</td>
-</tr>
 <tr class="odd">
 <td>320</td>
 <td align="left">test-map.R</td>
 <td align="left">map</td>
-<td align="left">map_depth modifies values at specified depth</td>
-<td align="left">expect_equal</td>
-<td align="right">116</td>
-<td align="right">116</td>
+<td align="left">map_if() and map_at() always return a list</td>
+<td align="left">expect_identical</td>
+<td align="right">78</td>
+<td align="right">78</td>
 </tr>
 <tr class="even">
 <td>321</td>
 <td align="left">test-map.R</td>
 <td align="left">map</td>
-<td align="left">map_depth modifies values at specified depth</td>
-<td align="left">expect_equal</td>
-<td align="right">117</td>
-<td align="right">117</td>
+<td align="left">map_if() and map_at() always return a list</td>
+<td align="left">expect_identical</td>
+<td align="right">79</td>
+<td align="right">79</td>
 </tr>
 <tr class="odd">
 <td>322</td>
 <td align="left">test-map.R</td>
 <td align="left">map</td>
-<td align="left">map_depth modifies values at specified depth</td>
-<td align="left">expect_equal</td>
-<td align="right">118</td>
-<td align="right">118</td>
+<td align="left">map_at() works with tidyselect</td>
+<td align="left">expect_identical</td>
+<td align="right">86</td>
+<td align="right">86</td>
 </tr>
 <tr class="even">
 <td>323</td>
 <td align="left">test-map.R</td>
 <td align="left">map</td>
-<td align="left">map_depth modifies values at specified depth</td>
-<td align="left">expect_equal</td>
-<td align="right">119</td>
-<td align="right">119</td>
+<td align="left">map_at() works with tidyselect</td>
+<td align="left">expect_identical</td>
+<td align="right">87</td>
+<td align="right">87</td>
 </tr>
 <tr class="odd">
 <td>324</td>
 <td align="left">test-map.R</td>
 <td align="left">map</td>
-<td align="left">map_depth modifies values at specified depth</td>
-<td align="left">expect_equal</td>
-<td align="right">120</td>
-<td align="right">120</td>
+<td align="left">map_at() works with tidyselect</td>
+<td align="left">expect_identical</td>
+<td align="right">89</td>
+<td align="right">89</td>
 </tr>
 <tr class="even">
 <td>325</td>
 <td align="left">test-map.R</td>
 <td align="left">map</td>
-<td align="left">map_depth modifies values at specified depth</td>
-<td align="left">expect_error</td>
-<td align="right">121</td>
-<td align="right">121</td>
+<td align="left">map_at() works with tidyselect</td>
+<td align="left">expect_identical</td>
+<td align="right">90</td>
+<td align="right">90</td>
 </tr>
 <tr class="odd">
 <td>326</td>
 <td align="left">test-map.R</td>
 <td align="left">map</td>
-<td align="left">map_depth modifies values at specified depth</td>
-<td align="left">expect_error</td>
-<td align="right">122</td>
-<td align="right">122</td>
+<td align="left">negative .at omits locations</td>
+<td align="left">expect_equal</td>
+<td align="right">96</td>
+<td align="right">96</td>
 </tr>
 <tr class="even">
 <td>327</td>
 <td align="left">test-map.R</td>
 <td align="left">map</td>
-<td align="left">map_depth modifies values at specified depth</td>
-<td align="left">expect_error</td>
-<td align="right">123</td>
-<td align="right">123</td>
+<td align="left">map works with calls and pairlists</td>
+<td align="left">expect_equal</td>
+<td align="right">101</td>
+<td align="right">101</td>
 </tr>
 <tr class="odd">
 <td>328</td>
 <td align="left">test-map.R</td>
 <td align="left">map</td>
-<td align="left">map_depth() with .ragged = TRUE operates on leaves</td>
+<td align="left">map works with calls and pairlists</td>
 <td align="left">expect_equal</td>
-<td align="right">136</td>
-<td align="right">136</td>
+<td align="right">104</td>
+<td align="right">104</td>
 </tr>
 <tr class="even">
 <td>329</td>
 <td align="left">test-map.R</td>
 <td align="left">map</td>
-<td align="left">map_depth() with .ragged = TRUE operates on leaves</td>
-<td align="left">expect_equal</td>
-<td align="right">137</td>
-<td align="right">137</td>
+<td align="left">primitive dispatch correctly</td>
+<td align="left">expect_identical</td>
+<td align="right">112</td>
+<td align="right">112</td>
 </tr>
 <tr class="odd">
 <td>330</td>
 <td align="left">test-map.R</td>
 <td align="left">map</td>
-<td align="left">map_depth() with .ragged = TRUE operates on leaves</td>
-<td align="left">expect_equal</td>
-<td align="right">139</td>
-<td align="right">139</td>
+<td align="left">map_if requires predicate functions</td>
+<td align="left">expect_error</td>
+<td align="right">115</td>
+<td align="right">117</td>
 </tr>
 <tr class="even">
 <td>331</td>
 <td align="left">test-map.R</td>
 <td align="left">map</td>
-<td align="left">error message follows style guide when result is not length 1</td>
-<td align="left">expect_error</td>
-<td align="right">144</td>
-<td align="right">147</td>
+<td align="left">
+<code>.else</code> maps false elements</td>
+<td align="left">expect_identical</td>
+<td align="right">119</td>
+<td align="right">121</td>
 </tr>
 <tr class="odd">
 <td>332</td>
+<td align="left">test-map.R</td>
+<td align="left">map</td>
+<td align="left">map_depth modifies values at specified depth</td>
+<td align="left">expect_equal</td>
+<td align="right">126</td>
+<td align="right">126</td>
+</tr>
+<tr class="even">
+<td>333</td>
+<td align="left">test-map.R</td>
+<td align="left">map</td>
+<td align="left">map_depth modifies values at specified depth</td>
+<td align="left">expect_equal</td>
+<td align="right">127</td>
+<td align="right">127</td>
+</tr>
+<tr class="odd">
+<td>334</td>
+<td align="left">test-map.R</td>
+<td align="left">map</td>
+<td align="left">map_depth modifies values at specified depth</td>
+<td align="left">expect_equal</td>
+<td align="right">128</td>
+<td align="right">128</td>
+</tr>
+<tr class="even">
+<td>335</td>
+<td align="left">test-map.R</td>
+<td align="left">map</td>
+<td align="left">map_depth modifies values at specified depth</td>
+<td align="left">expect_equal</td>
+<td align="right">129</td>
+<td align="right">129</td>
+</tr>
+<tr class="odd">
+<td>336</td>
+<td align="left">test-map.R</td>
+<td align="left">map</td>
+<td align="left">map_depth modifies values at specified depth</td>
+<td align="left">expect_equal</td>
+<td align="right">130</td>
+<td align="right">130</td>
+</tr>
+<tr class="even">
+<td>337</td>
+<td align="left">test-map.R</td>
+<td align="left">map</td>
+<td align="left">map_depth modifies values at specified depth</td>
+<td align="left">expect_equal</td>
+<td align="right">131</td>
+<td align="right">131</td>
+</tr>
+<tr class="odd">
+<td>338</td>
+<td align="left">test-map.R</td>
+<td align="left">map</td>
+<td align="left">map_depth modifies values at specified depth</td>
+<td align="left">expect_error</td>
+<td align="right">132</td>
+<td align="right">132</td>
+</tr>
+<tr class="even">
+<td>339</td>
+<td align="left">test-map.R</td>
+<td align="left">map</td>
+<td align="left">map_depth modifies values at specified depth</td>
+<td align="left">expect_error</td>
+<td align="right">133</td>
+<td align="right">133</td>
+</tr>
+<tr class="odd">
+<td>340</td>
+<td align="left">test-map.R</td>
+<td align="left">map</td>
+<td align="left">map_depth modifies values at specified depth</td>
+<td align="left">expect_error</td>
+<td align="right">134</td>
+<td align="right">134</td>
+</tr>
+<tr class="even">
+<td>341</td>
+<td align="left">test-map.R</td>
+<td align="left">map</td>
+<td align="left">map_depth() with .ragged = TRUE operates on leaves</td>
+<td align="left">expect_equal</td>
+<td align="right">147</td>
+<td align="right">147</td>
+</tr>
+<tr class="odd">
+<td>342</td>
+<td align="left">test-map.R</td>
+<td align="left">map</td>
+<td align="left">map_depth() with .ragged = TRUE operates on leaves</td>
+<td align="left">expect_equal</td>
+<td align="right">148</td>
+<td align="right">148</td>
+</tr>
+<tr class="even">
+<td>343</td>
+<td align="left">test-map.R</td>
+<td align="left">map</td>
+<td align="left">map_depth() with .ragged = TRUE operates on leaves</td>
+<td align="left">expect_equal</td>
+<td align="right">150</td>
+<td align="right">150</td>
+</tr>
+<tr class="odd">
+<td>344</td>
+<td align="left">test-map.R</td>
+<td align="left">map</td>
+<td align="left">error message follows style guide when result is not length 1</td>
+<td align="left">expect_error</td>
+<td align="right">155</td>
+<td align="right">158</td>
+</tr>
+<tr class="even">
+<td>345</td>
+<td align="left">test-map.R</td>
+<td align="left">map</td>
+<td align="left">map() with empty input copies names</td>
+<td align="left">expect_identical</td>
+<td align="right">163</td>
+<td align="right">163</td>
+</tr>
+<tr class="odd">
+<td>346</td>
+<td align="left">test-map.R</td>
+<td align="left">map</td>
+<td align="left">map() with empty input copies names</td>
+<td align="left">expect_identical</td>
+<td align="right">164</td>
+<td align="right">164</td>
+</tr>
+<tr class="even">
+<td>347</td>
+<td align="left">test-map.R</td>
+<td align="left">map</td>
+<td align="left">map() with empty input copies names</td>
+<td align="left">expect_identical</td>
+<td align="right">165</td>
+<td align="right">165</td>
+</tr>
+<tr class="odd">
+<td>348</td>
+<td align="left">test-map.R</td>
+<td align="left">map</td>
+<td align="left">map() with empty input copies names</td>
+<td align="left">expect_identical</td>
+<td align="right">166</td>
+<td align="right">166</td>
+</tr>
+<tr class="even">
+<td>349</td>
+<td align="left">test-map.R</td>
+<td align="left">map</td>
+<td align="left">map() with empty input copies names</td>
+<td align="left">expect_identical</td>
+<td align="right">167</td>
+<td align="right">167</td>
+</tr>
+<tr class="odd">
+<td>350</td>
+<td align="left">test-map.R</td>
+<td align="left">map</td>
+<td align="left">map() with empty input copies names</td>
+<td align="left">expect_identical</td>
+<td align="right">168</td>
+<td align="right">168</td>
+</tr>
+<tr class="even">
+<td>351</td>
 <td align="left">test-map2.R</td>
 <td align="left">map2</td>
 <td align="left">map2 inputs must be same length</td>
@@ -3119,8 +3290,8 @@
 <td align="right">3</td>
 <td align="right">12</td>
 </tr>
-<tr class="even">
-<td>333</td>
+<tr class="odd">
+<td>352</td>
 <td align="left">test-map2.R</td>
 <td align="left">map2</td>
 <td align="left">map2 can’t simplify if elements longer than length 1</td>
@@ -3128,8 +3299,8 @@
 <td align="right">14</td>
 <td align="right">19</td>
 </tr>
-<tr class="odd">
-<td>334</td>
+<tr class="even">
+<td>353</td>
 <td align="left">test-map2.R</td>
 <td align="left">map2</td>
 <td align="left">fails on non-vectors</td>
@@ -3137,8 +3308,8 @@
 <td align="right">21</td>
 <td align="right">24</td>
 </tr>
-<tr class="even">
-<td>335</td>
+<tr class="odd">
+<td>354</td>
 <td align="left">test-map2.R</td>
 <td align="left">map2</td>
 <td align="left">fails on non-vectors</td>
@@ -3146,8 +3317,8 @@
 <td align="right">23</td>
 <td align="right">23</td>
 </tr>
-<tr class="odd">
-<td>336</td>
+<tr class="even">
+<td>355</td>
 <td align="left">test-map2.R</td>
 <td align="left">map2</td>
 <td align="left">map2 vectorised inputs of length 1</td>
@@ -3155,8 +3326,8 @@
 <td align="right">26</td>
 <td align="right">29</td>
 </tr>
-<tr class="even">
-<td>337</td>
+<tr class="odd">
+<td>356</td>
 <td align="left">test-map2.R</td>
 <td align="left">map2</td>
 <td align="left">map2 vectorised inputs of length 1</td>
@@ -3164,8 +3335,8 @@
 <td align="right">28</td>
 <td align="right">28</td>
 </tr>
-<tr class="odd">
-<td>338</td>
+<tr class="even">
+<td>357</td>
 <td align="left">test-map2.R</td>
 <td align="left">map2</td>
 <td align="left">any 0 length input gives 0 length output</td>
@@ -3173,8 +3344,8 @@
 <td align="right">31</td>
 <td align="right">39</td>
 </tr>
-<tr class="even">
-<td>339</td>
+<tr class="odd">
+<td>358</td>
 <td align="left">test-map2.R</td>
 <td align="left">map2</td>
 <td align="left">any 0 length input gives 0 length output</td>
@@ -3182,8 +3353,8 @@
 <td align="right">33</td>
 <td align="right">33</td>
 </tr>
-<tr class="odd">
-<td>340</td>
+<tr class="even">
+<td>359</td>
 <td align="left">test-map2.R</td>
 <td align="left">map2</td>
 <td align="left">any 0 length input gives 0 length output</td>
@@ -3191,8 +3362,8 @@
 <td align="right">34</td>
 <td align="right">34</td>
 </tr>
-<tr class="even">
-<td>341</td>
+<tr class="odd">
+<td>360</td>
 <td align="left">test-map2.R</td>
 <td align="left">map2</td>
 <td align="left">any 0 length input gives 0 length output</td>
@@ -3200,8 +3371,8 @@
 <td align="right">36</td>
 <td align="right">36</td>
 </tr>
-<tr class="odd">
-<td>342</td>
+<tr class="even">
+<td>361</td>
 <td align="left">test-map2.R</td>
 <td align="left">map2</td>
 <td align="left">any 0 length input gives 0 length output</td>
@@ -3209,8 +3380,8 @@
 <td align="right">37</td>
 <td align="right">37</td>
 </tr>
-<tr class="even">
-<td>343</td>
+<tr class="odd">
+<td>362</td>
 <td align="left">test-map2.R</td>
 <td align="left">map2</td>
 <td align="left">any 0 length input gives 0 length output</td>
@@ -3218,26 +3389,26 @@
 <td align="right">38</td>
 <td align="right">38</td>
 </tr>
-<tr class="odd">
-<td>344</td>
+<tr class="even">
+<td>363</td>
 <td align="left">test-map2.R</td>
 <td align="left">map2</td>
 <td align="left">map2 takes only names from x</td>
 <td align="left">expect_equal</td>
 <td align="right">45</td>
 <td align="right">45</td>
+</tr>
+<tr class="odd">
+<td>364</td>
+<td align="left">test-map2.R</td>
+<td align="left">map2</td>
+<td align="left">map2 takes only names from x</td>
+<td align="left">expect_equal</td>
+<td align="right">46</td>
+<td align="right">46</td>
 </tr>
 <tr class="even">
-<td>345</td>
-<td align="left">test-map2.R</td>
-<td align="left">map2</td>
-<td align="left">map2 takes only names from x</td>
-<td align="left">expect_equal</td>
-<td align="right">46</td>
-<td align="right">46</td>
-</tr>
-<tr class="odd">
-<td>346</td>
+<td>365</td>
 <td align="left">test-map2.R</td>
 <td align="left">map2</td>
 <td align="left">map2 always returns a list</td>
@@ -3245,8 +3416,62 @@
 <td align="right">49</td>
 <td align="right">51</td>
 </tr>
+<tr class="odd">
+<td>366</td>
+<td align="left">test-map2.R</td>
+<td align="left">map2</td>
+<td align="left">map2() with empty input copies names</td>
+<td align="left">expect_identical</td>
+<td align="right">55</td>
+<td align="right">55</td>
+</tr>
 <tr class="even">
-<td>347</td>
+<td>367</td>
+<td align="left">test-map2.R</td>
+<td align="left">map2</td>
+<td align="left">map2() with empty input copies names</td>
+<td align="left">expect_identical</td>
+<td align="right">56</td>
+<td align="right">56</td>
+</tr>
+<tr class="odd">
+<td>368</td>
+<td align="left">test-map2.R</td>
+<td align="left">map2</td>
+<td align="left">map2() with empty input copies names</td>
+<td align="left">expect_identical</td>
+<td align="right">57</td>
+<td align="right">57</td>
+</tr>
+<tr class="even">
+<td>369</td>
+<td align="left">test-map2.R</td>
+<td align="left">map2</td>
+<td align="left">map2() with empty input copies names</td>
+<td align="left">expect_identical</td>
+<td align="right">58</td>
+<td align="right">58</td>
+</tr>
+<tr class="odd">
+<td>370</td>
+<td align="left">test-map2.R</td>
+<td align="left">map2</td>
+<td align="left">map2() with empty input copies names</td>
+<td align="left">expect_identical</td>
+<td align="right">59</td>
+<td align="right">59</td>
+</tr>
+<tr class="even">
+<td>371</td>
+<td align="left">test-map2.R</td>
+<td align="left">map2</td>
+<td align="left">map2() with empty input copies names</td>
+<td align="left">expect_identical</td>
+<td align="right">60</td>
+<td align="right">60</td>
+</tr>
+<tr class="odd">
+<td>372</td>
 <td align="left">test-modify.R</td>
 <td align="left">modify</td>
 <td align="left">modify returns same type as input</td>
@@ -3254,26 +3479,26 @@
 <td align="right">5</td>
 <td align="right">5</td>
 </tr>
-<tr class="odd">
-<td>348</td>
+<tr class="even">
+<td>373</td>
 <td align="left">test-modify.R</td>
 <td align="left">modify</td>
 <td align="left">modify_if/modify_at return same type as input</td>
 <td align="left">expect_equal</td>
 <td align="right">13</td>
 <td align="right">13</td>
+</tr>
+<tr class="odd">
+<td>374</td>
+<td align="left">test-modify.R</td>
+<td align="left">modify</td>
+<td align="left">modify_if/modify_at return same type as input</td>
+<td align="left">expect_equal</td>
+<td align="right">16</td>
+<td align="right">16</td>
 </tr>
 <tr class="even">
-<td>349</td>
-<td align="left">test-modify.R</td>
-<td align="left">modify</td>
-<td align="left">modify_if/modify_at return same type as input</td>
-<td align="left">expect_equal</td>
-<td align="right">16</td>
-<td align="right">16</td>
-</tr>
-<tr class="odd">
-<td>350</td>
+<td>375</td>
 <td align="left">test-modify.R</td>
 <td align="left">modify</td>
 <td align="left">modify_at requires a named object</td>
@@ -3281,8 +3506,8 @@
 <td align="right">21</td>
 <td align="right">21</td>
 </tr>
-<tr class="even">
-<td>351</td>
+<tr class="odd">
+<td>376</td>
 <td align="left">test-modify.R</td>
 <td align="left">modify</td>
 <td align="left">modify_at operates on character and numeric indexing</td>
@@ -3290,8 +3515,8 @@
 <td align="right">26</td>
 <td align="right">26</td>
 </tr>
-<tr class="odd">
-<td>352</td>
+<tr class="even">
+<td>377</td>
 <td align="left">test-modify.R</td>
 <td align="left">modify</td>
 <td align="left">negative .at omits locations</td>
@@ -3299,26 +3524,26 @@
 <td align="right">32</td>
 <td align="right">32</td>
 </tr>
-<tr class="even">
-<td>353</td>
+<tr class="odd">
+<td>378</td>
 <td align="left">test-modify.R</td>
 <td align="left">modify</td>
 <td align="left">modify works with calls and pairlists</td>
 <td align="left">expect_equal</td>
 <td align="right">37</td>
 <td align="right">37</td>
+</tr>
+<tr class="even">
+<td>379</td>
+<td align="left">test-modify.R</td>
+<td align="left">modify</td>
+<td align="left">modify works with calls and pairlists</td>
+<td align="left">expect_equal</td>
+<td align="right">40</td>
+<td align="right">40</td>
 </tr>
 <tr class="odd">
-<td>354</td>
-<td align="left">test-modify.R</td>
-<td align="left">modify</td>
-<td align="left">modify works with calls and pairlists</td>
-<td align="left">expect_equal</td>
-<td align="right">40</td>
-<td align="right">40</td>
-</tr>
-<tr class="even">
-<td>355</td>
+<td>380</td>
 <td align="left">test-modify.R</td>
 <td align="left">modify</td>
 <td align="left">modify{,_at,_if} preserves atomic vector classes</td>
@@ -3326,8 +3551,8 @@
 <td align="right">43</td>
 <td align="right">58</td>
 </tr>
-<tr class="odd">
-<td>356</td>
+<tr class="even">
+<td>381</td>
 <td align="left">test-modify.R</td>
 <td align="left">modify</td>
 <td align="left">modify{,_at,_if} preserves atomic vector classes</td>
@@ -3335,8 +3560,8 @@
 <td align="right">45</td>
 <td align="right">45</td>
 </tr>
-<tr class="even">
-<td>357</td>
+<tr class="odd">
+<td>382</td>
 <td align="left">test-modify.R</td>
 <td align="left">modify</td>
 <td align="left">modify{,_at,_if} preserves atomic vector classes</td>
@@ -3344,8 +3569,8 @@
 <td align="right">46</td>
 <td align="right">46</td>
 </tr>
-<tr class="odd">
-<td>358</td>
+<tr class="even">
+<td>383</td>
 <td align="left">test-modify.R</td>
 <td align="left">modify</td>
 <td align="left">modify{,_at,_if} preserves atomic vector classes</td>
@@ -3353,8 +3578,8 @@
 <td align="right">47</td>
 <td align="right">47</td>
 </tr>
-<tr class="even">
-<td>359</td>
+<tr class="odd">
+<td>384</td>
 <td align="left">test-modify.R</td>
 <td align="left">modify</td>
 <td align="left">modify{,_at,_if} preserves atomic vector classes</td>
@@ -3362,8 +3587,8 @@
 <td align="right">49</td>
 <td align="right">49</td>
 </tr>
-<tr class="odd">
-<td>360</td>
+<tr class="even">
+<td>385</td>
 <td align="left">test-modify.R</td>
 <td align="left">modify</td>
 <td align="left">modify{,_at,_if} preserves atomic vector classes</td>
@@ -3371,8 +3596,8 @@
 <td align="right">50</td>
 <td align="right">50</td>
 </tr>
-<tr class="even">
-<td>361</td>
+<tr class="odd">
+<td>386</td>
 <td align="left">test-modify.R</td>
 <td align="left">modify</td>
 <td align="left">modify{,_at,_if} preserves atomic vector classes</td>
@@ -3380,8 +3605,8 @@
 <td align="right">51</td>
 <td align="right">51</td>
 </tr>
-<tr class="odd">
-<td>362</td>
+<tr class="even">
+<td>387</td>
 <td align="left">test-modify.R</td>
 <td align="left">modify</td>
 <td align="left">modify{,_at,_if} preserves atomic vector classes</td>
@@ -3389,8 +3614,8 @@
 <td align="right">52</td>
 <td align="right">52</td>
 </tr>
-<tr class="even">
-<td>363</td>
+<tr class="odd">
+<td>388</td>
 <td align="left">test-modify.R</td>
 <td align="left">modify</td>
 <td align="left">modify{,_at,_if} preserves atomic vector classes</td>
@@ -3398,8 +3623,8 @@
 <td align="right">54</td>
 <td align="right">54</td>
 </tr>
-<tr class="odd">
-<td>364</td>
+<tr class="even">
+<td>389</td>
 <td align="left">test-modify.R</td>
 <td align="left">modify</td>
 <td align="left">modify{,_at,_if} preserves atomic vector classes</td>
@@ -3407,26 +3632,26 @@
 <td align="right">55</td>
 <td align="right">55</td>
 </tr>
-<tr class="even">
-<td>365</td>
+<tr class="odd">
+<td>390</td>
 <td align="left">test-modify.R</td>
 <td align="left">modify</td>
 <td align="left">modify{,_at,_if} preserves atomic vector classes</td>
 <td align="left">expect_type</td>
 <td align="right">56</td>
 <td align="right">56</td>
+</tr>
+<tr class="even">
+<td>391</td>
+<td align="left">test-modify.R</td>
+<td align="left">modify</td>
+<td align="left">modify{,_at,_if} preserves atomic vector classes</td>
+<td align="left">expect_type</td>
+<td align="right">57</td>
+<td align="right">57</td>
 </tr>
 <tr class="odd">
-<td>366</td>
-<td align="left">test-modify.R</td>
-<td align="left">modify</td>
-<td align="left">modify{,_at,_if} preserves atomic vector classes</td>
-<td align="left">expect_type</td>
-<td align="right">57</td>
-<td align="right">57</td>
-</tr>
-<tr class="even">
-<td>367</td>
+<td>392</td>
 <td align="left">test-modify.R</td>
 <td align="left">modify</td>
 <td align="left">modify() and variants implement sane coercion rules for base vectors</td>
@@ -3434,8 +3659,8 @@
 <td align="right">60</td>
 <td align="right">65</td>
 </tr>
-<tr class="odd">
-<td>368</td>
+<tr class="even">
+<td>393</td>
 <td align="left">test-modify.R</td>
 <td align="left">modify</td>
 <td align="left">modify() and variants implement sane coercion rules for base vectors</td>
@@ -3443,26 +3668,26 @@
 <td align="right">62</td>
 <td align="right">62</td>
 </tr>
-<tr class="even">
-<td>369</td>
+<tr class="odd">
+<td>394</td>
 <td align="left">test-modify.R</td>
 <td align="left">modify</td>
 <td align="left">modify() and variants implement sane coercion rules for base vectors</td>
 <td align="left">expect_error</td>
 <td align="right">63</td>
 <td align="right">63</td>
+</tr>
+<tr class="even">
+<td>395</td>
+<td align="left">test-modify.R</td>
+<td align="left">modify</td>
+<td align="left">modify() and variants implement sane coercion rules for base vectors</td>
+<td align="left">expect_error</td>
+<td align="right">64</td>
+<td align="right">64</td>
 </tr>
 <tr class="odd">
-<td>370</td>
-<td align="left">test-modify.R</td>
-<td align="left">modify</td>
-<td align="left">modify() and variants implement sane coercion rules for base vectors</td>
-<td align="left">expect_error</td>
-<td align="right">64</td>
-<td align="right">64</td>
-</tr>
-<tr class="even">
-<td>371</td>
+<td>396</td>
 <td align="left">test-modify.R</td>
 <td align="left">modify</td>
 <td align="left">modify2() and imodify() preserve type of first input</td>
@@ -3470,8 +3695,8 @@
 <td align="right">70</td>
 <td align="right">70</td>
 </tr>
-<tr class="odd">
-<td>372</td>
+<tr class="even">
+<td>397</td>
 <td align="left">test-modify.R</td>
 <td align="left">modify</td>
 <td align="left">modify2() and imodify() preserve type of first input</td>
@@ -3479,8 +3704,8 @@
 <td align="right">73</td>
 <td align="right">73</td>
 </tr>
-<tr class="even">
-<td>373</td>
+<tr class="odd">
+<td>398</td>
 <td align="left">test-modify.R</td>
 <td align="left">modify</td>
 <td align="left">modify2() and imodify() preserve type of first input</td>
@@ -3488,8 +3713,8 @@
 <td align="right">74</td>
 <td align="right">74</td>
 </tr>
-<tr class="odd">
-<td>374</td>
+<tr class="even">
+<td>399</td>
 <td align="left">test-modify.R</td>
 <td align="left">modify</td>
 <td align="left">modify2() recycles arguments</td>
@@ -3497,8 +3722,8 @@
 <td align="right">77</td>
 <td align="right">82</td>
 </tr>
-<tr class="even">
-<td>375</td>
+<tr class="odd">
+<td>400</td>
 <td align="left">test-modify.R</td>
 <td align="left">modify</td>
 <td align="left">modify2() recycles arguments</td>
@@ -3506,26 +3731,26 @@
 <td align="right">79</td>
 <td align="right">79</td>
 </tr>
-<tr class="odd">
-<td>376</td>
+<tr class="even">
+<td>401</td>
 <td align="left">test-modify.R</td>
 <td align="left">modify</td>
 <td align="left">modify2() recycles arguments</td>
 <td align="left">expect_identical</td>
 <td align="right">80</td>
 <td align="right">80</td>
+</tr>
+<tr class="odd">
+<td>402</td>
+<td align="left">test-modify.R</td>
+<td align="left">modify</td>
+<td align="left">modify2() recycles arguments</td>
+<td align="left">expect_identical</td>
+<td align="right">81</td>
+<td align="right">81</td>
 </tr>
 <tr class="even">
-<td>377</td>
-<td align="left">test-modify.R</td>
-<td align="left">modify</td>
-<td align="left">modify2() recycles arguments</td>
-<td align="left">expect_identical</td>
-<td align="right">81</td>
-<td align="right">81</td>
-</tr>
-<tr class="odd">
-<td>378</td>
+<td>403</td>
 <td align="left">test-modify.R</td>
 <td align="left">modify</td>
 <td align="left">modify_if() requires predicate functions</td>
@@ -3533,8 +3758,8 @@
 <td align="right">84</td>
 <td align="right">87</td>
 </tr>
-<tr class="even">
-<td>379</td>
+<tr class="odd">
+<td>404</td>
 <td align="left">test-modify.R</td>
 <td align="left">modify</td>
 <td align="left">modify_if() requires predicate functions</td>
@@ -3542,8 +3767,8 @@
 <td align="right">86</td>
 <td align="right">86</td>
 </tr>
-<tr class="odd">
-<td>380</td>
+<tr class="even">
+<td>405</td>
 <td align="left">test-modify.R</td>
 <td align="left">modify</td>
 <td align="left">
@@ -3552,8 +3777,8 @@
 <td align="right">92</td>
 <td align="right">92</td>
 </tr>
-<tr class="even">
-<td>381</td>
+<tr class="odd">
+<td>406</td>
 <td align="left">test-modify.R</td>
 <td align="left">modify</td>
 <td align="left">modify_depth modifies values at specified depth</td>
@@ -3561,8 +3786,8 @@
 <td align="right">100</td>
 <td align="right">100</td>
 </tr>
-<tr class="odd">
-<td>382</td>
+<tr class="even">
+<td>407</td>
 <td align="left">test-modify.R</td>
 <td align="left">modify</td>
 <td align="left">modify_depth modifies values at specified depth</td>
@@ -3570,8 +3795,8 @@
 <td align="right">101</td>
 <td align="right">101</td>
 </tr>
-<tr class="even">
-<td>383</td>
+<tr class="odd">
+<td>408</td>
 <td align="left">test-modify.R</td>
 <td align="left">modify</td>
 <td align="left">modify_depth modifies values at specified depth</td>
@@ -3579,8 +3804,8 @@
 <td align="right">102</td>
 <td align="right">102</td>
 </tr>
-<tr class="odd">
-<td>384</td>
+<tr class="even">
+<td>409</td>
 <td align="left">test-modify.R</td>
 <td align="left">modify</td>
 <td align="left">modify_depth modifies values at specified depth</td>
@@ -3588,8 +3813,8 @@
 <td align="right">103</td>
 <td align="right">103</td>
 </tr>
-<tr class="even">
-<td>385</td>
+<tr class="odd">
+<td>410</td>
 <td align="left">test-modify.R</td>
 <td align="left">modify</td>
 <td align="left">modify_depth modifies values at specified depth</td>
@@ -3597,8 +3822,8 @@
 <td align="right">104</td>
 <td align="right">104</td>
 </tr>
-<tr class="odd">
-<td>386</td>
+<tr class="even">
+<td>411</td>
 <td align="left">test-modify.R</td>
 <td align="left">modify</td>
 <td align="left">modify_depth modifies values at specified depth</td>
@@ -3606,8 +3831,8 @@
 <td align="right">105</td>
 <td align="right">105</td>
 </tr>
-<tr class="even">
-<td>387</td>
+<tr class="odd">
+<td>412</td>
 <td align="left">test-modify.R</td>
 <td align="left">modify</td>
 <td align="left">modify_depth modifies values at specified depth</td>
@@ -3615,8 +3840,8 @@
 <td align="right">106</td>
 <td align="right">106</td>
 </tr>
-<tr class="odd">
-<td>388</td>
+<tr class="even">
+<td>413</td>
 <td align="left">test-modify.R</td>
 <td align="left">modify</td>
 <td align="left">modify_depth modifies values at specified depth</td>
@@ -3624,8 +3849,8 @@
 <td align="right">107</td>
 <td align="right">107</td>
 </tr>
-<tr class="even">
-<td>389</td>
+<tr class="odd">
+<td>414</td>
 <td align="left">test-modify.R</td>
 <td align="left">modify</td>
 <td align="left">modify_depth modifies values at specified depth</td>
@@ -3633,8 +3858,8 @@
 <td align="right">108</td>
 <td align="right">108</td>
 </tr>
-<tr class="odd">
-<td>390</td>
+<tr class="even">
+<td>415</td>
 <td align="left">test-modify.R</td>
 <td align="left">modify</td>
 <td align="left">.ragged = TRUE operates on leaves</td>
@@ -3642,8 +3867,8 @@
 <td align="right">121</td>
 <td align="right">121</td>
 </tr>
-<tr class="even">
-<td>391</td>
+<tr class="odd">
+<td>416</td>
 <td align="left">test-modify.R</td>
 <td align="left">modify</td>
 <td align="left">.ragged = TRUE operates on leaves</td>
@@ -3651,8 +3876,8 @@
 <td align="right">122</td>
 <td align="right">122</td>
 </tr>
-<tr class="odd">
-<td>392</td>
+<tr class="even">
+<td>417</td>
 <td align="left">test-modify.R</td>
 <td align="left">modify</td>
 <td align="left">.ragged = TRUE operates on leaves</td>
@@ -3660,26 +3885,26 @@
 <td align="right">124</td>
 <td align="right">124</td>
 </tr>
-<tr class="even">
-<td>393</td>
+<tr class="odd">
+<td>418</td>
 <td align="left">test-modify.R</td>
 <td align="left">modify</td>
 <td align="left">vectorised operations on the recursive and atomic levels yield same results</td>
 <td align="left">expect_identical</td>
 <td align="right">130</td>
 <td align="right">130</td>
+</tr>
+<tr class="even">
+<td>419</td>
+<td align="left">test-modify.R</td>
+<td align="left">modify</td>
+<td align="left">vectorised operations on the recursive and atomic levels yield same results</td>
+<td align="left">expect_identical</td>
+<td align="right">131</td>
+<td align="right">131</td>
 </tr>
 <tr class="odd">
-<td>394</td>
-<td align="left">test-modify.R</td>
-<td align="left">modify</td>
-<td align="left">vectorised operations on the recursive and atomic levels yield same results</td>
-<td align="left">expect_identical</td>
-<td align="right">131</td>
-<td align="right">131</td>
-</tr>
-<tr class="even">
-<td>395</td>
+<td>420</td>
 <td align="left">test-modify.R</td>
 <td align="left">modify</td>
 <td align="left">vectorised operations on the recursive and atomic levels yield same results</td>
@@ -3687,8 +3912,35 @@
 <td align="right">132</td>
 <td align="right">132</td>
 </tr>
+<tr class="even">
+<td>421</td>
+<td align="left">test-modify.R</td>
+<td align="left">modify</td>
+<td align="left">modify_at() can use tidyselect</td>
+<td align="left">expect_is</td>
+<td align="right">138</td>
+<td align="right">138</td>
+</tr>
 <tr class="odd">
-<td>396</td>
+<td>422</td>
+<td align="left">test-modify.R</td>
+<td align="left">modify</td>
+<td align="left">modify_at() can use tidyselect</td>
+<td align="left">expect_is</td>
+<td align="right">139</td>
+<td align="right">139</td>
+</tr>
+<tr class="even">
+<td>423</td>
+<td align="left">test-modify.R</td>
+<td align="left">modify</td>
+<td align="left">modify_at() can use tidyselect</td>
+<td align="left">expect_is</td>
+<td align="right">141</td>
+<td align="right">141</td>
+</tr>
+<tr class="odd">
+<td>424</td>
 <td align="left">test-negate.R</td>
 <td align="left">negate</td>
 <td align="left">negate works with both functions and vectors</td>
@@ -3697,7 +3949,7 @@
 <td align="right">5</td>
 </tr>
 <tr class="even">
-<td>397</td>
+<td>425</td>
 <td align="left">test-negate.R</td>
 <td align="left">negate</td>
 <td align="left">negate works with both functions and vectors</td>
@@ -3706,7 +3958,7 @@
 <td align="right">6</td>
 </tr>
 <tr class="odd">
-<td>398</td>
+<td>426</td>
 <td align="left">test-negate.R</td>
 <td align="left">negate</td>
 <td align="left">negate works with both functions and vectors</td>
@@ -3715,7 +3967,7 @@
 <td align="right">8</td>
 </tr>
 <tr class="even">
-<td>399</td>
+<td>427</td>
 <td align="left">test-negate.R</td>
 <td align="left">negate</td>
 <td align="left">negate works with both functions and vectors</td>
@@ -3724,7 +3976,7 @@
 <td align="right">9</td>
 </tr>
 <tr class="odd">
-<td>400</td>
+<td>428</td>
 <td align="left">test-output.R</td>
 <td align="left">output</td>
 <td align="left">safely has NULL error when successful</td>
@@ -3733,7 +3985,7 @@
 <td align="right">5</td>
 </tr>
 <tr class="even">
-<td>401</td>
+<td>429</td>
 <td align="left">test-output.R</td>
 <td align="left">output</td>
 <td align="left">safely has NULL result on failure</td>
@@ -3742,7 +3994,7 @@
 <td align="right">10</td>
 </tr>
 <tr class="odd">
-<td>402</td>
+<td>430</td>
 <td align="left">test-output.R</td>
 <td align="left">output</td>
 <td align="left">safely has NULL result on failure</td>
@@ -3751,7 +4003,7 @@
 <td align="right">12</td>
 </tr>
 <tr class="even">
-<td>403</td>
+<td>431</td>
 <td align="left">test-output.R</td>
 <td align="left">output</td>
 <td align="left">quietly captures output</td>
@@ -3760,7 +4012,7 @@
 <td align="right">23</td>
 </tr>
 <tr class="odd">
-<td>404</td>
+<td>432</td>
 <td align="left">test-output.R</td>
 <td align="left">output</td>
 <td align="left">quietly captures output</td>
@@ -3769,7 +4021,7 @@
 <td align="right">24</td>
 </tr>
 <tr class="even">
-<td>405</td>
+<td>433</td>
 <td align="left">test-output.R</td>
 <td align="left">output</td>
 <td align="left">quietly captures output</td>
@@ -3778,7 +4030,7 @@
 <td align="right">25</td>
 </tr>
 <tr class="odd">
-<td>406</td>
+<td>434</td>
 <td align="left">test-output.R</td>
 <td align="left">output</td>
 <td align="left">quietly captures output</td>
@@ -3787,7 +4039,7 @@
 <td align="right">33</td>
 </tr>
 <tr class="even">
-<td>407</td>
+<td>435</td>
 <td align="left">test-output.R</td>
 <td align="left">output</td>
 <td align="left">possibly returns default value on failure</td>
@@ -3796,7 +4048,7 @@
 <td align="right">38</td>
 </tr>
 <tr class="odd">
-<td>408</td>
+<td>436</td>
 <td align="left">test-output.R</td>
 <td align="left">output</td>
 <td align="left">possibly emits a message on failure if quiet = FALSE</td>
@@ -3805,7 +4057,7 @@
 <td align="right">44</td>
 </tr>
 <tr class="even">
-<td>409</td>
+<td>437</td>
 <td align="left">test-output.R</td>
 <td align="left">output</td>
 <td align="left">auto_browse() not intended for primitive functions</td>
@@ -3814,7 +4066,7 @@
 <td align="right">50</td>
 </tr>
 <tr class="odd">
-<td>410</td>
+<td>438</td>
 <td align="left">test-output.R</td>
 <td align="left">output</td>
 <td align="left">auto_browse() not intended for primitive functions</td>
@@ -3823,7 +4075,7 @@
 <td align="right">49</td>
 </tr>
 <tr class="even">
-<td>411</td>
+<td>439</td>
 <td align="left">test-partial.R</td>
 <td align="left">partial</td>
 <td align="left">dots are correctly placed in the signature</td>
@@ -3832,7 +4084,7 @@
 <td align="right">6</td>
 </tr>
 <tr class="odd">
-<td>412</td>
+<td>440</td>
 <td align="left">test-partial.R</td>
 <td align="left">partial</td>
 <td align="left">no lazy evaluation means arguments aren’t repeatedly evaluated</td>
@@ -3841,7 +4093,7 @@
 <td align="right">13</td>
 </tr>
 <tr class="even">
-<td>413</td>
+<td>441</td>
 <td align="left">test-partial.R</td>
 <td align="left">partial</td>
 <td align="left">no lazy evaluation means arguments aren’t repeatedly evaluated</td>
@@ -3850,7 +4102,7 @@
 <td align="right">18</td>
 </tr>
 <tr class="odd">
-<td>414</td>
+<td>442</td>
 <td align="left">test-partial.R</td>
 <td align="left">partial</td>
 <td align="left">partial() still works with functions using <code>missing()</code>
@@ -3860,7 +4112,7 @@
 <td align="right">23</td>
 </tr>
 <tr class="even">
-<td>415</td>
+<td>443</td>
 <td align="left">test-partial.R</td>
 <td align="left">partial</td>
 <td align="left">partialised arguments are evaluated in their environments</td>
@@ -3869,7 +4121,7 @@
 <td align="right">34</td>
 </tr>
 <tr class="odd">
-<td>416</td>
+<td>444</td>
 <td align="left">test-partial.R</td>
 <td align="left">partial</td>
 <td align="left">partialised function is evaluated in its environment</td>
@@ -3878,7 +4130,7 @@
 <td align="right">45</td>
 </tr>
 <tr class="even">
-<td>417</td>
+<td>445</td>
 <td align="left">test-partial.R</td>
 <td align="left">partial</td>
 <td align="left">partial() supports quosures</td>
@@ -3887,7 +4139,7 @@
 <td align="right">55</td>
 </tr>
 <tr class="odd">
-<td>418</td>
+<td>446</td>
 <td align="left">test-partial.R</td>
 <td align="left">partial</td>
 <td align="left">partial() supports quosures</td>
@@ -3896,7 +4148,7 @@
 <td align="right">56</td>
 </tr>
 <tr class="even">
-<td>419</td>
+<td>447</td>
 <td align="left">test-partial.R</td>
 <td align="left">partial</td>
 <td align="left">partial() matches argument with primitives</td>
@@ -3905,7 +4157,7 @@
 <td align="right">61</td>
 </tr>
 <tr class="odd">
-<td>420</td>
+<td>448</td>
 <td align="left">test-partial.R</td>
 <td align="left">partial</td>
 <td align="left">partial() squashes quosures before printing</td>
@@ -3914,7 +4166,7 @@
 <td align="right">69</td>
 </tr>
 <tr class="even">
-<td>421</td>
+<td>449</td>
 <td align="left">test-partial.R</td>
 <td align="left">partial</td>
 <td align="left">partial() handles primitives with named arguments after <code>...</code>
@@ -3924,7 +4176,7 @@
 <td align="right">74</td>
 </tr>
 <tr class="odd">
-<td>422</td>
+<td>450</td>
 <td align="left">test-partial.R</td>
 <td align="left">partial</td>
 <td align="left">partial() handles primitives with named arguments after <code>...</code>
@@ -3934,7 +4186,7 @@
 <td align="right">73</td>
 </tr>
 <tr class="even">
-<td>423</td>
+<td>451</td>
 <td align="left">test-partial.R</td>
 <td align="left">partial</td>
 <td align="left">partialised function does not infloop when given the same name (#387)</td>
@@ -3943,7 +4195,7 @@
 <td align="right">79</td>
 </tr>
 <tr class="odd">
-<td>424</td>
+<td>452</td>
 <td align="left">test-partial.R</td>
 <td align="left">partial</td>
 <td align="left">partial() handles <code>... =</code> arguments</td>
@@ -3952,7 +4204,7 @@
 <td align="right">86</td>
 </tr>
 <tr class="even">
-<td>425</td>
+<td>453</td>
 <td align="left">test-partial.R</td>
 <td align="left">partial</td>
 <td align="left">partial() handles <code>... =</code> arguments</td>
@@ -3961,7 +4213,7 @@
 <td align="right">89</td>
 </tr>
 <tr class="odd">
-<td>426</td>
+<td>454</td>
 <td align="left">test-partial.R</td>
 <td align="left">partial</td>
 <td align="left">partial() handles <code>... =</code> arguments</td>
@@ -3970,87 +4222,96 @@
 <td align="right">92</td>
 </tr>
 <tr class="even">
-<td>427</td>
+<td>455</td>
 <td align="left">test-partial.R</td>
 <td align="left">partial</td>
-<td align="left">
-<code>.lazy</code>, <code>.env</code>, and <code>.first</code> are soft-deprecated</td>
-<td align="left">expect_warning</td>
-<td align="right">100</td>
-<td align="right">100</td>
+<td align="left">partial() supports substituted arguments</td>
+<td align="left">expect_identical</td>
+<td align="right">98</td>
+<td align="right">98</td>
 </tr>
 <tr class="odd">
-<td>428</td>
+<td>456</td>
 <td align="left">test-partial.R</td>
 <td align="left">partial</td>
 <td align="left">
 <code>.lazy</code>, <code>.env</code>, and <code>.first</code> are soft-deprecated</td>
 <td align="left">expect_warning</td>
-<td align="right">101</td>
-<td align="right">101</td>
+<td align="right">106</td>
+<td align="right">106</td>
 </tr>
 <tr class="even">
-<td>429</td>
+<td>457</td>
 <td align="left">test-partial.R</td>
 <td align="left">partial</td>
 <td align="left">
 <code>.lazy</code>, <code>.env</code>, and <code>.first</code> are soft-deprecated</td>
 <td align="left">expect_warning</td>
-<td align="right">102</td>
-<td align="right">102</td>
+<td align="right">107</td>
+<td align="right">107</td>
 </tr>
 <tr class="odd">
-<td>430</td>
+<td>458</td>
+<td align="left">test-partial.R</td>
+<td align="left">partial</td>
+<td align="left">
+<code>.lazy</code>, <code>.env</code>, and <code>.first</code> are soft-deprecated</td>
+<td align="left">expect_warning</td>
+<td align="right">108</td>
+<td align="right">108</td>
+</tr>
+<tr class="even">
+<td>459</td>
 <td align="left">test-partial.R</td>
 <td align="left">partial</td>
 <td align="left">
 <code>.lazy</code> still works</td>
 <td align="left">expect_identical</td>
-<td align="right">110</td>
-<td align="right">110</td>
-</tr>
-<tr class="even">
-<td>431</td>
-<td align="left">test-partial.R</td>
-<td align="left">partial</td>
-<td align="left">
-<code>.first</code> still works</td>
-<td align="left">expect_identical</td>
-<td align="right">117</td>
-<td align="right">117</td>
+<td align="right">116</td>
+<td align="right">116</td>
 </tr>
 <tr class="odd">
-<td>432</td>
+<td>460</td>
 <td align="left">test-partial.R</td>
 <td align="left">partial</td>
 <td align="left">
 <code>.first</code> still works</td>
 <td align="left">expect_identical</td>
-<td align="right">120</td>
-<td align="right">120</td>
+<td align="right">123</td>
+<td align="right">123</td>
 </tr>
 <tr class="even">
-<td>433</td>
+<td>461</td>
 <td align="left">test-partial.R</td>
 <td align="left">partial</td>
 <td align="left">
 <code>.first</code> still works</td>
 <td align="left">expect_identical</td>
-<td align="right">121</td>
-<td align="right">121</td>
+<td align="right">126</td>
+<td align="right">126</td>
 </tr>
 <tr class="odd">
-<td>434</td>
+<td>462</td>
+<td align="left">test-partial.R</td>
+<td align="left">partial</td>
+<td align="left">
+<code>.first</code> still works</td>
+<td align="left">expect_identical</td>
+<td align="right">127</td>
+<td align="right">127</td>
+</tr>
+<tr class="even">
+<td>463</td>
 <td align="left">test-partial.R</td>
 <td align="left">partial</td>
 <td align="left">
 <code>...f</code> still works</td>
 <td align="left">expect_error</td>
-<td align="right">124</td>
-<td align="right">126</td>
+<td align="right">130</td>
+<td align="right">132</td>
 </tr>
-<tr class="even">
-<td>435</td>
+<tr class="odd">
+<td>464</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">contents must be a vector</td>
@@ -4058,8 +4319,8 @@
 <td align="right">3</td>
 <td align="right">5</td>
 </tr>
-<tr class="odd">
-<td>436</td>
+<tr class="even">
+<td>465</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">can pluck by position</td>
@@ -4067,8 +4328,8 @@
 <td align="right">13</td>
 <td align="right">13</td>
 </tr>
-<tr class="even">
-<td>437</td>
+<tr class="odd">
+<td>466</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">can pluck by position</td>
@@ -4076,8 +4337,8 @@
 <td align="right">14</td>
 <td align="right">14</td>
 </tr>
-<tr class="odd">
-<td>438</td>
+<tr class="even">
+<td>467</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">can pluck by position</td>
@@ -4085,8 +4346,8 @@
 <td align="right">15</td>
 <td align="right">15</td>
 </tr>
-<tr class="even">
-<td>439</td>
+<tr class="odd">
+<td>468</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">can pluck by position</td>
@@ -4094,8 +4355,8 @@
 <td align="right">18</td>
 <td align="right">18</td>
 </tr>
-<tr class="odd">
-<td>440</td>
+<tr class="even">
+<td>469</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">can pluck by position</td>
@@ -4103,8 +4364,8 @@
 <td align="right">19</td>
 <td align="right">19</td>
 </tr>
-<tr class="even">
-<td>441</td>
+<tr class="odd">
+<td>470</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">can pluck by position</td>
@@ -4112,8 +4373,8 @@
 <td align="right">20</td>
 <td align="right">20</td>
 </tr>
-<tr class="odd">
-<td>442</td>
+<tr class="even">
+<td>471</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">can pluck by name</td>
@@ -4121,26 +4382,26 @@
 <td align="right">26</td>
 <td align="right">26</td>
 </tr>
-<tr class="even">
-<td>443</td>
+<tr class="odd">
+<td>472</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">can pluck by name</td>
 <td align="left">expect_identical</td>
 <td align="right">27</td>
 <td align="right">27</td>
+</tr>
+<tr class="even">
+<td>473</td>
+<td align="left">test-pluck.R</td>
+<td align="left">pluck</td>
+<td align="left">can pluck by name</td>
+<td align="left">expect_identical</td>
+<td align="right">28</td>
+<td align="right">28</td>
 </tr>
 <tr class="odd">
-<td>444</td>
-<td align="left">test-pluck.R</td>
-<td align="left">pluck</td>
-<td align="left">can pluck by name</td>
-<td align="left">expect_identical</td>
-<td align="right">28</td>
-<td align="right">28</td>
-</tr>
-<tr class="even">
-<td>445</td>
+<td>474</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">can pluck from atomic vectors</td>
@@ -4148,8 +4409,8 @@
 <td align="right">31</td>
 <td align="right">36</td>
 </tr>
-<tr class="odd">
-<td>446</td>
+<tr class="even">
+<td>475</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">can pluck from atomic vectors</td>
@@ -4157,26 +4418,26 @@
 <td align="right">33</td>
 <td align="right">33</td>
 </tr>
-<tr class="even">
-<td>447</td>
+<tr class="odd">
+<td>476</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">can pluck from atomic vectors</td>
 <td align="left">expect_identical</td>
 <td align="right">34</td>
 <td align="right">34</td>
+</tr>
+<tr class="even">
+<td>477</td>
+<td align="left">test-pluck.R</td>
+<td align="left">pluck</td>
+<td align="left">can pluck from atomic vectors</td>
+<td align="left">expect_identical</td>
+<td align="right">35</td>
+<td align="right">35</td>
 </tr>
 <tr class="odd">
-<td>448</td>
-<td align="left">test-pluck.R</td>
-<td align="left">pluck</td>
-<td align="left">can pluck from atomic vectors</td>
-<td align="left">expect_identical</td>
-<td align="right">35</td>
-<td align="right">35</td>
-</tr>
-<tr class="even">
-<td>449</td>
+<td>478</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">can pluck by name and position</td>
@@ -4184,8 +4445,8 @@
 <td align="right">40</td>
 <td align="right">40</td>
 </tr>
-<tr class="odd">
-<td>450</td>
+<tr class="even">
+<td>479</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">require length 1 vectors</td>
@@ -4193,8 +4454,8 @@
 <td align="right">44</td>
 <td align="right">47</td>
 </tr>
-<tr class="even">
-<td>451</td>
+<tr class="odd">
+<td>480</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">require length 1 vectors</td>
@@ -4202,8 +4463,8 @@
 <td align="right">46</td>
 <td align="right">46</td>
 </tr>
-<tr class="odd">
-<td>452</td>
+<tr class="even">
+<td>481</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">special indexes never match</td>
@@ -4211,8 +4472,8 @@
 <td align="right">52</td>
 <td align="right">52</td>
 </tr>
-<tr class="even">
-<td>453</td>
+<tr class="odd">
+<td>482</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">special indexes never match</td>
@@ -4220,8 +4481,8 @@
 <td align="right">53</td>
 <td align="right">53</td>
 </tr>
-<tr class="odd">
-<td>454</td>
+<tr class="even">
+<td>483</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">special indexes never match</td>
@@ -4229,8 +4490,8 @@
 <td align="right">55</td>
 <td align="right">55</td>
 </tr>
-<tr class="even">
-<td>455</td>
+<tr class="odd">
+<td>484</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">special indexes never match</td>
@@ -4238,8 +4499,8 @@
 <td align="right">57</td>
 <td align="right">57</td>
 </tr>
-<tr class="odd">
-<td>456</td>
+<tr class="even">
+<td>485</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">special indexes never match</td>
@@ -4247,26 +4508,26 @@
 <td align="right">58</td>
 <td align="right">58</td>
 </tr>
-<tr class="even">
-<td>457</td>
+<tr class="odd">
+<td>486</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">special indexes never match</td>
 <td align="left">expect_null</td>
 <td align="right">59</td>
 <td align="right">59</td>
+</tr>
+<tr class="even">
+<td>487</td>
+<td align="left">test-pluck.R</td>
+<td align="left">pluck</td>
+<td align="left">special indexes never match</td>
+<td align="left">expect_null</td>
+<td align="right">60</td>
+<td align="right">60</td>
 </tr>
 <tr class="odd">
-<td>458</td>
-<td align="left">test-pluck.R</td>
-<td align="left">pluck</td>
-<td align="left">special indexes never match</td>
-<td align="left">expect_null</td>
-<td align="right">60</td>
-<td align="right">60</td>
-</tr>
-<tr class="even">
-<td>459</td>
+<td>488</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">special values return NULL</td>
@@ -4274,8 +4535,8 @@
 <td align="right">63</td>
 <td align="right">73</td>
 </tr>
-<tr class="odd">
-<td>460</td>
+<tr class="even">
+<td>489</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">special values return NULL</td>
@@ -4283,8 +4544,8 @@
 <td align="right">68</td>
 <td align="right">68</td>
 </tr>
-<tr class="even">
-<td>461</td>
+<tr class="odd">
+<td>490</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">special values return NULL</td>
@@ -4292,8 +4553,8 @@
 <td align="right">71</td>
 <td align="right">71</td>
 </tr>
-<tr class="odd">
-<td>462</td>
+<tr class="even">
+<td>491</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">special values return NULL</td>
@@ -4301,8 +4562,8 @@
 <td align="right">72</td>
 <td align="right">72</td>
 </tr>
-<tr class="even">
-<td>463</td>
+<tr class="odd">
+<td>492</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">handles weird names</td>
@@ -4310,8 +4571,8 @@
 <td align="right">79</td>
 <td align="right">79</td>
 </tr>
-<tr class="odd">
-<td>464</td>
+<tr class="even">
+<td>493</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">handles weird names</td>
@@ -4319,26 +4580,26 @@
 <td align="right">80</td>
 <td align="right">80</td>
 </tr>
-<tr class="even">
-<td>465</td>
+<tr class="odd">
+<td>494</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">handles weird names</td>
 <td align="left">expect_null</td>
 <td align="right">82</td>
 <td align="right">82</td>
+</tr>
+<tr class="even">
+<td>495</td>
+<td align="left">test-pluck.R</td>
+<td align="left">pluck</td>
+<td align="left">handles weird names</td>
+<td align="left">expect_null</td>
+<td align="right">83</td>
+<td align="right">83</td>
 </tr>
 <tr class="odd">
-<td>466</td>
-<td align="left">test-pluck.R</td>
-<td align="left">pluck</td>
-<td align="left">handles weird names</td>
-<td align="left">expect_null</td>
-<td align="right">83</td>
-<td align="right">83</td>
-</tr>
-<tr class="even">
-<td>467</td>
+<td>496</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">supports splicing</td>
@@ -4346,26 +4607,26 @@
 <td align="right">89</td>
 <td align="right">89</td>
 </tr>
-<tr class="odd">
-<td>468</td>
+<tr class="even">
+<td>497</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">can pluck attributes</td>
 <td align="left">expect_equal</td>
 <td align="right">106</td>
 <td align="right">106</td>
+</tr>
+<tr class="odd">
+<td>498</td>
+<td align="left">test-pluck.R</td>
+<td align="left">pluck</td>
+<td align="left">can pluck attributes</td>
+<td align="left">expect_equal</td>
+<td align="right">107</td>
+<td align="right">107</td>
 </tr>
 <tr class="even">
-<td>469</td>
-<td align="left">test-pluck.R</td>
-<td align="left">pluck</td>
-<td align="left">can pluck attributes</td>
-<td align="left">expect_equal</td>
-<td align="right">107</td>
-<td align="right">107</td>
-</tr>
-<tr class="odd">
-<td>470</td>
+<td>499</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">attr_getter() evaluates eagerly</td>
@@ -4373,8 +4634,8 @@
 <td align="right">118</td>
 <td align="right">118</td>
 </tr>
-<tr class="even">
-<td>471</td>
+<tr class="odd">
+<td>500</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">delegate error handling to Rf_eval()</td>
@@ -4382,8 +4643,8 @@
 <td align="right">121</td>
 <td align="right">124</td>
 </tr>
-<tr class="odd">
-<td>472</td>
+<tr class="even">
+<td>501</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">delegate error handling to Rf_eval()</td>
@@ -4391,8 +4652,8 @@
 <td align="right">123</td>
 <td align="right">123</td>
 </tr>
-<tr class="even">
-<td>473</td>
+<tr class="odd">
+<td>502</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">pluck() dispatches on base getters</td>
@@ -4400,8 +4661,8 @@
 <td align="right">126</td>
 <td align="right">128</td>
 </tr>
-<tr class="odd">
-<td>474</td>
+<tr class="even">
+<td>503</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">pluck() dispatches on global methods</td>
@@ -4409,8 +4670,8 @@
 <td align="right">132</td>
 <td align="right">132</td>
 </tr>
-<tr class="even">
-<td>475</td>
+<tr class="odd">
+<td>504</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">pluck() supports primitive functions (#404)</td>
@@ -4418,8 +4679,8 @@
 <td align="right">137</td>
 <td align="right">137</td>
 </tr>
-<tr class="odd">
-<td>476</td>
+<tr class="even">
+<td>505</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">attr_getter() uses exact (non-partial) matching</td>
@@ -4427,8 +4688,8 @@
 <td align="right">147</td>
 <td align="right">147</td>
 </tr>
-<tr class="even">
-<td>477</td>
+<tr class="odd">
+<td>506</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">attr_getter() uses exact (non-partial) matching</td>
@@ -4436,35 +4697,8 @@
 <td align="right">148</td>
 <td align="right">148</td>
 </tr>
-<tr class="odd">
-<td>478</td>
-<td align="left">test-pluck.R</td>
-<td align="left">pluck</td>
-<td align="left">pluck errors with invalid indices</td>
-<td align="left">expect_error</td>
-<td align="right">154</td>
-<td align="right">157</td>
-</tr>
 <tr class="even">
-<td>479</td>
-<td align="left">test-pluck.R</td>
-<td align="left">pluck</td>
-<td align="left">pluck errors with invalid indices</td>
-<td align="left">expect_error</td>
-<td align="right">156</td>
-<td align="right">156</td>
-</tr>
-<tr class="odd">
-<td>480</td>
-<td align="left">test-pluck.R</td>
-<td align="left">pluck</td>
-<td align="left">pluck returns missing with missing index</td>
-<td align="left">expect_equal</td>
-<td align="right">159</td>
-<td align="right">161</td>
-</tr>
-<tr class="even">
-<td>481</td>
+<td>507</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">pluck errors with invalid indices</td>
@@ -4473,7 +4707,7 @@
 <td align="right">157</td>
 </tr>
 <tr class="odd">
-<td>482</td>
+<td>508</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">pluck errors with invalid indices</td>
@@ -4482,7 +4716,7 @@
 <td align="right">156</td>
 </tr>
 <tr class="even">
-<td>483</td>
+<td>509</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">pluck returns missing with missing index</td>
@@ -4491,7 +4725,34 @@
 <td align="right">161</td>
 </tr>
 <tr class="odd">
-<td>484</td>
+<td>510</td>
+<td align="left">test-pluck.R</td>
+<td align="left">pluck</td>
+<td align="left">pluck errors with invalid indices</td>
+<td align="left">expect_error</td>
+<td align="right">154</td>
+<td align="right">157</td>
+</tr>
+<tr class="even">
+<td>511</td>
+<td align="left">test-pluck.R</td>
+<td align="left">pluck</td>
+<td align="left">pluck errors with invalid indices</td>
+<td align="left">expect_error</td>
+<td align="right">156</td>
+<td align="right">156</td>
+</tr>
+<tr class="odd">
+<td>512</td>
+<td align="left">test-pluck.R</td>
+<td align="left">pluck</td>
+<td align="left">pluck returns missing with missing index</td>
+<td align="left">expect_equal</td>
+<td align="right">159</td>
+<td align="right">161</td>
+</tr>
+<tr class="even">
+<td>513</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">plucks by name</td>
@@ -4499,8 +4760,8 @@
 <td align="right">185</td>
 <td align="right">187</td>
 </tr>
-<tr class="even">
-<td>485</td>
+<tr class="odd">
+<td>514</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">can’t pluck from complex</td>
@@ -4508,8 +4769,8 @@
 <td align="right">189</td>
 <td align="right">191</td>
 </tr>
-<tr class="odd">
-<td>486</td>
+<tr class="even">
+<td>515</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">reduce_subset_call() type-checks</td>
@@ -4517,8 +4778,8 @@
 <td align="right">196</td>
 <td align="right">199</td>
 </tr>
-<tr class="even">
-<td>487</td>
+<tr class="odd">
+<td>516</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">reduce_subset_call() type-checks</td>
@@ -4526,8 +4787,8 @@
 <td align="right">198</td>
 <td align="right">198</td>
 </tr>
-<tr class="odd">
-<td>488</td>
+<tr class="even">
+<td>517</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">assign_in() doesn’t assign in the caller environment</td>
@@ -4535,8 +4796,8 @@
 <td align="right">204</td>
 <td align="right">204</td>
 </tr>
-<tr class="even">
-<td>489</td>
+<tr class="odd">
+<td>518</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">assign_in() assigns</td>
@@ -4544,8 +4805,8 @@
 <td align="right">210</td>
 <td align="right">210</td>
 </tr>
-<tr class="odd">
-<td>490</td>
+<tr class="even">
+<td>519</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">pluck&lt;- is an alias for assign_in()</td>
@@ -4553,8 +4814,8 @@
 <td align="right">216</td>
 <td align="right">216</td>
 </tr>
-<tr class="even">
-<td>491</td>
+<tr class="odd">
+<td>520</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">assign_in() requires at least one location</td>
@@ -4562,8 +4823,8 @@
 <td align="right">221</td>
 <td align="right">221</td>
 </tr>
-<tr class="odd">
-<td>492</td>
+<tr class="even">
+<td>521</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">assign_in() requires at least one location</td>
@@ -4571,8 +4832,8 @@
 <td align="right">222</td>
 <td align="right">222</td>
 </tr>
-<tr class="even">
-<td>493</td>
+<tr class="odd">
+<td>522</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">assign_in() requires existing location</td>
@@ -4580,8 +4841,8 @@
 <td align="right">227</td>
 <td align="right">227</td>
 </tr>
-<tr class="odd">
-<td>494</td>
+<tr class="even">
+<td>523</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">assign_in() requires existing location</td>
@@ -4589,8 +4850,8 @@
 <td align="right">228</td>
 <td align="right">228</td>
 </tr>
-<tr class="even">
-<td>495</td>
+<tr class="odd">
+<td>524</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">modify_in() modifies in pluck location</td>
@@ -4598,8 +4859,8 @@
 <td align="right">238</td>
 <td align="right">238</td>
 </tr>
-<tr class="odd">
-<td>496</td>
+<tr class="even">
+<td>525</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">modify_in() modifies in pluck location</td>
@@ -4607,26 +4868,26 @@
 <td align="right">241</td>
 <td align="right">241</td>
 </tr>
-<tr class="even">
-<td>497</td>
+<tr class="odd">
+<td>526</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">modify_in() requires existing location</td>
 <td align="left">expect_error</td>
 <td align="right">246</td>
 <td align="right">246</td>
+</tr>
+<tr class="even">
+<td>527</td>
+<td align="left">test-pluck.R</td>
+<td align="left">pluck</td>
+<td align="left">modify_in() requires existing location</td>
+<td align="left">expect_error</td>
+<td align="right">247</td>
+<td align="right">247</td>
 </tr>
 <tr class="odd">
-<td>498</td>
-<td align="left">test-pluck.R</td>
-<td align="left">pluck</td>
-<td align="left">modify_in() requires existing location</td>
-<td align="left">expect_error</td>
-<td align="right">247</td>
-<td align="right">247</td>
-</tr>
-<tr class="even">
-<td>499</td>
+<td>528</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">pluck() dispatches on vector methods</td>
@@ -4634,8 +4895,8 @@
 <td align="right">265</td>
 <td align="right">270</td>
 </tr>
-<tr class="odd">
-<td>500</td>
+<tr class="even">
+<td>529</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">pluck() dispatches on vector methods</td>
@@ -4643,26 +4904,26 @@
 <td align="right">267</td>
 <td align="right">267</td>
 </tr>
-<tr class="even">
-<td>501</td>
+<tr class="odd">
+<td>530</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">pluck() dispatches on vector methods</td>
 <td align="left">expect_identical</td>
 <td align="right">268</td>
 <td align="right">268</td>
+</tr>
+<tr class="even">
+<td>531</td>
+<td align="left">test-pluck.R</td>
+<td align="left">pluck</td>
+<td align="left">pluck() dispatches on vector methods</td>
+<td align="left">expect_identical</td>
+<td align="right">269</td>
+<td align="right">269</td>
 </tr>
 <tr class="odd">
-<td>502</td>
-<td align="left">test-pluck.R</td>
-<td align="left">pluck</td>
-<td align="left">pluck() dispatches on vector methods</td>
-<td align="left">expect_identical</td>
-<td align="right">269</td>
-<td align="right">269</td>
-</tr>
-<tr class="even">
-<td>503</td>
+<td>532</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">pluck() dispatches on vector methods</td>
@@ -4670,8 +4931,8 @@
 <td align="right">277</td>
 <td align="right">280</td>
 </tr>
-<tr class="odd">
-<td>504</td>
+<tr class="even">
+<td>533</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">pluck() dispatches on vector methods</td>
@@ -4679,8 +4940,8 @@
 <td align="right">279</td>
 <td align="right">279</td>
 </tr>
-<tr class="even">
-<td>505</td>
+<tr class="odd">
+<td>534</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">pluck() dispatches on vector methods</td>
@@ -4688,8 +4949,8 @@
 <td align="right">288</td>
 <td align="right">291</td>
 </tr>
-<tr class="odd">
-<td>506</td>
+<tr class="even">
+<td>535</td>
 <td align="left">test-pluck.R</td>
 <td align="left">pluck</td>
 <td align="left">pluck() dispatches on vector methods</td>
@@ -4697,8 +4958,8 @@
 <td align="right">290</td>
 <td align="right">290</td>
 </tr>
-<tr class="even">
-<td>507</td>
+<tr class="odd">
+<td>536</td>
 <td align="left">test-predicates.R</td>
 <td align="left">predicates</td>
 <td align="left">predicate-based functionals work with logical vectors</td>
@@ -4706,8 +4967,8 @@
 <td align="right">3</td>
 <td align="right">14</td>
 </tr>
-<tr class="odd">
-<td>508</td>
+<tr class="even">
+<td>537</td>
 <td align="left">test-predicates.R</td>
 <td align="left">predicates</td>
 <td align="left">predicate-based functionals work with logical vectors</td>
@@ -4715,8 +4976,8 @@
 <td align="right">5</td>
 <td align="right">5</td>
 </tr>
-<tr class="even">
-<td>509</td>
+<tr class="odd">
+<td>538</td>
 <td align="left">test-predicates.R</td>
 <td align="left">predicates</td>
 <td align="left">predicate-based functionals work with logical vectors</td>
@@ -4724,8 +4985,8 @@
 <td align="right">6</td>
 <td align="right">9</td>
 </tr>
-<tr class="odd">
-<td>510</td>
+<tr class="even">
+<td>539</td>
 <td align="left">test-predicates.R</td>
 <td align="left">predicates</td>
 <td align="left">predicate-based functionals work with logical vectors</td>
@@ -4733,8 +4994,8 @@
 <td align="right">10</td>
 <td align="right">13</td>
 </tr>
-<tr class="even">
-<td>511</td>
+<tr class="odd">
+<td>540</td>
 <td align="left">test-predicates.R</td>
 <td align="left">predicates</td>
 <td align="left">keep() and discard() require predicate functions</td>
@@ -4742,8 +5003,8 @@
 <td align="right">16</td>
 <td align="right">19</td>
 </tr>
-<tr class="odd">
-<td>512</td>
+<tr class="even">
+<td>541</td>
 <td align="left">test-predicates.R</td>
 <td align="left">predicates</td>
 <td align="left">keep() and discard() require predicate functions</td>
@@ -4751,8 +5012,8 @@
 <td align="right">18</td>
 <td align="right">18</td>
 </tr>
-<tr class="even">
-<td>513</td>
+<tr class="odd">
+<td>542</td>
 <td align="left">test-prepend.R</td>
 <td align="left">prepend</td>
 <td align="left">prepend is clearer version of merging with c()</td>
@@ -4760,8 +5021,8 @@
 <td align="right">5</td>
 <td align="right">8</td>
 </tr>
-<tr class="odd">
-<td>514</td>
+<tr class="even">
+<td>543</td>
 <td align="left">test-prepend.R</td>
 <td align="left">prepend</td>
 <td align="left">prepend is clearer version of merging with c()</td>
@@ -4769,26 +5030,26 @@
 <td align="right">9</td>
 <td align="right">14</td>
 </tr>
-<tr class="even">
-<td>515</td>
+<tr class="odd">
+<td>544</td>
 <td align="left">test-rate.R</td>
 <td align="left">test_that: new_rate() creates rate objects</td>
 <td align="left">can bump and reset count</td>
 <td align="left">expect_identical</td>
 <td align="right">14</td>
 <td align="right">14</td>
+</tr>
+<tr class="even">
+<td>545</td>
+<td align="left">test-rate.R</td>
+<td align="left">test_that: new_rate() creates rate objects</td>
+<td align="left">can bump and reset count</td>
+<td align="left">expect_identical</td>
+<td align="right">17</td>
+<td align="right">17</td>
 </tr>
 <tr class="odd">
-<td>516</td>
-<td align="left">test-rate.R</td>
-<td align="left">test_that: new_rate() creates rate objects</td>
-<td align="left">can bump and reset count</td>
-<td align="left">expect_identical</td>
-<td align="right">17</td>
-<td align="right">17</td>
-</tr>
-<tr class="even">
-<td>517</td>
+<td>546</td>
 <td align="left">test-rate.R</td>
 <td align="left">test_that: new_rate() creates rate objects</td>
 <td align="left">rates have print methods</td>
@@ -4796,8 +5057,8 @@
 <td align="right">20</td>
 <td align="right">28</td>
 </tr>
-<tr class="odd">
-<td>518</td>
+<tr class="even">
+<td>547</td>
 <td align="left">test-rate.R</td>
 <td align="left">test_that: new_rate() creates rate objects</td>
 <td align="left">rate_delay() delays</td>
@@ -4805,8 +5066,8 @@
 <td align="right">41</td>
 <td align="right">41</td>
 </tr>
-<tr class="even">
-<td>519</td>
+<tr class="odd">
+<td>548</td>
 <td align="left">test-rate.R</td>
 <td align="left">test_that: new_rate() creates rate objects</td>
 <td align="left">rate_delay() delays</td>
@@ -4814,26 +5075,26 @@
 <td align="right">44</td>
 <td align="right">44</td>
 </tr>
-<tr class="odd">
-<td>520</td>
+<tr class="even">
+<td>549</td>
 <td align="left">test-rate.R</td>
 <td align="left">test_that: new_rate() creates rate objects</td>
 <td align="left">rate_delay() delays</td>
 <td align="left">expect_identical</td>
 <td align="right">45</td>
 <td align="right">45</td>
+</tr>
+<tr class="odd">
+<td>550</td>
+<td align="left">test-rate.R</td>
+<td align="left">test_that: new_rate() creates rate objects</td>
+<td align="left">rate_delay() delays</td>
+<td align="left">expect_identical</td>
+<td align="right">48</td>
+<td align="right">48</td>
 </tr>
 <tr class="even">
-<td>521</td>
-<td align="left">test-rate.R</td>
-<td align="left">test_that: new_rate() creates rate objects</td>
-<td align="left">rate_delay() delays</td>
-<td align="left">expect_identical</td>
-<td align="right">48</td>
-<td align="right">48</td>
-</tr>
-<tr class="odd">
-<td>522</td>
+<td>551</td>
 <td align="left">test-rate.R</td>
 <td align="left">test_that: new_rate() creates rate objects</td>
 <td align="left">rate_delay() delays</td>
@@ -4841,8 +5102,8 @@
 <td align="right">50</td>
 <td align="right">54</td>
 </tr>
-<tr class="even">
-<td>523</td>
+<tr class="odd">
+<td>552</td>
 <td align="left">test-rate.R</td>
 <td align="left">test_that: new_rate() creates rate objects</td>
 <td align="left">rate_delay() delays</td>
@@ -4850,8 +5111,8 @@
 <td align="right">56</td>
 <td align="right">60</td>
 </tr>
-<tr class="odd">
-<td>524</td>
+<tr class="even">
+<td>553</td>
 <td align="left">test-rate.R</td>
 <td align="left">test_that: new_rate() creates rate objects</td>
 <td align="left">rate_backoff() backs off</td>
@@ -4859,8 +5120,8 @@
 <td align="right">71</td>
 <td align="right">71</td>
 </tr>
-<tr class="even">
-<td>525</td>
+<tr class="odd">
+<td>554</td>
 <td align="left">test-rate.R</td>
 <td align="left">test_that: new_rate() creates rate objects</td>
 <td align="left">rate_backoff() backs off</td>
@@ -4868,26 +5129,26 @@
 <td align="right">74</td>
 <td align="right">74</td>
 </tr>
-<tr class="odd">
-<td>526</td>
+<tr class="even">
+<td>555</td>
 <td align="left">test-rate.R</td>
 <td align="left">test_that: new_rate() creates rate objects</td>
 <td align="left">rate_backoff() backs off</td>
 <td align="left">expect_identical</td>
 <td align="right">75</td>
 <td align="right">75</td>
+</tr>
+<tr class="odd">
+<td>556</td>
+<td align="left">test-rate.R</td>
+<td align="left">test_that: new_rate() creates rate objects</td>
+<td align="left">rate_backoff() backs off</td>
+<td align="left">expect_identical</td>
+<td align="right">78</td>
+<td align="right">78</td>
 </tr>
 <tr class="even">
-<td>527</td>
-<td align="left">test-rate.R</td>
-<td align="left">test_that: new_rate() creates rate objects</td>
-<td align="left">rate_backoff() backs off</td>
-<td align="left">expect_identical</td>
-<td align="right">78</td>
-<td align="right">78</td>
-</tr>
-<tr class="odd">
-<td>528</td>
+<td>557</td>
 <td align="left">test-rate.R</td>
 <td align="left">test_that: new_rate() creates rate objects</td>
 <td align="left">rate_backoff() backs off</td>
@@ -4895,8 +5156,8 @@
 <td align="right">80</td>
 <td align="right">84</td>
 </tr>
-<tr class="even">
-<td>529</td>
+<tr class="odd">
+<td>558</td>
 <td align="left">test-rate.R</td>
 <td align="left">test_that: new_rate() creates rate objects</td>
 <td align="left">rate_backoff() backs off</td>
@@ -4904,8 +5165,8 @@
 <td align="right">86</td>
 <td align="right">90</td>
 </tr>
-<tr class="odd">
-<td>530</td>
+<tr class="even">
+<td>559</td>
 <td align="left">test-rate.R</td>
 <td align="left">test_that: new_rate() creates rate objects</td>
 <td align="left">rate_sleep() checks that rate is still valid</td>
@@ -4913,8 +5174,8 @@
 <td align="right">95</td>
 <td align="right">99</td>
 </tr>
-<tr class="even">
-<td>531</td>
+<tr class="odd">
+<td>560</td>
 <td align="left">test-rate.R</td>
 <td align="left">test_that: new_rate() creates rate objects</td>
 <td align="left">rate_sleep() checks that rate is still valid</td>
@@ -4922,8 +5183,8 @@
 <td align="right">100</td>
 <td align="right">104</td>
 </tr>
-<tr class="odd">
-<td>532</td>
+<tr class="even">
+<td>561</td>
 <td align="left">test-rate.R</td>
 <td align="left">test_that: new_rate() creates rate objects</td>
 <td align="left">insistently() resets rate state</td>
@@ -4931,8 +5192,8 @@
 <td align="right">109</td>
 <td align="right">113</td>
 </tr>
-<tr class="even">
-<td>533</td>
+<tr class="odd">
+<td>562</td>
 <td align="left">test-rate.R</td>
 <td align="left">test_that: new_rate() creates rate objects</td>
 <td align="left">insistently() resets rate state</td>
@@ -4940,8 +5201,8 @@
 <td align="right">114</td>
 <td align="right">118</td>
 </tr>
-<tr class="odd">
-<td>534</td>
+<tr class="even">
+<td>563</td>
 <td align="left">test-recycle_args.R</td>
 <td align="left">recycle_args</td>
 <td align="left">rejects uneven lengths</td>
@@ -4949,8 +5210,8 @@
 <td align="right">5</td>
 <td align="right">5</td>
 </tr>
-<tr class="even">
-<td>535</td>
+<tr class="odd">
+<td>564</td>
 <td align="left">test-recycle_args.R</td>
 <td align="left">recycle_args</td>
 <td align="left">recycles single values and preserves longer ones</td>
@@ -4958,8 +5219,8 @@
 <td align="right">13</td>
 <td align="right">13</td>
 </tr>
-<tr class="odd">
-<td>536</td>
+<tr class="even">
+<td>565</td>
 <td align="left">test-recycle_args.R</td>
 <td align="left">recycle_args</td>
 <td align="left">recycles single values and preserves longer ones</td>
@@ -4967,26 +5228,26 @@
 <td align="right">14</td>
 <td align="right">14</td>
 </tr>
-<tr class="even">
-<td>537</td>
+<tr class="odd">
+<td>566</td>
 <td align="left">test-recycle_args.R</td>
 <td align="left">recycle_args</td>
 <td align="left">recycles single values and preserves longer ones</td>
 <td align="left">expect_equal</td>
 <td align="right">15</td>
 <td align="right">15</td>
+</tr>
+<tr class="even">
+<td>567</td>
+<td align="left">test-recycle_args.R</td>
+<td align="left">recycle_args</td>
+<td align="left">recycles single values and preserves longer ones</td>
+<td align="left">expect_equal</td>
+<td align="right">16</td>
+<td align="right">16</td>
 </tr>
 <tr class="odd">
-<td>538</td>
-<td align="left">test-recycle_args.R</td>
-<td align="left">recycle_args</td>
-<td align="left">recycles single values and preserves longer ones</td>
-<td align="left">expect_equal</td>
-<td align="right">16</td>
-<td align="right">16</td>
-</tr>
-<tr class="even">
-<td>539</td>
+<td>568</td>
 <td align="left">test-recycle_args.R</td>
 <td align="left">recycle_args</td>
 <td align="left">will not recycle non-vectors</td>
@@ -4994,8 +5255,8 @@
 <td align="right">21</td>
 <td align="right">24</td>
 </tr>
-<tr class="odd">
-<td>540</td>
+<tr class="even">
+<td>569</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">empty input returns init or error</td>
@@ -5003,8 +5264,8 @@
 <td align="right">3</td>
 <td align="right">6</td>
 </tr>
-<tr class="even">
-<td>541</td>
+<tr class="odd">
+<td>570</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">empty input returns init or error</td>
@@ -5012,8 +5273,8 @@
 <td align="right">5</td>
 <td align="right">5</td>
 </tr>
-<tr class="odd">
-<td>542</td>
+<tr class="even">
+<td>571</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">first/value value used as first value</td>
@@ -5021,8 +5282,8 @@
 <td align="right">8</td>
 <td align="right">11</td>
 </tr>
-<tr class="even">
-<td>543</td>
+<tr class="odd">
+<td>572</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">first/value value used as first value</td>
@@ -5030,8 +5291,8 @@
 <td align="right">10</td>
 <td align="right">10</td>
 </tr>
-<tr class="odd">
-<td>544</td>
+<tr class="even">
+<td>573</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">length 1 argument reduced with init</td>
@@ -5039,8 +5300,8 @@
 <td align="right">13</td>
 <td align="right">15</td>
 </tr>
-<tr class="even">
-<td>545</td>
+<tr class="odd">
+<td>574</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">direction of reduce determines how generated trees lean</td>
@@ -5048,8 +5309,8 @@
 <td align="right">17</td>
 <td align="right">20</td>
 </tr>
-<tr class="odd">
-<td>546</td>
+<tr class="even">
+<td>575</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">direction of reduce determines how generated trees lean</td>
@@ -5057,8 +5318,8 @@
 <td align="right">19</td>
 <td align="right">19</td>
 </tr>
-<tr class="even">
-<td>547</td>
+<tr class="odd">
+<td>576</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">can shortcircuit reduction with done()</td>
@@ -5066,8 +5327,8 @@
 <td align="right">25</td>
 <td align="right">25</td>
 </tr>
-<tr class="odd">
-<td>548</td>
+<tr class="even">
+<td>577</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">can shortcircuit reduction with done()</td>
@@ -5075,8 +5336,8 @@
 <td align="right">30</td>
 <td align="right">30</td>
 </tr>
-<tr class="even">
-<td>549</td>
+<tr class="odd">
+<td>578</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">accumulate passes arguments to function</td>
@@ -5084,8 +5345,8 @@
 <td align="right">39</td>
 <td align="right">39</td>
 </tr>
-<tr class="odd">
-<td>550</td>
+<tr class="even">
+<td>579</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">accumulate passes arguments to function</td>
@@ -5093,8 +5354,8 @@
 <td align="right">40</td>
 <td align="right">40</td>
 </tr>
-<tr class="even">
-<td>551</td>
+<tr class="odd">
+<td>580</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">accumulate passes arguments to function</td>
@@ -5102,8 +5363,8 @@
 <td align="right">42</td>
 <td align="right">42</td>
 </tr>
-<tr class="odd">
-<td>552</td>
+<tr class="even">
+<td>581</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">accumulate passes arguments to function</td>
@@ -5111,26 +5372,26 @@
 <td align="right">43</td>
 <td align="right">43</td>
 </tr>
-<tr class="even">
-<td>553</td>
+<tr class="odd">
+<td>582</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">accumulate keeps input names</td>
 <td align="left">expect_identical</td>
 <td align="right">48</td>
 <td align="right">48</td>
+</tr>
+<tr class="even">
+<td>583</td>
+<td align="left">test-reduce.R</td>
+<td align="left">reduce</td>
+<td align="left">accumulate keeps input names</td>
+<td align="left">expect_identical</td>
+<td align="right">49</td>
+<td align="right">49</td>
 </tr>
 <tr class="odd">
-<td>554</td>
-<td align="left">test-reduce.R</td>
-<td align="left">reduce</td>
-<td align="left">accumulate keeps input names</td>
-<td align="left">expect_identical</td>
-<td align="right">49</td>
-<td align="right">49</td>
-</tr>
-<tr class="even">
-<td>555</td>
+<td>584</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">accumulate keeps input names when init is supplied</td>
@@ -5138,8 +5399,8 @@
 <td align="right">52</td>
 <td align="right">58</td>
 </tr>
-<tr class="odd">
-<td>556</td>
+<tr class="even">
+<td>585</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">accumulate keeps input names when init is supplied</td>
@@ -5147,8 +5408,8 @@
 <td align="right">54</td>
 <td align="right">54</td>
 </tr>
-<tr class="even">
-<td>557</td>
+<tr class="odd">
+<td>586</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">accumulate keeps input names when init is supplied</td>
@@ -5156,8 +5417,8 @@
 <td align="right">56</td>
 <td align="right">56</td>
 </tr>
-<tr class="odd">
-<td>558</td>
+<tr class="even">
+<td>587</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">accumulate keeps input names when init is supplied</td>
@@ -5165,8 +5426,8 @@
 <td align="right">57</td>
 <td align="right">57</td>
 </tr>
-<tr class="even">
-<td>559</td>
+<tr class="odd">
+<td>588</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">can terminate accumulate() early</td>
@@ -5174,8 +5435,8 @@
 <td align="right">71</td>
 <td align="right">71</td>
 </tr>
-<tr class="odd">
-<td>560</td>
+<tr class="even">
+<td>589</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">can terminate accumulate() early</td>
@@ -5183,8 +5444,8 @@
 <td align="right">72</td>
 <td align="right">72</td>
 </tr>
-<tr class="even">
-<td>561</td>
+<tr class="odd">
+<td>590</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">can terminate accumulate() early</td>
@@ -5192,8 +5453,8 @@
 <td align="right">74</td>
 <td align="right">74</td>
 </tr>
-<tr class="odd">
-<td>562</td>
+<tr class="even">
+<td>591</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">can terminate accumulate() early</td>
@@ -5201,8 +5462,8 @@
 <td align="right">75</td>
 <td align="right">75</td>
 </tr>
-<tr class="even">
-<td>563</td>
+<tr class="odd">
+<td>592</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">can terminate accumulate() early with an empty box</td>
@@ -5210,8 +5471,8 @@
 <td align="right">89</td>
 <td align="right">89</td>
 </tr>
-<tr class="odd">
-<td>564</td>
+<tr class="even">
+<td>593</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">can terminate accumulate() early with an empty box</td>
@@ -5219,8 +5480,8 @@
 <td align="right">90</td>
 <td align="right">90</td>
 </tr>
-<tr class="even">
-<td>565</td>
+<tr class="odd">
+<td>594</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">can terminate accumulate() early with an empty box</td>
@@ -5228,8 +5489,8 @@
 <td align="right">92</td>
 <td align="right">92</td>
 </tr>
-<tr class="odd">
-<td>566</td>
+<tr class="even">
+<td>595</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">can terminate accumulate() early with an empty box</td>
@@ -5237,8 +5498,8 @@
 <td align="right">93</td>
 <td align="right">93</td>
 </tr>
-<tr class="even">
-<td>567</td>
+<tr class="odd">
+<td>596</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">can terminate accumulate() early with an empty box</td>
@@ -5246,26 +5507,26 @@
 <td align="right">96</td>
 <td align="right">96</td>
 </tr>
-<tr class="odd">
-<td>568</td>
+<tr class="even">
+<td>597</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">basic application works</td>
 <td align="left">expect_equal</td>
 <td align="right">105</td>
 <td align="right">105</td>
+</tr>
+<tr class="odd">
+<td>598</td>
+<td align="left">test-reduce.R</td>
+<td align="left">reduce</td>
+<td align="left">basic application works</td>
+<td align="left">expect_equal</td>
+<td align="right">106</td>
+<td align="right">106</td>
 </tr>
 <tr class="even">
-<td>569</td>
-<td align="left">test-reduce.R</td>
-<td align="left">reduce</td>
-<td align="left">basic application works</td>
-<td align="left">expect_equal</td>
-<td align="right">106</td>
-<td align="right">106</td>
-</tr>
-<tr class="odd">
-<td>570</td>
+<td>599</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">reduce returns original input if it was length one</td>
@@ -5273,8 +5534,8 @@
 <td align="right">111</td>
 <td align="right">111</td>
 </tr>
-<tr class="even">
-<td>571</td>
+<tr class="odd">
+<td>600</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">can shortcircuit reduce2() with done()</td>
@@ -5282,8 +5543,8 @@
 <td align="right">117</td>
 <td align="right">117</td>
 </tr>
-<tr class="odd">
-<td>572</td>
+<tr class="even">
+<td>601</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">basic accumulate2() works</td>
@@ -5291,8 +5552,8 @@
 <td align="right">126</td>
 <td align="right">126</td>
 </tr>
-<tr class="even">
-<td>573</td>
+<tr class="odd">
+<td>602</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">basic accumulate2() works</td>
@@ -5300,8 +5561,8 @@
 <td align="right">127</td>
 <td align="right">127</td>
 </tr>
-<tr class="odd">
-<td>574</td>
+<tr class="even">
+<td>603</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">can terminate accumulate2() early</td>
@@ -5309,8 +5570,8 @@
 <td align="right">141</td>
 <td align="right">141</td>
 </tr>
-<tr class="even">
-<td>575</td>
+<tr class="odd">
+<td>604</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">can terminate accumulate2() early</td>
@@ -5318,8 +5579,8 @@
 <td align="right">142</td>
 <td align="right">142</td>
 </tr>
-<tr class="odd">
-<td>576</td>
+<tr class="even">
+<td>605</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">right variants are retired</td>
@@ -5327,8 +5588,8 @@
 <td align="right">150</td>
 <td align="right">150</td>
 </tr>
-<tr class="even">
-<td>577</td>
+<tr class="odd">
+<td>606</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">right variants are retired</td>
@@ -5336,8 +5597,8 @@
 <td align="right">151</td>
 <td align="right">151</td>
 </tr>
-<tr class="odd">
-<td>578</td>
+<tr class="even">
+<td>607</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">right variants are retired</td>
@@ -5345,8 +5606,8 @@
 <td align="right">152</td>
 <td align="right">152</td>
 </tr>
-<tr class="even">
-<td>579</td>
+<tr class="odd">
+<td>608</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">reduce_right still works</td>
@@ -5354,8 +5615,8 @@
 <td align="right">157</td>
 <td align="right">157</td>
 </tr>
-<tr class="odd">
-<td>580</td>
+<tr class="even">
+<td>609</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">reduce_right still works</td>
@@ -5363,8 +5624,8 @@
 <td align="right">158</td>
 <td align="right">158</td>
 </tr>
-<tr class="even">
-<td>581</td>
+<tr class="odd">
+<td>610</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">reduce_right still works</td>
@@ -5372,8 +5633,8 @@
 <td align="right">159</td>
 <td align="right">159</td>
 </tr>
-<tr class="odd">
-<td>582</td>
+<tr class="even">
+<td>611</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">reduce_right equivalent to reversing input</td>
@@ -5381,8 +5642,8 @@
 <td align="right">165</td>
 <td align="right">165</td>
 </tr>
-<tr class="even">
-<td>583</td>
+<tr class="odd">
+<td>612</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">reduce_right equivalent to reversing input</td>
@@ -5390,8 +5651,8 @@
 <td align="right">166</td>
 <td align="right">166</td>
 </tr>
-<tr class="odd">
-<td>584</td>
+<tr class="even">
+<td>613</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">reduce2_right still works</td>
@@ -5399,26 +5660,26 @@
 <td align="right">174</td>
 <td align="right">174</td>
 </tr>
-<tr class="even">
-<td>585</td>
+<tr class="odd">
+<td>614</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">reduce2_right still works</td>
 <td align="left">expect_equal</td>
 <td align="right">175</td>
 <td align="right">175</td>
+</tr>
+<tr class="even">
+<td>615</td>
+<td align="left">test-reduce.R</td>
+<td align="left">reduce</td>
+<td align="left">reduce2_right still works</td>
+<td align="left">expect_equal</td>
+<td align="right">179</td>
+<td align="right">179</td>
 </tr>
 <tr class="odd">
-<td>586</td>
-<td align="left">test-reduce.R</td>
-<td align="left">reduce</td>
-<td align="left">reduce2_right still works</td>
-<td align="left">expect_equal</td>
-<td align="right">179</td>
-<td align="right">179</td>
-</tr>
-<tr class="even">
-<td>587</td>
+<td>616</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">reduce2_right still works</td>
@@ -5426,8 +5687,8 @@
 <td align="right">180</td>
 <td align="right">180</td>
 </tr>
-<tr class="odd">
-<td>588</td>
+<tr class="even">
+<td>617</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">accumulate_right still works</td>
@@ -5435,8 +5696,8 @@
 <td align="right">187</td>
 <td align="right">187</td>
 </tr>
-<tr class="even">
-<td>589</td>
+<tr class="odd">
+<td>618</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">accumulate_right still works</td>
@@ -5444,26 +5705,26 @@
 <td align="right">190</td>
 <td align="right">190</td>
 </tr>
-<tr class="odd">
-<td>590</td>
+<tr class="even">
+<td>619</td>
 <td align="left">test-reduce.R</td>
 <td align="left">reduce</td>
 <td align="left">accumulate_right still works</td>
 <td align="left">expect_identical</td>
 <td align="right">192</td>
 <td align="right">192</td>
+</tr>
+<tr class="odd">
+<td>620</td>
+<td align="left">test-reduce.R</td>
+<td align="left">reduce</td>
+<td align="left">accumulate_right still works</td>
+<td align="left">expect_identical</td>
+<td align="right">193</td>
+<td align="right">193</td>
 </tr>
 <tr class="even">
-<td>591</td>
-<td align="left">test-reduce.R</td>
-<td align="left">reduce</td>
-<td align="left">accumulate_right still works</td>
-<td align="left">expect_identical</td>
-<td align="right">193</td>
-<td align="right">193</td>
-</tr>
-<tr class="odd">
-<td>592</td>
+<td>621</td>
 <td align="left">test-rerun.R</td>
 <td align="left">rerun</td>
 <td align="left">single unnamed arg doesn’t get extra list</td>
@@ -5471,8 +5732,8 @@
 <td align="right">3</td>
 <td align="right">5</td>
 </tr>
-<tr class="even">
-<td>593</td>
+<tr class="odd">
+<td>622</td>
 <td align="left">test-rerun.R</td>
 <td align="left">rerun</td>
 <td align="left">single named arg gets extra list</td>
@@ -5480,8 +5741,8 @@
 <td align="right">7</td>
 <td align="right">9</td>
 </tr>
-<tr class="odd">
-<td>594</td>
+<tr class="even">
+<td>623</td>
 <td align="left">test-rerun.R</td>
 <td align="left">rerun</td>
 <td align="left">every run is different</td>
@@ -5489,8 +5750,8 @@
 <td align="right">13</td>
 <td align="right">13</td>
 </tr>
-<tr class="even">
-<td>595</td>
+<tr class="odd">
+<td>624</td>
 <td align="left">test-rerun.R</td>
 <td align="left">rerun</td>
 <td align="left">rerun uses scope of expression</td>
@@ -5498,8 +5759,8 @@
 <td align="right">21</td>
 <td align="right">21</td>
 </tr>
-<tr class="odd">
-<td>596</td>
+<tr class="even">
+<td>625</td>
 <td align="left">test-retired-invoke.R</td>
 <td align="left">retired-invoke</td>
 <td align="left">invoke() evaluates expressions in the right environment</td>
@@ -5507,8 +5768,8 @@
 <td align="right">8</td>
 <td align="right">8</td>
 </tr>
-<tr class="even">
-<td>597</td>
+<tr class="odd">
+<td>626</td>
 <td align="left">test-retired-invoke.R</td>
 <td align="left">retired-invoke</td>
 <td align="left">invoke() follows promises to find the evaluation env</td>
@@ -5516,8 +5777,8 @@
 <td align="right">18</td>
 <td align="right">18</td>
 </tr>
-<tr class="odd">
-<td>598</td>
+<tr class="even">
+<td>627</td>
 <td align="left">test-retired-invoke.R</td>
 <td align="left">retired-invoke</td>
 <td align="left">invoke_map() works with bare function</td>
@@ -5525,8 +5786,8 @@
 <td align="right">27</td>
 <td align="right">27</td>
 </tr>
-<tr class="even">
-<td>599</td>
+<tr class="odd">
+<td>628</td>
 <td align="left">test-retired-invoke.R</td>
 <td align="left">retired-invoke</td>
 <td align="left">invoke_map() works with bare function</td>
@@ -5534,8 +5795,8 @@
 <td align="right">28</td>
 <td align="right">28</td>
 </tr>
-<tr class="odd">
-<td>600</td>
+<tr class="even">
+<td>629</td>
 <td align="left">test-retired-invoke.R</td>
 <td align="left">retired-invoke</td>
 <td align="left">invoke_map() works with bare function</td>
@@ -5543,8 +5804,8 @@
 <td align="right">29</td>
 <td align="right">29</td>
 </tr>
-<tr class="even">
-<td>601</td>
+<tr class="odd">
+<td>630</td>
 <td align="left">test-retired-invoke.R</td>
 <td align="left">retired-invoke</td>
 <td align="left">invoke_map() works with bare function</td>
@@ -5552,8 +5813,8 @@
 <td align="right">31</td>
 <td align="right">31</td>
 </tr>
-<tr class="odd">
-<td>602</td>
+<tr class="even">
+<td>631</td>
 <td align="left">test-retired-invoke.R</td>
 <td align="left">retired-invoke</td>
 <td align="left">invoke_map() works with bare function</td>
@@ -5561,8 +5822,8 @@
 <td align="right">32</td>
 <td align="right">32</td>
 </tr>
-<tr class="even">
-<td>603</td>
+<tr class="odd">
+<td>632</td>
 <td align="left">test-retired-invoke.R</td>
 <td align="left">retired-invoke</td>
 <td align="left">invoke_map() works with bare function</td>
@@ -5570,26 +5831,26 @@
 <td align="right">33</td>
 <td align="right">33</td>
 </tr>
-<tr class="odd">
-<td>604</td>
+<tr class="even">
+<td>633</td>
 <td align="left">test-retired-invoke.R</td>
 <td align="left">retired-invoke</td>
 <td align="left">invoke_map() works with bare function</td>
 <td align="left">expect_identical</td>
 <td align="right">35</td>
 <td align="right">35</td>
+</tr>
+<tr class="odd">
+<td>634</td>
+<td align="left">test-retired-invoke.R</td>
+<td align="left">retired-invoke</td>
+<td align="left">invoke_map() works with bare function</td>
+<td align="left">expect_identical</td>
+<td align="right">38</td>
+<td align="right">38</td>
 </tr>
 <tr class="even">
-<td>605</td>
-<td align="left">test-retired-invoke.R</td>
-<td align="left">retired-invoke</td>
-<td align="left">invoke_map() works with bare function</td>
-<td align="left">expect_identical</td>
-<td align="right">38</td>
-<td align="right">38</td>
-</tr>
-<tr class="odd">
-<td>606</td>
+<td>635</td>
 <td align="left">test-retired-invoke.R</td>
 <td align="left">retired-invoke</td>
 <td align="left">invoke_map() evaluates expressions in the right environment</td>
@@ -5597,8 +5858,8 @@
 <td align="right">44</td>
 <td align="right">47</td>
 </tr>
-<tr class="even">
-<td>607</td>
+<tr class="odd">
+<td>636</td>
 <td align="left">test-retired-invoke.R</td>
 <td align="left">retired-invoke</td>
 <td align="left">invoke_maps doesn’t rely on c() returning list</td>
@@ -5606,8 +5867,8 @@
 <td align="right">52</td>
 <td align="right">52</td>
 </tr>
-<tr class="odd">
-<td>608</td>
+<tr class="even">
+<td>637</td>
 <td align="left">test-simplify.R</td>
 <td align="left">simplify</td>
 <td align="left">can_simplify() understands vector molds</td>
@@ -5615,8 +5876,8 @@
 <td align="right">6</td>
 <td align="right">6</td>
 </tr>
-<tr class="even">
-<td>609</td>
+<tr class="odd">
+<td>638</td>
 <td align="left">test-simplify.R</td>
 <td align="left">simplify</td>
 <td align="left">can_simplify() understands vector molds</td>
@@ -5624,8 +5885,8 @@
 <td align="right">7</td>
 <td align="right">7</td>
 </tr>
-<tr class="odd">
-<td>610</td>
+<tr class="even">
+<td>639</td>
 <td align="left">test-simplify.R</td>
 <td align="left">simplify</td>
 <td align="left">can_simplify() understands vector molds</td>
@@ -5633,8 +5894,8 @@
 <td align="right">8</td>
 <td align="right">8</td>
 </tr>
-<tr class="even">
-<td>611</td>
+<tr class="odd">
+<td>640</td>
 <td align="left">test-simplify.R</td>
 <td align="left">simplify</td>
 <td align="left">can_simplify() understands vector molds</td>
@@ -5642,8 +5903,8 @@
 <td align="right">11</td>
 <td align="right">11</td>
 </tr>
-<tr class="odd">
-<td>612</td>
+<tr class="even">
+<td>641</td>
 <td align="left">test-simplify.R</td>
 <td align="left">simplify</td>
 <td align="left">can_simplify() understands vector molds</td>
@@ -5651,8 +5912,8 @@
 <td align="right">12</td>
 <td align="right">12</td>
 </tr>
-<tr class="even">
-<td>613</td>
+<tr class="odd">
+<td>642</td>
 <td align="left">test-simplify.R</td>
 <td align="left">simplify</td>
 <td align="left">can_simplify() understands types as strings</td>
@@ -5660,8 +5921,8 @@
 <td align="right">17</td>
 <td align="right">17</td>
 </tr>
-<tr class="odd">
-<td>614</td>
+<tr class="even">
+<td>643</td>
 <td align="left">test-simplify.R</td>
 <td align="left">simplify</td>
 <td align="left">can_simplify() understands types as strings</td>
@@ -5669,8 +5930,8 @@
 <td align="right">18</td>
 <td align="right">18</td>
 </tr>
-<tr class="even">
-<td>615</td>
+<tr class="odd">
+<td>644</td>
 <td align="left">test-simplify.R</td>
 <td align="left">simplify</td>
 <td align="left">integer is coercible to double</td>
@@ -5678,8 +5939,8 @@
 <td align="right">23</td>
 <td align="right">23</td>
 </tr>
-<tr class="odd">
-<td>616</td>
+<tr class="even">
+<td>645</td>
 <td align="left">test-simplify.R</td>
 <td align="left">simplify</td>
 <td align="left">integer is coercible to double</td>
@@ -5687,26 +5948,26 @@
 <td align="right">24</td>
 <td align="right">24</td>
 </tr>
-<tr class="even">
-<td>617</td>
+<tr class="odd">
+<td>646</td>
 <td align="left">test-simplify.R</td>
 <td align="left">simplify</td>
 <td align="left">integer is coercible to double</td>
 <td align="left">expect_true</td>
 <td align="right">25</td>
 <td align="right">25</td>
+</tr>
+<tr class="even">
+<td>647</td>
+<td align="left">test-simplify.R</td>
+<td align="left">simplify</td>
+<td align="left">integer is coercible to double</td>
+<td align="left">expect_true</td>
+<td align="right">26</td>
+<td align="right">26</td>
 </tr>
 <tr class="odd">
-<td>618</td>
-<td align="left">test-simplify.R</td>
-<td align="left">simplify</td>
-<td align="left">integer is coercible to double</td>
-<td align="left">expect_true</td>
-<td align="right">26</td>
-<td align="right">26</td>
-</tr>
-<tr class="even">
-<td>619</td>
+<td>648</td>
 <td align="left">test-simplify.R</td>
 <td align="left">simplify</td>
 <td align="left">numeric is an alias for double</td>
@@ -5714,8 +5975,8 @@
 <td align="right">29</td>
 <td align="right">31</td>
 </tr>
-<tr class="odd">
-<td>620</td>
+<tr class="even">
+<td>649</td>
 <td align="left">test-simplify.R</td>
 <td align="left">simplify</td>
 <td align="left">double is not coercible to integer</td>
@@ -5723,8 +5984,8 @@
 <td align="right">33</td>
 <td align="right">35</td>
 </tr>
-<tr class="even">
-<td>621</td>
+<tr class="odd">
+<td>650</td>
 <td align="left">test-splice.R</td>
 <td align="left">splice</td>
 <td align="left">predicate controls which elements get spliced</td>
@@ -5732,8 +5993,8 @@
 <td align="right">6</td>
 <td align="right">6</td>
 </tr>
-<tr class="odd">
-<td>622</td>
+<tr class="even">
+<td>651</td>
 <td align="left">test-splice.R</td>
 <td align="left">splice</td>
 <td align="left">predicate controls which elements get spliced</td>
@@ -5741,26 +6002,26 @@
 <td align="right">7</td>
 <td align="right">7</td>
 </tr>
-<tr class="even">
-<td>623</td>
+<tr class="odd">
+<td>652</td>
 <td align="left">test-splice.R</td>
 <td align="left">splice</td>
 <td align="left">splice() produces correctly named lists</td>
 <td align="left">expect_named</td>
 <td align="right">14</td>
 <td align="right">14</td>
+</tr>
+<tr class="even">
+<td>653</td>
+<td align="left">test-splice.R</td>
+<td align="left">splice</td>
+<td align="left">splice() produces correctly named lists</td>
+<td align="left">expect_named</td>
+<td align="right">17</td>
+<td align="right">17</td>
 </tr>
 <tr class="odd">
-<td>624</td>
-<td align="left">test-splice.R</td>
-<td align="left">splice</td>
-<td align="left">splice() produces correctly named lists</td>
-<td align="left">expect_named</td>
-<td align="right">17</td>
-<td align="right">17</td>
-</tr>
-<tr class="even">
-<td>625</td>
+<td>654</td>
 <td align="left">test-transpose.R</td>
 <td align="left">transpose</td>
 <td align="left">input must be a list</td>
@@ -5768,8 +6029,8 @@
 <td align="right">3</td>
 <td align="right">5</td>
 </tr>
-<tr class="odd">
-<td>626</td>
+<tr class="even">
+<td>655</td>
 <td align="left">test-transpose.R</td>
 <td align="left">transpose</td>
 <td align="left">elements of input must be atomic vectors</td>
@@ -5777,8 +6038,8 @@
 <td align="right">7</td>
 <td align="right">10</td>
 </tr>
-<tr class="even">
-<td>627</td>
+<tr class="odd">
+<td>656</td>
 <td align="left">test-transpose.R</td>
 <td align="left">transpose</td>
 <td align="left">elements of input must be atomic vectors</td>
@@ -5786,8 +6047,8 @@
 <td align="right">9</td>
 <td align="right">9</td>
 </tr>
-<tr class="odd">
-<td>628</td>
+<tr class="even">
+<td>657</td>
 <td align="left">test-transpose.R</td>
 <td align="left">transpose</td>
 <td align="left">empty list returns empty list</td>
@@ -5795,8 +6056,8 @@
 <td align="right">12</td>
 <td align="right">14</td>
 </tr>
-<tr class="even">
-<td>629</td>
+<tr class="odd">
+<td>658</td>
 <td align="left">test-transpose.R</td>
 <td align="left">transpose</td>
 <td align="left">transpose switches order of first &amp; second idnex</td>
@@ -5804,8 +6065,8 @@
 <td align="right">18</td>
 <td align="right">18</td>
 </tr>
-<tr class="odd">
-<td>630</td>
+<tr class="even">
+<td>659</td>
 <td align="left">test-transpose.R</td>
 <td align="left">transpose</td>
 <td align="left">inside names become outside names</td>
@@ -5813,8 +6074,8 @@
 <td align="right">23</td>
 <td align="right">23</td>
 </tr>
-<tr class="even">
-<td>631</td>
+<tr class="odd">
+<td>660</td>
 <td align="left">test-transpose.R</td>
 <td align="left">transpose</td>
 <td align="left">outside names become inside names</td>
@@ -5822,8 +6083,8 @@
 <td align="right">28</td>
 <td align="right">28</td>
 </tr>
-<tr class="odd">
-<td>632</td>
+<tr class="even">
+<td>661</td>
 <td align="left">test-transpose.R</td>
 <td align="left">transpose</td>
 <td align="left">warns if element too short</td>
@@ -5831,8 +6092,8 @@
 <td align="right">33</td>
 <td align="right">33</td>
 </tr>
-<tr class="even">
-<td>633</td>
+<tr class="odd">
+<td>662</td>
 <td align="left">test-transpose.R</td>
 <td align="left">transpose</td>
 <td align="left">warns if element too short</td>
@@ -5840,8 +6101,8 @@
 <td align="right">34</td>
 <td align="right">34</td>
 </tr>
-<tr class="odd">
-<td>634</td>
+<tr class="even">
+<td>663</td>
 <td align="left">test-transpose.R</td>
 <td align="left">transpose</td>
 <td align="left">warns if element too long</td>
@@ -5849,8 +6110,8 @@
 <td align="right">38</td>
 <td align="right">38</td>
 </tr>
-<tr class="even">
-<td>635</td>
+<tr class="odd">
+<td>664</td>
 <td align="left">test-transpose.R</td>
 <td align="left">transpose</td>
 <td align="left">warns if element too long</td>
@@ -5858,8 +6119,8 @@
 <td align="right">39</td>
 <td align="right">39</td>
 </tr>
-<tr class="odd">
-<td>636</td>
+<tr class="even">
+<td>665</td>
 <td align="left">test-transpose.R</td>
 <td align="left">transpose</td>
 <td align="left">can transpose list of lists of atomic vectors</td>
@@ -5867,8 +6128,8 @@
 <td align="right">44</td>
 <td align="right">44</td>
 </tr>
-<tr class="even">
-<td>637</td>
+<tr class="odd">
+<td>666</td>
 <td align="left">test-transpose.R</td>
 <td align="left">transpose</td>
 <td align="left">can transpose lists of atomic vectors</td>
@@ -5876,8 +6137,8 @@
 <td align="right">47</td>
 <td align="right">52</td>
 </tr>
-<tr class="odd">
-<td>638</td>
+<tr class="even">
+<td>667</td>
 <td align="left">test-transpose.R</td>
 <td align="left">transpose</td>
 <td align="left">can transpose lists of atomic vectors</td>
@@ -5885,26 +6146,26 @@
 <td align="right">49</td>
 <td align="right">49</td>
 </tr>
-<tr class="even">
-<td>639</td>
+<tr class="odd">
+<td>668</td>
 <td align="left">test-transpose.R</td>
 <td align="left">transpose</td>
 <td align="left">can transpose lists of atomic vectors</td>
 <td align="left">expect_equal</td>
 <td align="right">50</td>
 <td align="right">50</td>
+</tr>
+<tr class="even">
+<td>669</td>
+<td align="left">test-transpose.R</td>
+<td align="left">transpose</td>
+<td align="left">can transpose lists of atomic vectors</td>
+<td align="left">expect_equal</td>
+<td align="right">51</td>
+<td align="right">51</td>
 </tr>
 <tr class="odd">
-<td>640</td>
-<td align="left">test-transpose.R</td>
-<td align="left">transpose</td>
-<td align="left">can transpose lists of atomic vectors</td>
-<td align="left">expect_equal</td>
-<td align="right">51</td>
-<td align="right">51</td>
-</tr>
-<tr class="even">
-<td>641</td>
+<td>670</td>
 <td align="left">test-transpose.R</td>
 <td align="left">transpose</td>
 <td align="left">can’t transpose expressions</td>
@@ -5912,8 +6173,8 @@
 <td align="right">54</td>
 <td align="right">59</td>
 </tr>
-<tr class="odd">
-<td>642</td>
+<tr class="even">
+<td>671</td>
 <td align="left">test-transpose.R</td>
 <td align="left">transpose</td>
 <td align="left">can override default names</td>
@@ -5921,26 +6182,26 @@
 <td align="right">70</td>
 <td align="right">73</td>
 </tr>
-<tr class="even">
-<td>643</td>
+<tr class="odd">
+<td>672</td>
 <td align="left">test-transpose.R</td>
 <td align="left">transpose</td>
 <td align="left">if present, names are used</td>
 <td align="left">expect_equal</td>
 <td align="right">83</td>
 <td align="right">83</td>
+</tr>
+<tr class="even">
+<td>673</td>
+<td align="left">test-transpose.R</td>
+<td align="left">transpose</td>
+<td align="left">if present, names are used</td>
+<td align="left">expect_equal</td>
+<td align="right">84</td>
+<td align="right">84</td>
 </tr>
 <tr class="odd">
-<td>644</td>
-<td align="left">test-transpose.R</td>
-<td align="left">transpose</td>
-<td align="left">if present, names are used</td>
-<td align="left">expect_equal</td>
-<td align="right">84</td>
-<td align="right">84</td>
-</tr>
-<tr class="even">
-<td>645</td>
+<td>674</td>
 <td align="left">test-transpose.R</td>
 <td align="left">transpose</td>
 <td align="left">if missing elements, filled with NULL</td>
@@ -5948,8 +6209,8 @@
 <td align="right">93</td>
 <td align="right">93</td>
 </tr>
-<tr class="odd">
-<td>646</td>
+<tr class="even">
+<td>675</td>
 <td align="left">test-transpose.R</td>
 <td align="left">transpose</td>
 <td align="left">warning if too short</td>
@@ -5957,8 +6218,8 @@
 <td align="right">103</td>
 <td align="right">103</td>
 </tr>
-<tr class="even">
-<td>647</td>
+<tr class="odd">
+<td>676</td>
 <td align="left">test-transpose.R</td>
 <td align="left">transpose</td>
 <td align="left">warning if too short</td>
@@ -5966,8 +6227,8 @@
 <td align="right">104</td>
 <td align="right">104</td>
 </tr>
-<tr class="odd">
-<td>648</td>
+<tr class="even">
+<td>677</td>
 <td align="left">test-transpose.R</td>
 <td align="left">transpose</td>
 <td align="left">warning if too long</td>
@@ -5975,8 +6236,8 @@
 <td align="right">112</td>
 <td align="right">112</td>
 </tr>
-<tr class="even">
-<td>649</td>
+<tr class="odd">
+<td>678</td>
 <td align="left">test-transpose.R</td>
 <td align="left">transpose</td>
 <td align="left">warning if too long</td>
@@ -5984,8 +6245,8 @@
 <td align="right">113</td>
 <td align="right">113</td>
 </tr>
-<tr class="odd">
-<td>650</td>
+<tr class="even">
+<td>679</td>
 <td align="left">test-utils.R</td>
 <td align="left">utils</td>
 <td align="left">rbernoulli is a special case of rbinom</td>
@@ -5993,8 +6254,8 @@
 <td align="right">10</td>
 <td align="right">10</td>
 </tr>
-<tr class="even">
-<td>651</td>
+<tr class="odd">
+<td>680</td>
 <td align="left">test-utils.R</td>
 <td align="left">utils</td>
 <td align="left">rdunif works</td>
@@ -6002,8 +6263,8 @@
 <td align="right">13</td>
 <td align="right">15</td>
 </tr>
-<tr class="odd">
-<td>652</td>
+<tr class="even">
+<td>681</td>
 <td align="left">test-utils.R</td>
 <td align="left">utils</td>
 <td align="left">rdunif fails if a and b are not unit length numbers</td>
@@ -6011,8 +6272,8 @@
 <td align="right">17</td>
 <td align="right">22</td>
 </tr>
-<tr class="even">
-<td>653</td>
+<tr class="odd">
+<td>682</td>
 <td align="left">test-utils.R</td>
 <td align="left">utils</td>
 <td align="left">rdunif fails if a and b are not unit length numbers</td>
@@ -6020,26 +6281,26 @@
 <td align="right">19</td>
 <td align="right">19</td>
 </tr>
-<tr class="odd">
-<td>654</td>
+<tr class="even">
+<td>683</td>
 <td align="left">test-utils.R</td>
 <td align="left">utils</td>
 <td align="left">rdunif fails if a and b are not unit length numbers</td>
 <td align="left">expect_error</td>
 <td align="right">20</td>
 <td align="right">20</td>
+</tr>
+<tr class="odd">
+<td>684</td>
+<td align="left">test-utils.R</td>
+<td align="left">utils</td>
+<td align="left">rdunif fails if a and b are not unit length numbers</td>
+<td align="left">expect_error</td>
+<td align="right">21</td>
+<td align="right">21</td>
 </tr>
 <tr class="even">
-<td>655</td>
-<td align="left">test-utils.R</td>
-<td align="left">utils</td>
-<td align="left">rdunif fails if a and b are not unit length numbers</td>
-<td align="left">expect_error</td>
-<td align="right">21</td>
-<td align="right">21</td>
-</tr>
-<tr class="odd">
-<td>656</td>
+<td>685</td>
 <td align="left">test-utils.R</td>
 <td align="left">utils</td>
 <td align="left">has_names returns vector of logicals</td>
@@ -6047,8 +6308,8 @@
 <td align="right">24</td>
 <td align="right">27</td>
 </tr>
-<tr class="even">
-<td>657</td>
+<tr class="odd">
+<td>686</td>
 <td align="left">test-utils.R</td>
 <td align="left">utils</td>
 <td align="left">has_names returns vector of logicals</td>
@@ -6056,17 +6317,98 @@
 <td align="right">26</td>
 <td align="right">26</td>
 </tr>
+<tr class="even">
+<td>687</td>
+<td align="left">test-utils.R</td>
+<td align="left">utils</td>
+<td align="left">quo_invert() inverts quosured arguments</td>
+<td align="left">expect_identical</td>
+<td align="right">31</td>
+<td align="right">31</td>
+</tr>
 <tr class="odd">
-<td>658</td>
+<td>688</td>
+<td align="left">test-utils.R</td>
+<td align="left">utils</td>
+<td align="left">quo_invert() inverts quosured arguments</td>
+<td align="left">expect_identical</td>
+<td align="right">34</td>
+<td align="right">34</td>
+</tr>
+<tr class="even">
+<td>689</td>
+<td align="left">test-utils.R</td>
+<td align="left">utils</td>
+<td align="left">quo_invert() inverts quosured arguments</td>
+<td align="left">expect_identical</td>
+<td align="right">37</td>
+<td align="right">37</td>
+</tr>
+<tr class="odd">
+<td>690</td>
+<td align="left">test-utils.R</td>
+<td align="left">utils</td>
+<td align="left">quo_invert() detects local quosures</td>
+<td align="left">expect_identical</td>
+<td align="right">43</td>
+<td align="right">43</td>
+</tr>
+<tr class="even">
+<td>691</td>
+<td align="left">test-utils.R</td>
+<td align="left">utils</td>
+<td align="left">quo_invert() detects local quosures</td>
+<td align="left">expect_identical</td>
+<td align="right">47</td>
+<td align="right">47</td>
+</tr>
+<tr class="odd">
+<td>692</td>
+<td align="left">test-utils.R</td>
+<td align="left">utils</td>
+<td align="left">quo_invert() supports quosures in function position</td>
+<td align="left">expect_identical</td>
+<td align="right">52</td>
+<td align="right">52</td>
+</tr>
+<tr class="even">
+<td>693</td>
+<td align="left">test-utils.R</td>
+<td align="left">utils</td>
+<td align="left">quo_invert() supports quosures in function position</td>
+<td align="left">expect_identical</td>
+<td align="right">57</td>
+<td align="right">57</td>
+</tr>
+<tr class="odd">
+<td>694</td>
+<td align="left">test-utils.R</td>
+<td align="left">utils</td>
+<td align="left">quo_invert() supports quosures</td>
+<td align="left">expect_identical</td>
+<td align="right">63</td>
+<td align="right">63</td>
+</tr>
+<tr class="even">
+<td>695</td>
+<td align="left">test-utils.R</td>
+<td align="left">utils</td>
+<td align="left">quo_invert() supports quosures</td>
+<td align="left">expect_identical</td>
+<td align="right">67</td>
+<td align="right">67</td>
+</tr>
+<tr class="odd">
+<td>696</td>
 <td align="left">test-utils.R</td>
 <td align="left">utils</td>
 <td align="left">%@% is an infix attribute accessor</td>
 <td align="left">expect_identical</td>
-<td align="right">33</td>
-<td align="right">33</td>
+<td align="right">75</td>
+<td align="right">75</td>
 </tr>
 <tr class="even">
-<td>659</td>
+<td>697</td>
 <td align="left">test-when.R</td>
 <td align="left">when</td>
 <td align="left">when chooses the correct action</td>
@@ -6075,7 +6417,7 @@
 <td align="right">13</td>
 </tr>
 <tr class="odd">
-<td>660</td>
+<td>698</td>
 <td align="left">test-when.R</td>
 <td align="left">when</td>
 <td align="left">when chooses the correct action</td>
@@ -6084,7 +6426,7 @@
 <td align="right">23</td>
 </tr>
 <tr class="even">
-<td>661</td>
+<td>699</td>
 <td align="left">test-when.R</td>
 <td align="left">when</td>
 <td align="left">when chooses the correct action</td>
@@ -6093,7 +6435,7 @@
 <td align="right">33</td>
 </tr>
 <tr class="odd">
-<td>662</td>
+<td>700</td>
 <td align="left">test-when.R</td>
 <td align="left">when</td>
 <td align="left">named arguments work with when</td>
@@ -6102,7 +6444,7 @@
 <td align="right">46</td>
 </tr>
 <tr class="even">
-<td>663</td>
+<td>701</td>
 <td align="left">test-when.R</td>
 <td align="left">when</td>
 <td align="left">default values work without a formula</td>
@@ -6111,7 +6453,7 @@
 <td align="right">58</td>
 </tr>
 <tr class="odd">
-<td>664</td>
+<td>702</td>
 <td align="left">test-when.R</td>
 <td align="left">when</td>
 <td align="left">error when named arguments have no matching conditions</td>
