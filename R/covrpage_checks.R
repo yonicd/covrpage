@@ -18,7 +18,7 @@ check_for_tests <- function(testdir) {
 
 #' @importFrom utils installed.packages
 check_for_pkgs <- function(pkg) {
-  pkgs_current <- rownames(utils::installed.packages())
+  pkgs_current <- utils::installed.packages()[,c(1)]
 
   pkg <- normalizePath(pkg, mustWork = FALSE)
 
@@ -40,8 +40,19 @@ check_for_pkgs <- function(pkg) {
   pkg_deps <- union(pkg_deps, c("testthat", "knitr"))
 
   pkg_deps <- pkg_deps[!grepl("R", pkg_deps)]
-
-  ret <- setdiff(pkg_deps, pkgs_current)
+  
+  #strip out version from import names
+  pkg_names <- gsub('\\s*\\((.*?)$','',pkg_deps) 
+  
+  # pkg_versions <- mapply(
+  #   FUN = function(x,y) gsub(sprintf('%s|\\(|\\)|[>=]',x),'',y), 
+  #   pkg_names,pkg_deps,
+  #   USE.NAMES = FALSE
+  # )
+  
+  #pkg_deps <- data.frame(name = pkg_names, version = pkg_versions, stringsAsFactors = FALSE)
+  
+  ret <- setdiff(pkg_names, pkgs_current)
 
   on.exit(invisible(ret),add = TRUE)
   
