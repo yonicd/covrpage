@@ -6,7 +6,7 @@ Status](https://travis-ci.org/metrumresearchgroup/covrpage.svg?branch=master)](h
 [![Coverage
 Status](https://img.shields.io/codecov/c/github/metrumresearchgroup/covrpage/master.svg)](https://codecov.io/github/metrumresearchgroup/covrpage?branch=master)
 [![Covrpage
-Summary](https://img.shields.io/badge/covrpage-Last_Build_2019_01_24-brightgreen.svg)](http://tinyurl.com/y9sgxbgh)
+Summary](https://img.shields.io/badge/covrpage-Last_Build_2019_02_14-brightgreen.svg)](http://tinyurl.com/y9sgxbgh)
 
 # covrpage <img src="https://github.com/metrumresearchgroup/covrpage/blob/master/inst/logo/covrpageLogoSCREEN.png?raw=true" align="right"/>
 

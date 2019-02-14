@@ -1,6 +1,6 @@
 Tests and Coverage
 ================
-24 January, 2019 10:21:44
+14 February, 2019 07:33:59
 
 This output is created by
 [covrpage](https://github.com/metrumresearchgroup/covrpage).
@@ -13,13 +13,13 @@ package.
 
 | Object                                                      | Coverage (%) |
 | :---------------------------------------------------------- | :----------: |
-| covrpage                                                    |    73.16     |
+| covrpage                                                    |    73.59     |
 | [R/covrpage\_snapshot.R](../R/covrpage_snapshot.R)          |     0.00     |
 | [R/map\_testthat\_snapshot.R](../R/map_testthat_snapshot.R) |     0.00     |
 | [R/use\_tic.R](../R/use_tic.R)                              |     0.00     |
 | [R/utils.R](../R/utils.R)                                   |    16.67     |
+| [R/covrpage\_checks.R](../R/covrpage_checks.R)              |    34.62     |
 | [R/covrpage\_cleanup.R](../R/covrpage_cleanup.R)            |    54.55     |
-| [R/covrpage\_checks.R](../R/covrpage_checks.R)              |    62.86     |
 | [R/coverage\_skip.R](../R/coverage_skip.R)                  |    75.00     |
 | [R/use\_covrpage.R](../R/use_covrpage.R)                    |    78.05     |
 | [R/testthat\_summary.R](../R/testthat_summary.R)            |    88.78     |
@@ -31,6 +31,7 @@ package.
 | [R/vignette.R](../R/vignette.R)                             |    98.00     |
 | [R/covrpage\_ci.R](../R/covrpage_ci.R)                      |    100.00    |
 | [R/covrpage.R](../R/covrpage.R)                             |    100.00    |
+| [R/desc.R](../R/desc.R)                                     |    100.00    |
 
 <br>
 
@@ -42,12 +43,12 @@ package.
 
 | file                                               | n |  time | error | failed | skipped | warning |
 | :------------------------------------------------- | -: | ----: | ----: | -----: | ------: | ------: |
-| [test-badge.R](testthat/test-badge.R)              | 2 | 0.436 |     0 |      0 |       0 |       0 |
-| [test-check\_utils.R](testthat/test-check_utils.R) | 5 | 0.099 |     0 |      0 |       0 |       0 |
-| [test-covrfuns.R](testthat/test-covrfuns.R)        | 6 | 0.065 |     0 |      0 |       0 |       0 |
-| [test-tencrypt.R](testthat/test-tencrypt.R)        | 2 | 1.438 |     0 |      0 |       0 |       0 |
+| [test-badge.R](testthat/test-badge.R)              | 2 | 0.529 |     0 |      0 |       0 |       0 |
+| [test-check\_utils.R](testthat/test-check_utils.R) | 5 | 0.089 |     0 |      0 |       0 |       0 |
+| [test-covrfuns.R](testthat/test-covrfuns.R)        | 6 | 0.081 |     0 |      0 |       0 |       0 |
+| [test-tencrypt.R](testthat/test-tencrypt.R)        | 2 | 2.081 |     0 |      0 |       0 |       0 |
 | [test-utilities.R](testthat/test-utilities.R)      | 1 | 0.002 |     0 |      0 |       0 |       0 |
-| [test-vignette.R](testthat/test-vignette.R)        | 5 | 0.310 |     0 |      0 |       0 |       0 |
+| [test-vignette.R](testthat/test-vignette.R)        | 5 | 0.118 |     0 |      0 |       0 |       0 |
 
 <details closed>
 
@@ -56,25 +57,25 @@ package.
 
 | file                                                   | context                    | test                                   | status | n |  time |
 | :----------------------------------------------------- | :------------------------- | :------------------------------------- | :----- | -: | ----: |
-| [test-badge.R](testthat/test-badge.R#L14)              | badge                      | create badge: create                   | PASS   | 1 | 0.238 |
-| [test-badge.R](testthat/test-badge.R#L19)              | badge                      | create badge: output message           | PASS   | 1 | 0.198 |
-| [test-check\_utils.R](testthat/test-check_utils.R#L4)  | check for tests            | tests are detected                     | PASS   | 1 | 0.001 |
-| [test-check\_utils.R](testthat/test-check_utils.R#L14) | check for packages         | packages are detected                  | PASS   | 3 | 0.049 |
-| [test-check\_utils.R](testthat/test-check_utils.R#L23) | use covrpage               | test use\_covrpage                     | PASS   | 1 | 0.049 |
-| [test-covrfuns.R](testthat/test-covrfuns.R#L5)         | check summary covr         | covr\_summary: standard input          | PASS   | 1 | 0.027 |
-| [test-covrfuns.R](testthat/test-covrfuns.R#L9_L11)     | check summary covr         | covr\_summary: empty input             | PASS   | 1 | 0.001 |
-| [test-covrfuns.R](testthat/test-covrfuns.R#L19)        | check summary output types | with data: short                       | PASS   | 1 | 0.020 |
-| [test-covrfuns.R](testthat/test-covrfuns.R#L23)        | check summary output types | with data: long                        | PASS   | 1 | 0.013 |
+| [test-badge.R](testthat/test-badge.R#L14)              | badge                      | create badge: create                   | PASS   | 1 | 0.302 |
+| [test-badge.R](testthat/test-badge.R#L19)              | badge                      | create badge: output message           | PASS   | 1 | 0.227 |
+| [test-check\_utils.R](testthat/test-check_utils.R#L4)  | check for tests            | tests are detected                     | PASS   | 1 | 0.003 |
+| [test-check\_utils.R](testthat/test-check_utils.R#L14) | check for packages         | packages are detected                  | PASS   | 3 | 0.022 |
+| [test-check\_utils.R](testthat/test-check_utils.R#L23) | use covrpage               | test use\_covrpage                     | PASS   | 1 | 0.064 |
+| [test-covrfuns.R](testthat/test-covrfuns.R#L5)         | check summary covr         | covr\_summary: standard input          | PASS   | 1 | 0.042 |
+| [test-covrfuns.R](testthat/test-covrfuns.R#L9_L11)     | check summary covr         | covr\_summary: empty input             | PASS   | 1 | 0.003 |
+| [test-covrfuns.R](testthat/test-covrfuns.R#L19)        | check summary output types | with data: short                       | PASS   | 1 | 0.019 |
+| [test-covrfuns.R](testthat/test-covrfuns.R#L23)        | check summary output types | with data: long                        | PASS   | 1 | 0.014 |
 | [test-covrfuns.R](testthat/test-covrfuns.R#L27)        | check summary output types | with data: no data                     | PASS   | 1 | 0.001 |
-| [test-covrfuns.R](testthat/test-covrfuns.R#L35)        | check covr to df           | covr object to df: empty input         | PASS   | 1 | 0.003 |
-| [test-tencrypt.R](testthat/test-tencrypt.R#L16)        | encryption of PAT          | testing tencrypt: no add               | PASS   | 1 | 1.436 |
+| [test-covrfuns.R](testthat/test-covrfuns.R#L35)        | check covr to df           | covr object to df: empty input         | PASS   | 1 | 0.002 |
+| [test-tencrypt.R](testthat/test-tencrypt.R#L16)        | encryption of PAT          | testing tencrypt: no add               | PASS   | 1 | 2.079 |
 | [test-tencrypt.R](testthat/test-tencrypt.R#L22)        | encryption of PAT          | testing tencrypt: with add             | PASS   | 1 | 0.002 |
 | [test-utilities.R](testthat/test-utilities.R#L10_L13)  | utils                      | find package in path: benchmark        | PASS   | 1 | 0.002 |
-| [test-vignette.R](testthat/test-vignette.R#L23)        | vignettes                  | testing vignette: file time update     | PASS   | 1 | 0.001 |
-| [test-vignette.R](testthat/test-vignette.R#L29)        | vignettes                  | testing vignette: create vignette dir  | PASS   | 1 | 0.222 |
-| [test-vignette.R](testthat/test-vignette.R#L39)        | vignettes                  | testing vignette: add suggests         | PASS   | 1 | 0.029 |
-| [test-vignette.R](testthat/test-vignette.R#L47)        | vignettes                  | testing vignette: append suggests      | PASS   | 1 | 0.031 |
-| [test-vignette.R](testthat/test-vignette.R#L57)        | vignettes                  | testing vignette: add vignette builder | PASS   | 1 | 0.027 |
+| [test-vignette.R](testthat/test-vignette.R#L23)        | vignettes                  | testing vignette: file time update     | PASS   | 1 | 0.002 |
+| [test-vignette.R](testthat/test-vignette.R#L29)        | vignettes                  | testing vignette: create vignette dir  | PASS   | 1 | 0.026 |
+| [test-vignette.R](testthat/test-vignette.R#L39)        | vignettes                  | testing vignette: add suggests         | PASS   | 1 | 0.032 |
+| [test-vignette.R](testthat/test-vignette.R#L47)        | vignettes                  | testing vignette: append suggests      | PASS   | 1 | 0.032 |
+| [test-vignette.R](testthat/test-vignette.R#L57)        | vignettes                  | testing vignette: add vignette builder | PASS   | 1 | 0.026 |
 
 </details>
 
