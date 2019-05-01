@@ -1,9 +1,10 @@
 language: r
 cache: packages
+r_packages:
+- rstudioapi
 r_github_packages:
 - metrumresearchgroup/covrpage
 - metrumresearchgroup/pkgdown
-- rstudio/rstudioapi
 os:
 - linux
 after_success:
