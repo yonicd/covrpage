@@ -7,6 +7,10 @@ Status](https://travis-ci.org/metrumresearchgroup/covrpage.svg?branch=master)](h
 Status](https://img.shields.io/codecov/c/github/metrumresearchgroup/covrpage/master.svg)](https://codecov.io/github/metrumresearchgroup/covrpage?branch=master)
 [![Covrpage
 Summary](https://img.shields.io/badge/covrpage-Last_Build_2019_02_14-brightgreen.svg)](http://tinyurl.com/y9sgxbgh)
+[![Views](http://ghtraffic.herokuapp.com/badge/views?owner=metrumresearchgroup&repo=covrpage)](https://github.com/metrumresearchgroup/covrpage/graphs/traffic)
+[![Clones](http://ghtraffic.herokuapp.com/badge/clones?owner=metrumresearchgroup&repo=covrpage)](https://github.com/metrumresearchgroup/covrpage/graphs/traffic)
+[![Viewers](http://ghtraffic.herokuapp.com/badge/viewers?owner=metrumresearchgroup&repo=covrpage)](https://github.com/metrumresearchgroup/covrpage/graphs/traffic)
+[![Cloners](http://ghtraffic.herokuapp.com/badge/cloners?owner=metrumresearchgroup&repo=covrpage)](https://github.com/metrumresearchgroup/covrpage/graphs/traffic)
 
 # covrpage <img src="https://github.com/metrumresearchgroup/covrpage/blob/master/inst/logo/covrpageLogoSCREEN.png?raw=true" align="right"/>
 
