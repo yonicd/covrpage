@@ -1,7 +1,5 @@
 language: r
 cache: packages
-r_packages:
-- rstudioapi
 r_github_packages:
 - metrumresearchgroup/covrpage
 - metrumresearchgroup/pkgdown
@@ -9,7 +7,7 @@ os:
 - linux
 after_success:
 - Rscript -e 'covr::codecov()'
-- Rscript -e 'devtools::install(); covrpage::covrpage_ci()'
+- Rscript -e 'devtools::install(); covrpage::covrpage_ci(update_badge = FALSE)'
 - Rscript -e 'pkgdown::build_site()'
 deploy:
   provider: pages
