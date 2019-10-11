@@ -3,7 +3,15 @@ title: covrpage
 development:
   mode: auto
 
+template:
+  params:
+    bootswatch: flatly
+
 navbar:
+  type: inverse
+  right:
+    - icon: fa-github fa-lg
+      href: https://github.com/metrumresearchgroup/covrpage
   structure:
     left:  [home, reference, articleindex, news]
     right: [github, twitter]
