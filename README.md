@@ -6,7 +6,7 @@ Status](https://travis-ci.org/metrumresearchgroup/covrpage.svg?branch=master)](h
 [![Coverage
 Status](https://img.shields.io/codecov/c/github/metrumresearchgroup/covrpage/master.svg)](https://codecov.io/github/metrumresearchgroup/covrpage?branch=master)
 [![Covrpage
-Summary](https://covrpage.herokuapp.com/badge/metrumresearchgroup/covrpage)](https://covrpage.herokuapp.com/url/metrumresearchgroup/covrpage)
+Summary](https://img.shields.io/badge/covrpage-Last_Build_2019_01_17-brightgreen.svg)](http://tinyurl.com/yayrd3et)
 [![Views](http://ghtraffic.herokuapp.com/badge/metrumresearchgroup/covrpage/views)](https://github.com/metrumresearchgroup/covrpage/graphs/traffic)
 [![Clones](http://ghtraffic.herokuapp.com/badge/metrumresearchgroup/covrpage/clones)](https://github.com/metrumresearchgroup/covrpage/graphs/traffic)
 [![Viewers](http://ghtraffic.herokuapp.com/badge/metrumresearchgroup/covrpage/viewers)](https://github.com/metrumresearchgroup/covrpage/graphs/traffic)
