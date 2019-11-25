@@ -4,8 +4,13 @@
 \alias{covrpage}
 \title{Render covrpage}
 \usage{
-covrpage(path = getwd(), preview = TRUE, auto_push = FALSE,
-  update_badge = TRUE, vignette = FALSE)
+covrpage(
+  path = getwd(),
+  preview = TRUE,
+  auto_push = FALSE,
+  update_badge = TRUE,
+  vignette = FALSE
+)
 }
 \arguments{
 \item{path}{path to package}
@@ -26,7 +31,8 @@ Render the template of the covrpage in the package directory.
 \seealso{
 \code{\link[rmarkdown]{render}}
 
-Other invoke: \code{\link{covrpage_ci}},
-  \code{\link{covrpage_snapshot}}
+Other invoke: 
+\code{\link{covrpage_ci}()},
+\code{\link{covrpage_snapshot}()}
 }
 \concept{invoke}

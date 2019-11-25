@@ -27,6 +27,3 @@ current_hash <- function(path = '.', trim = FALSE){
   hash
 }
 
-is_git <- function(){
-  system('git rev-parse --is-inside-work-tree',intern = TRUE)=='true'
-}

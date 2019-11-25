@@ -8,19 +8,20 @@ always_allow_html: yes
 ```{r, echo = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
+  fig.path = "man/figures/",
   comment = "#>"
 )
 ```
 
 [![Travis-CI Build Status](https://travis-ci.org/metrumresearchgroup/covrpage.svg?branch=master)](https://travis-ci.org/metrumresearchgroup/covrpage)
 [![Coverage Status](https://img.shields.io/codecov/c/github/metrumresearchgroup/covrpage/master.svg)](https://codecov.io/github/metrumresearchgroup/covrpage?branch=master)
-[![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2019_01_17-brightgreen.svg)](http://tinyurl.com/yayrd3et)
+[![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2019_11_24-brightgreen.svg)](http://tinyurl.com/yayrd3et)
 [![Views](http://ghtraffic.herokuapp.com/badge/metrumresearchgroup/covrpage/views)](https://github.com/metrumresearchgroup/covrpage/graphs/traffic)
 [![Clones](http://ghtraffic.herokuapp.com/badge/metrumresearchgroup/covrpage/clones)](https://github.com/metrumresearchgroup/covrpage/graphs/traffic)
 [![Viewers](http://ghtraffic.herokuapp.com/badge/metrumresearchgroup/covrpage/viewers)](https://github.com/metrumresearchgroup/covrpage/graphs/traffic)
 [![Cloners](http://ghtraffic.herokuapp.com/badge/metrumresearchgroup/covrpage/cloners)](https://github.com/metrumresearchgroup/covrpage/graphs/traffic)
 
-# covrpage `r if(knitr::opts_knit$get('rmarkdown.pandoc.to')=='gfm-ascii_identifiers') '<img src="https://github.com/metrumresearchgroup/covrpage/blob/master/inst/logo/covrpageLogoSCREEN.png?raw=true" align="right"/>'`
+# covrpage <img src="man/figures/logo.png" align="right" class="logo"/>`
 
 Trust is earned not ~~inherited~~ importedFrom. Now that you've built a cool package, you want potential users to trust it so that they might adopt it. How to build trust in your piece of software? Unit testing is part of the components building trustworthiness of your package. Imagine you're at the point where you've tested most lines of your code with thorough assertions, including checks of edge cases. Proof of that hard work will be a high test coverage, that potential users of your package might notice thanks to a bright green coverage badge. But how would they know your tests are thorough? That's what `covrpage` helps you with, by creating a [summary report](tests/README.md) of your tests that goes beyond the coverage percentage. This way, potential users can see at a glance how good the unit testing of your package is.
 

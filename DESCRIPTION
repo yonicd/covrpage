@@ -1,6 +1,6 @@
 Package: covrpage
 Title: Create a Readme Summary Page for GitHub testthat and covr Outputs
-Version: 0.0.70
+Version: 0.0.71
 Authors@R: c(
   person(given   = "Jonathan",
          family  = "Sidi",
@@ -22,7 +22,7 @@ LazyData: true
 Depends: R (>= 2.10)
 Imports: utils, git2r, rmarkdown, covr, stats,
   magrittr, testthat, curl, whisker, withr, remotes
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.1
 Suggests: knitr,spelling, rstudioapi
 VignetteBuilder: knitr
 Language: en-US
