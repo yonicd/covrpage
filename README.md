@@ -12,7 +12,7 @@ Summary](https://img.shields.io/badge/covrpage-Last_Build_2019_11_24-brightgreen
 [![Viewers](http://ghtraffic.herokuapp.com/badge/metrumresearchgroup/covrpage/viewers)](https://github.com/metrumresearchgroup/covrpage/graphs/traffic)
 [![Cloners](http://ghtraffic.herokuapp.com/badge/metrumresearchgroup/covrpage/cloners)](https://github.com/metrumresearchgroup/covrpage/graphs/traffic)
 
-# covrpage <img src="man/figures/logo.png" align="right" class="logo"/>\`
+# covrpage <img src="man/figures/logo.png" align="right" class="logo"/>
 
 Trust is earned not ~~inherited~~ importedFrom. Now that you’ve built a
 cool package, you want potential users to trust it so that they might
