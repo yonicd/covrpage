@@ -25,24 +25,26 @@ build_icon <- function(sinfo){
 
 
 travis_icon <- function() {
+  
+  JOB_WEB_URL <- Sys.getenv("TRAVIS_JOB_WEB_URL")
+  
   sprintf(
     '<a href="%s" target="_blank"><span title="Built on Travis">![](%s)</span></a>',
-    Sys.getenv("TRAVIS_JOB_WEB_URL"),
+    JOB_WEB_URL,
     "https://github.com/metrumresearchgroup/covrpage/blob/master/inst/logo/travis.png?raw=true"
   )
 }
 
 gh_icon <- function() {
   
-  ACTIONS_JOB_WEB_URL <- sprintf('https://github.com/%s/commit/%s/checks?check_suite_id=%s',
+  JOB_WEB_URL <- sprintf('https://github.com/%s/commit/%s/checks',
               Sys.getenv('GITHUB_REPOSITORY'),
-              system('git rev-parse HEAD',intern = TRUE),
-              Sys.getenv('GITHUB_ACTION')
+              system('git rev-parse HEAD',intern = TRUE)
             )
   
   sprintf(
     '<a href="%s" target="_blank"><span title="Built on Github Actions">![](%s)</span></a>',
-    ACTIONS_JOB_WEB_URL,
+    JOB_WEB_URL,
     "https://github.com/metrumresearchgroup/covrpage/blob/actions/inst/logo/gh.png?raw=true"
   )
   
