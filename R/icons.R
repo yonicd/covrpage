@@ -33,13 +33,17 @@ travis_icon <- function() {
 }
 
 gh_icon <- function() {
+  
+  ACTIONS_JOB_WEB_URL <- sprintf('https://github.com/%s/commit/%s/checks?check_suite_id=%s',
+              Sys.getenv('GITHUB_REPOSITORY'),
+              system('git rev-parse HEAD',intern = TRUE),
+              Sys.getenv('GITHUB_ACTION')
+            )
+  
   sprintf(
     '<a href="%s" target="_blank"><span title="Built on Github Actions">![](%s)</span></a>',
-    sprintf('https://github.com/%s/commit/%s/checks?check_suite_id=%s',
-            Sys.getenv('GITHUB_REPOSITORY'),
-            system('git rev-parse HEAD',intern = TRUE),
-            Sys.getenv('GITHUB_ACTION')
-    ),
-    "https://github.com/metrumresearchgroup/covrpage/blob/master/inst/logo/gh.png?raw=true"
+    ACTIONS_JOB_WEB_URL,
+    "https://github.com/metrumresearchgroup/covrpage/blob/actions/inst/logo/gh.png?raw=true"
   )
+  
 }
