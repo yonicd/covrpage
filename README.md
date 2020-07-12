@@ -2,15 +2,11 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 [![Travis-CI Build
-Status](https://travis-ci.org/metrumresearchgroup/covrpage.svg?branch=master)](https://travis-ci.org/metrumresearchgroup/covrpage)
+Status](https://travis-ci.org/yonicd/covrpage.svg?branch=master)](https://travis-ci.org/yonicd/covrpage)
 [![Coverage
-Status](https://img.shields.io/codecov/c/github/metrumresearchgroup/covrpage/master.svg)](https://codecov.io/github/metrumresearchgroup/covrpage?branch=master)
+Status](https://img.shields.io/codecov/c/github/yonicd/covrpage/master.svg)](https://codecov.io/github/yonicd/covrpage?branch=master)
 [![Covrpage
 Summary](https://img.shields.io/badge/covrpage-Last_Build_2020_07_12-brightgreen.svg)](http://tinyurl.com/yayrd3et)
-[![Views](http://ghtraffic.herokuapp.com/badge/metrumresearchgroup/covrpage/views)](https://github.com/metrumresearchgroup/covrpage/graphs/traffic)
-[![Clones](http://ghtraffic.herokuapp.com/badge/metrumresearchgroup/covrpage/clones)](https://github.com/metrumresearchgroup/covrpage/graphs/traffic)
-[![Viewers](http://ghtraffic.herokuapp.com/badge/metrumresearchgroup/covrpage/viewers)](https://github.com/metrumresearchgroup/covrpage/graphs/traffic)
-[![Cloners](http://ghtraffic.herokuapp.com/badge/metrumresearchgroup/covrpage/cloners)](https://github.com/metrumresearchgroup/covrpage/graphs/traffic)
 
 # covrpage
 
@@ -37,7 +33,7 @@ potential *contributors* where help is needed.
 
     # install.packages('remotes')
     
-    remotes::install_github('metrumresearchgroup/covrpage')
+    remotes::install_github('yonicd/covrpage')
 
 ## Usage
 
@@ -61,19 +57,19 @@ potential *contributors* where help is needed.
 
 covrpage can be outputed as a vignette called `Tests and Coverage`
 making it part of the package help documentation and can be viewed as an
-[article](https://metrumresearchgroup.github.io/covrpage/articles/tests_and_coverage.html)
+[article](https://yonicd.github.io/covrpage/articles/tests_and_coverage.html)
 in a [pkgdown](https://github.com/r-lib/pkgdown) site.
 
 ## Articles
 
   - [Getting
-    Started](https://metrumresearchgroup.github.io/covrpage/articles/get-started.html)
+    Started](https://yonicd.github.io/covrpage/articles/get-started.html)
   - [How to read the
-    report](https://metrumresearchgroup.github.io/covrpage/articles/how-to-read-covrpage-report.html)
+    report](https://yonicd.github.io/covrpage/articles/how-to-read-covrpage-report.html)
   - [Test
-    Results](https://metrumresearchgroup.github.io/covrpage/articles/Test_Results.html)
+    Results](https://yonicd.github.io/covrpage/articles/Test_Results.html)
   - [Continuous
-    Integration](https://metrumresearchgroup.github.io/covrpage/articles/Continuous_Integration.html)
+    Integration](https://yonicd.github.io/covrpage/articles/Continuous_Integration.html)
 
 ## Repositories using covrpage
 
@@ -89,7 +85,7 @@ in a [pkgdown](https://github.com/r-lib/pkgdown) site.
 
 If you also have `covrpage` on your site and want to add it to the list
 you can submit a [Pull
-Request](https://github.com/metrumresearchgroup/covrpage/pulls?utf8=%E2%9C%93&q=is%3Apr)
+Request](https://github.com/yonicd/covrpage/pulls?utf8=%E2%9C%93&q=is%3Apr)
 to this README.
 
 ## Contributing
@@ -106,5 +102,4 @@ Conduct](CONDUCT.md). By participating in this project you agree to
 abide by its terms.
 
 Any questions/comments are always welcome in the
-[issues](https://github.com/metrumresearchgroup/covrpage/issues)
-section.
+[issues](https://github.com/yonicd/covrpage/issues) section.
