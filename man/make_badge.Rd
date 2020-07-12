@@ -4,8 +4,7 @@
 \alias{make_badge}
 \title{Create covrpage Badge}
 \usage{
-make_badge(remote_origin = NULL, active_branch = NULL,
-  tinyurl = TRUE)
+make_badge(remote_origin = NULL, active_branch = NULL, tinyurl = TRUE)
 }
 \arguments{
 \item{remote_origin}{character, username/repo of the remote origin, Default: NULL}
@@ -26,8 +25,9 @@ if either inputs are NULL then the .git file is inspected to gather the
 information
 }
 \seealso{
-Other setup: \code{\link{tencrypt}},
-  \code{\link{use_covrpage_vignette}},
-  \code{\link{use_covrpage}}
+Other setup: 
+\code{\link{tencrypt}()},
+\code{\link{use_covrpage_vignette}()},
+\code{\link{use_covrpage}()}
 }
 \concept{setup}

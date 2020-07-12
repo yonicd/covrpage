@@ -18,6 +18,9 @@ gath <- function(i, x) {
 sum_func <- function(x) {
   x <- do.call("rbind", lapply(4:7, gath, x))
 
+  if(!nrow(x))
+    browser()
+  
   x <- data.frame(stats::aggregate(. ~ file + status_type, x, sum), stringsAsFactors = FALSE)
 
   x <- sprea(x)
@@ -189,6 +192,6 @@ travis_image <- function() {
   sprintf(
     '<a href="%s" target="_blank"><span title="Built on Travis">![](%s)</span></a>',
     Sys.getenv("TRAVIS_JOB_WEB_URL"),
-    "https://github.com/metrumresearchgroup/covrpage/blob/master/inst/logo/travis.png?raw=true"
+    "https://github.com/yonicd/covrpage/blob/master/inst/logo/travis.png?raw=true"
   )
 }

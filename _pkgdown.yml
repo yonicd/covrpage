@@ -11,7 +11,7 @@ navbar:
   type: inverse
   right:
     - icon: fa-github fa-lg
-      href: https://github.com/metrumresearchgroup/covrpage
+      href: https://github.com/yonicd/covrpage
   structure:
     left:  [home, reference, articleindex, news]
     right: [github, twitter]
@@ -22,10 +22,10 @@ navbar:
       href: articles/index.html
     twitter:
       icon: fa-lg fa-twitter
-      href: http://twitter.com/MetrumRG
+      href: http://twitter.com/yoniceedee
 
 hexURL:
-  https://github.com/metrumresearchgroup/covrpage/blob/master/inst/logo/covrpageLogoSCREEN.png?raw=true
+  https://github.com/yonicd/covrpage/blob/master/inst/logo/covrpageLogoSCREEN.png?raw=true
 
 reference:
   - title: "Setup"

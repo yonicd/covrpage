@@ -9,7 +9,7 @@ testthat::describe('find package in path',{
     
     testthat::expect_equal(
       'covrpage',
-      package_name(td)
+      covrpage:::package_name(td)
       )
   })
 })
