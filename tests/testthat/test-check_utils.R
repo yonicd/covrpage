@@ -9,7 +9,7 @@ testthat::context("check for packages")
 td <- "../assets/covrpage_benchmark/covrpage"
 
 testthat::test_that("packages are detected", {
-  testthat::skip_on_travis()
+  testthat::skip_on_ci()
 
   testthat::expect_error(covrpage:::check_for_pkgs("."))
   testthat::expect_error(covrpage:::check_for_pkgs(".."))

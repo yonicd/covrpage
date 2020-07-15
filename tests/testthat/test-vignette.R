@@ -1,7 +1,7 @@
 testthat::context("vignettes")
 
 testthat::describe("testing vignette", {
-  testthat::skip_on_travis()
+  testthat::skip_on_ci()
 
   file.copy("../assets/covrpage_benchmark/covrpage", tempdir(), recursive = TRUE)
   td <- file.path(tempdir(), "covrpage")
