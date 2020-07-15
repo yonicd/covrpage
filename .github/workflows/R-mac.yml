@@ -74,7 +74,7 @@ jobs:
         if: github.ref == 'refs/heads/master'
         run: |
           Rscript -e 'remotes::install_github("metrumresearchgroup/pkgdown")' \
-                  -e "pkgdown:::deploy_local(new_process = FALSE, remote_url = 'https://x-access-token:${{secrets.GITHUB_PAT}}@github.com/${{github.repository}}.git')"          
+                  -e "pkgdown:::deploy_local(new_process = FALSE, remote_url = 'https://x-access-token:${{secrets.GH_PAT}}@github.com/${{github.repository}}.git')"          
 
       - name: Upload check results
         if: failure()
