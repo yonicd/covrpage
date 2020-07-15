@@ -11,3 +11,4 @@
 ignore
 ^CONDUCT\.md$
 ^tic\.R$
+^\.github$
