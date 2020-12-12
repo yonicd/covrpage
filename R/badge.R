@@ -117,7 +117,7 @@ get_uri <- function(remote_origin = NULL, active_branch = NULL) {
     remote_origin <- get_remote_origin()
   }
 
-  sprintf("%s/tree/%s", remote_origin, active_branch)
+  sprintf("%s/blob/%s", remote_origin, active_branch)
 }
 
 #' @importFrom curl nslookup curl
