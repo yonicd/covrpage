@@ -3,7 +3,7 @@ title: "Tests and Coverage"
 date: "`r format(Sys.time(), '%d %B, %Y %H:%M:%S')`"
 ---
 
-This output is created by [covrpage](https://github.com/metrumresearchgroup/covrpage).
+This output is created by [covrpage](https://github.com/yonicd/covrpage).
 
 ```{r load,include=FALSE}
 library(covr     , warn.conflicts = FALSE , quietly = TRUE)

@@ -1,7 +1,7 @@
 Add to .travs.yml 
 
   r_github_packages: 
-  - metrumresearchgroup/covrpage   
+  - yonicd/covrpage   
   - r-lib/pkgdown
 
   {{success}}
