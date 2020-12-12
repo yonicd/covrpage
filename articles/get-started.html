@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covrpage</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.71</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1</span>
       </span>
     </div>
 
@@ -67,12 +67,13 @@
 
       
 
-      </header><div class="row">
+      </header><script src="get-started_files/accessible-code-block-0.0.1/empty-anchor.js"></script><link href="get-started_files/anchor-sections-1.0/anchor-sections.css" rel="stylesheet">
+<script src="get-started_files/anchor-sections-1.0/anchor-sections.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1>Getting Started</h1>
             
-            <h4 class="date">2020-07-15</h4>
+            <h4 class="date">2020-12-12</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/yonicd/covrpage/blob/master/vignettes/get-started.Rmd"><code>vignettes/get-started.Rmd</code></a></small>
       <div class="hidden name"><code>get-started.Rmd</code></div>
@@ -106,9 +107,9 @@
 <p>To see how <code>covrpage</code>report looks like, the easiest thing to do is to run <code><a href="../reference/covrpage.html">covrpage::covrpage()</a></code> at the root of your package, or providing the path to your package as argument.</p>
 <p>The functions powering the report are:</p>
 <ul>
-<li><p><code><a href="https://testthat.r-lib.org/reference/test_dir.html">testthat::test_check()</a></code> to actually run tests and get the results;</p></li>
+<li><p><code><a href="https://testthat.r-lib.org/reference/test_package.html">testthat::test_check()</a></code> to actually run tests and get the results;</p></li>
 <li><p><code><a href="../reference/map_testthat.html">covrpage::map_testthat()</a></code> to map the hierarchy structure of testthat directory;</p></li>
-<li><p><code><a href="../reference/testthat_summary.html">covrpage::testthat_summary()</a></code> to provide a summary for the output of <code><a href="https://testthat.r-lib.org/reference/test_dir.html">testthat::test_check()</a></code>;</p></li>
+<li><p><code><a href="../reference/testthat_summary.html">covrpage::testthat_summary()</a></code> to provide a summary for the output of <code><a href="https://testthat.r-lib.org/reference/test_package.html">testthat::test_check()</a></code>;</p></li>
 <li><p><code><a href="../reference/covr_summary.html">covrpage::covr_summary()</a></code> to run <code>covr</code> even with failing tests.</p></li>
 </ul>
 <p>You can see an example for the <code>remedy</code> package <a href="https://github.com/ThinkR-open/remedy/tree/master/tests#tests-and-coverage">here</a>.</p>
@@ -131,10 +132,10 @@
 <h1 class="hasAnchor">
 <a href="#conclusion" class="anchor"></a>Conclusion</h1>
 <p><code>covrpage</code> report aims at providing more information about the testing of your package to potential users and collaborators, and can inform your own work developing and maintaining your package. Publishing the report with continuous integration will ensure it’s always up-to-date. As a summary, in any package of yours, run</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co"># remotes::install_github('ropenscilabs/travis')</span></a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co"># travis::use_tic()</span></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3">covrpage<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/covrpage/man/use_covrpage.html">use_covrpage</a></span>(<span class="dt">travis_type =</span> <span class="st">'tic'</span>)</a>
-<a class="sourceLine" id="cb1-4" data-line-number="4">covrpage<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/covrpage/man/covrpage.html">covrpage</a></span>(<span class="dt">vignette =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># remotes::install_github('ropenscilabs/travis')</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="co"># travis::use_tic()</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>covrpage<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/covrpage/man/use_covrpage.html">use_covrpage</a></span>(<span class="dt">travis_type =</span> <span class="st">'tic'</span>)</span>
+<span id="cb1-4"><a href="#cb1-4"></a>covrpage<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/covrpage/man/covrpage.html">covrpage</a></span>(<span class="dt">vignette =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 </div>
   </div>
 
