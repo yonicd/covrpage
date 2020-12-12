@@ -84,28 +84,28 @@
 <div id="package-installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#package-installation" class="anchor"></a>Package Installation</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># install.packages('remotes')</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a></span>
-<span id="cb1-3"><a href="#cb1-3"></a>remotes<span class="op">::</span><span class="kw"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">'yonicd/covrpage'</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co"># install.packages('remotes')</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">remotes<span class="op">::</span><span class="kw"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">'yonicd/covrpage'</span>)</a></code></pre></div>
 </div>
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># assuming you are in your package root directory</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a></span>
-<span id="cb2-3"><a href="#cb2-3"></a>covrpage<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/covrpage/man/covrpage.html">covrpage</a></span>()</span>
-<span id="cb2-4"><a href="#cb2-4"></a></span>
-<span id="cb2-5"><a href="#cb2-5"></a><span class="co"># create the covrpage and send directly to remote repository</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a></span>
-<span id="cb2-7"><a href="#cb2-7"></a>covrpage<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/covrpage/man/covrpage.html">covrpage</a></span>(<span class="dt">auto_push =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb2-8"><a href="#cb2-8"></a></span>
-<span id="cb2-9"><a href="#cb2-9"></a><span class="co"># Copy output as a vignette to use in pkgdown</span></span>
-<span id="cb2-10"><a href="#cb2-10"></a></span>
-<span id="cb2-11"><a href="#cb2-11"></a>covrpage<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/covrpage/man/covrpage.html">covrpage</a></span>(<span class="dt">vignette =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb2-12"><a href="#cb2-12"></a></span>
-<span id="cb2-13"><a href="#cb2-13"></a><span class="co"># assuming you are not in your package directory</span></span>
-<span id="cb2-14"><a href="#cb2-14"></a></span>
-<span id="cb2-15"><a href="#cb2-15"></a>covrpage<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/covrpage/man/covrpage.html">covrpage</a></span>(<span class="dt">path =</span> <span class="st">'another_directory'</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="co"># assuming you are in your package root directory</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">covrpage<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/covrpage/man/covrpage.html">covrpage</a></span>()</a>
+<a class="sourceLine" id="cb2-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co"># create the covrpage and send directly to remote repository</span></a>
+<a class="sourceLine" id="cb2-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb2-7" data-line-number="7">covrpage<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/covrpage/man/covrpage.html">covrpage</a></span>(<span class="dt">auto_push =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb2-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb2-9" data-line-number="9"><span class="co"># Copy output as a vignette to use in pkgdown</span></a>
+<a class="sourceLine" id="cb2-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb2-11" data-line-number="11">covrpage<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/covrpage/man/covrpage.html">covrpage</a></span>(<span class="dt">vignette =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb2-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb2-13" data-line-number="13"><span class="co"># assuming you are not in your package directory</span></a>
+<a class="sourceLine" id="cb2-14" data-line-number="14"></a>
+<a class="sourceLine" id="cb2-15" data-line-number="15">covrpage<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/covrpage/man/covrpage.html">covrpage</a></span>(<span class="dt">path =</span> <span class="st">'another_directory'</span>)</a></code></pre></div>
 </div>
 <div id="vignette" class="section level2">
 <h2 class="hasAnchor">
@@ -186,7 +186,7 @@
 <ul class="list-unstyled">
 <li><a href="https://travis-ci.org/yonicd/covrpage"><img src="https://travis-ci.org/yonicd/covrpage.svg?branch=master" alt="Travis-CI Build Status"></a></li>
 <li><a href="https://codecov.io/github/yonicd/covrpage?branch=master"><img src="https://img.shields.io/codecov/c/github/yonicd/covrpage/master.svg" alt="Coverage Status"></a></li>
-<li><a href="http://tinyurl.com/yayrd3et"><img src="https://img.shields.io/badge/covrpage-Last_Build_2020_12_12-yellowgreen.svg" alt="Covrpage Summary"></a></li>
+<li><a href="http://tinyurl.com/yayrd3et"><img src="https://img.shields.io/badge/covrpage-Last_Build_2020_12_12-brightgreen.svg" alt="Covrpage Summary"></a></li>
 </ul>
 </div>
 </div>
