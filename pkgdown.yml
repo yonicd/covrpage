@@ -1,9 +1,8 @@
-pandoc: '2.2'
+pandoc: 2.7.3
 pkgdown: 1.4.1.9000
 pkgdown_sha: 08d56fc764f959e14840670e58df9f05177ef487
 articles:
   Continuous_Integration: Continuous_Integration.html
-  Test_Results: Test_Results.html
   get-started: get-started.html
   how-to-read-covrpage-report: how-to-read-covrpage-report.html
   snapshots: snapshots.html
