@@ -1,6 +1,6 @@
 Tests and Coverage
 ================
-12 December, 2020 16:18:24
+12 December, 2020 19:43:19
 
   - [Coverage](#coverage)
   - [Unit Tests](#unit-tests)
@@ -45,7 +45,7 @@ Unit Test summary is created using the
 | file                                               | n |  time | error | failed | skipped | warning | icon |
 | :------------------------------------------------- | -: | ----: | ----: | -----: | ------: | ------: | :--- |
 | [test-check\_utils.R](testthat/test-check_utils.R) | 5 | 0.109 |     0 |      0 |       1 |       2 | 🔶⚠️  |
-| [test-covrfuns.R](testthat/test-covrfuns.R)        | 6 | 0.073 |     0 |      0 |       0 |       0 |      |
+| [test-covrfuns.R](testthat/test-covrfuns.R)        | 6 | 0.066 |     0 |      0 |       0 |       0 |      |
 
 <details open>
 
@@ -53,12 +53,12 @@ Unit Test summary is created using the
 
 | file                                                   | context                    | test                           | status  | n |  time | icon |
 | :----------------------------------------------------- | :------------------------- | :----------------------------- | :------ | -: | ----: | :--- |
-| [test-check\_utils.R](testthat/test-check_utils.R#L4)  | check for tests            | tests are detected             | PASS    | 1 | 0.021 |      |
-| [test-check\_utils.R](testthat/test-check_utils.R#L12) | check for packages         | packages are detected          | SKIPPED | 1 | 0.022 | 🔶    |
+| [test-check\_utils.R](testthat/test-check_utils.R#L4)  | check for tests            | tests are detected             | PASS    | 1 | 0.020 |      |
+| [test-check\_utils.R](testthat/test-check_utils.R#L12) | check for packages         | packages are detected          | SKIPPED | 1 | 0.023 | 🔶    |
 | [test-check\_utils.R](testthat/test-check_utils.R#L23) | use covrpage               | test use\_covrpage             | WARNING | 3 | 0.066 | ⚠️   |
-| [test-covrfuns.R](testthat/test-covrfuns.R#L5)         | check summary covr         | covr\_summary: standard input  | PASS    | 1 | 0.024 |      |
-| [test-covrfuns.R](testthat/test-covrfuns.R#L9_L11)     | check summary covr         | covr\_summary: empty input     | PASS    | 1 | 0.009 |      |
-| [test-covrfuns.R](testthat/test-covrfuns.R#L19)        | check summary output types | with data: short               | PASS    | 1 | 0.027 |      |
+| [test-covrfuns.R](testthat/test-covrfuns.R#L5)         | check summary covr         | covr\_summary: standard input  | PASS    | 1 | 0.023 |      |
+| [test-covrfuns.R](testthat/test-covrfuns.R#L9_L11)     | check summary covr         | covr\_summary: empty input     | PASS    | 1 | 0.008 |      |
+| [test-covrfuns.R](testthat/test-covrfuns.R#L19)        | check summary output types | with data: short               | PASS    | 1 | 0.022 |      |
 | [test-covrfuns.R](testthat/test-covrfuns.R#L23)        | check summary output types | with data: long                | PASS    | 1 | 0.007 |      |
 | [test-covrfuns.R](testthat/test-covrfuns.R#L27)        | check summary output types | with data: no data             | PASS    | 1 | 0.003 |      |
 | [test-covrfuns.R](testthat/test-covrfuns.R#L35)        | check covr to df           | covr object to df: empty input | PASS    | 1 | 0.003 |      |
