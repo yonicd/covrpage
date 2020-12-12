@@ -1,7 +1,7 @@
 testthat::context("encryption of PAT")
 
 testthat::describe("testing tencrypt", {
-  testthat::skip_on_travis()
+  testthat::skip_on_ci()
 
   file.copy("../assets/covrpage_benchmark/covrpage", tempdir(), recursive = TRUE)
   td <- file.path(tempdir(), "covrpage")
@@ -10,7 +10,7 @@ testthat::describe("testing tencrypt", {
   repo <- git2r::init()
   file.create(".travis.yml")
   git2r::add(repo, ".travis.yml")
-  git2r::remote_add(repo, name = "origin", url = "git@github.com:metrumresearchgroup/covrpage.git")
+  git2r::remote_add(repo, name = "origin", url = "git@github.com:yonicd/covrpage.git")
 
   it("no add", {
     testthat::expect_equal(nchar(tencrypt(add = FALSE)), 686)

@@ -1,7 +1,7 @@
 testthat::context("coverage history")
 
 testthat::describe("fetch md files", {
-  testthat::skip_on_travis()
+  testthat::skip_on_ci()
 
   file.copy("../assets/covrpage_benchmark/covrpage", tempdir(), recursive = TRUE)
   td <- file.path(tempdir(), "covrpage")
@@ -30,7 +30,7 @@ testthat::describe("fetch md files", {
 })
 
 testthat::describe("fetch covr history", {
-  testthat::skip_on_travis()
+  testthat::skip_on_ci()
 
   file.copy("../assets/covrpage_benchmark/covrpage", tempdir(), recursive = TRUE)
   td <- file.path(tempdir(), "covrpage")

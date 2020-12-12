@@ -18,6 +18,9 @@ gath <- function(i, x) {
 sum_func <- function(x) {
   x <- do.call("rbind", lapply(4:7, gath, x))
 
+  if(!nrow(x))
+    browser()
+  
   x <- data.frame(stats::aggregate(. ~ file + status_type, x, sum), stringsAsFactors = FALSE)
 
   x <- sprea(x)

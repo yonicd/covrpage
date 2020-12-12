@@ -19,6 +19,7 @@ covr_log()
 }
 }
 \seealso{
-Other log: \code{\link{covrpage_log}}
+Other log: 
+\code{\link{covrpage_log}()}
 }
 \concept{log}

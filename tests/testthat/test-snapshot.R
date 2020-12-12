@@ -1,6 +1,6 @@
 testthat::context("remote covrpage")
 
-testthat::skip_on_travis()
+testthat::skip_on_ci()
 testthat::skip_on_cran()
 
 testthat::describe("run covrpage snapshot", {

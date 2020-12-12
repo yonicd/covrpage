@@ -4,8 +4,13 @@
 \alias{covrpage_snapshot}
 \title{Run covrpage on a GitHub Repository}
 \usage{
-covrpage_snapshot(repo, branch = NULL, PAT = Sys.getenv("GITHUB_PAT"),
-  host = "api.github.com", preview = TRUE)
+covrpage_snapshot(
+  repo,
+  branch = NULL,
+  PAT = Sys.getenv("GITHUB_PAT"),
+  host = "api.github.com",
+  preview = TRUE
+)
 }
 \arguments{
 \item{repo}{character, Public GitHub repository}
@@ -36,7 +41,8 @@ if(interactive()){
 \seealso{
 \code{\link[covrpage]{covrpage}} \code{\link[git2r]{clone}} \code{\link[remotes]{install_github}}
 
-Other invoke: \code{\link{covrpage_ci}},
-  \code{\link{covrpage}}
+Other invoke: 
+\code{\link{covrpage_ci}()},
+\code{\link{covrpage}()}
 }
 \concept{invoke}

@@ -4,8 +4,11 @@
 \alias{tencrypt}
 \title{Encrypt Travis environment variables}
 \usage{
-tencrypt(r_obj = Sys.getenv("GITHUB_PAT"), travis_env = "GITHUB_PAT",
-  add = TRUE)
+tencrypt(
+  r_obj = Sys.getenv("GITHUB_PAT"),
+  travis_env = "GITHUB_PAT",
+  add = TRUE
+)
 }
 \arguments{
 \item{r_obj}{object value to encrypt}
@@ -18,8 +21,9 @@ tencrypt(r_obj = Sys.getenv("GITHUB_PAT"), travis_env = "GITHUB_PAT",
 Add encrypted Travis environment variable to git directory and .travis.yml.
 }
 \seealso{
-Other setup: \code{\link{make_badge}},
-  \code{\link{use_covrpage_vignette}},
-  \code{\link{use_covrpage}}
+Other setup: 
+\code{\link{make_badge}()},
+\code{\link{use_covrpage_vignette}()},
+\code{\link{use_covrpage}()}
 }
 \concept{setup}

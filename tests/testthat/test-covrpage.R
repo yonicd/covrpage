@@ -1,7 +1,7 @@
 testthat::context("check against benchmark repo that main function is working")
 
 testthat::describe("check on benchmark repo", {
-  testthat::skip_on_travis()
+  testthat::skip_on_ci()
 
   file.copy("../assets/covrpage_benchmark/covrpage", tempdir(), recursive = TRUE)
 
@@ -27,7 +27,7 @@ testthat::describe("check on benchmark repo", {
 })
 
 testthat::describe("check ci wrapper on benchmark repo", {
-  testthat::skip_on_travis()
+  testthat::skip_on_ci()
 
   file.copy("../assets/covrpage_benchmark/covrpage", tempdir(), recursive = TRUE)
   td <- file.path(tempdir(), "covrpage")

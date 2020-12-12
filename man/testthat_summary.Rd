@@ -18,9 +18,11 @@ data.frame
 Summary outputs for testthat object that is used in rmd
 }
 \seealso{
-Other utility: \code{\link{coverage_skip}},
-  \code{\link{covr_summary}},
-  \code{\link{map_testthat_snapshot}},
-  \code{\link{map_testthat}}, \code{\link{map_test}}
+Other utility: 
+\code{\link{coverage_skip}()},
+\code{\link{covr_summary}()},
+\code{\link{map_testthat_snapshot}()},
+\code{\link{map_testthat}()},
+\code{\link{map_test}()}
 }
 \concept{utility}
