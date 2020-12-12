@@ -1,7 +1,7 @@
 testthat::context("encryption of PAT")
 
 testthat::describe("testing tencrypt", {
-  testthat::skip_on_ci()
+  testthat::skip(message = 'no travis check')
 
   file.copy("../assets/covrpage_benchmark/covrpage", tempdir(), recursive = TRUE)
   td <- file.path(tempdir(), "covrpage")
