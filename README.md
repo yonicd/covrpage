@@ -2,17 +2,13 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 [![Travis-CI Build
-Status](https://travis-ci.org/metrumresearchgroup/covrpage.svg?branch=master)](https://travis-ci.org/metrumresearchgroup/covrpage)
+Status](https://travis-ci.org/yonicd/covrpage.svg?branch=master)](https://travis-ci.org/yonicd/covrpage)
 [![Coverage
-Status](https://img.shields.io/codecov/c/github/metrumresearchgroup/covrpage/master.svg)](https://codecov.io/github/metrumresearchgroup/covrpage?branch=master)
+Status](https://img.shields.io/codecov/c/github/yonicd/covrpage/master.svg)](https://codecov.io/github/yonicd/covrpage?branch=master)
 [![Covrpage
-Summary](https://img.shields.io/badge/covrpage-Last_Build_2019_11_24-brightgreen.svg)](http://tinyurl.com/yayrd3et)
-[![Views](http://ghtraffic.herokuapp.com/badge/metrumresearchgroup/covrpage/views)](https://github.com/metrumresearchgroup/covrpage/graphs/traffic)
-[![Clones](http://ghtraffic.herokuapp.com/badge/metrumresearchgroup/covrpage/clones)](https://github.com/metrumresearchgroup/covrpage/graphs/traffic)
-[![Viewers](http://ghtraffic.herokuapp.com/badge/metrumresearchgroup/covrpage/viewers)](https://github.com/metrumresearchgroup/covrpage/graphs/traffic)
-[![Cloners](http://ghtraffic.herokuapp.com/badge/metrumresearchgroup/covrpage/cloners)](https://github.com/metrumresearchgroup/covrpage/graphs/traffic)
+Summary](https://img.shields.io/badge/covrpage-Last_Build_2020_12_12-yellowgreen.svg)](http://tinyurl.com/yayrd3et)
 
-# covrpage <img src="man/figures/logo.png" align="right" class="logo"/>
+# covrpage
 
 Trust is earned not ~~inherited~~ importedFrom. Now that you’ve built a
 cool package, you want potential users to trust it so that they might
@@ -36,60 +32,60 @@ potential *contributors* where help is needed.
 ## Package Installation
 
     # install.packages('remotes')
-    
-    remotes::install_github('metrumresearchgroup/covrpage')
+
+    remotes::install_github('yonicd/covrpage')
 
 ## Usage
 
     # assuming you are in your package root directory
-    
+
     covrpage::covrpage()
-    
+
     # create the covrpage and send directly to remote repository
-    
+
     covrpage::covrpage(auto_push = TRUE)
-    
+
     # Copy output as a vignette to use in pkgdown
-    
+
     covrpage::covrpage(vignette = TRUE)
-    
+
     # assuming you are not in your package directory
-    
+
     covrpage::covrpage(path = 'another_directory')
 
 ## Vignette
 
 covrpage can be outputed as a vignette called `Tests and Coverage`
 making it part of the package help documentation and can be viewed as an
-[article](https://metrumresearchgroup.github.io/covrpage/articles/tests_and_coverage.html)
+[article](https://yonicd.github.io/covrpage/articles/tests_and_coverage.html)
 in a [pkgdown](https://github.com/r-lib/pkgdown) site.
 
 ## Articles
 
-  - [Getting
-    Started](https://metrumresearchgroup.github.io/covrpage/articles/get-started.html)
-  - [How to read the
-    report](https://metrumresearchgroup.github.io/covrpage/articles/how-to-read-covrpage-report.html)
-  - [Test
-    Results](https://metrumresearchgroup.github.io/covrpage/articles/Test_Results.html)
-  - [Continuous
-    Integration](https://metrumresearchgroup.github.io/covrpage/articles/Continuous_Integration.html)
+-   [Getting
+    Started](https://yonicd.github.io/covrpage/articles/get-started.html)
+-   [How to read the
+    report](https://yonicd.github.io/covrpage/articles/how-to-read-covrpage-report.html)
+-   [Test
+    Results](https://yonicd.github.io/covrpage/articles/Test_Results.html)
+-   [Continuous
+    Integration](https://yonicd.github.io/covrpage/articles/Continuous_Integration.html)
 
 ## Repositories using covrpage
 
-  - [slackr](https://github.com/hrbrmstr/slackr/tree/master/tests)
-  - [remedy](https://github.com/thinkr-open/remedy/tree/master/tests)
-  - [mathpix](https://github.com/jonocarroll/mathpix/tree/master/tests)
-  - [carbonate](https://github.com/yonicd/carbonate/tree/master/tests)
-  - [GSEAdv](https://github.com/llrs/GSEAdv/tree/master/tests)
-  - [rfm](https://github.com/rsquaredacademy/rfm/tree/master/tests)
-  - [ggstatsplot](https://github.com/IndrajeetPatil/ggstatsplot/tree/master/tests)
-  - [Full
+-   [slackr](https://github.com/hrbrmstr/slackr/tree/master/tests)
+-   [remedy](https://github.com/thinkr-open/remedy/tree/master/tests)
+-   [mathpix](https://github.com/jonocarroll/mathpix/tree/master/tests)
+-   [carbonate](https://github.com/yonicd/carbonate/tree/master/tests)
+-   [GSEAdv](https://github.com/llrs/GSEAdv/tree/master/tests)
+-   [rfm](https://github.com/rsquaredacademy/rfm/tree/master/tests)
+-   [ggstatsplot](https://github.com/IndrajeetPatil/ggstatsplot/tree/master/tests)
+-   [Full
     List…](https://github.com/search?l=Markdown&o=desc&q=covrpage+filename%3AREADME.md+path%3Atests&s=indexed&type=Code)
 
 If you also have `covrpage` on your site and want to add it to the list
 you can submit a [Pull
-Request](https://github.com/metrumresearchgroup/covrpage/pulls?utf8=%E2%9C%93&q=is%3Apr)
+Request](https://github.com/yonicd/covrpage/pulls?utf8=%E2%9C%93&q=is%3Apr)
 to this README.
 
 ## Contributing
@@ -106,5 +102,4 @@ Conduct](CONDUCT.md). By participating in this project you agree to
 abide by its terms.
 
 Any questions/comments are always welcome in the
-[issues](https://github.com/metrumresearchgroup/covrpage/issues)
-section.
+[issues](https://github.com/yonicd/covrpage/issues) section.

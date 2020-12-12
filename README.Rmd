@@ -13,15 +13,11 @@ knitr::opts_chunk$set(
 )
 ```
 
-[![Travis-CI Build Status](https://travis-ci.org/metrumresearchgroup/covrpage.svg?branch=master)](https://travis-ci.org/metrumresearchgroup/covrpage)
-[![Coverage Status](https://img.shields.io/codecov/c/github/metrumresearchgroup/covrpage/master.svg)](https://codecov.io/github/metrumresearchgroup/covrpage?branch=master)
-[![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2019_11_24-brightgreen.svg)](http://tinyurl.com/yayrd3et)
-[![Views](http://ghtraffic.herokuapp.com/badge/metrumresearchgroup/covrpage/views)](https://github.com/metrumresearchgroup/covrpage/graphs/traffic)
-[![Clones](http://ghtraffic.herokuapp.com/badge/metrumresearchgroup/covrpage/clones)](https://github.com/metrumresearchgroup/covrpage/graphs/traffic)
-[![Viewers](http://ghtraffic.herokuapp.com/badge/metrumresearchgroup/covrpage/viewers)](https://github.com/metrumresearchgroup/covrpage/graphs/traffic)
-[![Cloners](http://ghtraffic.herokuapp.com/badge/metrumresearchgroup/covrpage/cloners)](https://github.com/metrumresearchgroup/covrpage/graphs/traffic)
+[![Travis-CI Build Status](https://travis-ci.org/yonicd/covrpage.svg?branch=master)](https://travis-ci.org/yonicd/covrpage)
+[![Coverage Status](https://img.shields.io/codecov/c/github/yonicd/covrpage/master.svg)](https://codecov.io/github/yonicd/covrpage?branch=master)
+[![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2020_12_12-yellowgreen.svg)](http://tinyurl.com/yayrd3et)
 
-# covrpage <img src="man/figures/logo.png" align="right" class="logo"/>
+# covrpage `r if(knitr::opts_knit$get('rmarkdown.pandoc.to')=='gfm-ascii_identifiers') '<img src="https://github.com/yonicd/covrpage/blob/master/inst/logo/covrpageLogoSCREEN.png?raw=true" align="right"/>'`
 
 Trust is earned not ~~inherited~~ importedFrom. Now that you've built a cool package, you want potential users to trust it so that they might adopt it. How to build trust in your piece of software? Unit testing is part of the components building trustworthiness of your package. Imagine you're at the point where you've tested most lines of your code with thorough assertions, including checks of edge cases. Proof of that hard work will be a high test coverage, that potential users of your package might notice thanks to a bright green coverage badge. But how would they know your tests are thorough? That's what `covrpage` helps you with, by creating a [summary report](tests/README.md) of your tests that goes beyond the coverage percentage. This way, potential users can see at a glance how good the unit testing of your package is.
 
@@ -34,7 +30,7 @@ No, it can also inform your work on your package, by helping you track progress 
 ```
 # install.packages('remotes')
 
-remotes::install_github('metrumresearchgroup/covrpage')
+remotes::install_github('yonicd/covrpage')
 ```
 
 ## Usage
@@ -60,14 +56,14 @@ covrpage::covrpage(path = 'another_directory')
 
 ## Vignette
 
-covrpage can be outputed as a vignette called `Tests and Coverage` making it part of the package help documentation and can be viewed as an [article](https://metrumresearchgroup.github.io/covrpage/articles/tests_and_coverage.html) in a [pkgdown](https://github.com/r-lib/pkgdown) site.
+covrpage can be outputed as a vignette called `Tests and Coverage` making it part of the package help documentation and can be viewed as an [article](https://yonicd.github.io/covrpage/articles/tests_and_coverage.html) in a [pkgdown](https://github.com/r-lib/pkgdown) site.
 
 ## Articles
 
-  - [Getting Started](https://metrumresearchgroup.github.io/covrpage/articles/get-started.html)
-  - [How to read the report](https://metrumresearchgroup.github.io/covrpage/articles/how-to-read-covrpage-report.html)
-  - [Test Results](https://metrumresearchgroup.github.io/covrpage/articles/Test_Results.html)
-  - [Continuous Integration](https://metrumresearchgroup.github.io/covrpage/articles/Continuous_Integration.html)
+  - [Getting Started](https://yonicd.github.io/covrpage/articles/get-started.html)
+  - [How to read the report](https://yonicd.github.io/covrpage/articles/how-to-read-covrpage-report.html)
+  - [Test Results](https://yonicd.github.io/covrpage/articles/Test_Results.html)
+  - [Continuous Integration](https://yonicd.github.io/covrpage/articles/Continuous_Integration.html)
 
 ## Repositories using covrpage
 
@@ -80,7 +76,7 @@ covrpage can be outputed as a vignette called `Tests and Coverage` making it par
   - [ggstatsplot](https://github.com/IndrajeetPatil/ggstatsplot/tree/master/tests)
   - [Full List...](https://github.com/search?l=Markdown&o=desc&q=covrpage+filename%3AREADME.md+path%3Atests&s=indexed&type=Code)
 
-If you also have `covrpage` on your site and want to add it to the list you can submit a [Pull Request](https://github.com/metrumresearchgroup/covrpage/pulls?utf8=%E2%9C%93&q=is%3Apr) to this README.
+If you also have `covrpage` on your site and want to add it to the list you can submit a [Pull Request](https://github.com/yonicd/covrpage/pulls?utf8=%E2%9C%93&q=is%3Apr) to this README.
 
 ## Contributing
 
@@ -88,4 +84,4 @@ If you also have `covrpage` on your site and want to add it to the list you can 
 
 Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
 
-Any questions/comments are always welcome in the [issues](https://github.com/metrumresearchgroup/covrpage/issues) section.
+Any questions/comments are always welcome in the [issues](https://github.com/yonicd/covrpage/issues) section.

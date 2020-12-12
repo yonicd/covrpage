@@ -1,10 +1,10 @@
 Package: covrpage
 Title: Create a Readme Summary Page for GitHub testthat and covr Outputs
-Version: 0.0.71
+Version: 0.1
 Authors@R: c(
   person(given   = "Jonathan",
          family  = "Sidi",
-         email   = "yonis@metrumrg.com",
+         email   = "yonicd@gmail.com",
          role    = c("aut",'cre'),
          comment = c(ORCID = "0000-0002-4222-1819")
          ),
@@ -15,14 +15,14 @@ Authors@R: c(
 Description: Create a README file to place in package test subdirectory to communicate 
   with other users in more detail results of testthat and covr.
 License: MIT + file LICENSE
-URL: https://github.com/metrumresearchgroup/covrpage
-BugReports: https://github.com/metrumresearchgroup/covrpage/issues
+URL: https://github.com/yonicd/covrpage
+BugReports: https://github.com/yonicd/covrpage/issues
 Encoding: UTF-8
 LazyData: true
 Depends: R (>= 2.10)
 Imports: utils, git2r, rmarkdown, covr, stats,
   magrittr, testthat, curl, whisker, withr, remotes
-RoxygenNote: 7.0.1
+RoxygenNote: 7.1.1
 Suggests: knitr,spelling, rstudioapi
 VignetteBuilder: knitr
 Language: en-US
