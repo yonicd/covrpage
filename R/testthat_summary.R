@@ -136,7 +136,7 @@ enfram <- function(x, name = "name", value = "value") {
   ret
 }
 
-#' importFrom utils sessionInfo packageVersion
+#' @importFrom utils sessionInfo packageVersion
 sinfo <- function() {
   
   x <- utils::sessionInfo()

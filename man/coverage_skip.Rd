@@ -27,6 +27,7 @@ Other utility:
 \code{\link{map_testthat_snapshot}()},
 \code{\link{map_testthat}()},
 \code{\link{map_test}()},
+\code{\link{package_name}()},
 \code{\link{testthat_summary}()}
 }
 \concept{utility}
