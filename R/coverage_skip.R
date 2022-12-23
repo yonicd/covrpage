@@ -21,7 +21,7 @@ coverage_skip <- function(
 
     test_m <- map_testthat(test_path)
 
-    test_x_long <- test_x %>%
+    test_x_long <- test_x |>
       testthat_summary(type = "long")
 
     test_skip <- test_x_long[test_x_long$status != "PASS", c("file", "test")]

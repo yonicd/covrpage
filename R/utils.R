@@ -1,6 +1,7 @@
 #' @title package name
 #' @description Retrieve package name
 #' @param path path to package
+#' @family utility
 #' @export
 package_name <- function(path=getwd()){
   desc_path <- normalizePath(file.path(path,'DESCRIPTION'),mustWork = TRUE)
@@ -31,6 +32,3 @@ current_hash <- function(path = '.', trim = FALSE){
   hash
 }
 
-is_git <- function(){
-  system('git rev-parse --is-inside-work-tree',intern = TRUE)=='true'
-}

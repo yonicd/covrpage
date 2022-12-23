@@ -46,6 +46,7 @@ Other utility:
 \code{\link{covr_summary}()},
 \code{\link{map_testthat}()},
 \code{\link{map_test}()},
+\code{\link{package_name}()},
 \code{\link{testthat_summary}()}
 }
 \concept{utility}
