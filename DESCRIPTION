@@ -1,6 +1,6 @@
 Package: covrpage
 Title: Create a Readme Summary Page for GitHub testthat and covr Outputs
-Version: 0.1
+Version: 0.2
 Authors@R: c(
   person(given   = "Jonathan",
          family  = "Sidi",
@@ -18,11 +18,10 @@ License: MIT + file LICENSE
 URL: https://github.com/yonicd/covrpage
 BugReports: https://github.com/yonicd/covrpage/issues
 Encoding: UTF-8
-LazyData: true
-Depends: R (>= 2.10)
-Imports: utils, git2r, rmarkdown, covr, stats,
-  magrittr, testthat, curl, whisker, withr, remotes
-RoxygenNote: 7.1.1
+LazyData: false
+Depends: R (>= 4.0)
+Imports: utils, git2r, rmarkdown, covr, stats, testthat, curl, whisker, withr, remotes
+RoxygenNote: 7.2.1
 Suggests: knitr,spelling, rstudioapi
 VignetteBuilder: knitr
 Language: en-US

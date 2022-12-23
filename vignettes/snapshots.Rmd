@@ -29,11 +29,11 @@ library(covrpage)
 List of all the expectations defined in the `tests/testthat` directory.
 
 ```{r,include=FALSE}
-testmap <- map_testthat_snapshot('tidyverse/purrr')
+testmap <- map_testthat_snapshot('r-lib/rlang')
 ```
 
 ```{r,eval=FALSE}
-testmap <- map_testthat_snapshot('tidyverse/purrr')
+testmap <- map_testthat_snapshot('r-lib/rlang')
 ```
  
 
@@ -58,5 +58,5 @@ knitr::kable(tail(testmap,-5))
 Run `covrpage` in a sterile environment to output the report `README`.
 
 ```{r,eval=FALSE}
-covrpage_snapshot('tidyverse/purrr')
+covrpage_snapshot('r-lib/rlang')
 ```

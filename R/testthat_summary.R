@@ -163,14 +163,6 @@ sinfo <- function() {
   list(info = sinfo, pkgs = pkgs)
 }
 
-#' @title Re-export magrittr pipe operators
-#' @description magrittr pipe operators
-#' @importFrom magrittr %>%
-#' @name %>%
-#' @rdname pipe
-#' @export
-NULL
-
 platform <- function() {
   if (.Platform[["OS.type"]] == "windows") {
     "windows"

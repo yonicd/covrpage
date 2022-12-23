@@ -65,10 +65,10 @@ covrpage_cleanup <- function(
   if (auto_push) {
     repo <- git2r::repository(".")
 
-    repo %>%
+    repo |>
       git2r::add(path = c("tests/README.md"))
 
-    repo %>%
+    repo |>
       git2r::commit(message = "update tests readme [skip ci]")
 
     system("git push")
