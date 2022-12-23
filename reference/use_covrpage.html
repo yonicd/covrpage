@@ -111,9 +111,8 @@ Default: system("git rev-parse --abbrev-ref HEAD", intern = TRUE) (usually 'mast
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">use_covrpage</span><span class="op">(</span>travis_type <span class="op">=</span> <span class="st">'bash'</span>,file<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>,<span class="st">'myfile.sh'</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>running command 'git config user.email' had status 1</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>running command 'git config travis.slug' had status 1</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Writing myfile.sh bash script to /tmp/Rtmp6wTdwV</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Writing myfile.sh bash script to /tmp/RtmpttciCL</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Add to .travs.yml </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>   r_github_packages: </span>
@@ -121,9 +120,9 @@ Default: system("git rev-parse --abbrev-ref HEAD", intern = TRUE) (usually 'mast
 <span class="r-msg co"><span class="r-pr">#&gt;</span>   </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     after_sucess: </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>   - Rscript -e 'covr::codecov()'</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>   - bash /tmp/Rtmp6wTdwV/myfile.sh</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>   - bash /tmp/RtmpttciCL/myfile.sh</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     after_failure:</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>   - bash /tmp/Rtmp6wTdwV/myfile.sh</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>   - bash /tmp/RtmpttciCL/myfile.sh</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>   deploy:</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     provider: pages</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     skip-cleanup: true</span>
@@ -135,12 +134,11 @@ Default: system("git rev-parse --abbrev-ref HEAD", intern = TRUE) (usually 'mast
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">#does not write to disk</span></span></span>
 <span class="r-in"><span><span class="fu">use_covrpage</span><span class="op">(</span>travis_type <span class="op">=</span> <span class="st">'bash'</span>,file<span class="op">=</span><span class="cn">NULL</span><span class="op">)</span></span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>running command 'git config user.email' had status 1</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>running command 'git config travis.slug' had status 1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> #!/bin/bash</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> set -x</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> if [ $TRAVIS_BRANCH == "actions" ] ; then</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> if [ $TRAVIS_BRANCH == "master" ] ; then</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> git config --global user.email "travis@travis-ci.org"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> git config --global user.name "Travis CI"</span>
@@ -152,11 +150,11 @@ Default: system("git rev-parse --abbrev-ref HEAD", intern = TRUE) (usually 'mast
 <span class="r-out co"><span class="r-pr">#&gt;</span> git add .</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> git commit --message "Travis build: $TRAVIS_BUILD_NUMBER [skip ci]"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> git remote add deploy https://:${GITHUB_PAT}@github.com/.git</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> git remote add deploy https://actions:${GITHUB_PAT}@github.com/.git</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> git push -f deploy test -v</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> else</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> echo "Not deploying, since this branch is not actions."</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> echo "Not deploying, since this branch is not master."</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> fi</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">use_covrpage</span><span class="op">(</span>travis_type <span class="op">=</span> <span class="st">'pkgdown'</span><span class="op">)</span></span></span>
