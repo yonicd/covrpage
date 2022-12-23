@@ -6,19 +6,28 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Continuous Integration • covrpage</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/all.min.css" integrity="sha256-PbSmjxuVAzJ6FPvNYsrXygfGhNJYyZ2GktDbkMBqQZg=" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/v4-shims.min.css" integrity="sha256-A6jcAdwFD48VMjlI3GDxUd+eCQa7/KWy6G9oe/ovaPA=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
+<!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/flatly/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><meta property="og:title" content="Continuous Integration">
-<meta property="og:description" content="">
-<meta name="twitter:card" content="summary">
+<meta property="og:description" content="covrpage">
+<meta property="og:image" content="/logo.png">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
-<body>
+<body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
@@ -31,18 +40,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covrpage</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
@@ -52,7 +55,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/yonicd/covrpage">
+  <a href="https://github.com/yonicd/covrpage" class="external-link">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -67,212 +70,172 @@
 
       
 
-      </header><link href="Continuous_Integration_files/anchor-sections-1.0/anchor-sections.css" rel="stylesheet">
-<script src="Continuous_Integration_files/anchor-sections-1.0/anchor-sections.js"></script><div class="row">
+      </header><script src="Continuous_Integration_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1>Continuous Integration</h1>
-                        <h4 class="author">Jonathan Sidi</h4>
+      <h1 data-toc-skip>Continuous Integration</h1>
+                        <h4 data-toc-skip class="author">Jonathan Sidi</h4>
             
-            <h4 class="date">2020-12-12</h4>
+            <h4 data-toc-skip class="date">2022-12-23</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/yonicd/covrpage/blob/master/vignettes/Continuous_Integration.Rmd"><code>vignettes/Continuous_Integration.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/yonicd/covrpage/blob/HEAD/vignettes/Continuous_Integration.Rmd" class="external-link"><code>vignettes/Continuous_Integration.Rmd</code></a></small>
       <div class="hidden name"><code>Continuous_Integration.Rmd</code></div>
 
     </div>
 
     
     
-<div id="travis" class="section level2">
-<h2 class="hasAnchor">
-<a href="#travis" class="anchor"></a>Travis</h2>
-<div id="direct" class="section level3">
-<h3 class="hasAnchor">
-<a href="#direct" class="anchor"></a>Direct</h3>
-<p><code>covrpage</code> can be deployed in Travis much the way <a href="https://covr.r-lib.org/reference/coveralls.html">covr::covralls</a> is deployed. The only difference is that <code>covrpage</code> will push back the updated <code>README.md</code> file to the originating repository so it can be updated as part of the custom integration routine.</p>
+<div class="section level2">
+<h2 id="travis">Travis<a class="anchor" aria-label="anchor" href="#travis"></a>
+</h2>
+<div class="section level3">
+<h3 id="direct">Direct<a class="anchor" aria-label="anchor" href="#direct"></a>
+</h3>
+<p><code>covrpage</code> can be deployed in Travis much the way <a href="https://covr.r-lib.org/reference/coveralls.html" class="external-link">covr::covralls</a> is deployed. The only difference is that <code>covrpage</code> will push back the updated <code>README.md</code> file to the originating repository so it can be updated as part of the custom integration routine.</p>
 <p>The following <code>.travis.yml</code> is needed for the deployment:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yml"><code class="sourceCode yaml"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="fu">language:</span><span class="at"> R</span></a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="fu">sudo:</span><span class="at"> false</span></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="fu">cache:</span><span class="at"> packages</span></a>
-<a class="sourceLine" id="cb1-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="fu">after_success:</span></a>
-<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="kw"><a href="https://rdrr.io/r/base/Arithmetic.html">-</a></span> <span class="fu">Rscript -e 'covr:</span><span class="at">:codecov()'</span></a>
-<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="kw"><a href="https://rdrr.io/r/base/Arithmetic.html">-</a></span> bash .travis/covrpage.sh</a>
-<a class="sourceLine" id="cb1-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb1-9" data-line-number="9"><span class="fu">after_failure:</span></a>
-<a class="sourceLine" id="cb1-10" data-line-number="10"><span class="kw"><a href="https://rdrr.io/r/base/Arithmetic.html">-</a></span> bash .travis/covrpage.sh</a>
-<a class="sourceLine" id="cb1-11" data-line-number="11"></a>
-<a class="sourceLine" id="cb1-12" data-line-number="12"><span class="fu">r_github_packages:</span><span class="at"> metrumresearchgroup/covrpage</span></a>
-<a class="sourceLine" id="cb1-13" data-line-number="13"><span class="fu">env:</span></a>
-<a class="sourceLine" id="cb1-14" data-line-number="14">  <span class="fu">global:</span></a>
-<a class="sourceLine" id="cb1-15" data-line-number="15">    <span class="fu">secure:</span><span class="at"> </span><span class="kw"><a href="https://rdrr.io/r/base/Extract.html">[</a></span>Travis encrypted Github PAT<span class="kw">]</span></a></code></pre></div>
-<p>covrpage adds one new line to the standard <code>{covr}</code> Travis YML:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode yml"><code class="sourceCode yaml"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/Arithmetic.html">-</a></span> bash .travis/covrpage.sh</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">language</span><span class="kw">:</span><span class="at"> R</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="fu">sudo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="fu">cache</span><span class="kw">:</span><span class="at"> packages</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="fu">after_success</span><span class="kw">:</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a><span class="kw">-</span><span class="at"> Rscript -e 'covr::codecov()'</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a><span class="kw">-</span><span class="at"> bash .travis/covrpage.sh</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a><span class="fu">after_failure</span><span class="kw">:</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a><span class="kw">-</span><span class="at"> bash .travis/covrpage.sh</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a><span class="fu">r_github_packages</span><span class="kw">:</span><span class="at"> metrumresearchgroup/covrpage</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a><span class="fu">env</span><span class="kw">:</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true"></a><span class="at">  </span><span class="fu">global</span><span class="kw">:</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true"></a><span class="at">    </span><span class="fu">secure</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">Travis encrypted Github PAT</span><span class="kw">]</span></span></code></pre></div>
+<p>covrpage adds one new line to the standard <a href="https://covr.r-lib.org" class="external-link">covr</a> Travis YML:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode yml"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="kw">-</span><span class="at"> bash .travis/covrpage.sh</span></span></code></pre></div>
 <p>This file is created when running <code><a href="../reference/use_covrpage.html">covrpage::use_covrpage()</a></code> in the <code>.travis</code> subdirectory:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode yml"><code class="sourceCode yaml"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="fu">env:</span></a>
-<a class="sourceLine" id="cb3-2" data-line-number="2">  <span class="fu">global:</span></a>
-<a class="sourceLine" id="cb3-3" data-line-number="3">    <span class="fu">secure:</span><span class="at"> IeWrPb9tC9oxkoceXs4NStZJFIJKtvi/qeErbv3OATeo+BylRwj9xzcmzQrV8ps...</span></a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode yml"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="fu">env</span><span class="kw">:</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a><span class="at">  </span><span class="fu">global</span><span class="kw">:</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a><span class="at">    </span><span class="fu">secure</span><span class="kw">:</span><span class="at"> IeWrPb9tC9oxkoceXs4NStZJFIJKtvi/qeErbv3OATeo+BylRwj9xzcmzQrV8ps...</span></span></code></pre></div>
 <p>The bash script can be run on a successful or failed build creating the covrpage report.</p>
-<p>To allow Travis push back into the originating repository, you will need to give it permission to do so by providing an encrypted <a href="https://github.com/settings/tokens">GitHub Personal Access Token</a> (PAT). This is done using the Travis command line <a href="https://docs.travis-ci.com/user/encryption-keys/">function</a>.</p>
-<p>By default, the function assumes you have defined a system environment variable <code>GITHUB_PAT</code> and will use it to define a <a href="https://docs.travis-ci.com/user/environment-variables/">Travis environment variable</a> as <code>GH_PAT</code>.</p>
+<p>To allow Travis push back into the originating repository, you will need to give it permission to do so by providing an encrypted <a href="https://github.com/settings/tokens" class="external-link">GitHub Personal Access Token</a> (PAT). This is done using the Travis command line <a href="https://docs.travis-ci.com/user/encryption-keys/" class="external-link">function</a>.</p>
+<p>By default, the function assumes you have defined a system environment variable <code>GITHUB_PAT</code> and will use it to define a <a href="https://docs.travis-ci.com/user/environment-variables/" class="external-link">Travis environment variable</a> as <code>GH_PAT</code>.</p>
 <ul>
 <li>
 <code>R</code> Environment Variable</li>
 </ul>
 <p>To define the Github PAT as an R environment variable:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/Sys.setenv.html">Sys.setenv</a></span>(<span class="dt">GITHUB_PAT=</span><span class="st">'PAT FROM GITHUB'</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Sys.setenv.html" class="external-link">Sys.setenv</a></span><span class="op">(</span>GITHUB_PAT<span class="op">=</span><span class="st">'PAT FROM GITHUB'</span><span class="op">)</span></span></code></pre></div>
 <ul>
 <li>Travis Environment Variable</li>
 </ul>
 <p>Run the following line in the terminal when you are in the root project directory (where the <code>.git</code> folder in located), the output should be appended directly to the <code>.travis.yml</code> file. Each time you run it a new <code>secure</code> line is added to the yml.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">travis encrypt GH_PAT=<span class="st">"[PAT FROM GITHUB]"</span> <span class="op">--</span>add</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a>travis encrypt GH_PAT=<span class="st">"[PAT FROM GITHUB]"</span> <span class="op">--</span>add</span></code></pre></div>
 <p>These two commands are combined into a utility function:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">covrpage<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/covrpage/man/tencrypt.html">tencrypt</a></span>(<span class="dt">r_obj =</span> <span class="kw"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span>(<span class="st">"GITHUB_PAT"</span>),<span class="dt">travis_env =</span> <span class="st">"GH_PAT"</span>,<span class="dt">add =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">covrpage</span><span class="fu">::</span><span class="fu"><a href="../reference/tencrypt.html">tencrypt</a></span><span class="op">(</span>r_obj <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html" class="external-link">Sys.getenv</a></span><span class="op">(</span><span class="st">"GITHUB_PAT"</span><span class="op">)</span>,travis_env <span class="op">=</span> <span class="st">"GH_PAT"</span>,add <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="deploy-pkgdown" class="section level3">
-<h3 class="hasAnchor">
-<a href="#deploy-pkgdown" class="anchor"></a>Deploy + pkgdown</h3>
-<p>You can also use <a href="https://www.github.com/r-lib/pkgdown">pkgdown</a> to create a covrpage readme with Travis. This is relevant or successful builds only, since travis will not invoke a deploy on a failed build.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode yml"><code class="sourceCode yaml"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="fu">language:</span><span class="at"> r</span></a>
-<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="fu">cache:</span><span class="at"> packages</span></a>
-<a class="sourceLine" id="cb7-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="fu">after_success:</span></a>
-<a class="sourceLine" id="cb7-5" data-line-number="5"><span class="kw"><a href="https://rdrr.io/r/base/Arithmetic.html">-</a></span> <span class="fu">Rscript -e 'covr:</span><span class="at">:codecov()'</span></a>
-<a class="sourceLine" id="cb7-6" data-line-number="6"><span class="kw"><a href="https://rdrr.io/r/base/Arithmetic.html">-</a></span> <span class="fu">Rscript -e 'devtools:</span><span class="at">:install(); covrpage::covrpage_ci()'</span></a>
-<a class="sourceLine" id="cb7-7" data-line-number="7"><span class="kw"><a href="https://rdrr.io/r/base/Arithmetic.html">-</a></span> <span class="fu">Rscript -e 'pkgdown:</span><span class="at">:build_site()'</span></a>
-<a class="sourceLine" id="cb7-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb7-9" data-line-number="9"><span class="fu">r_github_packages:</span><span class="at"> </span></a>
-<a class="sourceLine" id="cb7-10" data-line-number="10">  <span class="kw"><a href="https://rdrr.io/r/base/Arithmetic.html">-</a></span> metrumresearchgroup/covrpage</a>
-<a class="sourceLine" id="cb7-11" data-line-number="11">  <span class="kw"><a href="https://rdrr.io/r/base/Arithmetic.html">-</a></span> r-lib/pkgdown <span class="co">#either put this here or in Suggests in the DESCRIPTION file</span></a>
-<a class="sourceLine" id="cb7-12" data-line-number="12"></a>
-<a class="sourceLine" id="cb7-13" data-line-number="13"><span class="fu">deploy:</span></a>
-<a class="sourceLine" id="cb7-14" data-line-number="14">  <span class="fu">provider:</span><span class="at"> pages</span></a>
-<a class="sourceLine" id="cb7-15" data-line-number="15">  <span class="fu">skip-cleanup:</span><span class="at"> true</span></a>
-<a class="sourceLine" id="cb7-16" data-line-number="16">  <span class="fu">github-token:</span><span class="at"> </span><span class="st">"$GH_PAT"</span></a>
-<a class="sourceLine" id="cb7-17" data-line-number="17">  <span class="fu">keep-history:</span><span class="at"> true</span></a>
-<a class="sourceLine" id="cb7-18" data-line-number="18">  <span class="fu">local-dir:</span><span class="at"> docs</span></a>
-<a class="sourceLine" id="cb7-19" data-line-number="19">  <span class="fu">on:</span></a>
-<a class="sourceLine" id="cb7-20" data-line-number="20">    <span class="fu">branch:</span><span class="at"> master</span></a>
-<a class="sourceLine" id="cb7-21" data-line-number="21"></a>
-<a class="sourceLine" id="cb7-22" data-line-number="22"><span class="fu">env:</span></a>
-<a class="sourceLine" id="cb7-23" data-line-number="23">  <span class="fu">global:</span></a>
-<a class="sourceLine" id="cb7-24" data-line-number="24">    <span class="fu">secure:</span><span class="at"> </span><span class="kw"><a href="https://rdrr.io/r/base/Extract.html">[</a></span>Travis encrypted Github PAT<span class="kw">]</span></a></code></pre></div>
+<div class="section level3">
+<h3 id="deploy-pkgdown">Deploy + pkgdown<a class="anchor" aria-label="anchor" href="#deploy-pkgdown"></a>
+</h3>
+<p>You can also use <a href="https://www.github.com/r-lib/pkgdown" class="external-link">pkgdown</a> to create a covrpage readme with Travis. This is relevant or successful builds only, since travis will not invoke a deploy on a failed build.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode yml"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="fu">language</span><span class="kw">:</span><span class="at"> r</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a><span class="fu">cache</span><span class="kw">:</span><span class="at"> packages</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a><span class="fu">after_success</span><span class="kw">:</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a><span class="kw">-</span><span class="at"> Rscript -e 'covr::codecov()'</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true"></a><span class="kw">-</span><span class="at"> Rscript -e 'devtools::install(); covrpage::covrpage_ci()'</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true"></a><span class="kw">-</span><span class="at"> Rscript -e 'pkgdown::build_site()'</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true"></a><span class="fu">r_github_packages</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true"></a><span class="at">  </span><span class="kw">-</span><span class="at"> metrumresearchgroup/covrpage</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true"></a><span class="at">  </span><span class="kw">-</span><span class="at"> r-lib/pkgdown</span><span class="co"> #either put this here or in Suggests in the DESCRIPTION file</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true"></a><span class="fu">deploy</span><span class="kw">:</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true"></a><span class="at">  </span><span class="fu">provider</span><span class="kw">:</span><span class="at"> pages</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true"></a><span class="at">  </span><span class="fu">skip-cleanup</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true"></a><span class="at">  </span><span class="fu">github-token</span><span class="kw">:</span><span class="at"> </span><span class="st">"$GH_PAT"</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true"></a><span class="at">  </span><span class="fu">keep-history</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true"></a><span class="at">  </span><span class="fu">local-dir</span><span class="kw">:</span><span class="at"> docs</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true"></a><span class="at">  </span><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true"></a><span class="at">    </span><span class="fu">branch</span><span class="kw">:</span><span class="at"> master</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true"></a></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true"></a><span class="fu">env</span><span class="kw">:</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true"></a><span class="at">  </span><span class="fu">global</span><span class="kw">:</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true"></a><span class="at">    </span><span class="fu">secure</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">Travis encrypted Github PAT</span><span class="kw">]</span></span></code></pre></div>
 </div>
-<div id="tic" class="section level3">
-<h3 class="hasAnchor">
-<a href="#tic" class="anchor"></a>tic</h3>
-<p>You can use the <a href="https://github.com/ropenscilabs/tic">tic</a> package to manage the steps taken in travis. It is simplest to install <code>tic</code> via the <a href="https://github.com/ropenscilabs/travis">travis</a> package with the function <a href="https://ropenscilabs.github.io/travis/reference/use_tic.html">travis::use_tic()</a>. This will take you through all the steps needed to set up the workflow in travis and github with the project repository.</p>
-<p>After running this function you can run <a href="https://metrumresearchgroup.github.io/covrpage/reference/use_covrpage.html">covrpage::use_covrpage(travis_type=‘tic’)</a> to copy into the project root directory the two files needed to run covrpage on travis: <code>tic.R</code> and <code>.travis.yml</code>. They can always be found in the system folder of the package.</p>
-<div id="highlights" class="section level4">
-<h4 class="hasAnchor">
-<a href="#highlights" class="anchor"></a>Highlights</h4>
+<div class="section level3">
+<h3 id="tic">tic<a class="anchor" aria-label="anchor" href="#tic"></a>
+</h3>
+<p>You can use the <a href="https://github.com/ropenscilabs/tic" class="external-link">tic</a> package to manage the steps taken in travis. It is simplest to install <code>tic</code> via the <a href="https://github.com/ropenscilabs/travis" class="external-link">travis</a> package with the function <a href="https://ropenscilabs.github.io/travis/reference/use_tic.html" class="external-link">travis::use_tic()</a>. This will take you through all the steps needed to set up the workflow in travis and github with the project repository.</p>
+<p>After running this function you can run <a href="https://metrumresearchgroup.github.io/covrpage/reference/use_covrpage.html" class="external-link">covrpage::use_covrpage(travis_type=‘tic’)</a> to copy into the project root directory the two files needed to run covrpage on travis: <code>tic.R</code> and <code>.travis.yml</code>. They can always be found in the system folder of the package.</p>
+<div class="section level4">
+<h4 id="highlights">Highlights<a class="anchor" aria-label="anchor" href="#highlights"></a>
+</h4>
 <p>Some things to highlight in the setup of the templates.</p>
-<p>If the <code>commit</code> is pushed to <code>origin/master</code> then after a successful build covrpage is run and the resulting <code>tests/README.md</code> is deployed back into the <code>origin/master</code> and if there is a vignette output <a href="https://www.github.com/r-lib/pkgdown">pkgdown</a> will rebuild the <code>docs</code> folder and will be deployed into <code>gh-pages</code>.</p>
+<p>If the <code>commit</code> is pushed to <code>origin/master</code> then after a successful build covrpage is run and the resulting <code>tests/README.md</code> is deployed back into the <code>origin/master</code> and if there is a vignette output <a href="https://www.github.com/r-lib/pkgdown" class="external-link">pkgdown</a> will rebuild the <code>docs</code> folder and will be deployed into <code>gh-pages</code>.</p>
 <p>If the commit is <strong>not</strong> pushed to <code>origin/master</code>, ie a <code>origin/&lt;branch&gt;</code>, then after a successful build <code>covrpage</code> is run and the resulting <code>tests/README.md</code> is deployed back into the <code>origin/&lt;branch&gt;</code>.</p>
 <p>Again, if there is an unsuccessful build on travis, then no deployment will occur. In this case you would need to use the <a href="#direct">bash</a> option to deploy back into the <code>origin</code>.</p>
 </div>
-<div id="tic-r" class="section level4">
-<h4 class="hasAnchor">
-<a href="#tic-r" class="anchor"></a>tic.R</h4>
-<p><code><a href="https://rdrr.io/r/base/system.file.html">system.file('templates/tic/tic.R',package = 'covrpage')</a></code></p>
-<pre><code>  add_package_checks()
-  
-  if (Sys.getenv("id_rsa") != "") {
-    # pkgdown documentation can be built optionally. Other example criteria:
-    # - `inherits(ci(), "TravisCI")`: Only for Travis CI
-    # - `ci()$is_tag()`: Only for tags, not for branches
-    # - `Sys.getenv("BUILD_PKGDOWN") != ""`: If the env var "BUILD_PKGDOWN" is set
-    # - `Sys.getenv("TRAVIS_EVENT_TYPE") == "cron"`: Only for Travis cron jobs
-    get_stage("before_deploy") %&gt;%
-      add_step(step_setup_ssh())
-    
-    if (ci()$get_branch() == "master") {
-      get_stage("deploy") %&gt;%
-        add_code_step(covr::codecov()) %&gt;%
-        add_code_step(devtools::install()) %&gt;%
-        add_code_step(covrpage::covrpage_ci()) %&gt;%
-        add_step(step_push_deploy(commit_paths = "tests/README.md")) %&gt;%
-        add_step(step_build_pkgdown()) %&gt;%
-        add_step(step_push_deploy(path = "docs", branch = "gh-pages"))
-    }else{
-      get_stage("deploy") %&gt;%
-        add_code_step(covr::codecov()) %&gt;%
-        add_code_step(devtools::install()) %&gt;%
-        add_code_step(covrpage::covrpage_ci()) %&gt;%
-        add_step(step_push_deploy(commit_paths = "tests/README.md"))
-    }
-  }</code></pre>
+<div class="section level4">
+<h4 id="tic-r">tic.R<a class="anchor" aria-label="anchor" href="#tic-r"></a>
+</h4>
+<p><code>system.file('templates/tic/tic.R',package = 'covrpage')</code></p>
+<pre><code><span>  <span class="fu">add_package_checks</span><span class="op">(</span><span class="op">)</span></span>
+<span>  </span>
+<span>  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html" class="external-link">Sys.getenv</a></span><span class="op">(</span><span class="st">"id_rsa"</span><span class="op">)</span> <span class="op">!=</span> <span class="st">""</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="co"># pkgdown documentation can be built optionally. Other example criteria:</span></span>
+<span>    <span class="co"># - `inherits(ci(), "TravisCI")`: Only for Travis CI</span></span>
+<span>    <span class="co"># - `ci()$is_tag()`: Only for tags, not for branches</span></span>
+<span>    <span class="co"># - `Sys.getenv("BUILD_PKGDOWN") != ""`: If the env var "BUILD_PKGDOWN" is set</span></span>
+<span>    <span class="co"># - `Sys.getenv("TRAVIS_EVENT_TYPE") == "cron"`: Only for Travis cron jobs</span></span>
+<span>    <span class="fu">get_stage</span><span class="op">(</span><span class="st">"before_deploy"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>      <span class="fu">add_step</span><span class="op">(</span><span class="fu">step_setup_ssh</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span>    </span>
+<span>    <span class="kw">if</span> <span class="op">(</span><span class="fu">ci</span><span class="op">(</span><span class="op">)</span><span class="op">$</span><span class="fu">get_branch</span><span class="op">(</span><span class="op">)</span> <span class="op">==</span> <span class="st">"master"</span><span class="op">)</span> <span class="op">{</span></span>
+<span>      <span class="fu">get_stage</span><span class="op">(</span><span class="st">"deploy"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>        <span class="fu">add_code_step</span><span class="op">(</span><span class="fu">covr</span><span class="fu">::</span><span class="fu"><a href="http://covr.r-lib.org/reference/codecov.html" class="external-link">codecov</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>        <span class="fu">add_code_step</span><span class="op">(</span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install</span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>        <span class="fu">add_code_step</span><span class="op">(</span><span class="fu">covrpage</span><span class="fu">::</span><span class="fu"><a href="../reference/covrpage_ci.html">covrpage_ci</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>        <span class="fu">add_step</span><span class="op">(</span><span class="fu">step_push_deploy</span><span class="op">(</span>commit_paths <span class="op">=</span> <span class="st">"tests/README.md"</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>        <span class="fu">add_step</span><span class="op">(</span><span class="fu">step_build_pkgdown</span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>        <span class="fu">add_step</span><span class="op">(</span><span class="fu">step_push_deploy</span><span class="op">(</span>path <span class="op">=</span> <span class="st">"docs"</span>, branch <span class="op">=</span> <span class="st">"gh-pages"</span><span class="op">)</span><span class="op">)</span></span>
+<span>    <span class="op">}</span><span class="kw">else</span><span class="op">{</span></span>
+<span>      <span class="fu">get_stage</span><span class="op">(</span><span class="st">"deploy"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>        <span class="fu">add_code_step</span><span class="op">(</span><span class="fu">covr</span><span class="fu">::</span><span class="fu"><a href="http://covr.r-lib.org/reference/codecov.html" class="external-link">codecov</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>        <span class="fu">add_code_step</span><span class="op">(</span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install</span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>        <span class="fu">add_code_step</span><span class="op">(</span><span class="fu">covrpage</span><span class="fu">::</span><span class="fu"><a href="../reference/covrpage_ci.html">covrpage_ci</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>        <span class="fu">add_step</span><span class="op">(</span><span class="fu">step_push_deploy</span><span class="op">(</span>commit_paths <span class="op">=</span> <span class="st">"tests/README.md"</span><span class="op">)</span><span class="op">)</span></span>
+<span>    <span class="op">}</span></span>
+<span>  <span class="op">}</span></span></code></pre>
 </div>
-<div id="tic_travis-yml" class="section level4">
-<h4 class="hasAnchor">
-<a href="#tic_travis-yml" class="anchor"></a>tic_travis.yml</h4>
-<p><code><a href="https://rdrr.io/r/base/system.file.html">system.file('templates/tic/tic_travis.yml',package = 'covrpage')</a></code></p>
-<pre><code>  # R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
-  # Default configuration for use with tic package
-  # Usually you shouldn't need to change the first part of the file
-  
-  # Header
-  language: r
-  cache: packages
-  r_github_packages:
-  - yonicd/covrpage
-  - r-lib/pkgdown
-  os:
-  - linux
-  
-  #env
-  env:
-    global:
-      - _R_CHECK_FORCE_SUGGESTS_=false
-      - MAKEFLAGS="-j 2"
-      
-  # R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
-  # Default configuration for use with tic package
-  # Usually you shouldn't need to change the first part of the file
-  
-  # DO NOT CHANGE THE CODE BELOW
-  before_install: R -q -e 'install.packages(c("remotes", "curl")); remotes::install_github("ropenscilabs/tic"); tic::prepare_all_stages(); tic::before_install()'
-  install: R -q -e 'tic::install()'
-  after_install: R -q -e 'tic::after_install()'
-  before_script: R -q -e 'tic::before_script()'
-  script: R -q -e 'tic::script()'
-  after_success: R -q -e 'tic::after_success()'
-  after_failure: R -q -e 'tic::after_failure()'
-  before_deploy: R -q -e 'tic::before_deploy()'
-  deploy:
-    provider: script
-    script: R -q -e 'tic::deploy()'
-    on:
-      all_branches: true
-  after_deploy: R -q -e 'tic::after_deploy()'
-  after_script: R -q -e 'tic::after_script()'
-  # DO NOT CHANGE THE CODE ABOVE</code></pre>
+<div class="section level4">
+<h4 id="tic_travis-yml">tic_travis.yml<a class="anchor" aria-label="anchor" href="#tic_travis-yml"></a>
+</h4>
+<p><code>system.file('templates/tic/tic_travis.yml',package = 'covrpage')</code></p>
+<pre><code>  Warning in file(con, "r"): file("") only supports open = "w+" and open = "w+b":
+  using the former</code></pre>
 </div>
 </div>
 </div>
   </div>
 
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-        <div id="tocnav">
-      <h2 class="hasAnchor">
-<a href="#tocnav" class="anchor"></a>Contents</h2>
-      <ul class="nav nav-pills nav-stacked">
-<li><a href="#travis">Travis</a></li>
-      </ul>
+        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
+    </nav>
 </div>
-      </div>
 
 </div>
 
 
 
       <footer><div class="copyright">
-  <p>Developed by Jonathan Sidi, Locke Data.</p>
+  <p></p>
+<p>Developed by Jonathan Sidi, Locke Data.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.9000.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer>
@@ -280,6 +243,8 @@
 
   
 
+
+  
 
   </body>
 </html>
