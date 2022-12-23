@@ -1,7 +1,7 @@
 testthat::context("badge")
 
 testthat::describe("create badge", {
-
+  testthat::skip_on_ci()
   file.copy("../assets/covrpage_benchmark/covrpage", tempdir(), recursive = TRUE)
   td <- file.path(tempdir(), "covrpage")
   dir.create(td)
