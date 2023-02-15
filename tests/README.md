@@ -1,6 +1,6 @@
 Tests and Coverage
 ================
-23 December, 2022 19:01:59
+15 February, 2023 13:00:48
 
   - [Coverage](#coverage)
   - [Unit Tests](#unit-tests)
@@ -46,8 +46,8 @@ Unit Test summary is created using the
 
 | file                                               | n |  time | error | failed | skipped | warning | icon |
 | :------------------------------------------------- | -: | ----: | ----: | -----: | ------: | ------: | :--- |
-| [test-check\_utils.R](testthat/test-check_utils.R) | 4 | 0.051 |     0 |      0 |       1 |       1 | 🔶⚠️  |
-| [test-covrfuns.R](testthat/test-covrfuns.R)        | 6 | 0.048 |     0 |      0 |       0 |       0 |      |
+| [test-check\_utils.R](testthat/test-check_utils.R) | 4 | 0.083 |     0 |      0 |       1 |       1 | 🔶⚠️  |
+| [test-covrfuns.R](testthat/test-covrfuns.R)        | 6 | 0.045 |     0 |      0 |       0 |       0 |      |
 
 <details open>
 
@@ -55,15 +55,15 @@ Unit Test summary is created using the
 
 | file                                                   | context                    | test                           | status  | n |  time | icon |
 | :----------------------------------------------------- | :------------------------- | :----------------------------- | :------ | -: | ----: | :--- |
-| [test-check\_utils.R](testthat/test-check_utils.R#L4)  | check for tests            | tests are detected             | PASS    | 1 | 0.010 |      |
+| [test-check\_utils.R](testthat/test-check_utils.R#L4)  | check for tests            | tests are detected             | PASS    | 1 | 0.042 |      |
 | [test-check\_utils.R](testthat/test-check_utils.R#L12) | check for packages         | packages are detected          | SKIPPED | 1 | 0.008 | 🔶    |
 | [test-check\_utils.R](testthat/test-check_utils.R#L23) | use covrpage               | test use\_covrpage             | WARNING | 2 | 0.033 | ⚠️   |
 | [test-covrfuns.R](testthat/test-covrfuns.R#L5)         | check summary covr         | covr\_summary: standard input  | PASS    | 1 | 0.018 |      |
 | [test-covrfuns.R](testthat/test-covrfuns.R#L9_L11)     | check summary covr         | covr\_summary: empty input     | PASS    | 1 | 0.007 |      |
 | [test-covrfuns.R](testthat/test-covrfuns.R#L19)        | check summary output types | with data: short               | PASS    | 1 | 0.008 |      |
 | [test-covrfuns.R](testthat/test-covrfuns.R#L23)        | check summary output types | with data: long                | PASS    | 1 | 0.005 |      |
-| [test-covrfuns.R](testthat/test-covrfuns.R#L27)        | check summary output types | with data: no data             | PASS    | 1 | 0.003 |      |
-| [test-covrfuns.R](testthat/test-covrfuns.R#L35)        | check covr to df           | covr object to df: empty input | PASS    | 1 | 0.007 |      |
+| [test-covrfuns.R](testthat/test-covrfuns.R#L27)        | check summary output types | with data: no data             | PASS    | 1 | 0.004 |      |
+| [test-covrfuns.R](testthat/test-covrfuns.R#L35)        | check covr to df           | covr object to df: empty input | PASS    | 1 | 0.003 |      |
 
 | Failed | Warning | Skipped |
 | :----- | :------ | :------ |
@@ -78,7 +78,7 @@ Unit Test summary is created using the
 | Field    | Value                         |                                                                                                                                                                                                                                                                  |
 | :------- | :---------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Version  | R version 4.2.2 (2022-10-31)  |                                                                                                                                                                                                                                                                  |
-| Platform | x86\_64-pc-linux-gnu (64-bit) | <a href="https://github.com/yonicd/covrpage/commit/daa4a0b747cba1098fc3b40fea79b0d41747dab8/checks" target="_blank"><span title="Built on Github Actions">![](https://github.com/metrumresearchgroup/covrpage/blob/actions/inst/logo/gh.png?raw=true)</span></a> |
+| Platform | x86\_64-pc-linux-gnu (64-bit) | <a href="https://github.com/yonicd/covrpage/commit/77a7223ae889b0ee4112323f005972ea611035cc/checks" target="_blank"><span title="Built on Github Actions">![](https://github.com/metrumresearchgroup/covrpage/blob/actions/inst/logo/gh.png?raw=true)</span></a> |
 | Running  | Ubuntu 22.04.1 LTS            |                                                                                                                                                                                                                                                                  |
 | Language | C                             |                                                                                                                                                                                                                                                                  |
 | Timezone | UTC                           |                                                                                                                                                                                                                                                                  |
