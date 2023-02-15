@@ -34,7 +34,7 @@ coverage_skip <- function(
   test_skip_lines <- lapply(
     split(test_skip, test_skip$file),
     function(x) {
-      unlist(mapply(seq, from = x$line1, to = x$line2))
+      unlist(mapply(seq, from = x$line1, to = x$line2, SIMPLIFY = FALSE))
     }
   )
 
