@@ -1,6 +1,6 @@
 Tests and Coverage
 ================
-12 December, 2020 19:50:23
+23 December, 2022 19:01:59
 
   - [Coverage](#coverage)
   - [Unit Tests](#unit-tests)
@@ -15,7 +15,7 @@ Coverage summary is created using the
 
 | Object                                                      | Coverage (%) |
 | :---------------------------------------------------------- | :----------: |
-| covrpage                                                    |    12.70     |
+| covrpage                                                    |    12.24     |
 | [R/badge.R](../R/badge.R)                                   |     0.00     |
 | [R/coverage\_skip.R](../R/coverage_skip.R)                  |     0.00     |
 | [R/covrpage\_ci.R](../R/covrpage_ci.R)                      |     0.00     |
@@ -24,6 +24,8 @@ Coverage summary is created using the
 | [R/covrpage\_snapshot.R](../R/covrpage_snapshot.R)          |     0.00     |
 | [R/covrpage.R](../R/covrpage.R)                             |     0.00     |
 | [R/desc.R](../R/desc.R)                                     |     0.00     |
+| [R/icons.R](../R/icons.R)                                   |     0.00     |
+| [R/is\_utils.R](../R/is_utils.R)                            |     0.00     |
 | [R/map\_testthat\_snapshot.R](../R/map_testthat_snapshot.R) |     0.00     |
 | [R/map\_testthat.R](../R/map_testthat.R)                    |     0.00     |
 | [R/tencrypt.R](../R/tencrypt.R)                             |     0.00     |
@@ -44,8 +46,8 @@ Unit Test summary is created using the
 
 | file                                               | n |  time | error | failed | skipped | warning | icon |
 | :------------------------------------------------- | -: | ----: | ----: | -----: | ------: | ------: | :--- |
-| [test-check\_utils.R](testthat/test-check_utils.R) | 5 | 0.104 |     0 |      0 |       1 |       2 | 🔶⚠️  |
-| [test-covrfuns.R](testthat/test-covrfuns.R)        | 6 | 0.061 |     0 |      0 |       0 |       0 |      |
+| [test-check\_utils.R](testthat/test-check_utils.R) | 4 | 0.051 |     0 |      0 |       1 |       1 | 🔶⚠️  |
+| [test-covrfuns.R](testthat/test-covrfuns.R)        | 6 | 0.048 |     0 |      0 |       0 |       0 |      |
 
 <details open>
 
@@ -53,15 +55,15 @@ Unit Test summary is created using the
 
 | file                                                   | context                    | test                           | status  | n |  time | icon |
 | :----------------------------------------------------- | :------------------------- | :----------------------------- | :------ | -: | ----: | :--- |
-| [test-check\_utils.R](testthat/test-check_utils.R#L4)  | check for tests            | tests are detected             | PASS    | 1 | 0.021 |      |
-| [test-check\_utils.R](testthat/test-check_utils.R#L12) | check for packages         | packages are detected          | SKIPPED | 1 | 0.021 | 🔶    |
-| [test-check\_utils.R](testthat/test-check_utils.R#L23) | use covrpage               | test use\_covrpage             | WARNING | 3 | 0.062 | ⚠️   |
-| [test-covrfuns.R](testthat/test-covrfuns.R#L5)         | check summary covr         | covr\_summary: standard input  | PASS    | 1 | 0.022 |      |
+| [test-check\_utils.R](testthat/test-check_utils.R#L4)  | check for tests            | tests are detected             | PASS    | 1 | 0.010 |      |
+| [test-check\_utils.R](testthat/test-check_utils.R#L12) | check for packages         | packages are detected          | SKIPPED | 1 | 0.008 | 🔶    |
+| [test-check\_utils.R](testthat/test-check_utils.R#L23) | use covrpage               | test use\_covrpage             | WARNING | 2 | 0.033 | ⚠️   |
+| [test-covrfuns.R](testthat/test-covrfuns.R#L5)         | check summary covr         | covr\_summary: standard input  | PASS    | 1 | 0.018 |      |
 | [test-covrfuns.R](testthat/test-covrfuns.R#L9_L11)     | check summary covr         | covr\_summary: empty input     | PASS    | 1 | 0.007 |      |
-| [test-covrfuns.R](testthat/test-covrfuns.R#L19)        | check summary output types | with data: short               | PASS    | 1 | 0.020 |      |
-| [test-covrfuns.R](testthat/test-covrfuns.R#L23)        | check summary output types | with data: long                | PASS    | 1 | 0.007 |      |
-| [test-covrfuns.R](testthat/test-covrfuns.R#L27)        | check summary output types | with data: no data             | PASS    | 1 | 0.002 |      |
-| [test-covrfuns.R](testthat/test-covrfuns.R#L35)        | check covr to df           | covr object to df: empty input | PASS    | 1 | 0.003 |      |
+| [test-covrfuns.R](testthat/test-covrfuns.R#L19)        | check summary output types | with data: short               | PASS    | 1 | 0.008 |      |
+| [test-covrfuns.R](testthat/test-covrfuns.R#L23)        | check summary output types | with data: long                | PASS    | 1 | 0.005 |      |
+| [test-covrfuns.R](testthat/test-covrfuns.R#L27)        | check summary output types | with data: no data             | PASS    | 1 | 0.003 |      |
+| [test-covrfuns.R](testthat/test-covrfuns.R#L35)        | check covr to df           | covr object to df: empty input | PASS    | 1 | 0.007 |      |
 
 | Failed | Warning | Skipped |
 | :----- | :------ | :------ |
@@ -73,19 +75,19 @@ Unit Test summary is created using the
 
 <summary> Session Info </summary>
 
-| Field    | Value                             |
-| :------- | :-------------------------------- |
-| Version  | R version 4.0.3 (2020-10-10)      |
-| Platform | x86\_64-apple-darwin17.0 (64-bit) |
-| Running  | macOS Catalina 10.15.7            |
-| Language | en\_US                            |
-| Timezone | UTC                               |
+| Field    | Value                         |                                                                                                                                                                                                                                                                  |
+| :------- | :---------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Version  | R version 4.2.2 (2022-10-31)  |                                                                                                                                                                                                                                                                  |
+| Platform | x86\_64-pc-linux-gnu (64-bit) | <a href="https://github.com/yonicd/covrpage/commit/daa4a0b747cba1098fc3b40fea79b0d41747dab8/checks" target="_blank"><span title="Built on Github Actions">![](https://github.com/metrumresearchgroup/covrpage/blob/actions/inst/logo/gh.png?raw=true)</span></a> |
+| Running  | Ubuntu 22.04.1 LTS            |                                                                                                                                                                                                                                                                  |
+| Language | C                             |                                                                                                                                                                                                                                                                  |
+| Timezone | UTC                           |                                                                                                                                                                                                                                                                  |
 
 | Package  | Version |
 | :------- | :------ |
-| testthat | 3.0.0   |
-| covr     | 3.3.2   |
-| covrpage | 0.1     |
+| testthat | 3.1.6   |
+| covr     | 3.6.1   |
+| covrpage | 0.2     |
 
 </details>
 

@@ -5,17 +5,19 @@ date: "`r format(Sys.time(), '%d %B, %Y %H:%M:%S')`"
 
 This output is created by [covrpage](https://github.com/yonicd/covrpage).
 
-```{r load,include=FALSE}
+```{r load dependencies,include=FALSE}
 library(covr     , warn.conflicts = FALSE , quietly = TRUE)
 library(knitr    , warn.conflicts = FALSE , quietly = TRUE)
-library(magrittr , warn.conflicts = FALSE , quietly = TRUE)
-
 ```
 
 ```{r run unit tests, include=FALSE}
+<<<<<<< HEAD
 testthat::set_max_fails(Inf)
+=======
+
+>>>>>>> 5e1f6729b44c6f57f5913f457620383163e3819b
 test_x    <- testthat::test_check(
-  package         = package_name(path = '..'),
+  package         = covrpage::package_name(path = '..'),
   reporter        = testthat::default_reporter(),
   stop_on_failure = FALSE,
   stop_on_warning = FALSE
@@ -25,21 +27,21 @@ skip <- length(test_x)>0
 failed <- FALSE
 ```
 
-```{r maps, include=FALSE}
+```{r map tests, include=FALSE}
 test_m <- covrpage::map_testthat('testthat')
 ```
 
 
-```{r, include=FALSE}
-test_x_short <- test_x%>%
+```{r create summaries, include=FALSE}
+test_x_short <- test_x |>
   covrpage::testthat_summary(type='short')
 
-test_x_long <- test_x%>%
+test_x_long <- test_x |>
   covrpage::testthat_summary(type='long')
 
 ```
  
-```{r, include=FALSE,eval=skip}
+```{r check for failed tests, include=FALSE,eval=skip}
 test_skip <- test_x_long[test_x_long$status!='PASS',c('file','test')]
 
 test_skip$file <- gsub('#(.*?)$','',basename(test_skip$file))
@@ -50,7 +52,7 @@ failed <- any(test_x_long$status%in%c('ERROR','FAILED'))
 
 ```
 
-```{r, include=FALSE,eval=!skip}
+```{r prep for skipped tests, include=FALSE,eval=!skip}
 
 test_skip <- test_m
 
@@ -62,17 +64,21 @@ Coverage summary is created using the [covr](https://github.com/r-lib/covr) pack
 
 ```{r run covrage,include=FALSE}
 if(any(grepl(covrpage::package_name(path = '..'),loadedNamespaces())))
+<<<<<<< HEAD
   unloadNamespace(covrpage::package_name(path = '..'))
+=======
+  unloadNamespace(package_name(path = '..'))
+>>>>>>> 5e1f6729b44c6f57f5913f457620383163e3819b
 cvr <- covrpage::coverage_skip(test_path = '../tests/testthat', test_skip = test_skip)
 ```
 
-```{r,echo=FALSE,eval=failed}
+```{r message on coverage warning,echo=FALSE,eval=failed}
 cat(sprintf('%s Not All Tests Passed\n  Coverage statistics are approximations of the non-failing tests.\n  Use with caution\n\n For further investigation check in testthat summary tables.',covrpage:::emos[[platform()]][['WARNING']]))
 ```
 
-```{r,echo=FALSE}
-cvr%>%
-  covrpage::covr_summary(failed = failed,package = package_name(path = '..'))%>%
+```{r summarize coverage,echo=FALSE}
+cvr |>
+  covrpage::covr_summary(failed = failed,package = package_name(path = '..')) |>
   knitr::kable(digits = 2,
              col.names = c('Object','Coverage (%)'),align = c('l','c'))
 
@@ -84,13 +90,13 @@ cvr%>%
 
 Unit Test summary is created using the [testthat](https://github.com/r-lib/testthat) package.
 
-```{r,echo=FALSE,warning=FALSE,message=FALSE,eval=!skip}
+```{r print skipped warning for short summary,echo=FALSE,warning=FALSE,message=FALSE,eval=!skip}
 cat('All tests were skipped')
 ```
 
-```{r,echo=FALSE,warning=FALSE,message=FALSE,eval=skip}
+```{r print short summary table,echo=FALSE,warning=FALSE,message=FALSE,eval=skip}
 
-test_x_short%>%
+test_x_short |>
   knitr::kable()
 
 ```
@@ -98,18 +104,18 @@ test_x_short%>%
 <details `r sprintf('%s',if(skip) test_details(test_x_short))`>
   <summary> Show Detailed Test Results </summary>
 
-```{r,echo=FALSE,warning=FALSE,message=FALSE,eval=!skip}
+```{r print skipped warning for long summary,echo=FALSE,warning=FALSE,message=FALSE,eval=!skip}
 cat('All tests were skipped')
 ```
 
-```{r,echo=FALSE,warning=FALSE,message=FALSE,eval=skip}
+```{r print long summary table,echo=FALSE,warning=FALSE,message=FALSE,eval=skip}
 
-test_x_long%>%
+test_x_long |>
   knitr::kable()
 
 ```
 
-```{r,echo=FALSE}
+```{r prep session info summary table,echo=FALSE}
 if(length(names(test_x_long))>0){
 if('icon'%in%names(test_x_long)){
   emos <- covrpage:::emos[[covrpage:::platform()]]
@@ -123,14 +129,14 @@ if('icon'%in%names(test_x_long)){
 <details>
   <summary> Session Info </summary>
   
-```{r,echo=FALSE,warning=FALSE,message=FALSE}
+```{r print session info summary table,echo=FALSE,warning=FALSE,message=FALSE}
 
 x <- covrpage:::sinfo()
 
-x$info%>%
+x$info |>
   knitr::kable()
 
-x$pkgs%>%
+x$pkgs |>
   knitr::kable()
 
 ```

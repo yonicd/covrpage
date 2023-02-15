@@ -49,7 +49,6 @@ articles:
   - title: "Advanced"
     contents:
       - Continuous_Integration
-      - Test_Results
       - snapshots
   - title: "The Output"
     contents: 

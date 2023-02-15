@@ -11,7 +11,7 @@ tencrypt <- function(r_obj = Sys.getenv("GITHUB_PAT"),
                      add = TRUE) {
   try(x <- system("travis --version", intern = TRUE), silent = TRUE)
 
-  if (class(x) == "try-error") {
+  if (inherits(x,"try-error")) {
     stop("Travis CLI not installed")
   }
 
