@@ -112,7 +112,7 @@ Default: system("git rev-parse --abbrev-ref HEAD", intern = TRUE) (usually 'mast
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">use_covrpage</span><span class="op">(</span>travis_type <span class="op">=</span> <span class="st">'bash'</span>,file<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>,<span class="st">'myfile.sh'</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>running command 'git config travis.slug' had status 1</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Writing myfile.sh bash script to /tmp/RtmpOlFTni</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Writing myfile.sh bash script to /tmp/RtmpIQwSuF</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Add to .travs.yml </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>   r_github_packages: </span>
@@ -120,9 +120,9 @@ Default: system("git rev-parse --abbrev-ref HEAD", intern = TRUE) (usually 'mast
 <span class="r-msg co"><span class="r-pr">#&gt;</span>   </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     after_sucess: </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>   - Rscript -e 'covr::codecov()'</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>   - bash /tmp/RtmpOlFTni/myfile.sh</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>   - bash /tmp/RtmpIQwSuF/myfile.sh</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     after_failure:</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>   - bash /tmp/RtmpOlFTni/myfile.sh</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>   - bash /tmp/RtmpIQwSuF/myfile.sh</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>   deploy:</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     provider: pages</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     skip-cleanup: true</span>
