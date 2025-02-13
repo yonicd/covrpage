@@ -4,20 +4,12 @@
 \alias{covrpage_snapshot}
 \title{Run covrpage on a GitHub Repository}
 \usage{
-covrpage_snapshot(
-  repo,
-  branch = NULL,
-  PAT = Sys.getenv("GITHUB_PAT"),
-  host = "api.github.com",
-  preview = TRUE
-)
+covrpage_snapshot(repo, branch = NULL, host = "api.github.com", preview = TRUE)
 }
 \arguments{
 \item{repo}{character, Public GitHub repository}
 
 \item{branch}{character, Name of the branch to checkout. Default: NULL}
-
-\item{PAT}{character, GitHub Personal Access Token, Default: Sys.getenv("GITHUB_PAT")}
 
 \item{host}{character, GitHub API host to use, Default: "api.github.com"}
 
@@ -29,7 +21,7 @@ Runs a covrpage on a GitHub repository in a sterile environment
 \details{
 Creates a markdown output that is sent to the internal viewer.
 
-Setting branch to NULL means that \code{\link[git2r]{clone}} will use the remote's default branch.
+Setting branch to NULL means that \code{\link[gert]{git_clone}} will use the remote's default branch.
 }
 \examples{
 \dontrun{
@@ -39,10 +31,10 @@ if(interactive()){
 }
 }
 \seealso{
-\code{\link[covrpage]{covrpage}} \code{\link[git2r]{clone}} \code{\link[remotes]{install_github}}
+\code{\link[covrpage]{covrpage}} \code{\link[gert]{git_clone}} \code{\link[remotes]{install_github}}
 
 Other invoke: 
-\code{\link{covrpage_ci}()},
-\code{\link{covrpage}()}
+\code{\link{covrpage}()},
+\code{\link{covrpage_ci}()}
 }
 \concept{invoke}

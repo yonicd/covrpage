@@ -25,8 +25,8 @@ Return data.frame containing which expecations are in the testthat directory
 Other utility: 
 \code{\link{coverage_skip}()},
 \code{\link{covr_summary}()},
-\code{\link{map_testthat_snapshot}()},
 \code{\link{map_test}()},
+\code{\link{map_testthat_snapshot}()},
 \code{\link{package_name}()},
 \code{\link{testthat_summary}()}
 }

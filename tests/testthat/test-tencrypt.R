@@ -7,10 +7,10 @@
 #   td <- file.path(tempdir(), "covrpage")
 #   wd <- getwd()
 #   setwd(td)
-#   repo <- git2r::init()
+#   gert::git_init()
 #   file.create(".travis.yml")
-#   git2r::add(repo, ".travis.yml")
-#   git2r::remote_add(repo, name = "origin", url = "git@github.com:yonicd/covrpage.git")
+#   gert::git_add(".travis.yml")
+#   gert::git_remote_add(name = "origin", url = "https://github.com/yonicd/covrpage.git")
 # 
 #   it("no add", {
 #     testthat::expect_equal(nchar(tencrypt(add = FALSE)), 686)

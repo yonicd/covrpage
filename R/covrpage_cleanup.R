@@ -1,3 +1,4 @@
+#' @importFrom gert git_add git_commit git_push
 covrpage_cleanup <- function(
                              preview = TRUE,
                              auto_push = FALSE,
@@ -63,14 +64,8 @@ covrpage_cleanup <- function(
   }
 
   if (auto_push) {
-    repo <- git2r::repository(".")
-
-    repo |>
-      git2r::add(path = c("tests/README.md"))
-
-    repo |>
-      git2r::commit(message = "update tests readme [skip ci]")
-
-    system("git push")
+    gert::git_add("tests/README.md")
+    gert::git_commit(message = "update tests readme [skip ci]")
+    gert::git_push()
   }
 }

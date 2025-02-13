@@ -27,7 +27,7 @@ information
 \seealso{
 Other setup: 
 \code{\link{tencrypt}()},
-\code{\link{use_covrpage_vignette}()},
-\code{\link{use_covrpage}()}
+\code{\link{use_covrpage}()},
+\code{\link{use_covrpage_vignette}()}
 }
 \concept{setup}

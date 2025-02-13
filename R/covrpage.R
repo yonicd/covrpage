@@ -13,7 +13,6 @@
 #' @family invoke
 #' @export
 #' @importFrom rmarkdown render
-#' @importFrom git2r repository add commit push
 #' @importFrom utils tail
 covrpage <- function(path = getwd(), preview = TRUE, auto_push = FALSE, update_badge = TRUE, vignette = FALSE) {
   testdir <- file.path(path, "tests")

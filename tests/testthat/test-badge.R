@@ -7,8 +7,8 @@ testthat::describe("create badge", {
   dir.create(td)
   withr::with_dir(td,{
     testthat::skip_on_ci()
-    repo <- git2r::init()
-    git2r::remote_add(repo, name = "origin", url = "git@github.com:yonicd/covrpage.git")
+    gert::git_init()
+    gert::git_remote_add(name = "origin", url = "https://github.com/yonicd/covrpage.git")
     
     it("create", {
       testthat::expect_true(grepl("badge", make_badge(active_branch = "master")))

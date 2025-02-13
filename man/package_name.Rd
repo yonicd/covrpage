@@ -16,9 +16,9 @@ Retrieve package name
 Other utility: 
 \code{\link{coverage_skip}()},
 \code{\link{covr_summary}()},
-\code{\link{map_testthat_snapshot}()},
-\code{\link{map_testthat}()},
 \code{\link{map_test}()},
+\code{\link{map_testthat}()},
+\code{\link{map_testthat_snapshot}()},
 \code{\link{testthat_summary}()}
 }
 \concept{utility}

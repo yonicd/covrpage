@@ -4,19 +4,12 @@
 \alias{map_testthat_snapshot}
 \title{Run map_testthat on a GitHub Repository}
 \usage{
-map_testthat_snapshot(
-  repo,
-  branch = NULL,
-  PAT = Sys.getenv("GITHUB_PAT"),
-  host = "api.github.com"
-)
+map_testthat_snapshot(repo, branch = NULL, host = "api.github.com")
 }
 \arguments{
 \item{repo}{character, Public GitHub repository}
 
 \item{branch}{character, Name of the branch to checkout. Default: NULL}
-
-\item{PAT}{character, GitHub Personal Access Token, Default: Sys.getenv("GITHUB_PAT")}
 
 \item{host}{character, GitHub API host to use, Default: "api.github.com"}
 }
@@ -29,7 +22,7 @@ Runs a covrpage on a GitHub repository in a sterile environment
 \details{
 Creates a markdown output that is sent to the internal viewer.
 
-Setting branch to NULL means that \code{\link[git2r]{clone}} will use the remote's default branch.
+Setting branch to NULL means that \code{\link[gert]{git_clone}} will use the remote's default branch.
 }
 \examples{
 \dontrun{
@@ -39,13 +32,13 @@ if(interactive()){
 }
 }
 \seealso{
-\code{\link[covrpage]{covrpage}} \code{\link[git2r]{clone}} \code{\link[remotes]{install_github}}
+\code{\link[covrpage]{covrpage}} \code{\link[gert]{git_clone}} \code{\link[remotes]{install_github}}
 
 Other utility: 
 \code{\link{coverage_skip}()},
 \code{\link{covr_summary}()},
-\code{\link{map_testthat}()},
 \code{\link{map_test}()},
+\code{\link{map_testthat}()},
 \code{\link{package_name}()},
 \code{\link{testthat_summary}()}
 }

@@ -23,7 +23,7 @@ Add encrypted Travis environment variable to git directory and .travis.yml.
 \seealso{
 Other setup: 
 \code{\link{make_badge}()},
-\code{\link{use_covrpage_vignette}()},
-\code{\link{use_covrpage}()}
+\code{\link{use_covrpage}()},
+\code{\link{use_covrpage_vignette}()}
 }
 \concept{setup}
